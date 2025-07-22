@@ -250,3 +250,5 @@ tl/
 cache/
 tmp/
 saves/
+
+.idea/

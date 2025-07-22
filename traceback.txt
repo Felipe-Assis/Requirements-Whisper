@@ -1,0 +1,36 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 2, in script call
+    call scene_1_quarto from _scene_1_quarto
+  File "game/scripts/scene_1_quarto.rpy", line 21, in script
+    show screen pointclick_quarto_1
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+Exception: Screen pointclick_quarto_1 is not known.
+
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 2, in script call
+    call scene_1_quarto from _scene_1_quarto
+  File "game/scripts/scene_1_quarto.rpy", line 21, in script
+    show screen pointclick_quarto_1
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 1328, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen pointclick_quarto_1 is not known.
+
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.7.25031702
+The Requirements Whisperer 1.0
+Tue Jul 22 18:36:46 2025
