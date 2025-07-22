@@ -205,3 +205,48 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Ren'Py engine-specific ignores
+# Compiled scripts and bytecode
+*.rpyc
+*.rpymc
+
+# Cache and persistent data
+*.save
+*.sav
+*.log
+*.tmp
+*.bak
+*.shs
+*.bak.save
+
+# Persistent files
+persistent
+
+# Exported builds (these are generated from the Ren'Py launcher)
+/game/
+/android-build/
+/iOS-build/
+/web/
+/windows/
+/linux/
+/mac/
+/build/
+*/renpy-*/
+
+# Ren'Py project autosaves and logs
+log.txt
+errors.txt
+traceback.txt
+renpy.log
+
+# Translations and caches
+tl/
+*.rpa
+*.rpo
+
+# Common Ren'Py folders that hold build metadata
+cache/
+tmp/
+saves/
