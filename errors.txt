@@ -1,0 +1,26 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/scripts/scene_2_escritorio.rpy", line 11: multiple at clauses are prohibited.
+    show sabrina enthusiastic at left at sprite_zoom
+                                        ^
+
+File "game/scripts/scene_2_escritorio.rpy", line 18: multiple at clauses are prohibited.
+    show carlos confident at right at sprite_zoom
+                                     ^
+
+File "game/scripts/scene_2_escritorio.rpy", line 21: multiple at clauses are prohibited.
+    show julio serious at center at sprite_zoom
+                                   ^
+
+File "game/scripts/scene_2_escritorio.rpy", line 24: multiple at clauses are prohibited.
+    show rodrigo serious at right at sprite_zoom
+                                    ^
+
+File "game/scripts/scene_2_escritorio.rpy", line 30: multiple at clauses are prohibited.
+    show sabrina neutral at left at sprite_zoom
+                                   ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Tue Jul 22 22:32:58 2025

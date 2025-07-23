@@ -1,92 +1,63 @@
-# scene_1_quarto.rpy
 label scene_1_quarto:
-    # Inicia variáveis locais
-    $ alarm_off = False
-    $ notebook_taken = False
-    $ mochila_taken = False
-    $ notebook_in_bag = False
-    $ clothes_changed = False
     $ player_gender = ""
     $ player_name = ""
-    $ player_age = 18
+    $ player_age = ""
     $ inventory = []
 
-    # Background do quarto
     scene bg quarto_manha
 
-    show screen inv_quick # Mostra inventário rápido (caso já implementado)
+    "BIP BIP BIP... O som do alarme ecoa pelo quarto iluminado pela manhã."
+    "Ainda sonolento, você se senta na cama e logo se lembra: hoje é dia de buscar um estágio!"
+    "Você olha ao redor do quarto, respira fundo e decide começar o dia."
 
-    "BIP BIP BIP... O alarme toca alto logo cedo."
+    # 1. Pergunta o nome
+    $ player_name = renpy.input("Antes de começarmos, qual é o seu nome?")
+    $ player_name = player_name.strip()
+    while player_name == "":
+        $ player_name = renpy.input("Por favor, digite um nome válido:")
+        $ player_name = player_name.strip()
 
-    show screen pointclick_quarto_1
+    # 2. Pergunta o sexo
+    "E qual seu gênero?"
+    menu:
+        "Escolha seu gênero:"
+        "Feminino":
+            $ player_gender = "Feminino"
+        "Masculino":
+            $ player_gender = "Masculino"
+        "Outro":
+            $ player_gender = "Outro"
 
-    "Você deve desligar o despertador..."
+    # 3. Pergunta a idade
+    $ player_age = renpy.input("Qual sua idade?")
+    $ player_age = player_age.strip()
+    while not player_age.isdigit() or int(player_age) < 12 or int(player_age) > 99:
+        $ player_age = renpy.input("Por favor, digite uma idade válida (12-99):")
+        $ player_age = player_age.strip()
+    $ player_age = int(player_age)
 
-    # Espera o jogador clicar no despertador
-    while not alarm_off:
-        $ renpy.pause(0.5)
+    # Continua normalmente:
+    "Ótimo, [player_name]! Tudo pronto para sua busca por estágio."
 
-    "Você desliga o alarme e sente o silêncio no quarto."
-
-    "Hora de checar o notebook para procurar vagas de estágio."
-
-    show screen pointclick_quarto_2
-
-    while not notebook_taken:
-        $ renpy.pause(0.5)
-
-    "Antes de acessar as vagas, preencha seu cadastro:"
-
-    call screen player_formulario
-
+    "Você se levanta, pega seu notebook em cima da escrivaninha e senta para procurar vagas disponíveis."
     $ inventory.append("notebook")
-    "Você pegou seu notebook."
 
-    "Agora, pegue sua mochila antes de sair."
-    show screen pointclick_quarto_3
+    "Após alguns minutos de busca, você encontra três oportunidades interessantes:"
 
-    while not mochila_taken:
-        $ renpy.pause(0.5)
-
-    $ inventory.append("mochila")
-    "Você pegou sua mochila."
-
-    "Guarde seu notebook na mochila antes de sair."
-    show screen pointclick_guardar_notebook
-
-    while not notebook_in_bag:
-        $ renpy.pause(0.5)
-
-    $ inventory.remove("notebook")
-    $ inventory.append("notebook (na mochila)")
-
-    "Tudo pronto, mas talvez seja uma boa trocar de roupa antes de sair."
-
-    show screen pointclick_guarda_roupa
-
-    while not clothes_changed:
-        $ renpy.pause(0.5)
-
-    "Você trocou de roupa. Agora está pronto para começar o dia!"
-
-    jump escolher_vaga
-
-label escolher_vaga:
-    scene bg notebook_vagas
-    "Você abre o notebook e encontra três oportunidades de estágio:"
     menu:
         "Qual vaga deseja se candidatar?"
-        "Projeto de software para o IDT-UFRJ":
+        "1. Projeto de software para o Instituto de Doenças do Tórax (IDT-UFRJ)":
             $ chosen_job = "IDT-UFRJ"
-            jump proxima_cena
-        "Desenvolvimento mobile para startup de educação financeira":
+            "Você sente um frio na barriga, mas a ideia de participar de um projeto de impacto na área da saúde te anima."
+        "2. Desenvolvimento mobile para startup de educação financeira":
             $ chosen_job = "Startup"
-            jump proxima_cena
-        "Estágio em manutenção de sistemas legados numa grande empresa":
+            "Startups costumam ser ambientes dinâmicos... Quem sabe seja a chance de crescer rápido?"
+        "3. Estágio em manutenção de sistemas legados numa grande empresa":
             $ chosen_job = "Empresa legada"
-            jump proxima_cena
+            "Estabilidade, benefícios, um ambiente mais tradicional. Pode ser interessante para aprender com uma grande equipe."
 
-label proxima_cena:
-    # Continuação do roteiro...
-    "Você se prepara para uma nova etapa da sua jornada..."
-    return
+    "Você anota todos os detalhes da vaga e envia sua candidatura pelo notebook."
+    "Depois de terminar, sente que merece um pouco de organização. Você pega sua mochila e começa a guardar os itens que vai precisar."
+    $ inventory.append("mochila")
+    "Em seguida, confere no espelho se está apresentável para o dia. Troca de roupa e se sente pronto para essa nova fase!"
+    "Agora é esperar a resposta das empresas..."
