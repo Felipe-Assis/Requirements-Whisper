@@ -1609,3 +1609,7 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+init -1 python:
+    config.overlay_screens.append("top_right_clock")

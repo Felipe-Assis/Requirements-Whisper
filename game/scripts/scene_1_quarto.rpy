@@ -21,6 +21,8 @@ label scene_1_quarto:
     "Ainda sonolento, você se senta na cama e logo se lembra: hoje é dia de buscar um estágio!"
     pause 0.6
 
+    $ show_clock = True     # reaparece
+
     $ inventory_enabled = True
     $ add_to_inventory("notebook")
     $ add_to_inventory("celular")
