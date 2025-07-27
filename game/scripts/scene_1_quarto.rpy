@@ -1,3 +1,6 @@
+# --- FUNÇÕES PYTHON ---
+
+
 label scene_1_quarto:
     $ player_gender = ""
     $ player_name = ""
@@ -7,11 +10,24 @@ label scene_1_quarto:
     scene bg quarto_manha
     with fade
 
+
+
+
+
+
     play sound "audio/alarm_clock.ogg"
     "BIP BIP BIP... O som do alarme ecoa pelo quarto iluminado pela manhã."
     pause 0.8
     "Ainda sonolento, você se senta na cama e logo se lembra: hoje é dia de buscar um estágio!"
     pause 0.6
+
+    $ inventory_enabled = True
+    $ add_to_inventory("notebook")
+    $ add_to_inventory("celular")
+    $ add_to_inventory("bloco_de_notas")
+    $ add_to_inventory("caneta")
+    show screen inventory_button
+
     "Você olha ao redor do quarto, respira fundo e decide começar o dia."
     with dissolve
 
@@ -50,6 +66,14 @@ label scene_1_quarto:
     "Você se levanta, pega seu notebook em cima da escrivaninha e senta para procurar vagas disponíveis."
     $ inventory.append("notebook")
     pause 0.8
+
+    # --- CHAT INTEGRADO ---
+    $ chat_history = []  # Zera o histórico para cada conversa nova
+    "Talvez seja uma boa hora para tirar uma dúvida com o assistente virtual da universidade."
+    call chat_amigo
+    "Conversa finalizada."
+    # ----------------------
+
 
     "Após alguns minutos navegando pelos principais sites de recrutamento, três oportunidades chamam sua atenção:"
     with dissolve

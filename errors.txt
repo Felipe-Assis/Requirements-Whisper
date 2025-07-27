@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label scene_epilogo_conquistas_final is defined twice, at File "game/script.rpy", line 23:
-    call scene_epilogo_conquistas_final from scene_epilogo_conquistas_final
-and File "game/scripts/scene_epilogo_conquistas_final.rpy", line 1:
-label scene_epilogo_conquistas_final:
-
+File "game/scripts/mechanics/contacts_screen.rpy", line 70: The hbox statement is not a valid child of the imagebutton statement.
+    hbox:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jul 26 21:55:57 2025
+Sun Jul 27 13:57:09 2025

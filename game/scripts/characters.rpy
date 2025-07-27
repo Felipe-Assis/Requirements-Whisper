@@ -47,32 +47,38 @@ define enf_marta = Character("Enfermeira Marta", color="#4CAF50")
 # -------------------------------
 
 # --- developer_ai ---
+image developer_ai portrait = "images/characters/developer_ai/portrait.png"
 image developer_ai concentrated = "images/characters/developer_ai/concentrated.png"
 image developer_ai positive = "images/characters/developer_ai/positive.png"
 image developer_ai thinking = "images/characters/developer_ai/thinking.png"
 
 # --- developer_coding---
+image developer_coding portrait = "images/characters/developer_coding/portrait.png"
 image developer_coding neutral = "images/characters/developer_coding/neutral.png"
 image developer_coding positive = "images/characters/developer_coding/neutral.png"
 image developer_coding serious = "images/characters/developer_coding/serious.png"
 image developer_coding thinking = "images/characters/developer_coding/thinking.png"
 
 # --- developer_management---
+image developer_management portrait = "images/characters/developer_management/portrait.png"
 image developer_management serious = "images/characters/developer_management/serious.png"
 image developer_management thinking = "images/characters/developer_management/thinking.png"
 
 # --- developer_project---
+image developer_project portrait = "images/characters/developer_project/portrait.png"
 image developer_project confident = "images/characters/developer_project/confident.png"
 image developer_project neutral = "images/characters/developer_project/confident.png"
 image developer_project serious = "images/characters/developer_project/serious.png"
 image developer_project thinking = "images/characters/developer_project/thinking.png"
 
 # --- developer_quality ---
+image developer_quality portrait = "images/characters/developer_quality/portrait.png"
 image developer_quality positive = "images/characters/developer_quality/positive.png"
 image developer_quality serious = "images/characters/developer_quality/serious.png"
 image developer_quality thinking = "images/characters/developer_quality/thinking.png"
 
 # --- developer_requirements---
+image developer_requirements portrait = "images/characters/developer_requirements/portrait.png"
 image developer_requirements enthusiastic = "images/characters/developer_requirements/enthusiastic.png"
 image developer_requirements positive = "images/characters/developer_requirements/enthusiastic.png"
 image developer_requirements neutral = "images/characters/developer_requirements/neutral.png"
@@ -80,10 +86,12 @@ image developer_requirements serious = "images/characters/developer_requirements
 image developer_requirements thinking = "images/characters/developer_requirements/thinking.png"
 
 # --- developer_security ---
+image developer_security portrait = "images/characters/developer_security/portrait.png"
 image developer_security serious = "images/characters/developer_security/serious.png"
 image developer_security thinking = "images/characters/developer_security/thinking.png"
 
 # --- developer_test --
+image developer_test portrait = "images/characters/developer_test/portrait.png"
 image developer_test confident = "images/characters/developer_test/confident.png"
 image developer_test positive = "images/characters/developer_test/confident.png"
 image developer_test enthusiastic = "images/characters/developer_test/enthusiastic.png"

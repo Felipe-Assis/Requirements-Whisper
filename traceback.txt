@@ -1,48 +1,72 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 23, in script call
-    call scene_epilogo_conquistas_final from _scene_epilogo_conquistas_final
-  File "game/scripts/scene_epilogo_conquistas_final.rpy", line 92, in script
-    "Roteiro: [Seu Nome] | Arte: [Equipe/IA/Créditos] | Programação: [Seu Nome] | Personagens e história inspirados em vivências reais."
-SyntaxError: unexpected EOF while parsing (<none>, line 1)
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/scripts/mechanics/contacts_screen.rpy", line 7, in execute
+    screen contacts_screen():
+  File "game/scripts/mechanics/contacts_screen.rpy", line 7, in execute
+    screen contacts_screen():
+  File "game/scripts/mechanics/contacts_screen.rpy", line 12, in execute
+    frame:
+  File "game/scripts/mechanics/contacts_screen.rpy", line 19, in execute
+    vbox:
+  File "game/scripts/mechanics/contacts_screen.rpy", line 24, in execute
+    hbox:
+  File "game/scripts/mechanics/contacts_screen.rpy", line 27, in execute
+    grid 4 2 spacing 30:  # Aumente a grid se quiser mais linhas/colunas
+Exception: Grid overfull.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 23, in script call
-    call scene_epilogo_conquistas_final from _scene_epilogo_conquistas_final
-  File "game/scripts/scene_epilogo_conquistas_final.rpy", line 92, in script
-    "Roteiro: [Seu Nome] | Arte: [Equipe/IA/Créditos] | Programação: [Seu Nome] | Personagens e história inspirados em vivências reais."
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
-    raise e
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
-    raise orig_e
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: unexpected EOF while parsing (<none>, line 1)
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/scripts/mechanics/contacts_screen.rpy", line 7, in execute
+    screen contacts_screen():
+  File "game/scripts/mechanics/contacts_screen.rpy", line 7, in execute
+    screen contacts_screen():
+  File "game/scripts/mechanics/contacts_screen.rpy", line 12, in execute
+    frame:
+  File "game/scripts/mechanics/contacts_screen.rpy", line 19, in execute
+    vbox:
+  File "game/scripts/mechanics/contacts_screen.rpy", line 24, in execute
+    hbox:
+  File "game/scripts/mechanics/contacts_screen.rpy", line 27, in execute
+    grid 4 2 spacing 30:  # Aumente a grid se quiser mais linhas/colunas
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 556, in add
+    raise Exception("Grid overfull.")
+Exception: Grid overfull.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 The Requirements Whisperer 1.0
-Sat Jul 26 21:56:30 2025
+Sun Jul 27 14:00:15 2025
