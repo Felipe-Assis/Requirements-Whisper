@@ -1,17 +1,17 @@
 label scene_15_aniversario_surpresa:
+    play music music_office_relaxed fadein 1.0
     scene bg escritorio_interior_tarde
     with dissolve
 
+    $ advance_minutes(13)
     "{i}O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
     "{i}Você percebe que a equipe está querendo organizar algo especial, mas ninguém se prontificou ainda.{/i}"
 
-    # Momento didático e de inventário: pensar na logística do evento
     show developer_requirements thinking at left_zoom
     developer_requirements "Acho que ninguém lembrou de comprar bolo... Se der tempo, dá para improvisar alguma coisa."
     show developer_ai positive at right_zoom
     developer_ai "Se cada um trouxer um docinho, já vira festa! Alguém consegue buscar refrigerante?"
 
-    # Minijogo/simulações: Organização de surpresa (escolhas afetam amizade)
     "{i}Você decide assumir a liderança da surpresa. Pode escolher o que organizar:{/i}"
     menu:
         "Como você contribui para o aniversário surpresa?"
@@ -39,7 +39,6 @@ label scene_15_aniversario_surpresa:
             $ inventario.append("cartão")
             hide developer_project
 
-    # Minijogo opcional (decoração ou escolha de música)
     "{i}Com a comemoração se aproximando, você pode escolher mais uma ação para incrementar a surpresa:{/i}"
     menu:
         "Deseja cuidar de algum detalhe extra?"
@@ -60,14 +59,16 @@ label scene_15_aniversario_surpresa:
             $ amizade_developer_coding += 1
             hide developer_coding
 
-    # Padding - NPCs comentando, ritmo de preparação
     show developer_requirements positive at left_zoom
     developer_requirements "Vai ficar demais! E tudo feito em equipe, do jeitinho que a gente gosta."
     hide developer_requirements
 
-    "{i}A sala é fechada rapidinho para montar a surpresa. Cada um colabora, um busca bolo, outro pendura balões, outro ajuda a arrumar as mesas.{/i}"
+    # TRANSIÇÃO VISUAL PARA O ESCRITÓRIO DECORADO
     play sound "audio/ambiente_agitado.ogg"
-    pause 1.0
+    scene bg escritorio_festa
+    with fade
+    "{i}A sala é fechada rapidinho para montar a surpresa. Cada um colabora: bolo, balões, música e cartões tomam conta do ambiente. O escritório, agora decorado, ganha vida com as cores e a expectativa do grupo.{/i}"
+    pause 1.3
 
     # Chegada do aniversariante
     show developer_security serious at center_zoom
@@ -75,7 +76,6 @@ label scene_15_aniversario_surpresa:
     play sound "audio/aplausos.ogg"
     "{i}De repente, todos surgem juntos:{/i}"
 
-    # NPCs em diferentes expressões comemorativas
     show developer_ai enthusiastic at left_zoom
     show developer_test enthusiastic at right_zoom
     show developer_quality positive at right_zoom2
@@ -94,7 +94,6 @@ label scene_15_aniversario_surpresa:
     developer_security "Nossa, gente... Nem sei o que dizer. Vocês são demais!"
     play sound "audio/feedback_positive.ogg"
 
-    # Possível minijogo: escolha de fala do jogador (para personalizar a homenagem)
     menu:
         "Como você deseja parabenizar [NOME_DEVELOPER_SECURITY]?"
         "Desejo sucesso e agradeço pela parceria no projeto.":
@@ -115,19 +114,17 @@ label scene_15_aniversario_surpresa:
 
     "{i}A tarde termina em clima de festa, amizade e descontração. A equipe se sente ainda mais próxima e motivada para os próximos desafios.{/i}"
 
-    # Padding de final de cena e flag para futuras consequências
     $ flag_festa_seguranca = True
 
+    play music music_home_dreamy fadein 1.2
     scene bg escritorio_interior_noite
     with fade
     "{i}No fim do dia, todos se despedem com abraços e sorrisos. Você percebe que celebrar juntos é tão importante quanto entregar bons resultados técnicos.{/i}"
 
     scene bg quarto_noite
     with fade
-
     "{i}Mais tarde, em casa, você repousa após um dia cheio de risadas e desafios.{/i}"
     "{i}Revê mentalmente os momentos do evento surpresa, as conversas animadas, os olhares de gratidão e o quanto a equipe cresceu junta.{/i}"
-
     "{i}Você abre o notebook para registrar suas impressões do dia e percebe como pequenas iniciativas, como celebrar aniversários e valorizar os colegas, fortalecem laços e criam um ambiente onde todos se sentem pertencentes.{/i}"
 
     window hide
@@ -135,7 +132,6 @@ label scene_15_aniversario_surpresa:
     window show
 
     "{i}Lembra-se também das discussões técnicas, dos debates construtivos e das decisões tomadas em equipe para definir a arquitetura do sistema.{/i}"
-
     "{i}No fim, conclui que projetos de software não são feitos apenas de código, mas de pessoas, colaboração e respeito à diversidade de ideias.{/i}"
 
     scene black

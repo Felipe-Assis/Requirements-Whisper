@@ -1,14 +1,18 @@
 label scene_13_retorno_casa_sem3:
+    play music music_streets_focused fadein 1.0
     scene bg transito_noite
     with dissolve
 
-    "Mais um fim de tarde. O ônibus está cheio, mas você encontra um assento e coloca os fones de ouvido, olhando as luzes da cidade."
-    "A cabeça ainda gira com as revisões feitas na especificação dos requisitos, as dicas dos colegas e as pequenas conquistas do dia."
+    $ advance_minutes(32)
+    "{i}Mais um fim de tarde. O ônibus está cheio, mas você encontra um assento e coloca os fones de ouvido, olhando as luzes da cidade.{/i}"
+    "{i}A cabeça ainda gira com as revisões feitas na especificação dos requisitos, as dicas dos colegas e as pequenas conquistas do dia.{/i}"
 
+    play music music_home_reflecting fadein 1.5
     scene bg quarto_noite
     with fade
+    $ advance_minutes(20)
 
-    "De volta ao seu quarto, você larga a mochila e liga o notebook para revisar o documento finalizado durante o expediente."
+    "{i}De volta ao seu quarto, você larga a mochila e liga o notebook para revisar o documento finalizado durante o expediente.{/i}"
     show expression "images/items/notebook.png" as notebook at center_zoom
     pause 0.6
 
@@ -33,14 +37,15 @@ label scene_13_retorno_casa_sem3:
 
     "*‘Documentação não serve só para auditar ou apresentar: ela é memória coletiva, base para testes e para evoluir o sistema sem medo no futuro.’*"
 
-    "Você reflete sobre como a prática do projeto faz tudo aquilo fazer sentido — e que, por mais que documentar pareça trabalhoso, é o que torna o desenvolvimento possível em equipe."
+    "{i}Você reflete sobre como a prática do projeto faz tudo aquilo fazer sentido — e que, por mais que documentar pareça trabalhoso, é o que torna o desenvolvimento possível em equipe.{/i}"
 
-    "Antes de dormir, recebe uma mensagem rápida do grupo da equipe:"
+    "{i}Antes de dormir, recebe uma mensagem rápida do grupo da equipe:{/i}"
     play sound "audio/cell_vibration.ogg"
     show developer_requirements positive at left_zoom
     developer_requirements "(mensagem no grupo) Pessoal, parabéns pelo empenho hoje! Documento ficou ótimo. Amanhã, seguimos para a próxima etapa juntos!"
     hide developer_requirements
 
+    play music music_home_dreamy fadein 1.0
     scene black
     with fade
     window hide

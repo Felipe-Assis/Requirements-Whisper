@@ -1,4 +1,6 @@
 label scene_10_criacao_casos_uso:
+    $ game_hour = 9
+    $ game_minute = 10
     play music music_office_concentrated_1 fadein 1.0
     scene bg escritorio_interior_manha
     with fade

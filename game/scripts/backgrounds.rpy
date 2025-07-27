@@ -1,6 +1,8 @@
 # Arquivo: backgrounds.rpy
 
 
+
+image bg refeitorio_tarde = im.Scale("images/bg/refeitorio_tarde.png", config.screen_width, config.screen_height)
 image bg cozinha_noite = im.Scale("images/bg/cozinha_noite.png", config.screen_width, config.screen_height)
 
 image bg transito_manha = im.Scale("images/bg/transito_manha.png", config.screen_width, config.screen_height)
@@ -18,6 +20,7 @@ image bg empresa_exterior_manha = im.Scale("images/bg/empresa_exterior_manha.png
 image bg empresa_exterior_noite = im.Scale("images/bg/empresa_exterior_noite.png", config.screen_width, config.screen_height)
 
 # Escritório - Interior
+image bg escritorio_interior_festa = im.Scale("images/bg/escritorio_interior_festa.png", config.screen_width, config.screen_height)
 image bg escritorio_interior_manha = im.Scale("images/bg/escritorio_interior_manha.png", config.screen_width, config.screen_height)
 image bg escritorio_interior_tarde = im.Scale("images/bg/escritorio_interior_tarde.png", config.screen_width, config.screen_height)
 image bg escritorio_interior_noite = im.Scale("images/bg/escritorio_interior_noite.png", config.screen_width, config.screen_height)

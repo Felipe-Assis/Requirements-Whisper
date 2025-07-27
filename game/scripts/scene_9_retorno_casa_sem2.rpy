@@ -1,4 +1,6 @@
 label scene_9_retorno_casa_sem2:
+    $ game_hour = 21
+    $ game_minute = 00
     play music music_streets_focused fadein 1.0
     scene bg transito_noite
     with dissolve
