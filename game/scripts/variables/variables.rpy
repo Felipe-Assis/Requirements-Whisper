@@ -19,19 +19,20 @@ init -1:
     # Variáveis de controle de quais contatos estão disponíveis
     default amigo_selecionado = ""
 
-    default contato_developer_ai = True
-    default contato_developer_coding = True
+    default contato_developer_ai = False
+    default contato_developer_coding = False
     default contato_developer_management = False
-    default contato_developer_requirements = True
-    default contato_developer_project = True
-    default contato_developer_quality = True
-    default contato_developer_security = True
-    default contato_developer_test = True
-
+    default contato_developer_requirements = False
+    default contato_developer_project = False
+    default contato_developer_quality = False
+    default contato_developer_security = False
+    default contato_developer_test = False
+    default contato_doutora_1 = False
+    default contato_doutora_2 = False
 
     default game_hour = 7      # Horas (inteiro, 0-23)
     default game_minute = 0    # Minutos (inteiro, 0-59)
-    default show_clock = True  # Se quiser poder ocultar facilmente
+    default show_clock = False  # Se quiser poder ocultar facilmente
 
     # Função para atualizar o horário, se preferir
     init python:

@@ -74,3 +74,10 @@ image item notebook_fechado = Transform("items/notebook_fechado.png", zoom=0.35)
 image item notebook_fechado_small = Transform("items/notebook_fechado.png", zoom=0.2)
 image item notebook_fechado_idle = Transform("items/notebook_fechado.png", xysize=(128, 128))
 image item notebook_fechado_hover = Transform("items/notebook_fechado.png", xysize=(128, 128))
+
+
+# Garrafinha
+image item garrafinha = Transform("items/garrafinha.png", zoom=0.35)
+image item garrafinha_small = Transform("items/garrafinha.png", zoom=0.2)
+image item garrafinha_idle = Transform("items/garrafinha.png", xysize=(128, 128))
+image item garrafinha_hover = Transform("items/garrafinha.png", xysize=(128, 128))

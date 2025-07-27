@@ -41,6 +41,16 @@ init python:
             "portrait": "images/characters/developer_test/portrait.png",
             "assistant_id": "asst_t5wjZ9SCpAbHNCg7utEcY2et"
         },
+        "doutora_1": {
+            "name": NOME_DOUTORA_1,
+            "portrait": "images/characters/doutora_1/portrait.png",
+            "assistant_id": "asst_t5wjZ9SCpAbHNCg7utEcY2et"
+        },
+        "doutora_2": {
+            "name": NOME_DOUTORA_2,
+            "portrait": "images/characters/doutora_2/portrait.png",
+            "assistant_id": "asst_t5wjZ9SCpAbHNCg7utEcY2et"
+        },
         # Adicione outros se necessário...
     }
 

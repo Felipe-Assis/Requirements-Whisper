@@ -1,6 +1,3 @@
-# --- FUNÇÕES PYTHON ---
-
-
 label scene_1_quarto:
     $ player_gender = ""
     $ player_name = ""
@@ -10,33 +7,62 @@ label scene_1_quarto:
     scene bg quarto_manha
     with fade
 
-
-
-
-
-
+    $ renpy.music.set_volume(1.0, delay=0, channel="music")
+    play music music_home_dreamy fadein 1.5
     play sound "audio/alarm_clock.ogg"
     "BIP BIP BIP... O som do alarme ecoa pelo quarto iluminado pela manhã."
+    $ advance_minutes(2)
     pause 0.8
     "Ainda sonolento, você se senta na cama e logo se lembra: hoje é dia de buscar um estágio!"
+    $ advance_minutes(1)
     pause 0.6
 
-    $ show_clock = True     # reaparece
+    $ show_clock = True
 
-    $ inventory_enabled = True
+    # O jogador pega o notebook na mesa (inventário)
+    "Você olha ao redor do quarto, respira fundo e decide começar o dia. Seu notebook está em cima da escrivaninha, quase te chamando."
+    show expression "images/items/notebook_fechado.png" as notebook at center_zoom
+    "Você pega o notebook, sentindo o peso da responsabilidade — e da expectativa."
     $ add_to_inventory("notebook")
-    $ add_to_inventory("celular")
-    $ add_to_inventory("bloco_de_notas")
-    $ add_to_inventory("caneta")
-    show screen inventory_button
-
-    "Você olha ao redor do quarto, respira fundo e decide começar o dia."
+    $ advance_minutes(2)
+    hide notebook
     with dissolve
 
-    # Preenchendo o 'currículo'
-    "Você pega o notebook, abre o navegador e percebe que precisa atualizar seu currículo antes de começar a busca."
+    # Pega o celular
+    "Em cima do criado-mudo, seu celular vibra com uma notificação sobre oportunidades de estágio."
+    show expression "images/items/celular.png" as celular at left_zoom
+    "Você pega o celular, pensando em como a tecnologia pode ser sua aliada na busca de hoje."
+    $ add_to_inventory("celular")
+    $ advance_minutes(1)
+    hide celular
+    with dissolve
+
+    # Pega bloco de notas e caneta
+    "Na mochila, você encontra seu velho bloco de notas e uma caneta azul — essenciais para anotar qualquer insight durante o processo."
+    show expression "images/items/bloco_de_notas.png" as bloco at right_zoom
+    "Você adiciona o bloco de notas ao seu kit."
+    $ add_to_inventory("bloco_de_notas")
+    pause 0.3
+    hide bloco
+    with dissolve
+    show expression "images/items/caneta.png" as caneta at right_zoom
+    "A caneta não pode faltar. Afinal, ideias importantes vêm sem avisar!"
+    $ add_to_inventory("caneta")
+    pause 0.3
+    hide caneta
+    with dissolve
+
+    show screen inventory_button
+
+    $ advance_minutes(2)
+    "Pronto! Tudo à mão. Agora falta o mais importante: garantir que seu currículo esteja em dia."
+    with dissolve
+
+    # Preenchendo o currículo
+    "Você liga o notebook, conecta à internet e percebe que precisa atualizar seu currículo antes de começar a busca."
     show expression "images/items/notebook.png" as notebook at center_zoom
     pause 0.6
+    $ advance_minutes(3)
 
     $ player_name = renpy.input("Nome completo:")
     $ player_name = player_name.strip()
@@ -52,6 +78,7 @@ label scene_1_quarto:
             $ player_gender = "Masculino"
         "Outro":
             $ player_gender = "Outro"
+    $ advance_minutes(2)
 
     $ player_age = renpy.input("Qual sua idade?")
     $ player_age = player_age.strip()
@@ -59,33 +86,37 @@ label scene_1_quarto:
         $ player_age = renpy.input("Por favor, digite uma idade válida (12-99):")
         $ player_age = player_age.strip()
     $ player_age = int(player_age)
+    $ advance_minutes(2)
 
     hide notebook
     with dissolve
 
     "Ótimo, [player_name]! Currículo atualizado. Agora sim, hora de procurar vagas de estágio."
     play sound "audio/computer_typing.ogg"
-    "Você se levanta, pega seu notebook em cima da escrivaninha e senta para procurar vagas disponíveis."
-    $ inventory.append("notebook")
-    pause 0.8
+    $ advance_minutes(4)
+    "Você se levanta, pega o notebook e senta à escrivaninha, decidido(a) a começar a busca pelas melhores vagas."
+    $ advance_minutes(1)
 
-    # --- CHAT INTEGRADO ---
-    $ chat_history = []  # Zera o histórico para cada conversa nova
-    "Talvez seja uma boa hora para tirar uma dúvida com o assistente virtual da universidade."
-    call chat_amigo
-    "Conversa finalizada."
-    # ----------------------
-
+#     # --- CHAT INTEGRADO ---
+#     $ chat_history = []
+#     "Talvez seja uma boa hora para tirar uma dúvida com o assistente virtual da universidade sobre os requisitos das vagas na área de TI."
+#     call chat_amigo
+#     "Conversa finalizada."
+#     $ advance_minutes(3)
+#     # ----------------------
 
     "Após alguns minutos navegando pelos principais sites de recrutamento, três oportunidades chamam sua atenção:"
     with dissolve
+    $ advance_minutes(4)
 
     menu:
         "Para qual vaga deseja se candidatar?"
         "1. Participar do desenvolvimento de um sistema web para a área da saúde, em parceria com uma universidade":
             $ chosen_job = "saude"
             "Você sente um frio na barriga, mas a ideia de contribuir em um projeto que pode impactar a vida das pessoas te anima."
-            "O desafio é grande, mas a possibilidade de aprendizado e impacto social é ainda maior."
+            "{i}Projeto: Desenvolvimento do Sistema XYZ – sistema web para acompanhamento clínico de pacientes do Instituto XX.{/i}"
+            "O desafio é grande: envolverá desde a coleta de requisitos com profissionais de saúde até o desenvolvimento de dashboards e integração com app móvel."
+            "A possibilidade de aprendizado técnico e impacto social é ainda maior."
         "2. Desenvolvimento mobile em uma startup de tecnologia voltada para educação financeira":
             $ chosen_job = "startup"
             "Startups costumam ser ambientes dinâmicos e cheios de desafios."
@@ -94,20 +125,40 @@ label scene_1_quarto:
             $ chosen_job = "corporativo"
             "Estabilidade, benefícios e a experiência de atuar em uma empresa tradicional."
             "Talvez seja uma boa forma de entender a rotina e os processos de equipes grandes."
+    $ advance_minutes(4)
 
     "Você anota todos os detalhes da vaga e finaliza a candidatura pelo notebook."
     play sound "audio/send_email.ogg"
-    "Depois de terminar, sente que merece um pouco de organização."
-    "Você pega sua mochila e começa a separar os itens que vai precisar para o novo desafio."
-    $ inventory.append("mochila")
-    show expression "images/items/mochila.png" as mochila at left_zoom
-    pause 0.6
+    $ advance_minutes(1)
 
-    "Em seguida, confere no espelho se está apresentável para o dia."
-    "Troca de roupa, arruma o cabelo, respira fundo e se sente pronto para essa nova fase!"
+    "Depois de terminar, sente que merece um pouco de organização. Hora de preparar tudo para o novo desafio."
+    # Adicionando a mochila agora, como gesto simbólico de se preparar para sair
+    show expression "images/items/mochila.png" as mochila at left_zoom
+    "Você pega sua mochila preferida, pronta para receber todos os itens essenciais."
+    $ add_to_inventory("mochila")
+    "Ao acessar a MOCHILA (canto esquerdo superior) você verá seus itens"
+    "Na mochila, você pode acessar seu CELULAR e visualizar seus CONTATOS"
+    "Pode clicar em um CONTATO para conversar com seu amigo!"
+    "E também é possível visualizar o seu nível de AMIZADE."
+    pause 0.6
     hide mochila
+
+
+    show expression "images/items/garrafinha.png" as garrafinha at right_zoom
+    "Ah, quase esqueci da minha garrafinha!"
+    $ add_to_inventory("garrafinha")
+    pause 0.6
+    hide garrafinha
+
+
+
     with dissolve
 
+    "Em seguida, confere no espelho se está apresentável para o dia."
+    "Troca de roupa, arruma o cabelo, respira fundo e se sente pronto(a) para essa nova fase!"
+    $ advance_minutes(2)
+
+    stop music fadeout 1.5
     "Agora é só esperar a resposta das empresas..."
     pause 0.8
     scene black with fade

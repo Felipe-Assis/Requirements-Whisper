@@ -107,15 +107,15 @@ screen contacts_screen():
                                 xalign 0.5
                                 text "💗" size 16 color "#FF70A6" yalign 0.5
                                 bar:
-                                    value amiazde_developer_management
+                                    value amizade_developer_management
                                     range 10
                                     xmaximum 80
                                     ymaximum 10
                                     left_bar (
-                                        "#44D067" if amiazde_developer_management == 10 else
-                                        "#A4EB9E" if amiazde_developer_management >= 8 else
-                                        "#FFEB3B" if amiazde_developer_management >= 5 else
-                                        "#FFA149" if amiazde_developer_management >= 3 else
+                                        "#44D067" if amizade_developer_management == 10 else
+                                        "#A4EB9E" if amizade_developer_management >= 8 else
+                                        "#FFEB3B" if amizade_developer_management >= 5 else
+                                        "#FFA149" if amizade_developer_management >= 3 else
                                         "#FF5353"
                                     )
                                     right_bar "#eee"
@@ -282,6 +282,71 @@ screen contacts_screen():
                                     thumb None
                                     yalign 0.5
 
+
+                    if contato_doutora_1:
+                        vbox:
+                            spacing 3
+                            xalign 0.5
+                            imagebutton:
+                                idle "doutora_1 portrait"
+                                hover "doutora_1 portrait"
+                                at contact_icon
+                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nExperiente médica." % NOME_DOUTORA_1)]
+                                unhovered [SetVariable("selected_contact_description", "")]
+                                action [SetVariable("amigo_selecionado", "doutora_1"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            hbox:
+                                spacing 1
+                                xalign 0.5
+                                text "💗" size 16 color "#FF70A6" yalign 0.5
+                                bar:
+                                    value amizade_doutora_1
+                                    range 10
+                                    xmaximum 80
+                                    ymaximum 10
+                                    left_bar (
+                                        "#44D067" if amizade_doutora_1 == 10 else
+                                        "#A4EB9E" if amizade_doutora_1 >= 8 else
+                                        "#FFEB3B" if amizade_doutora_1 >= 5 else
+                                        "#FFA149" if amizade_doutora_1 >= 3 else
+                                        "#FF5353"
+                                    )
+                                    right_bar "#eee"
+                                    thumb None
+                                    yalign 0.5
+
+
+
+                    if contato_developer_test:
+                        vbox:
+                            spacing 3
+                            xalign 0.5
+                            imagebutton:
+                                idle "doutora_2 portrait"
+                                hover "doutora_2 portrait"
+                                at contact_icon
+                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem médica." % NOME_DOUTORA_2)]
+                                unhovered [SetVariable("selected_contact_description", "")]
+                                action [SetVariable("amigo_selecionado", "amizade_doutora_2"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            hbox:
+                                spacing 1
+                                xalign 0.5
+                                text "💗" size 16 color "#FF70A6" yalign 0.5
+                                bar:
+                                    value amizade_doutora_2
+                                    range 10
+                                    xmaximum 80
+                                    ymaximum 10
+                                    left_bar (
+                                        "#44D067" if amizade_doutora_2 == 10 else
+                                        "#A4EB9E" if amizade_doutora_2 >= 8 else
+                                        "#FFEB3B" if amizade_doutora_2 >= 5 else
+                                        "#FFA149" if amizade_doutora_2 >= 3 else
+                                        "#FF5353"
+                                    )
+                                    right_bar "#eee"
+                                    thumb None
+                                    yalign 0.5
+
             frame:
                 background "#222a"
                 xsize 725
@@ -293,3 +358,58 @@ screen contacts_screen():
                     xalign 0.5
 
             textbutton "Fechar" action Return() xalign 0.5
+
+
+init python:
+    def add_contact(contact_id):
+        # Inicializa o set de contatos se não existir
+        if not hasattr(store, 'contacts'):
+            store.contacts = set()
+        # Adiciona ao set, se ainda não estiver
+        if contact_id not in store.contacts:
+            store.contacts.add(contact_id)
+            # Tenta setar a variável booleana global correspondente (ex: contato_developer_ai)
+            var_name = "contato_" + contact_id
+            if hasattr(store, var_name):
+                setattr(store, var_name, True)
+            # Notifica nome amigável, se possível
+            try:
+                nome = AMIGOS_DATA[contact_id]["name"]
+                renpy.notify(f"Contato adicionado: {nome}")
+            except:
+                renpy.notify(f"Contato adicionado: {contact_id.replace('_',' ').capitalize()}")
+        else:
+            renpy.notify("Contato já adicionado.")
+
+
+    def add_friendship_point(character_id, amount=0.5):
+        """
+        Adiciona pontos de amizade ao personagem e notifica o jogador.
+        Exemplo: $ add_friendship_point("developer_requirements")
+        """
+        var_name = "amizade_" + character_id
+        if hasattr(store, var_name):
+            current = getattr(store, var_name)
+            new_value = current + amount
+            setattr(store, var_name, new_value)
+            # Notificação: tenta usar nome bonito se existir em AMIGOS_DATA
+            try:
+                nome = AMIGOS_DATA[character_id]["name"]
+                renpy.notify(f"Pontos de amizade com {nome} +{amount} (Total: {new_value})")
+            except:
+                renpy.notify(f"Pontos de amizade com {character_id.replace('_',' ').capitalize()} +{amount} (Total: {new_value})")
+            # Debug opcional no log
+            renpy.log(f"Pontos de amizade de {var_name}: {new_value}")
+        else:
+            renpy.log(f"Personagem não encontrado: {var_name}")
+
+    def get_friendship_point(character_id):
+        """
+        Retorna os pontos de amizade do personagem.
+        """
+        var_name = "amizade_" + character_id
+        if hasattr(store, var_name):
+            return getattr(store, var_name)
+        else:
+            renpy.log(f"Personagem não encontrado: {var_name}")
+            return 0

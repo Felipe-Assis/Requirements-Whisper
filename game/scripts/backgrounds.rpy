@@ -1,6 +1,15 @@
 # Arquivo: backgrounds.rpy
 
-# Quartos (exemplo: para manhã e noite, se tiver imagens)
+
+image bg cozinha_noite = im.Scale("images/bg/cozinha_noite.png", config.screen_width, config.screen_height)
+
+image bg transito_manha = im.Scale("images/bg/transito_manha.png", config.screen_width, config.screen_height)
+image bg transito_noite = im.Scale("images/bg/transito_noite.png", config.screen_width, config.screen_height)
+
+image bg sala_reunioes_manha = im.Scale("images/bg/sala_reunioes_manha.png", config.screen_width, config.screen_height)
+image bg sala_reunioes_tarde = im.Scale("images/bg/sala_reunioes_tarde.png", config.screen_width, config.screen_height)
+
+# Quartos
 image bg quarto_manha = im.Scale("images/bg/quarto_manha.png", config.screen_width, config.screen_height)
 image bg quarto_noite = im.Scale("images/bg/quarto_noite.png", config.screen_width, config.screen_height)
 

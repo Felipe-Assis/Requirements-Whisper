@@ -29,8 +29,8 @@ label scene_21_avaliacao_final:
     show developer_requirements enthusiastic at left_zoom
     developer_requirements "Sejam bem-vindos! Dr. Almeida e Enfermeira Marta estão aguardando. Respirem fundo — vocês estão prontos!"
 
-    show expression "images/npcs/dr_almeida.png" as dr_almeida at right_zoom
-    show expression "images/npcs/enf_marta.png" as enf_marta at right_zoom2
+    show expression "images/npcs/dr_almeida.png" as doutora_1 at right_zoom
+    show expression "images/npcs/enf_marta.png" as doutora_2 at right_zoom2
 
     "A equipe se organiza. Você apresenta o sistema, mostrando as principais funcionalidades, relatórios, telas e os diferenciais do projeto. Os stakeholders acompanham atentos."
 
@@ -46,26 +46,26 @@ label scene_21_avaliacao_final:
         $ resultado_tech = "Padrao"
 
     # Stakeholders avaliam (final alternativo)
-    show dr_almeida at right_zoom
-    dr_almeida "Fiquei impressionado com o resultado! O sistema está prático e visualmente agradável. Muito obrigado pelo empenho, pessoal."
+    show doutora_1 at right_zoom
+    doutora_1 "Fiquei impressionado com o resultado! O sistema está prático e visualmente agradável. Muito obrigado pelo empenho, pessoal."
 
     if resultado_tech == "DevOps":
-        dr_almeida "Adotar automação e práticas modernas como Docker nos dá confiança para crescer no futuro. Ótima visão!"
+        doutora_1 "Adotar automação e práticas modernas como Docker nos dá confiança para crescer no futuro. Ótima visão!"
     elif resultado_tech == "Teamwork":
-        enf_marta "O apoio de todos ficou claro. Gostei de ver a colaboração e preocupação em resolver rapidamente os problemas dos usuários!"
+        doutora_2 "O apoio de todos ficou claro. Gostei de ver a colaboração e preocupação em resolver rapidamente os problemas dos usuários!"
     else:
-        enf_marta "Ter uma documentação clara e processos bem definidos faz toda diferença. Fica muito mais fácil treinar a equipe aqui no hospital."
+        doutora_2 "Ter uma documentação clara e processos bem definidos faz toda diferença. Fica muito mais fácil treinar a equipe aqui no hospital."
 
     # Feedback técnico/detalhado com base em bugs/qualidade
     if "selo_codigo_sem_bugs" in inventario and "conquista_bug_vuln" in inventario:
-        enf_marta "Testamos vários cenários críticos e tudo funcionou bem. O sistema está estável e seguro, parabéns!"
-        dr_almeida "Vocês pensaram em cada detalhe. A confiabilidade é visível."
+        doutora_2 "Testamos vários cenários críticos e tudo funcionou bem. O sistema está estável e seguro, parabéns!"
+        doutora_1 "Vocês pensaram em cada detalhe. A confiabilidade é visível."
     else:
-        enf_marta "Notamos alguns pontos que podem ser melhorados, mas o essencial está bem implementado."
-        dr_almeida "Vamos ajustar juntos com o tempo. A evolução é parte do processo!"
+        doutora_2 "Notamos alguns pontos que podem ser melhorados, mas o essencial está bem implementado."
+        doutora_1 "Vamos ajustar juntos com o tempo. A evolução é parte do processo!"
 
     # Stakeholder faz convite e reconhecimento
-    dr_almeida "Gostaríamos de manter contato com todos. Estão convidados a colaborar em futuros projetos da instituição!"
+    doutora_1 "Gostaríamos de manter contato com todos. Estão convidados a colaborar em futuros projetos da instituição!"
     show developer_requirements positive at left_zoom
     developer_requirements "Fico feliz demais pelo reconhecimento. Parabéns, [player_name] — seu desenvolvimento ficou claro do início ao fim."
 

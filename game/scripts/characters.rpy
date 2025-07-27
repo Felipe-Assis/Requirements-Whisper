@@ -13,6 +13,9 @@ define NOME_DEVELOPER_QUALITY = "Daiana"     # developer_quality
 define NOME_DEVELOPER_PROJECT = "Heitor"     # developer_project
 define NOME_DEVELOPER_SECURITY = "Mateus"     # developer_security
 
+define NOME_DOUTORA_1 = "Dra. Michelle"
+define NOME_DOUTORA_2 = "Dra. Nathalia"
+
 define COR_DEVELOPER_TEST = "#4CA3FF"
 define COR_DEVELOPER_CODING = "#B8B8B8"
 define COR_DEVELOPER_MANAGEMENT = "#FFA500"
@@ -37,14 +40,27 @@ define developer_quality = Character(NOME_DEVELOPER_QUALITY, color=COR_DEVELOPER
 define developer_project = Character(NOME_DEVELOPER_PROJECT, color=COR_DEVELOPER_PROJECT)
 define developer_security = Character(NOME_DEVELOPER_SECURITY, color=COR_DEVELOPER_SECURITY)
 
+
 define npc_roommate = Character("Colega de República", color="#8EC07C")
 
-define dr_almeida = Character("Dr. Almeida", color="#B45F06")
-define enf_marta = Character("Enfermeira Marta", color="#4CAF50")
+define doutora_1 = Character(NOME_DOUTORA_1, color="#B45F06")
+define doutora_2 = Character(NOME_DOUTORA_2, color="#4CAF50")
 
 # -------------------------------
 # MAPEAMENTO DAS IMAGENS
 # -------------------------------
+
+image npc_roommate neutral = "images/characters/amigo/base.png"
+
+# --- doutora ---
+image doutora_1 portrait = "images/characters/doutora_1/portrait.png"
+image doutora_1 neutral = "images/characters/doutora_1/neutral.png"
+
+# --- enfermeira ---
+image doutora_2 portrait = "images/characters/doutora_2/portrait.png"
+image doutora_2 neutral = "images/characters/doutora_2/neutral.png"
+
+
 
 # --- developer_ai ---
 image developer_ai portrait = "images/characters/developer_ai/portrait.png"
