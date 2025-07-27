@@ -1,6 +1,6 @@
 label scene_8_cafe_informal:
     play music music_coffee_break_1 fadein 1.0
-    scene bg cafeteria_empresa_tarde
+    scene bg empresa_cafe_tarde
     with fade
 
     $ advance_minutes(12)

@@ -1,12 +1,14 @@
 label scene_17_tarde_estudos_tecnicos:
+    play music music_office_relaxed fadein 1.0
     scene bg escritorio_interior_tarde
     with dissolve
 
-    "Após a reunião de gerenciamento, a equipe retorna ao trabalho. Você decide aproveitar a tarde para revisar algumas teorias essenciais no notebook."
+    $ advance_minutes(11)
+    "{i}Após a reunião de gerenciamento, a equipe retorna ao trabalho. Você decide aproveitar a tarde para revisar algumas teorias essenciais no notebook.{/i}"
 
     play sound "audio/notebook_open.ogg"
     show expression "images/items/notebook.png" as notebook at center_zoom
-    "Você abre seu material digital e encontra uma lista de tópicos para revisar:"
+    "{i}Você abre seu material digital e encontra uma lista de tópicos para revisar:{/i}"
 
     window hide
     pause 0.7
@@ -15,7 +17,7 @@ label scene_17_tarde_estudos_tecnicos:
     "• Testes automatizados\n• Métricas de qualidade de software\n• Algoritmos de Machine Learning\n• Práticas de documentação\n• Revisão de código colaborativa"
 
     # Minijogo didático: quiz de revisão rápida
-    "Você resolve testar seus conhecimentos com um quiz rápido no notebook:"
+    "{i}Você resolve testar seus conhecimentos com um quiz rápido no notebook:{/i}"
     $ acertos_quiz = 0
 
     menu:
@@ -40,7 +42,6 @@ label scene_17_tarde_estudos_tecnicos:
 
     "Você acerta [acertos_quiz] de 2 perguntas no quiz."
 
-    # Novo menu para decidir se quer continuar estudando
     menu:
         "Deseja estudar mais e fazer mais questões, ou avançar?"
         "Sim, quero responder mais perguntas!":
@@ -70,9 +71,9 @@ label scene_17_tarde_estudos_tecnicos:
 
             # Padding de estudo — transição para noite
             play sound "audio/music_focus.ogg"
-            "Quando percebe, já anoiteceu."
             scene bg escritorio_interior_noite
             with fade
+            $ advance_minutes(32)
         "Prefiro avançar para as próximas tarefas.":
             "Você decide que já revisou o suficiente por hoje e fecha o notebook para descansar um pouco."
 
@@ -96,7 +97,6 @@ label scene_17_tarde_estudos_tecnicos:
     else:
         "Valeu o esforço! O importante é nunca parar de aprender."
 
-    # Feedback didático e oportunidade de ajuda especializada
     menu:
         "Gostaria de aprofundar algum tema?"
         "Sim, quero falar com [NOME_DEVELOPER_QUALITY] sobre qualidade de software.":
@@ -108,28 +108,27 @@ label scene_17_tarde_estudos_tecnicos:
             hide developer_quality
         "Prefiro consultar [NOME_DEVELOPER_AI] para discutir machine learning.":
             show developer_ai positive at right_zoom
-            developer_ai "Topa uma call? Posso te mostrar alguns notebooks práticos de classificação, clusterização e até uns exemplos reais de predição de exames médicos."
-            developer_ai "Ah, e tem vários datasets públicos para você brincar e experimentar algoritmos sem medo!"
+            developer_ai "Topa uma call? Posso te mostrar notebooks práticos de classificação, clusterização e até uns exemplos reais de predição de exames médicos."
+            developer_ai "Ah, e tem vários datasets públicos para você experimentar algoritmos sem medo!"
             $ amizade_developer_ai += 1
             $ inventario.append("notebook_ml_exemplo")
             hide developer_ai
         "Vou pesquisar sozinho(a) por enquanto.":
             "Você decide seguir pelos seus próprios caminhos, mas anota dúvidas para discutir depois com a equipe."
 
-    # Breve intervenção de outro NPC
     show developer_test enthusiastic at left_zoom
     developer_test "Se quiser revisar algum teste, me chama! Nada como aprender praticando."
     hide developer_test
 
-    # Reflexão e anotação no inventário
     $ inventario.append("anotacoes_tecnicas")
     "Você salva suas anotações, fecha o notebook e sente-se pronto(a) para os desafios dos próximos dias."
 
-    # Encerramento da semana 5
+    play music music_home_reflecting fadein 1.3
     scene bg quarto_noite
     with fade
+    $ advance_minutes(18)
 
-    "Mais tarde, em casa, você compara suas anotações com o material das aulas. Agora entende, na prática, como o gerenciamento de riscos e o acompanhamento do cronograma são vitais para o sucesso de um projeto — bem além da teoria."
+    "{i}Mais tarde, em casa, você compara suas anotações com o material das aulas. Agora entende, na prática, como o gerenciamento de riscos e o acompanhamento do cronograma são vitais para o sucesso de um projeto — bem além da teoria.{/i}"
 
     window hide
     pause 1.1

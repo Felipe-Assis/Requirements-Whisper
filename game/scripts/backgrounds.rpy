@@ -2,7 +2,12 @@
 
 
 
+image bg empresa_cafe_manha = im.Scale("images/bg/empresa_cafe_manha.png", config.screen_width, config.screen_height)
+image bg empresa_cafe_tarde = im.Scale("images/bg/empresa_cafe_tarde.png", config.screen_width, config.screen_height)
+
+
 image bg refeitorio_tarde = im.Scale("images/bg/refeitorio_tarde.png", config.screen_width, config.screen_height)
+
 image bg cozinha_noite = im.Scale("images/bg/cozinha_noite.png", config.screen_width, config.screen_height)
 
 image bg transito_manha = im.Scale("images/bg/transito_manha.png", config.screen_width, config.screen_height)

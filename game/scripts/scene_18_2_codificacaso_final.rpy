@@ -1,9 +1,11 @@
 label scene_18_2_codificacao_final:
+    play music music_office_concentrated_2 fadein 1.0
     scene bg escritorio_interior_manha
     with dissolve
 
+    $ advance_minutes(11)
     play sound "audio/teclado.ogg"
-    "Você chega cedo ao escritório, determinado(a) a finalizar o módulo de cadastro de pacientes com máxima qualidade."
+    "{i}Você chega cedo ao escritório, determinado(a) a finalizar o módulo de cadastro de pacientes com máxima qualidade.{/i}"
     show developer_coding serious at left_zoom
     show developer_test enthusiastic at right_zoom
 
@@ -11,15 +13,11 @@ label scene_18_2_codificacao_final:
     developer_test confident "Se quiser revisar juntos, estou por aqui. Vários olhos enxergam mais bugs!"
 
     # Mini-game visual: revisão/correção final
-    "Você abre o PR (Pull Request) no sistema de versionamento, pronto para a revisão final."
+    "{i}Você abre o PR (Pull Request) no sistema de versionamento, pronto para a revisão final.{/i}"
     show expression "images/ui/pr_placeholder.png" as pr at center_zoom
-    "No diff, identifica:"
-    "1. Função pouco legível"
-    "2. Campo sem validação"
-    "3. Documentação técnica desatualizada"
+    "{i}No diff, identifica:\n1. Função pouco legível\n2. Campo sem validação\n3. Documentação técnica desatualizada{/i}"
     hide pr
 
-    # Escolhas: o que priorizar primeiro (pode repetir até 2 vezes, tipo 'to-do')
     $ revisoes_realizadas = []
     $ revisoes_restantes = ["função", "validação", "documentação"]
 
@@ -55,7 +53,7 @@ label scene_18_2_codificacao_final:
 
     # Visual do checklist de revisão
     show expression "images/ui/checklist_placeholder.png" as checklist at right_zoom2
-    "Checklist de revisão preenchido:"
+    "{i}Checklist de revisão preenchido:{/i}"
     if "função" in revisoes_realizadas:
         "✔ Função refatorada"
     else:
@@ -69,8 +67,9 @@ label scene_18_2_codificacao_final:
     else:
         "✖ Documentação revisada"
     hide checklist
+    pause 0.7
 
-    # Breve comentário de outro NPC para dinâmica
+    # Feedback de outro NPC para dinâmica
     show developer_requirements positive at right_zoom2
     developer_requirements "Lembrem sempre de alinhar as implementações aos requisitos! Qualquer dúvida, me chama."
     hide developer_requirements
@@ -92,6 +91,12 @@ label scene_18_2_codificacao_final:
             developer_test neutral "Importante avisar, mas tente sempre garantir uma revisão coletiva antes. Previne sustos!"
             $ amizade_developer_test += 1
             $ entrega_pr = "direto"
+
+    # Exibe a tela de listagem de pacientes após merge/entrega
+    show expression "images/ui/placeholder_listagem_paciente.png" as tela_final at center_zoom
+    "{i}Após a entrega, você acessa a tela de listagem de pacientes e vê os dados aparecendo perfeitamente. É a sensação concreta de missão cumprida!{/i}"
+    hide tela_final
+    pause 0.7
 
     # Estatísticas finais e feedback
     "Resumo da revisão:"
@@ -123,26 +128,27 @@ label scene_18_2_codificacao_final:
     developer_ai "Bora pensar juntos em automatizar ainda mais o fluxo na próxima sprint!"
     hide developer_ai
 
+    play sound "audio/feedback_positive.ogg"
     scene bg escritorio_interior_tarde
     with fade
+    $ advance_minutes(17)
 
-    scene bg escritorio_interior_tarde
-    with fade
-
-    # Resumo do progresso do dia
     "Módulo entregue, bugs corrigidos e feedbacks recebidos: sensação de evolução profissional e de equipe."
-    "Você percebe como pequenas melhorias cotidianas levam a grandes resultados no longo prazo."
+    "{i}Você percebe como pequenas melhorias cotidianas levam a grandes resultados no longo prazo.{/i}"
 
     # Fechamento da semana
+    play music music_home_reflecting fadein 1.2
     scene bg quarto_noite
     with fade
-    "Em casa, você reflete sobre como descansar, planejar e revisar cada parte do código mudou a forma de encarar o projeto."
-    "A teoria de boas práticas faz ainda mais sentido após superar um ciclo intenso de codificação."
+    $ advance_minutes(12)
+
+    "{i}Em casa, você reflete sobre como descansar, planejar e revisar cada parte do código mudou a forma de encarar o projeto.{/i}"
+    "{i}A teoria de boas práticas faz ainda mais sentido após superar um ciclo intenso de codificação.{/i}"
 
     window hide
     pause 1.1
     window show
 
-    "Fim da Semana 6\n\nAprendizado: Aplicar o que aprendeu na universidade traz confiança para inovar, resolver problemas e crescer na carreira de verdade."
+    "{i}Fim da Semana 6\n\nAprendizado: Aplicar o que aprendeu na universidade traz confiança para inovar, resolver problemas e crescer na carreira de verdade.{/i}"
 
     return
