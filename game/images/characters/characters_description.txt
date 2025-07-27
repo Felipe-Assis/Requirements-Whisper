@@ -1,0 +1,19 @@
+# developer_ai: é jovem, pesquisador na área de IA, Machine Learning e Engenharia de Software. Bastante animado e entusiasmado, fala rápido, presta muita atenção nos detalhes e sempre propõe ideias interessantes. [Homem]
+images:
+- concentrated
+- thinking
+
+
+# developer_coding: desenvolvedor com ampla experiência de mercado e em diversos projetos. Trabalho nas maiores empresas do país e liderou equipes de desenvolvimento antes. Sênior, bastante sério e preza pelo trabalho bem feito e é bem crítico. Tem o hábito de falar muito. [Homem]
+
+# developer_management: relativamente jovem mas com muita experiência em gerenciar pessoas, preza pela organização e documentação. É bem querido pelos colegas de equipe. [Homem]
+
+# developer_project: é um jovem de muito conhecimento na parte de arquitetura de software e banco de dados. Já trabalhou no mercado financeiro mas saiu para explorar outras áreas. Costuma falar pouco mas ser bem pontual em suas intervenções.  [Homem]
+
+# deeloper_quality: se expressa muito bem, adora compartilhar conhecimento e ensinar aos outros. Eem experiência prática em desenvolvimento web e mobile mas hoje trabalha com qualidade de software. Também acaba ajudando na parte de requisitos quando necessário.  [Homem]
+
+# developer_requirements: é a especialista em elicitação e especificação de requisitos. Jovem mas com vasta experiência, se comunica muito bem e se anima fácil embora possa parecer tímida. É muito detalhista e frequentemente trabalha horas extras para garantir que tudo saia bem. Proativa e sempre a disposição para ajudar. [Homem]
+
+# developer_security: desenvolvedor sênior, sério, que fala devagar porém com precisão. Bastante organizado e preza pela segurança dos sistemas acima de tudo. Especialista em desenvolver checklists e participa da parte de teste também.
+
+# developer_test: jovem cientista que tem interesse na área de testes. Tem a tendência de fazer as coisas rapidamente, o que espanta os colegas por sua eficiência. Pode-se dizer que é um jovem gênio.

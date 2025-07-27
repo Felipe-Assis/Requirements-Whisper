@@ -1,21 +1,107 @@
-2025-07-23 01:42:57 UTC
+2025-07-27 00:42:38 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.7.25031702
 
-Early init took 0.06s
-Loading error handling took 0.02s
-Loading script took 0.09s
+Early init took 0.08s
+Loading error handling took 0.04s
+Loading script took 0.35s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.01s
+
+File "game/scripts/scene_20_deploy_final.rpy", line 62: expected 'simple_expression' not found.
+    hide expression
+                   ^
+
+File "game/scripts/scene_20_deploy_final.rpy", line 120: expected 'simple_expression' not found.
+    hide expression
+                   ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 39.62s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/scripts/scene_20_deploy_final.rpy", line 120: expected 'simple_expression' not found.
+    hide expression
+                   ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 40.67s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/scripts/scene_20_deploy_final.rpy", line 120: expected 'simple_expression' not found.
+    hide expression
+                   ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 51.39s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
+Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Dump and make backups took 0.05s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.02s
+Initial gc took 0.04s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -23,9 +109,1061 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.24s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 38, in script
+    menu:
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1632, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 99, in menu
+    label = substitute(label)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 62, in substitute
+    return s % renpy.exports.tag_quoting_dict
+TypeError: must be real number, not TagQuotingDict
+
+While running game code:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 38, in script
+    menu:
+TypeError: must be real number, not TagQuotingDict
+Resetting cache.
+Early init took 122.46s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/scripts/scene_20_deploy_final.rpy", line 136: expected menuitem
+    texto_bug:
+    ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 220.43s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+File "game/scripts/scene_20_deploy_final.rpy", line 135: expected ':' not found.
+    "Divido a tarefa com %s e %s para achar o gargalo." % (nome_developer_ai, nome_developer_project):
+                                                        ^
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 262.72s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.27s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 37, in script
+    menu:
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1632, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 99, in menu
+    label = substitute(label)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 62, in substitute
+    return s % renpy.exports.tag_quoting_dict
+TypeError: must be real number, not TagQuotingDict
+
+While running game code:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 37, in script
+    menu:
+TypeError: must be real number, not TagQuotingDict
+Resetting cache.
+Early init took 278.31s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.07s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.28s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 85, in script
+    "{i}De volta à sala, é hora de decidir onde será feito o deploy. [CÓDIGO] e [PROJETO] trazem opções para debate.{/i}"
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'CÓDIGO' is not defined
+
+While running game code:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 85, in script
+    "{i}De volta à sala, é hora de decidir onde será feito o deploy. [CÓDIGO] e [PROJETO] trazem opções para debate.{/i}"
+NameError: name 'CÓDIGO' is not defined
+Resetting cache.
+Early init took 326.12s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.27s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 85, in script
+    "{i}De volta à sala, é hora de decidir onde será feito o deploy. [nome_developer_coding] e [nome_developer_project] trazem opções para debate.{/i}"
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'nome_developer_coding' is not defined
+
+While running game code:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 85, in script
+    "{i}De volta à sala, é hora de decidir onde será feito o deploy. [nome_developer_coding] e [nome_developer_project] trazem opções para debate.{/i}"
+NameError: name 'nome_developer_coding' is not defined
+Resetting cache.
+Early init took 423.66s
+Loading error handling took 0.01s
+Loading script took 0.14s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.30s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 127, in script
+    menu:
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1632, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 134, in menu
+    rv = renpy.store.menu(new_items)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 424, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 207, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 207, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 210, in execute
+    vbox:
+  File "game/screens.rpy", line 211, in execute
+    for i in items:
+  File "game/screens.rpy", line 212, in execute
+    textbutton i.caption action i.action
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ui.py", line 1015, in _textbutton
+    text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
+    self.set_text(text, scope, substitute) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'nome_developer_ai' is not defined
+
+While running game code:
+  File "game/script.rpy", line 21, in script call
+    call scene_20_deploy_final from _scene_20_deploy_final
+  File "game/scripts/scene_20_deploy_final.rpy", line 127, in script
+    menu:
+  File "game/screens.rpy", line 207, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 207, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 210, in execute
+    vbox:
+  File "game/screens.rpy", line 211, in execute
+    for i in items:
+  File "game/screens.rpy", line 212, in execute
+    textbutton i.caption action i.action
+NameError: name 'nome_developer_ai' is not defined
+Resetting cache.
+Early init took 451.67s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.07s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.28s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 22, in script call
+    call scene_21_avaliacao_final from _scene_21_avaliacao_final
+  File "game/scripts/scene_21_avaliacao_final.rpy", line 69, in script
+    developer_requirements positive "Fico feliz demais pelo reconhecimento. Parabéns, [player_name] — seu desenvolvimento ficou claro do início ao fim."
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1407, in __call__
+    old_attr_state = self.handle_say_attributes(False, interact)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1223, in handle_say_attributes
+    if self.resolve_say_attributes(predicting, attrs):
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1149, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes ('positive',), but there's no image tag associated with the speaking character.
+
+While running game code:
+  File "game/script.rpy", line 22, in script call
+    call scene_21_avaliacao_final from _scene_21_avaliacao_final
+  File "game/scripts/scene_21_avaliacao_final.rpy", line 69, in script
+    developer_requirements positive "Fico feliz demais pelo reconhecimento. Parabéns, [player_name] — seu desenvolvimento ficou claro do início ao fim."
+Exception: Say has image attributes ('positive',), but there's no image tag associated with the speaking character.
+Resetting cache.
+Early init took 604.96s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.27s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 22, in script call
+    call scene_21_avaliacao_final from _scene_21_avaliacao_final
+  File "game/scripts/scene_21_avaliacao_final.rpy", line 70, in script
+    developer_requirements "Fico feliz demais pelo reconhecimento. Parabéns, {player_name} — seu desenvolvimento ficou claro do início ao fim."
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 814, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 2882, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\core.py", line 1384, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\screen.py", line 755, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 1457, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\text\text.py", line 2627, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\text\text.py", line 739, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\text\text.py", line 1541, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag 'player_name'
+
+While processing text tag {player_name} in 'Fico feliz demais pelo reconhecimento. Parabéns, {player_name} — seu desenvolvimento ficou claro do início ao fim.'.:
+  File "game/script.rpy", line 22, in script call
+    call scene_21_avaliacao_final from _scene_21_avaliacao_final
+  File "game/scripts/scene_21_avaliacao_final.rpy", line 70, in script
+    developer_requirements "Fico feliz demais pelo reconhecimento. Parabéns, {player_name} — seu desenvolvimento ficou claro do início ao fim."
+Exception: Unknown text tag 'player_name'
+Resetting cache.
+Early init took 651.74s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.07s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.24s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1427, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'scene_epilogo'.
+
+While running game code:
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+ScriptError: could not find label 'scene_epilogo'.
+Resetting cache.
+Early init took 702.57s
+Loading error handling took 0.01s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/scripts/scene_epilogo.rpy", line 5: Line with id epilogo_conquistas_final_df02c86b appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:5
+
+File "game/scripts/scene_epilogo.rpy", line 8: Line with id epilogo_conquistas_final_a555746a appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:8
+
+File "game/scripts/scene_epilogo.rpy", line 11: Line with id epilogo_conquistas_final_09c90e8a appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:11
+
+File "game/scripts/scene_epilogo.rpy", line 13: Line with id epilogo_conquistas_final_137a114c appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:13
+
+File "game/scripts/scene_epilogo.rpy", line 15: Line with id epilogo_conquistas_final_f03fd86d appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:15
+
+File "game/scripts/scene_epilogo.rpy", line 17: Line with id epilogo_conquistas_final_b3e855d6 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:17
+
+File "game/scripts/scene_epilogo.rpy", line 19: Line with id epilogo_conquistas_final_cd18def3 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:19
+
+File "game/scripts/scene_epilogo.rpy", line 21: Line with id epilogo_conquistas_final_48f697e2 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:21
+
+File "game/scripts/scene_epilogo.rpy", line 23: Line with id epilogo_conquistas_final_c462a3ea appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:23
+
+File "game/scripts/scene_epilogo.rpy", line 25: Line with id epilogo_conquistas_final_43112b0f appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:25
+
+File "game/scripts/scene_epilogo.rpy", line 27: Line with id epilogo_conquistas_final_52230a69 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:27
+
+File "game/scripts/scene_epilogo.rpy", line 29: Line with id epilogo_conquistas_final_906d8e2f appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:29
+
+File "game/scripts/scene_epilogo.rpy", line 31: Line with id epilogo_conquistas_final_5a8dd9cb appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:31
+
+File "game/scripts/scene_epilogo.rpy", line 39: Line with id epilogo_conquistas_final_62bae879 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:39
+
+File "game/scripts/scene_epilogo.rpy", line 43: Line with id epilogo_conquistas_final_9e08367d appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:43
+
+File "game/scripts/scene_epilogo.rpy", line 47: Line with id epilogo_conquistas_final_71744b13 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:47
+
+File "game/scripts/scene_epilogo.rpy", line 51: Line with id epilogo_conquistas_final_602ead97 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:51
+
+File "game/scripts/scene_epilogo.rpy", line 55: Line with id epilogo_conquistas_final_2d089a1c appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:55
+
+File "game/scripts/scene_epilogo.rpy", line 59: Line with id epilogo_conquistas_final_a2ca8974 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:59
+
+File "game/scripts/scene_epilogo.rpy", line 63: Line with id epilogo_conquistas_final_9a7a7840 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:63
+
+File "game/scripts/scene_epilogo.rpy", line 67: Line with id epilogo_conquistas_final_6e67816f appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:67
+
+File "game/scripts/scene_epilogo.rpy", line 73: Line with id epilogo_conquistas_final_9fb5837e appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:73
+
+File "game/scripts/scene_epilogo.rpy", line 75: Line with id epilogo_conquistas_final_9515a1eb appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:75
+
+File "game/scripts/scene_epilogo.rpy", line 77: Line with id epilogo_conquistas_final_82a15ca4 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:77
+
+File "game/scripts/scene_epilogo.rpy", line 91: Line with id creditos_finais_1acc6199 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:91
+
+File "game/scripts/scene_epilogo.rpy", line 92: Line with id creditos_finais_97d62444 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:92
+
+File "game/scripts/scene_epilogo.rpy", line 93: Line with id creditos_finais_e52c3037 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:93
+
+File "game/scripts/scene_epilogo.rpy", line 94: Line with id creditos_finais_28d38f67 appears twice. The other line is game/scripts/epilogo_conquistas_final.rpy:94
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 714.41s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+The label epilogo_conquistas_final is defined twice, at File "game/script.rpy", line 23:
+    call epilogo_conquistas_final from epilogo_conquistas_final
+and File "game/scripts/epilogo_conquistas_final.rpy", line 1:
+label epilogo_conquistas_final:
+
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.16s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 752.32s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+The label creditos_finais is defined twice, at File "game/scripts/epilogo_conquistas_final.rpyc", line 88:
+
+and File "game/scripts/scene_epilogo_conquistas_final.rpy", line 88:
+label creditos_finais:
+
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.13s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 753.25s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+The label creditos_finais is defined twice, at File "game/scripts/epilogo_conquistas_final.rpyc", line 88:
+
+and File "game/scripts/scene_epilogo_conquistas_final.rpy", line 88:
+label creditos_finais:
+
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.12s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 753.92s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+The label creditos_finais is defined twice, at File "game/scripts/epilogo_conquistas_final.rpyc", line 88:
+
+and File "game/scripts/scene_epilogo_conquistas_final.rpy", line 88:
+label creditos_finais:
+
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.14s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 769.24s
+Loading error handling took 0.02s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.26s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1427, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'scene_epilogo'.
+
+While running game code:
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo from _scene_epilogo
+ScriptError: could not find label 'scene_epilogo'.
+Resetting cache.
+Early init took 798.98s
+Loading error handling took 0.02s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+The label scene_epilogo_conquistas_final is defined twice, at File "game/script.rpy", line 23:
+    call scene_epilogo_conquistas_final from scene_epilogo_conquistas_final
+and File "game/scripts/scene_epilogo_conquistas_final.rpy", line 1:
+label scene_epilogo_conquistas_final:
+
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Interface start took 0.15s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 808.72s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Felipe\\AppData\\Roaming/RenPy/backups\\Requirements-Whisper':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.07s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.25s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon RX 6600'
+Version: b'4.6.0 Compatibility Profile Context 24.12.1.241127'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2054) drawable=(3840, 2054)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo_conquistas_final from _scene_epilogo_conquistas_final
+  File "game/scripts/scene_epilogo_conquistas_final.rpy", line 92, in script
+    "Roteiro: [Seu Nome] | Arte: [Equipe/IA/Créditos] | Programação: [Seu Nome] | Personagens e história inspirados em vivências reais."
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: unexpected EOF while parsing (<none>, line 1)
+
+While running game code:
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo_conquistas_final from _scene_epilogo_conquistas_final
+  File "game/scripts/scene_epilogo_conquistas_final.rpy", line 92, in script
+    "Roteiro: [Seu Nome] | Arte: [Equipe/IA/Créditos] | Programação: [Seu Nome] | Personagens e história inspirados em vivências reais."
+SyntaxError: unexpected EOF while parsing (<none>, line 1)

@@ -1,26 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 3, in script call
-    call scene_2_escritorio from _scene_2_escritorio
-  File "game/scripts/scene_2_escritorio.rpy", line 34, in script
-    jump proxima_cena3
-ScriptError: could not find label 'proxima_cena3'.
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo_conquistas_final from _scene_epilogo_conquistas_final
+  File "game/scripts/scene_epilogo_conquistas_final.rpy", line 92, in script
+    "Roteiro: [Seu Nome] | Arte: [Equipe/IA/Créditos] | Programação: [Seu Nome] | Personagens e história inspirados em vivências reais."
+SyntaxError: unexpected EOF while parsing (<none>, line 1)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 3, in script call
-    call scene_2_escritorio from _scene_2_escritorio
-  File "game/scripts/scene_2_escritorio.rpy", line 34, in script
-    jump proxima_cena3
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1712, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'proxima_cena3'.
+  File "game/script.rpy", line 23, in script call
+    call scene_epilogo_conquistas_final from _scene_epilogo_conquistas_final
+  File "game/scripts/scene_epilogo_conquistas_final.rpy", line 92, in script
+    "Roteiro: [Seu Nome] | Arte: [Equipe/IA/Créditos] | Programação: [Seu Nome] | Personagens e história inspirados em vivências reais."
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: unexpected EOF while parsing (<none>, line 1)
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 The Requirements Whisperer 1.0
-Tue Jul 22 22:35:38 2025
+Sat Jul 26 21:56:30 2025
