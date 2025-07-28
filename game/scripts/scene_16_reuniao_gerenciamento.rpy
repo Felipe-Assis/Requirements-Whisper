@@ -34,7 +34,7 @@ label scene_16_reuniao_gerenciamento:
         "Acho que estamos no ritmo certo, entregando com qualidade.":
             show developer_requirements positive at right_zoom
             developer_requirements "Bom ouvir isso! Mas lembrem de sempre registrar obstáculos — mesmo pequenos, podem virar bola de neve."
-            show developer_management positive at left_zoom
+            show developer_management thinking at left_zoom
             developer_management "Ótimo, sigamos atentos às prioridades do sprint."
         "Acredito que estamos ficando um pouco para trás no cronograma.":
             show developer_requirements serious at right_zoom
@@ -53,7 +53,7 @@ label scene_16_reuniao_gerenciamento:
     menu:
         "Como você responde sobre o prazo?"
         "Sim, algumas tarefas estão demorando mais do que o previsto.":
-            show developer_coding thinking at right_zoom_2
+            show developer_coding thinking at right_zoom2
             developer_coding "A complexidade aumentou, vale dividir tarefas ou renegociar datas."
             show developer_management thinking at left_zoom
             developer_management "É papel da liderança escutar e ajustar expectativas. Vamos adaptar juntos."
@@ -63,7 +63,7 @@ label scene_16_reuniao_gerenciamento:
             show developer_management positive at left_zoom
             developer_management "Bom! Manter vigilância evita surpresas. Qualquer dúvida, tragam antes de virar urgência."
         "Acho que alguns prazos estão folgados demais, dá para desafiar mais o time.":
-            show developer_test enthusiastic at right_zoom_2
+            show developer_test enthusiastic at right_zoom2
             developer_test "Gosto desse espírito! Se quiserem me passar mais cenários de teste, eu topo."
             show developer_management serious at left_zoom
             developer_management "Cuidado só para não sacrificar a qualidade pelo ritmo. Equilíbrio é o segredo."
@@ -90,7 +90,7 @@ label scene_16_reuniao_gerenciamento:
             developer_requirements "Mas precisamos garantir que os requisitos estejam bem refinados para evitar retrabalho!"
         "Atacar primeiro as tarefas mais rápidas para mostrar progresso.":
             $ flag_prioridade = "entregaveis_rapidos"
-            show developer_management neutral at right_zoom
+            show developer_management thinking at right_zoom
             show developer_requirements serious at left_zoom
             developer_management "Entregar rápido motiva o time, só não podemos perder de vista as demandas mais críticas."
             developer_requirements "E atenção para não deixar as tarefas grandes acumularem para o fim!"
@@ -121,7 +121,7 @@ label scene_16_reuniao_gerenciamento:
             developer_requirements "Vale também pedir que cada membro anote possíveis riscos em suas tarefas."
         "Confiar no time para resolver problemas conforme eles aparecem.":
             $ flag_risco = "ad_hoc"
-            show developer_management neutral at left_zoom
+            show developer_management thinking at left_zoom
             show developer_requirements serious at right_zoom
             developer_management "Temos um time competente, mas recomendo cautela para não sermos reativos demais."
             developer_requirements "A experiência conta, mas planejamento é sempre um diferencial."

@@ -25,7 +25,7 @@ label scene_18_codificacao_implementacao:
     developer_test "Qualquer coisa, já me chama — quero testar cada pedaço assim que ficar pronto!"
 
     # Placeholder de UI: Exibe tela de cadastro de paciente após início da codificação
-    show expression "images/ui/cadastro_screen.png" as tela_ui at center_zoom
+    show expression "images/artifacts/cadastro_screen.png" as tela_ui at center_zoom
     "{i}Você revisa o layout da tela de cadastro de paciente, planejando cada campo e interação conforme os requisitos levantados. Essa interface será seu desafio do dia!{/i}"
     hide tela_ui
     pause 0.8
@@ -113,7 +113,7 @@ label scene_18_codificacao_implementacao:
         developer_test "Perfeito! Com esse código, os testes passaram de primeira!"
 
     # Placeholder de UI: tela final após revisão
-    show expression "images/ui/main_screen.png" as tela_ui_final at center_zoom
+    show expression "images/artifacts/main_screen.png" as tela_ui_final at center_zoom
     "{i}Após os ajustes e revisões, você confere na tela a listagem dos pacientes, já refletindo os dados inseridos — é a confirmação visual do progresso!{/i}"
     hide tela_ui_final
     pause 0.7
@@ -136,7 +136,7 @@ label scene_18_codificacao_implementacao:
 
     # Feedback positivo extra de outros NPCs, caso termine no escritório
     if finalizou_no_escritorio:
-        show developer_quality positive at right_zoom_2
+        show developer_quality positive at right_zoom2
         developer_quality "Ótimo trabalho, [player_name]! Código limpo e bem testado é sinal de equipe madura."
         hide developer_quality
         show developer_ai positive at center_zoom

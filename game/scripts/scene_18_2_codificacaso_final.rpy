@@ -93,7 +93,7 @@ label scene_18_2_codificacao_final:
             $ entrega_pr = "direto"
 
     # Exibe a tela de listagem de pacientes após merge/entrega
-    show expression "images/ui/main_screen_old.png" as tela_final at center_zoom
+    show expression "images/artifacts/main_screen_old.png" as tela_final at center_zoom
     "{i}Após a entrega, você acessa a tela de listagem de pacientes e vê os dados aparecendo perfeitamente. É a sensação concreta de missão cumprida!{/i}"
     hide tela_final
     pause 0.7

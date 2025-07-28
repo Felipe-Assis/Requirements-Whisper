@@ -85,9 +85,9 @@ screen inventory_button():
             idle "item mochila_idle"
             hover "item mochila_aberta_vazia_idle"
             action ShowMenu("inventory_screen")
-            xpos 10
-            ypos 10
-            xysize (90,90)
+            xpos 30
+            ypos 30
+            xysize (120,120)
             focus_mask True
 
 # Função python para adicionar itens

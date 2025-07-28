@@ -124,7 +124,7 @@ label scene_11_almoco_equipe:
                         show developer_ai positive at right_zoom
                         developer_ai "Tem muita coisa inovadora surgindo! Se quiser, te passo uns artigos legais."
                     # Interrupção de developer_project
-                    show developer_project serious at left_zoom
+                    show developer_project serious at left_zoom2
                     developer_project "Só lembrem de validar os dados! IA é poderosa, mas depende da qualidade das informações."
                     hide developer_project
                 "Prefiro só ouvir e aproveitar o clima descontraído.":

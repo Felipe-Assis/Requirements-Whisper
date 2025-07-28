@@ -135,7 +135,7 @@ label scene_14_discussao_arquitetura:
         developer_ai "Vamos testar integrações automatizadas desde já! Se precisar, já tenho um template pronto para deploy."
         hide developer_ai
     elif flag_arquitetura == "hibrido":
-        show developer_project positive at left_zoom
+        show developer_project confident at left_zoom
         developer_project "O melhor dos dois mundos, se a equipe estiver alinhada. Bora documentar o plano de migração!"
         hide developer_project
 

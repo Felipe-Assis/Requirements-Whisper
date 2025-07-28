@@ -1,26 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/mechanics/chat_screen.rpy", line 2, in script
-    init -1 python:
-  File "game/scripts/mechanics/chat_screen.rpy", line 3, in <module>
-    import renpy.random
-ModuleNotFoundError: No module named 'renpy.random'
+  File "game/script.rpy", line 19, in script call
+    call scene_16_reuniao_gerenciamento from _scene_16_reuniao_gerenciamento
+  File "game/scripts/scene_16_reuniao_gerenciamento.rpy", line 66, in script
+    show developer_test enthusiastic at right_zoom_2
+  File "game/scripts/scene_16_reuniao_gerenciamento.rpy", line 66, in <module>
+    show developer_test enthusiastic at right_zoom_2
+NameError: name 'right_zoom_2' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/mechanics/chat_screen.rpy", line 2, in script
-    init -1 python:
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scripts/mechanics/chat_screen.rpy", line 3, in <module>
-    import renpy.random
-ModuleNotFoundError: No module named 'renpy.random'
+  File "game/script.rpy", line 19, in script call
+    call scene_16_reuniao_gerenciamento from _scene_16_reuniao_gerenciamento
+  File "game/scripts/scene_16_reuniao_gerenciamento.rpy", line 66, in script
+    show developer_test enthusiastic at right_zoom_2
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1083, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 1083, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/scene_16_reuniao_gerenciamento.rpy", line 66, in <module>
+    show developer_test enthusiastic at right_zoom_2
+NameError: name 'right_zoom_2' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 The Requirements Whisperer 1.0
-Sun Jul 27 22:37:45 2025
+Sun Jul 27 23:32:49 2025

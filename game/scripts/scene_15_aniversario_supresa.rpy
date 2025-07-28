@@ -12,8 +12,8 @@ label scene_15_aniversario_surpresa:
     with dissolve
 
     $ advance_minutes(13)
-    "{i}Já no dia seguinte..."
-    "O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
+    "{i}Já no dia seguinte...{/i}"
+    "{i}O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
     "{i}Você percebe que a equipe está querendo organizar algo especial, mas ninguém se prontificou ainda.{/i}"
 
     show developer_requirements thinking at left_zoom
@@ -43,7 +43,7 @@ label scene_15_aniversario_surpresa:
         "Sugiro fazer cartões de parabéns assinados por toda a equipe.":
             $ amizade_developer_security += 2
             $ amizade_developer_project += 1
-            show developer_project positive at right_zoom
+            show developer_project confident at right_zoom
             developer_project "Boa! Gestos simples valem muito. Eu topo ajudar a desenhar algo especial."
             $ inventario.append("cartão")
             hide developer_project
@@ -63,6 +63,7 @@ label scene_15_aniversario_surpresa:
             $ amizade_developer_quality += 1
             hide developer_quality
         "Preparar uma apresentação de slides com fotos engraçadas da equipe.":
+            hide developer_requirements
             show developer_coding positive at left_zoom
             developer_coding "Que nostalgia, [player_name]! Boa ideia para dar boas risadas juntos."
             $ amizade_developer_coding += 1

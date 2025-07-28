@@ -111,7 +111,7 @@ label scene_19_testes_seguranca:
     hide developer_security
 
     "{i}Você e a equipe respondem perguntas sobre: privacidade de dados,{/i}"
-    "{i}práticas de segurança (OWASP, RBAC, backups, criptografia),"" conformidade legal (LGPD), e governança do projeto.{/i}"
+    "{i}práticas de segurança (OWASP, RBAC, backups, criptografia), conformidade legal (LGPD), e governança do projeto.{/i}"
     "{i}O sistema gera automaticamente a pontuação e mostra o nível de maturidade do time, de Inexistente a Excelente.{/i}"
 
     # Feedback dinâmico do resultado (simulação)
@@ -131,7 +131,7 @@ label scene_19_testes_seguranca:
     developer_quality "Nossa avaliação ficou em [maturidade_percentual]\% — Nível [nivel_maturidade]. Isso mostra como evoluímos desde o início!"
     hide developer_quality
 
-    show developer_security positive at right_zoom
+    show developer_security thinking at right_zoom
     developer_security "Privacidade, segurança e testes: quanto mais investirmos, menos riscos teremos no futuro. Mantenham o checklist sempre atualizado!"
     hide developer_security
 

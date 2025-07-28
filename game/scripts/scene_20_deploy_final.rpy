@@ -1,4 +1,14 @@
 label scene_20_deploy_final:
+
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = False
+    $ disponivel_developer_management = False
+    $ disponivel_developer_requirements = False
+    $ disponivel_developer_project = False
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = False
+    $ disponivel_developer_test = False
+
     play music music_office_motivated fadein 1.0
     scene bg escritorio_interior_manha
     with fade
@@ -19,9 +29,9 @@ label scene_20_deploy_final:
     window show
 
     show expression "images/ui/checklist_deploy.png" as checklist at center_zoom
-    "{i}Checklist final:\n• Código revisado\n• Testes automatizados rodando\n"
-    "• Documentação atualizada\n• Backup realizado\n"
-    "• Ambiente de produção pronto\n• Script de rollback disponível{/i}"
+    "{i}Checklist final:\n• Código revisado\n• Testes automatizados rodando\n{/i}"
+    "{i}• Documentação atualizada\n• Backup realizado\n{/i}"
+    "{i}• Ambiente de produção pronto\n• Script de rollback disponível{/i}"
     hide checklist
 
     $ checklist_deploy = []

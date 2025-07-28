@@ -122,7 +122,7 @@ label scene_6_entrevista_stakeholders:
     with dissolve
 
     play music music_streets_focused fadein 0.8
-    scene transito_tarde
+    scene bg transito_tarde
     with fade
     "{i}Você retorna para sua mesa, sentindo que a entrevista foi produtiva e que já aprendeu muito sobre a importância de ouvir todos os envolvidos.{/i}"
     "Anota rapidamente os pontos principais no notebook antes de seguir para a próxima atividade."
