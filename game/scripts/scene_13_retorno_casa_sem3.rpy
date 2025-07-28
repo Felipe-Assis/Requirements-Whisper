@@ -28,7 +28,8 @@ label scene_13_retorno_casa_sem3:
     pause 0.7
     window show
 
-    "• Use sempre verbos no infinitivo nos requisitos (ex: 'Permitir cadastro de paciente')\n• Critérios de aceitação devem ser objetivos e fáceis de testar\n• Prefira frases curtas e sem ambiguidade\n• Separe o que é necessidade real do usuário de opiniões ou desejos"
+    "• Use sempre verbos no infinitivo nos requisitos (ex: 'Permitir cadastro de paciente')\n• Critérios de aceitação devem ser objetivos e fáceis de testar"
+    "\n• Prefira frases curtas e sem ambiguidade\n• Separe o que é necessidade real do usuário de opiniões ou desejos"
 
     "Abre seu aplicativo de notas e compara com o material da disciplina de Engenharia de Software. Um trecho chama a atenção:"
     window hide
@@ -41,9 +42,15 @@ label scene_13_retorno_casa_sem3:
 
     "{i}Antes de dormir, recebe uma mensagem rápida do grupo da equipe:{/i}"
     play sound "audio/cell_vibration.ogg"
-    show developer_requirements positive at left_zoom
+    show developer_requirements portrait at left_zoom
     developer_requirements "(mensagem no grupo) Pessoal, parabéns pelo empenho hoje! Documento ficou ótimo. Amanhã, seguimos para a próxima etapa juntos!"
     hide developer_requirements
+
+    "Estamos chegando na parte crítica do projeto..."
+    "Talvez seja interessante eu falar com mais alguém para sincronizar."
+
+    call screen contacts_screen
+
 
     play music music_home_dreamy fadein 1.0
     scene black

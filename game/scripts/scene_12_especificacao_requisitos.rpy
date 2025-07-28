@@ -14,7 +14,10 @@ label scene_12_especificacao_requisitos:
     pause 0.4
     window show
 
-    "\"Checklist de Inspeção:\n• Alguma informação importante está ausente?\n• Existe ambiguidade (dupla interpretação)?\n• Alguma regra está inconsistente ou contraditória?\n• Tem algum detalhe estranho, que foge do contexto ou da linguagem do usuário?\n• O requisito é testável, específico e mensurável?\""
+    "\"Checklist de Inspeção:\n• Alguma informação importante está ausente?\n• Existe ambiguidade (dupla interpretação)?"
+    "• Alguma regra está inconsistente ou contraditória?"
+    "\n• Tem algum detalhe estranho, que foge do contexto ou da linguagem do usuário?"
+    "\n• O requisito é testável, específico e mensurável?\""
 
     "{i}Vocês abrem juntos o documento de requisitos e começam a analisar linha por linha. [NOME_DEVELOPER_REQUIREMENTS] propõe: {/i}"
     developer_requirements "Vamos revisar juntos alguns exemplos reais?"
@@ -81,7 +84,9 @@ label scene_12_especificacao_requisitos:
     pause 0.3
     window show
 
-    "\"RF08A: O sistema deve permitir o cálculo automático da dependência tabágica do paciente com base na escala de Fagerström. Para informar a dependência tabágica, considerar pontuações: entre 0 e 2 == Muito baixa; 3 e 4 Baixa; 5 == Média; 6 e 7 == Elevada; entre 8 e 10 == Muito Elevada.\""
+    "\"RF08A: O sistema deve permitir o cálculo automático da dependência tabágica do paciente com base na escala de Fagerström."
+    " Para informar a dependência tabágica, considerar pontuações:"
+    " entre 0 e 2 == Muito baixa; 3 e 4 Baixa; 5 == Média; 6 e 7 == Elevada; entre 8 e 10 == Muito Elevada.\""
     developer_requirements "Esse é mais detalhado, mas ainda pode ser melhor. Vê algum ponto a aprimorar?"
 
     menu:
@@ -104,7 +109,8 @@ label scene_12_especificacao_requisitos:
     pause 0.3
     window show
 
-    "\"DR01: O sistema deve garantir que o tempo de resposta para carregamento completo das interfaces de cadastro de paciente e consulta ao prontuário clínico seja inferior a 2 segundos, em pelo menos 95% das requisições realizadas sob carga normal (até 100 usuários simultâneos), em ambiente de produção.\""
+    "\"DR01: O sistema deve garantir que o tempo de resposta para carregamento completo das interfaces de cadastro de paciente e consulta ao prontuário clínico seja inferior a 2 segundos,"
+    " em pelo menos 95\% das requisições realizadas sob carga normal (até 100 usuários simultâneos), em ambiente de produção.\""
     show developer_requirements neutral at left_zoom
     developer_requirements "Agora um de desempenho. Vê alguma ambiguidade ou informação que precisa reforço?"
 
@@ -160,7 +166,7 @@ label scene_12_especificacao_requisitos:
     hide developer_quality
 
     play sound "audio/cell_vibration.ogg"
-    show developer_ai positive at left_zoom
+    show developer_ai portrait at left_zoom
     developer_ai "(mensagem no grupo) Fiquei animado com a revisão! Um dia quero automatizar parte desse checklist com IA, viu? (risos)"
     hide developer_ai
 

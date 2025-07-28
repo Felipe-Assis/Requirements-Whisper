@@ -128,10 +128,10 @@ label scene_18_codificacao_implementacao:
 
     # Feedback positivo extra de outros NPCs, caso termine no escritório
     if finalizou_no_escritorio:
-        show developer_quality positive at right_zoom
+        show developer_quality positive at right_zoom_2
         developer_quality "Ótimo trabalho, [player_name]! Código limpo e bem testado é sinal de equipe madura."
         hide developer_quality
-        show developer_ai enthusiastic at center_zoom
+        show developer_ai positive at center_zoom
         developer_ai "Se quiser automatizar build e deploy, me chama! Podemos otimizar o processo juntos."
         hide developer_ai
 
@@ -162,6 +162,7 @@ label scene_18_codificacao_implementacao:
     pause 1.1
     window show
 
-    "{i}Fim da Semana 6\n\nAprendizado: Conceitos avançados de programação e atenção à qualidade tornam o desenvolvimento mais eficiente e menos estressante. Aplicar teoria na prática transforma desafios em crescimento real.{/i}"
+    "{i}Fim da Semana 6\n\nAprendizado: Conceitos avançados de programação e atenção à qualidade tornam o desenvolvimento mais eficiente e menos estressante.{/i}"
+    "{i}Aplicar teoria na prática transforma desafios em crescimento real.{/i}"
 
     return

@@ -8,8 +8,9 @@ label scene_1_quarto:
     with fade
 
     $ renpy.music.set_volume(1.0, delay=0, channel="music")
+    $ renpy.music.set_volume(1.0, delay=0, channel="sound")
+    play sound "audio/effects/alarm_clock.ogg"
     play music music_home_dreamy fadein 1.5
-    play sound "audio/alarm_clock.ogg"
     "BIP BIP BIP... O som do alarme ecoa pelo quarto iluminado pela manhã."
     $ advance_minutes(2)
     pause 0.8
@@ -92,7 +93,7 @@ label scene_1_quarto:
     with dissolve
 
     "Ótimo, [player_name]! Currículo atualizado. Agora sim, hora de procurar vagas de estágio."
-    play sound "audio/computer_typing.ogg"
+    play sound "audio/effects/computer_typing.wav"
     $ advance_minutes(4)
     "Você se levanta, pega o notebook e senta à escrivaninha, decidido(a) a começar a busca pelas melhores vagas."
     $ advance_minutes(1)
@@ -140,6 +141,8 @@ label scene_1_quarto:
     "Na mochila, você pode acessar seu CELULAR e visualizar seus CONTATOS"
     "Pode clicar em um CONTATO para conversar com seu amigo!"
     "E também é possível visualizar o seu nível de AMIZADE."
+    "No entanto, você não pode mandar mensagens em alguns momentos."
+    "Exemplo, não faz sentido enviar mensagens quando estiver no mesmo cômodo que a pessoa."
     pause 0.6
     hide mochila
 

@@ -1,5 +1,9 @@
 label scene_11_almoco_equipe:
-    play music music_coffee_break_2 fadein 1.0
+    play music music_coffee_break_friendly fadein 1.0
+
+    $ game_hour = 13
+    $ game_minute = 12
+
     scene bg refeitorio_tarde
     with fade
 
@@ -170,10 +174,10 @@ label scene_11_almoco_equipe:
                     hide developer_ai
                 "Comento sobre bugs que já presenciei em outros projetos.":
                     if get_friendship_point("developer_quality") >= 4:
-                        show developer_quality neutral at left_zoom
+                        show developer_quality positive at left_zoom
                         developer_quality "Esses exemplos de campo são os melhores! Se topar, depois pode mostrar pro time inteiro."
                     else:
-                        show developer_quality neutral at left_zoom
+                        show developer_quality thinking at left_zoom
                         developer_quality "Todo mundo já viu algum perrengue. Aprendizado de campo é valioso demais!"
                     # Interrupção de developer_requirements
                     show developer_requirements positive at right_zoom2

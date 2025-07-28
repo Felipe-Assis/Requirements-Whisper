@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/scene_2_escritorio.rpy", line 69: expected statement.
-    sshow developer_requirements neutral at left_zoom
-                                         ^
+File "game/scripts/mechanics/contacts_screen.rpy", line 232: imagebutton expects a non-empty block.
+    imagebutton:
+                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jul 27 19:07:16 2025
+Sun Jul 27 20:54:04 2025

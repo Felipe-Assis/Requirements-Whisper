@@ -1,4 +1,6 @@
 ﻿label start:
+    play sound "audio/effects/alarm_clock.wav"
+    "Did you hear the alarm clock?"
     call scene_1_quarto from _scene_1_quarto
     call scene_2_escritorio from _scene_2_escritorio
     call scene_3_reuniao_inicial from _scene_3_reuniao_inicial

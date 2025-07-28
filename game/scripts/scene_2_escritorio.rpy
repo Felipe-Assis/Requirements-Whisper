@@ -20,10 +20,10 @@ label scene_2_escritorio:
         show developer_requirements enthusiastic at left_zoom
         developer_requirements "Olá, você deve ser o [player_name], certo? Seja bem-vindo ao nosso time!"
         $ add_contact("developer_requirements")
-        $ add_friendship_point("developer_requirements")
         $ advance_minutes(2)
 
         developer_requirements "Eu sou a [NOME_DEVELOPER_REQUIREMENTS], engenheira de software responsável pela parte de requisitos desse projeto."
+        $ add_friendship_point("developer_requirements")
         developer_requirements "Hoje vou te apresentar à equipe. Preparado(a) para conhecer quem vai te acompanhar nessa jornada?"
         $ advance_minutes(1)
 
@@ -33,8 +33,8 @@ label scene_2_escritorio:
         # developer_test - animado/eficiente
         show developer_test enthusiastic at right_zoom
         developer_requirements "Esse é o [NOME_DEVELOPER_TEST], nosso expert em testes!"
-        developer_test "Oi! Bem-vindo! Sou apaixonado por desafios de teste e validação. Não se assuste se me ver codando e automatizando até o café!"
         $ add_contact("developer_test")
+        developer_test "Oi! Bem-vindo! Sou apaixonado por desafios de teste e validação. Não se assuste se me ver codando e automatizando até o café!"
         $ add_friendship_point("developer_test")
         pause 0.4
         hide developer_test with dissolve
@@ -42,8 +42,8 @@ label scene_2_escritorio:
         # developer_coding - experiente/sério
         show developer_coding serious at center_zoom
         developer_requirements "Aqui temos o [NOME_DEVELOPER_CODING], referência em desenvolvimento backend."
-        developer_coding "Prazer, sou criterioso com código limpo e funcionalidade bem feita. Você vai me ver bastante atento aos detalhes, principalmente nas integrações do sistema ByeByeFumo com o app móvel."
         $ add_contact("developer_coding")
+        developer_coding "Prazer, sou criterioso com código limpo e funcionalidade bem feita. Você vai me ver bastante atento aos detalhes, principalmente nas integrações do sistema ByeByeFumo com o app móvel."
         $ add_friendship_point("developer_coding")
         pause 0.4
         hide developer_coding with dissolve
@@ -51,8 +51,8 @@ label scene_2_escritorio:
         # developer_management - gerente, querido/organizado
         show developer_management thinking at right_zoom2
         developer_requirements "Esse é o [NOME_DEVELOPER_MANAGEMENT], nosso gerente de projeto."
-        developer_management "Olá! Pode contar comigo para alinhar prazos, organizar documentação e garantir que ninguém perca a daily!"
         $ add_contact("developer_management")
+        developer_management "Olá! Pode contar comigo para alinhar prazos, organizar documentação e garantir que ninguém perca a daily!"
         $ add_friendship_point("developer_management")
         pause 0.4
         hide developer_management with dissolve
@@ -61,8 +61,8 @@ label scene_2_escritorio:
         hide developer_requirements
         show developer_project serious at left_zoom
         developer_requirements "Aqui, [NOME_DEVELOPER_PROJECT], responsável pela arquitetura do sistema e banco de dados."
-        developer_project "Sou direto: se precisar de algo sobre modelagem ou banco, é só chamar. Estamos desenhando uma arquitetura robusta pro ByeByeFumo."
         $ add_contact("developer_project")
+        developer_project "Sou direto: se precisar de algo sobre modelagem ou banco, é só chamar. Estamos desenhando uma arquitetura robusta pro ByeByeFumo."
         $ add_friendship_point("developer_project")
         pause 0.3
         hide developer_project with dissolve
@@ -71,8 +71,8 @@ label scene_2_escritorio:
         # developer_quality - comunicativa, ensina, ajuda em requisitos
         show developer_quality positive at right_zoom
         developer_requirements "A [NOME_DEVELOPER_QUALITY] cuida da qualidade do software e adora compartilhar conhecimento!"
-        developer_quality "Oi! Testes, documentação, requisitos... Se quiser conversar sobre qualidade ou aprender algo novo, pode me procurar!"
         $ add_contact("developer_quality")
+        developer_quality "Oi! Testes, documentação, requisitos... Se quiser conversar sobre qualidade ou aprender algo novo, pode me procurar!"
         $ add_friendship_point("developer_quality")
         pause 0.3
         hide developer_quality with dissolve
@@ -80,8 +80,8 @@ label scene_2_escritorio:
         # developer_ai - entusiasmado, rápido, ideias novas
         show developer_ai positive at center_zoom
         developer_requirements "Já [NOME_DEVELOPER_AI] é nosso entusiasta de IA e inovação."
-        developer_ai "E aí! Sou fissurado em IA, machine learning e inovação. Se tiver uma ideia maluca, me chama. Bora revolucionar esse sistema juntos, do requisito ao deploy!"
         $ add_contact("developer_ai")
+        developer_ai "E aí! Sou fissurado em IA, machine learning e inovação. Se tiver uma ideia maluca, me chama. Bora revolucionar esse sistema juntos, do requisito ao deploy!"
         $ add_friendship_point("developer_ai")
         pause 0.3
         hide developer_ai with dissolve
@@ -89,8 +89,8 @@ label scene_2_escritorio:
         # developer_security - sério, fala devagar
         show developer_security serious at right_zoom
         developer_requirements "E fechando o time, [NOME_DEVELOPER_SECURITY], segurança total!"
-        developer_security "Oi, sou o responsável por garantir que tudo esteja seguro. Checklist, logs, criptografia... Pode confiar, seus dados (e os dos pacientes) estarão protegidos."
         $ add_contact("developer_security")
+        developer_security "Oi, sou o responsável por garantir que tudo esteja seguro. Checklist, logs, criptografia... Pode confiar, seus dados (e os dos pacientes) estarão protegidos."
         $ add_friendship_point("developer_security")
         pause 0.3
         hide developer_security with dissolve

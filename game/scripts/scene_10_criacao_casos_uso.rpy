@@ -38,7 +38,7 @@ label scene_10_criacao_casos_uso:
     "{i}Durante o mapeamento do fluxo de registro de exames, surge uma dúvida técnica sobre dependências entre módulos.{/i}"
     "{i}Você decide enviar uma mensagem rápida para [NOME_DEVELOPER_PROJECT], conhecido por ser direto e eficiente, pedindo uma revisão do diagrama de entidades.{/i}"
 
-    show developer_project serious at right_zoom
+    show developer_project portrait at right_zoom
     developer_project "(mensagem pelo chat) Vi seu fluxograma. Só cuidado para não criar dependência circular entre módulos de pacientes, exames e acompanhamento. Melhor separar a persistência de dados da lógica de negócios."
     show developer_requirements neutral at left_zoom
     developer_requirements "Ótima observação, [NOME_DEVELOPER_PROJECT]! Essa separação é fundamental para facilitar manutenções e evitar bugs futuros."

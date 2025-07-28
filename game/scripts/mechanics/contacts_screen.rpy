@@ -1,5 +1,13 @@
 default selected_contact_description = ""
 
+transform grayscale_icon:
+    matrixcolor Matrix([
+        0.3, 0.6, 0.1,
+        0.3, 0.6, 0.1,
+        0.3, 0.6, 0.1
+    ])
+    alpha 0.8
+
 transform contact_icon:
     xysize (140, 140)
 
@@ -31,13 +39,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_ai portrait"
-                                hover "developer_ai portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nEspecialista em IA e ML. Animado, detalhista, sempre com ideias inovadoras." % NOME_DEVELOPER_AI)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_ai"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_ai:
+                                imagebutton:
+                                    idle "developer_ai portrait"
+                                    hover "developer_ai portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nEspecialista em IA e ML. Animado, detalhista, sempre com ideias inovadoras." % NOME_DEVELOPER_AI)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_ai"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_ai portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -63,13 +77,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_coding portrait"
-                                hover "developer_coding portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\\nDesenvolvedor sênior, crítico e experiente, já liderou vários projetos." % NOME_DEVELOPER_CODING)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_coding"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_coding:
+                                imagebutton:
+                                    idle "developer_coding portrait"
+                                    hover "developer_coding portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\\nDesenvolvedor sênior, crítico e experiente, já liderou vários projetos." % NOME_DEVELOPER_CODING)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_coding"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_coding portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -95,13 +115,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_management portrait"
-                                hover "developer_management portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nGerente jovem, organizado, querido pela equipe." % NOME_DEVELOPER_MANAGEMENT)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_management"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_management:
+                                imagebutton:
+                                    idle "developer_management portrait"
+                                    hover "developer_management portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nGerente jovem, organizado, querido pela equipe." % NOME_DEVELOPER_MANAGEMENT)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_management"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_management portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -127,13 +153,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_requirements portrait"
-                                hover "developer_requirements portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\\nEspecialista em requisitos, comunicativa, detalhista e proativa." % NOME_DEVELOPER_REQUIREMENTS)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_requirements"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_requirements:
+                                imagebutton:
+                                    idle "developer_requirements portrait"
+                                    hover "developer_requirements portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\\nEspecialista em requisitos, comunicativa, detalhista e proativa." % NOME_DEVELOPER_REQUIREMENTS)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_requirements"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_requirements portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -159,13 +191,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_quality portrait"
-                                hover "developer_quality portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nApaixonada por ensinar e qualidade de software." % NOME_DEVELOPER_QUALITY)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_quality"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_quality:
+                                imagebutton:
+                                    idle "developer_quality portrait"
+                                    hover "developer_quality portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nApaixonada por ensinar e qualidade de software." % NOME_DEVELOPER_QUALITY)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_quality"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_quality portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -191,13 +229,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_project portrait"
-                                hover "developer_project portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nArquiteto de software e bancos, fala pouco, mas certeiro." % NOME_DEVELOPER_PROJECT)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_project"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_project:
+                                imagebutton:
+                                    idle "developer_project portrait"
+                                    hover "developer_project portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nArquiteto de software e bancos, fala pouco, mas certeiro." % NOME_DEVELOPER_PROJECT)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_project"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_project portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -223,13 +267,19 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_security portrait"
-                                hover "developer_security portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nSenior, fala devagar e preza segurança dos sistemas." % NOME_DEVELOPER_SECURITY)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_security"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_security:
+                                imagebutton:
+                                    idle "developer_security portrait"
+                                    hover "developer_security portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nSenior, fala devagar e preza segurança dos sistemas." % NOME_DEVELOPER_SECURITY)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_security"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_security portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -255,13 +305,18 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "developer_test portrait"
-                                hover "developer_test portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem prodígio dos testes, faz tudo com eficiência." % NOME_DEVELOPER_TEST)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "developer_test"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_developer_test:
+                                imagebutton:
+                                    idle "developer_test portrait"
+                                    hover "developer_test portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem prodígio dos testes, faz tudo com eficiência." % NOME_DEVELOPER_TEST)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "developer_test"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "developer_test portrait"
+                                    at contact_icon, grayscale_icon
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -287,13 +342,18 @@ screen contacts_screen():
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "doutora_1 portrait"
-                                hover "doutora_1 portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nExperiente médica." % NOME_DOUTORA_1)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "doutora_1"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_doutora_1:
+                                imagebutton:
+                                    idle "doutora_1 portrait"
+                                    hover "doutora_1 portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nExperiente médica." % NOME_DOUTORA_1)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "doutora_1"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "doutora_1 portrait"
+                                    at contact_icon, grayscale_icon
                             hbox:
                                 spacing 1
                                 xalign 0.5
@@ -316,17 +376,23 @@ screen contacts_screen():
 
 
 
-                    if contato_developer_test:
+                    if contato_doutora_2:
                         vbox:
                             spacing 3
                             xalign 0.5
-                            imagebutton:
-                                idle "doutora_2 portrait"
-                                hover "doutora_2 portrait"
-                                at contact_icon
-                                hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem médica." % NOME_DOUTORA_2)]
-                                unhovered [SetVariable("selected_contact_description", "")]
-                                action [SetVariable("amigo_selecionado", "amizade_doutora_2"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            if disponivel_doutora_2:
+                                imagebutton:
+                                    idle "doutora_2 portrait"
+                                    hover "doutora_2 portrait"
+                                    at contact_icon
+                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem médica." % NOME_DOUTORA_2)]
+                                    unhovered [SetVariable("selected_contact_description", "")]
+                                    action [SetVariable("amigo_selecionado", "amizade_doutora_2"), Hide("contacts_screen"), Jump("chat_amigo")]
+                            else:
+                                imagebutton:
+                                    idle "doutora_2 portrait"
+                                    at contact_icon, grayscale_icon
+
                             hbox:
                                 spacing 1
                                 xalign 0.5

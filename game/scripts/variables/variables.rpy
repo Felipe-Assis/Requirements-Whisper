@@ -30,6 +30,18 @@ init -1:
     default contato_doutora_1 = False
     default contato_doutora_2 = False
 
+
+    default disponivel_developer_ai = False
+    default disponivel_developer_coding = False
+    default disponivel_developer_management = False
+    default disponivel_developer_requirements = False
+    default disponivel_developer_project = False
+    default disponivel_developer_quality = False
+    default disponivel_developer_security = False
+    default disponivel_developer_test = False
+    default disponivel_doutora_1 = False
+    default disponivel_doutora_2 = False
+
     default game_hour = 7      # Horas (inteiro, 0-23)
     default game_minute = 0    # Minutos (inteiro, 0-59)
     default show_clock = False  # Se quiser poder ocultar facilmente

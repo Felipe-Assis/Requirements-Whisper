@@ -1,5 +1,5 @@
 label scene_8_cafe_informal:
-    play music music_coffee_break_1 fadein 1.0
+    play music music_coffee_break_energized fadein 1.0
     scene bg empresa_cafe_tarde
     with fade
 

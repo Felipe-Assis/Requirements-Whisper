@@ -35,7 +35,7 @@ label scene_16_reuniao_gerenciamento:
         "Sinto que tem muito retrabalho ou dúvida sobre o que priorizar.":
             show developer_requirements thinking at right_zoom
             developer_requirements "Talvez falte clareza nos critérios de pronto. Podemos revisar juntos as definições de done?"
-            show developer_management neutral at left_zoom
+            show developer_management serious at left_zoom
             developer_management "Se a documentação ou a comunicação não estiver clara, vale dedicar um tempo para alinhar tudo."
 
     # Avaliação sobre o prazo (diretiva do usuário)
@@ -44,19 +44,19 @@ label scene_16_reuniao_gerenciamento:
     menu:
         "Como você responde sobre o prazo?"
         "Sim, algumas tarefas estão demorando mais do que o previsto.":
-            show developer_coding thinking at right_zoom
+            show developer_coding thinking at right_zoom_2
             developer_coding "A complexidade aumentou, vale dividir tarefas ou renegociar datas."
             show developer_management thinking at left_zoom
             developer_management "É papel da liderança escutar e ajustar expectativas. Vamos adaptar juntos."
         "Ainda está sob controle, mas precisamos de atenção redobrada.":
-            show developer_ai positive at right_zoom
+            show developer_ai positive at left_zoom_2
             developer_ai "Se quiserem, posso ajudar automatizando alertas de progresso ou pendências."
             show developer_management positive at left_zoom
             developer_management "Bom! Manter vigilância evita surpresas. Qualquer dúvida, tragam antes de virar urgência."
         "Acho que alguns prazos estão folgados demais, dá para desafiar mais o time.":
-            show developer_test enthusiastic at right_zoom
+            show developer_test enthusiastic at right_zoom_2
             developer_test "Gosto desse espírito! Se quiserem me passar mais cenários de teste, eu topo."
-            show developer_management neutral at left_zoom
+            show developer_management serious at left_zoom
             developer_management "Cuidado só para não sacrificar a qualidade pelo ritmo. Equilíbrio é o segredo."
 
     # Limpa gerentes para nova rodada
@@ -87,7 +87,7 @@ label scene_16_reuniao_gerenciamento:
             developer_requirements "E atenção para não deixar as tarefas grandes acumularem para o fim!"
         "Dividir o time em duplas para que todos avancem juntos, equilibrando desafios.":
             $ flag_prioridade = "colaborativo"
-            show developer_management positive at right_zoom
+            show developer_management thinking at right_zoom
             show developer_requirements positive at left_zoom
             developer_management "Gosto da ideia! Trabalho em duplas estimula troca de conhecimento."
             developer_requirements "Assim todo mundo aprende e ninguém fica sobrecarregado!"
@@ -106,7 +106,7 @@ label scene_16_reuniao_gerenciamento:
             developer_requirements "E se surgir dúvida, alinhamos tudo na hora!"
         "Criar um documento de riscos e revisá-lo semanalmente.":
             $ flag_risco = "documento"
-            show developer_management positive at left_zoom
+            show developer_management thinking at left_zoom
             show developer_requirements thinking at right_zoom
             developer_management "Boa prática! Assim ninguém esquece dos pontos críticos."
             developer_requirements "Vale também pedir que cada membro anote possíveis riscos em suas tarefas."

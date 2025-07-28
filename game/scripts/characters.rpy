@@ -127,6 +127,12 @@ transform left_zoom:
     yalign 1.0
     zoom 0.6
 
+
+transform left_zoom_2:
+    xalign 0.2
+    yalign 1.0
+    zoom 0.6
+
 transform center_zoom:
     xalign 0.5
     yalign 1.0

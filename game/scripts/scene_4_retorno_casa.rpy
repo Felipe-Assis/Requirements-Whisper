@@ -1,5 +1,12 @@
 label scene_4_retorno_casa:
-
+    $ disponivel_developer_ai = True
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = True
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
     # Transição: ônibus/cidade à noite
     play music music_streets_focused fadein 1.8
     scene bg transito_noite
@@ -40,6 +47,10 @@ label scene_4_retorno_casa:
     hide developer_requirements
     $ add_friendship_point("developer_requirements", 1)
     $ advance_minutes(2)
+
+    "Tem mais gente online, talvez seja bom eu continuar com o celular e conversar com mais alguém?"
+
+    call screen contacts_screen
 
     # Pequena transição de tempo
     "Decide tomar um banho rápido e fazer um lanche, refletindo sobre os desafios e aprendizados do dia."

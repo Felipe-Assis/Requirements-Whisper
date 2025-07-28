@@ -21,15 +21,14 @@ label scene_19_testes_seguranca:
     window show
 
     "\"Checklist:"
-    "\n• Testes de unidade (funções críticas, validação de campos)"
-    "\n• Testes de integração (cadastro, autenticação, notificações, exportação de relatórios)"
-    "\n• Validação de permissões de acesso (papéis de usuário, RBAC, fluxos administrativos)"
-    "\n• Testes de injeção (SQL Injection, XSS, campos editáveis e uploads)"
-    "\n• Cobertura de código (buscando alcançar acima de 80%)"
-    "\n• Testes de autenticação, redefinição de senha, e multi-fator"
-    "\n• Verificação de logs, backups e anonimização de dados"
-    "\n• Plano de resposta a incidentes"
-    "\""
+    "• Testes de unidade (funções críticas, validação de campos)"
+    "• Testes de integração (cadastro, autenticação, notificações, exportação de relatórios)"
+    "• Validação de permissões de acesso (papéis de usuário, RBAC, fluxos administrativos)"
+    "• Testes de injeção (SQL Injection, XSS, campos editáveis e uploads)"
+    "• Cobertura de código (buscando alcançar acima de 80\%)"
+    "• Testes de autenticação, redefinição de senha, e multi-fator"
+    "• Verificação de logs, backups e anonimização de dados"
+    "• Plano de resposta a incidentes"
 
     $ testes_realizados = []
     $ checklist_opcoes = ["unidade", "integracao", "permissoes", "injeção", "cobertura", "autenticacao", "logs", "backup"]
@@ -71,12 +70,12 @@ label scene_19_testes_seguranca:
                 $ testes_realizados.append("cobertura")
                 $ checklist_opcoes.remove("cobertura")
                 show developer_quality serious at left_zoom
-                developer_quality "Cobertura acima de 80% é o ideal. Me chama se precisar gerar relatório."
+                developer_quality "Cobertura acima de 80\% é o ideal. Me chama se precisar gerar relatório."
                 hide developer_quality
             "Testes de autenticação" if "autenticacao" in checklist_opcoes:
                 $ testes_realizados.append("autenticacao")
                 $ checklist_opcoes.remove("autenticacao")
-                show developer_security neutral at right_zoom
+                show developer_security serious at right_zoom
                 developer_security "Valide que links de recuperação de senha expiram corretamente e que login inválido bloqueia após tentativas erradas."
                 hide developer_security
             "Verificação de logs e backups" if "logs" in checklist_opcoes or "backup" in checklist_opcoes:
@@ -103,7 +102,9 @@ label scene_19_testes_seguranca:
     developer_security "Preencha o checklist: cada resposta 'Sim' vale 2 pontos, 'Parcialmente' vale 1, 'Não' ou 'Não sei' valem 0. Use só 'Não se aplica' se realmente não couber ao projeto."
     hide developer_security
 
-    "{i}Você e a equipe respondem perguntas sobre: privacidade de dados, práticas de segurança (OWASP, RBAC, backups, criptografia), conformidade legal (LGPD), e governança do projeto. O sistema gera automaticamente a pontuação e mostra o nível de maturidade do time, de Inexistente a Excelente.{/i}"
+    "{i}Você e a equipe respondem perguntas sobre: privacidade de dados,{/i}"
+    "{i}práticas de segurança (OWASP, RBAC, backups, criptografia),"" conformidade legal (LGPD), e governança do projeto.{/i}"
+    "{i}O sistema gera automaticamente a pontuação e mostra o nível de maturidade do time, de Inexistente a Excelente.{/i}"
 
     # Feedback dinâmico do resultado (simulação)
     $ maturidade_percentual = 85   # Exemplo de cálculo fictício, pode ser ramificado depois
@@ -119,7 +120,7 @@ label scene_19_testes_seguranca:
         $ nivel_maturidade = "Inexistente"
 
     show developer_quality positive at left_zoom
-    developer_quality "Nossa avaliação ficou em [maturidade_percentual]% — Nível **[nivel_maturidade]**. Isso mostra como evoluímos desde o início!"
+    developer_quality "Nossa avaliação ficou em [maturidade_percentual]\% — Nível [nivel_maturidade]. Isso mostra como evoluímos desde o início!"
     hide developer_quality
 
     show developer_security positive at right_zoom

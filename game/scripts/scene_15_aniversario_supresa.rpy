@@ -4,7 +4,8 @@ label scene_15_aniversario_surpresa:
     with dissolve
 
     $ advance_minutes(13)
-    "{i}O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
+    "{i}Já no dia seguinte..."
+    "O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
     "{i}Você percebe que a equipe está querendo organizar algo especial, mas ninguém se prontificou ainda.{/i}"
 
     show developer_requirements thinking at left_zoom
@@ -49,7 +50,7 @@ label scene_15_aniversario_surpresa:
             $ amizade_developer_test += 1
             hide developer_test
         "Providenciar balões e enfeites coloridos.":
-            show developer_quality positive at left_zoom
+            show developer_quality positive at right_zoom2
             developer_quality "Adorei a decoração! Vai deixar tudo mais alegre."
             $ amizade_developer_quality += 1
             hide developer_quality
@@ -65,7 +66,7 @@ label scene_15_aniversario_surpresa:
 
     # TRANSIÇÃO VISUAL PARA O ESCRITÓRIO DECORADO
     play sound "audio/ambiente_agitado.ogg"
-    scene bg escritorio_festa
+    scene bg escritorio_interior_festa
     with fade
     "{i}A sala é fechada rapidinho para montar a surpresa. Cada um colabora: bolo, balões, música e cartões tomam conta do ambiente. O escritório, agora decorado, ganha vida com as cores e a expectativa do grupo.{/i}"
     pause 1.3
@@ -76,7 +77,7 @@ label scene_15_aniversario_surpresa:
     play sound "audio/aplausos.ogg"
     "{i}De repente, todos surgem juntos:{/i}"
 
-    show developer_ai enthusiastic at left_zoom
+    show developer_ai positive at left_zoom_2
     show developer_test enthusiastic at right_zoom
     show developer_quality positive at right_zoom2
     show developer_coding positive at left_zoom
@@ -90,7 +91,7 @@ label scene_15_aniversario_surpresa:
     hide developer_quality
     hide developer_coding
 
-    show developer_security positive at center_zoom
+    show developer_security serious at center_zoom
     developer_security "Nossa, gente... Nem sei o que dizer. Vocês são demais!"
     play sound "audio/feedback_positive.ogg"
 

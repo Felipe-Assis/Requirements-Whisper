@@ -58,9 +58,9 @@ label scene_21_avaliacao_final:
         $ resultado_tech = "Padrao"
 
     # Stakeholders avaliam (final alternativo)
-    show doutora_1 at right_zoom
+    show doutora_1 neutral at right_zoom
     doutora_1 "Fiquei muito satisfeita com o resultado! O sistema está fácil de usar, não precisei de manual pra achar o que eu queria. É uma grande mudança para a nossa rotina."
-    show doutora_2 at right_zoom2
+    show doutora_2 neutral at right_zoom2
     doutora_2 "De verdade, adorei o jeito que vocês deixaram tudo claro e simples. Preencher os dados do paciente ficou bem menos cansativo."
 
     # Comentários das médicas mais humanos e de rotina

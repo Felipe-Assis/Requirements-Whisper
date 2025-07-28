@@ -64,11 +64,11 @@ label scene_6_entrevista_stakeholders:
             show developer_requirements enthusiastic at left_zoom
             developer_requirements "Boa solução! Vamos equilibrar essas demandas no levantamento, pensando em fluxos práticos para cada perfil de usuário."
             hide developer_requirements
-        "Concordo com a doutora 1, relatórios bem feitos são essenciais.":
+        "Concordo com a [NOME_DOUTORA_1], relatórios bem feitos são essenciais.":
             $ add_friendship_point("doutora_1", 1)
             doutora_1 "Finalmente alguém me entende! Um sistema sem indicadores clínicos e relatórios personalizáveis perde o sentido, inclusive para prestação de contas e publicações científicas."
             doutora_2 "Só não me deixe de fora, hein? Preciso dos avisos de rotina!"
-        "Concordo com a doutora 2, notificações são urgentes para o dia a dia.":
+        "Concordo com a [NOME_DOUTORA_2], notificações são urgentes para o dia a dia.":
             $ add_friendship_point("doutora_2", 1)
             doutora_2 "Obrigada! Sem avisos a rotina não funciona — esqueço retornos e exames pendentes."
             doutora_1 "Mas preciso dos relatórios para validar dados, principalmente nas pesquisas."
@@ -111,8 +111,8 @@ label scene_6_entrevista_stakeholders:
     with dissolve
 
     "{i}Ao final, as doutoras se levantam e, sorrindo, pegam o celular.{/i}"
-    show doutora_1 positive at center_zoom
-    show doutora_2 positive at right_zoom
+    show doutora_1 neutral at center_zoom
+    show doutora_2 neutral at right_zoom
     doutora_1 "Se surgir qualquer dúvida, pode me chamar pelo app, viu? Prefiro resolver as coisas direto com quem está na linha de frente do sistema."
     doutora_2 "Exatamente! Pode contar comigo também, [player_name]. Quanto mais alinhados estivermos, melhor será o resultado final para todo mundo."
     $ add_contact("doutora_1")

@@ -14,7 +14,9 @@ label scene_17_tarde_estudos_tecnicos:
     pause 0.7
     window show
 
-    "• Testes automatizados\n• Métricas de qualidade de software\n• Algoritmos de Machine Learning\n• Práticas de documentação\n• Revisão de código colaborativa"
+    "• Testes automatizados\n• Métricas de qualidade de software\n"
+    "• Algoritmos de Machine Learning\n• Práticas de documentação\n"
+    "• Revisão de código colaborativa"
 
     # Minijogo didático: quiz de revisão rápida
     "{i}Você resolve testar seus conhecimentos com um quiz rápido no notebook:{/i}"

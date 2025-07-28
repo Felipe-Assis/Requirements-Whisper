@@ -10,7 +10,7 @@ label scene_20_deploy_final:
     show developer_management serious at left_zoom
     developer_management "Atenção, equipe! Chegou o grande momento. Vamos garantir que tudo esteja em ordem antes de ir para produção."
 
-    show developer_quality enthusiastic at right_zoom
+    show developer_quality positive at right_zoom
     developer_quality "Vamos passar pelo checklist final juntos! Documentar cada etapa é tão importante quanto programar."
     hide developer_quality
 
@@ -19,7 +19,9 @@ label scene_20_deploy_final:
     window show
 
     show expression "images/ui/checklist_deploy.png" as checklist at center_zoom
-    "{i}Checklist final:\n• Código revisado\n• Testes automatizados rodando\n• Documentação atualizada\n• Backup realizado\n• Ambiente de produção pronto\n• Script de rollback disponível{/i}"
+    "{i}Checklist final:\n• Código revisado\n• Testes automatizados rodando\n"
+    "• Documentação atualizada\n• Backup realizado\n"
+    "• Ambiente de produção pronto\n• Script de rollback disponível{/i}"
     hide checklist
 
     $ checklist_deploy = []

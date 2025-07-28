@@ -31,6 +31,9 @@ label scene_9_retorno_casa_sem2:
     $ advance_minutes(10)
 
     "{i}Antes de dormir, abre o celular e lê algumas anotações antigas da disciplina de Engenharia de Software.{/i}"
+    "Quem será que ainda está online?"
+
+    call screen contacts_screen
 
     window hide
     pause 0.8
@@ -39,6 +42,8 @@ label scene_9_retorno_casa_sem2:
     "Você compara o que viu hoje com o que aprendeu na universidade:\n\n*“Na teoria, elicitar requisitos parece simples: basta fazer perguntas certas. Mas na prática, cada resposta traz novos desafios e pontos de vista. Entender o contexto do usuário faz toda diferença!”*"
 
     "{i}Satisfeito(a) com o progresso, você fecha o notebook, prepara tudo para o dia seguinte e se permite finalmente descansar.{/i}"
+
+
 
     play music music_home_dreamy fadein 1.0
     scene black
