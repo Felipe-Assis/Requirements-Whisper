@@ -1,4 +1,12 @@
 label scene_18_codificacao_implementacao:
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = False
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = False
     play music music_office_concentrated_1 fadein 1.0
     scene bg escritorio_interior_manha
     with dissolve
@@ -17,7 +25,7 @@ label scene_18_codificacao_implementacao:
     developer_test "Qualquer coisa, já me chama — quero testar cada pedaço assim que ficar pronto!"
 
     # Placeholder de UI: Exibe tela de cadastro de paciente após início da codificação
-    show expression "images/ui/placeholder_cadastro_paciente.png" as tela_ui at center_zoom
+    show expression "images/ui/cadastro_screen.png" as tela_ui at center_zoom
     "{i}Você revisa o layout da tela de cadastro de paciente, planejando cada campo e interação conforme os requisitos levantados. Essa interface será seu desafio do dia!{/i}"
     hide tela_ui
     pause 0.8
@@ -105,7 +113,7 @@ label scene_18_codificacao_implementacao:
         developer_test "Perfeito! Com esse código, os testes passaram de primeira!"
 
     # Placeholder de UI: tela final após revisão
-    show expression "images/ui/placeholder_listagem_paciente.png" as tela_ui_final at center_zoom
+    show expression "images/ui/main_screen.png" as tela_ui_final at center_zoom
     "{i}Após os ajustes e revisões, você confere na tela a listagem dos pacientes, já refletindo os dados inseridos — é a confirmação visual do progresso!{/i}"
     hide tela_ui_final
     pause 0.7
@@ -150,6 +158,15 @@ label scene_18_codificacao_implementacao:
     with fade
     $ advance_minutes(21)
     "{i}O expediente termina com aquele misto de alívio e aprendizado. Você está se tornando cada vez mais profissional e preparado(a) para os próximos desafios.{/i}"
+
+    $ disponivel_developer_ai = True
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = True
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
 
     play music music_home_reflecting fadein 1.3
     scene bg quarto_noite

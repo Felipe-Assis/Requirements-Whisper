@@ -167,4 +167,5 @@ label scene_1_quarto:
     scene black with fade
     "..."
     pause 1.2
-    return
+
+    jump scene_2_escritorio

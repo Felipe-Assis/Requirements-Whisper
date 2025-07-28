@@ -39,8 +39,8 @@ init -1:
     default disponivel_developer_quality = False
     default disponivel_developer_security = False
     default disponivel_developer_test = False
-    default disponivel_doutora_1 = False
-    default disponivel_doutora_2 = False
+    default disponivel_doutora_1 = True
+    default disponivel_doutora_2 = True
 
     default game_hour = 7      # Horas (inteiro, 0-23)
     default game_minute = 0    # Minutos (inteiro, 0-59)

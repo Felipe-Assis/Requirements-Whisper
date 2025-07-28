@@ -17,6 +17,7 @@ label scene_4_retorno_casa:
     "As luzes da cidade passam rápido pela janela enquanto você relembra tudo o que aconteceu hoje no escritório."
     play sound "audio/effects/bus.ogg"
     pause 1.2
+    stop sound
 
     # Chegando em casa
     play music music_home_reflecting fadein 2.0

@@ -1,4 +1,13 @@
 label scene_17_tarde_estudos_tecnicos:
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
+
     play music music_office_relaxed fadein 1.0
     scene bg escritorio_interior_tarde
     with dissolve
@@ -124,7 +133,14 @@ label scene_17_tarde_estudos_tecnicos:
 
     $ inventario.append("anotacoes_tecnicas")
     "Você salva suas anotações, fecha o notebook e sente-se pronto(a) para os desafios dos próximos dias."
-
+    $ disponivel_developer_ai = True
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = True
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
     play music music_home_reflecting fadein 1.3
     scene bg quarto_noite
     with fade

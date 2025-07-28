@@ -1,4 +1,15 @@
 label scene_21_avaliacao_final:
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = False
+    $ disponivel_developer_management = False
+    $ disponivel_developer_requirements = False
+    $ disponivel_developer_project = False
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = False
+    $ disponivel_developer_test = False
+    $ disponivel_doutora_1 = False
+    $ disponivel_doutora_2 = False
+
     play music music_home_reflecting fadein 1.0
     # Transição: Manhã no escritório
     scene bg escritorio_interior_manha

@@ -1,8 +1,8 @@
 ﻿label start:
-    play sound "audio/effects/alarm_clock.wav"
-    "Did you hear the alarm clock?"
+    if user_id is None:
+        $ user_id = generate_user_id()
     call scene_1_quarto from _scene_1_quarto
-    call scene_2_escritorio from _scene_2_escritorio
+    #call scene_2_escritorio from _scene_2_escritorio
     call scene_3_reuniao_inicial from _scene_3_reuniao_inicial
     call scene_4_retorno_casa from _scene_4_retorno_casa
     call scene_5_preparacao_entrevista from _scene_5_preparacao_entrevista

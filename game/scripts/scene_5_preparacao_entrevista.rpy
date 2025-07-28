@@ -1,5 +1,13 @@
 label scene_5_preparacao_entrevista:
     # Manhã agitada no quarto
+#     $ disponivel_developer_ai = False
+#     $ disponivel_developer_coding = False
+#     $ disponivel_developer_management = False
+    $ disponivel_developer_requirements = False
+#     $ disponivel_developer_project = False
+#     $ disponivel_developer_quality = False
+#     $ disponivel_developer_security = False
+#     $ disponivel_developer_test = False
     play music music_home_dreamy fadein 1.0
     scene bg quarto_manha
     with dissolve

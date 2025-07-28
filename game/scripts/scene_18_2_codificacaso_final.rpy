@@ -93,7 +93,7 @@ label scene_18_2_codificacao_final:
             $ entrega_pr = "direto"
 
     # Exibe a tela de listagem de pacientes após merge/entrega
-    show expression "images/ui/placeholder_listagem_paciente.png" as tela_final at center_zoom
+    show expression "images/ui/main_screen_old.png" as tela_final at center_zoom
     "{i}Após a entrega, você acessa a tela de listagem de pacientes e vê os dados aparecendo perfeitamente. É a sensação concreta de missão cumprida!{/i}"
     hide tela_final
     pause 0.7
@@ -142,6 +142,14 @@ label scene_18_2_codificacao_final:
     with fade
     $ advance_minutes(12)
 
+    $ disponivel_developer_ai = True
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = True
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
     "{i}Em casa, você reflete sobre como descansar, planejar e revisar cada parte do código mudou a forma de encarar o projeto.{/i}"
     "{i}A teoria de boas práticas faz ainda mais sentido após superar um ciclo intenso de codificação.{/i}"
 

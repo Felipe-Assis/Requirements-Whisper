@@ -1,4 +1,13 @@
 label scene_16_reuniao_gerenciamento:
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = False
+    $ disponivel_developer_management = False
+    $ disponivel_developer_requirements = False
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = False
+
     play music music_office_focused fadein 1.0
     scene bg escritorio_interior_manha
     with dissolve

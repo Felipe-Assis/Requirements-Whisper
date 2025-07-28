@@ -1,4 +1,13 @@
 label scene_13_retorno_casa_sem3:
+    $ disponivel_developer_ai = True
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = True
+    $ disponivel_developer_project = True
+    $ disponivel_developer_quality = True
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
+
     play music music_streets_focused fadein 1.0
     scene bg transito_noite
     with dissolve

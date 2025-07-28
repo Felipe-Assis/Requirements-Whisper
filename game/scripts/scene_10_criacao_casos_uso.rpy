@@ -1,4 +1,13 @@
 label scene_10_criacao_casos_uso:
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = True
+    $ disponivel_developer_management = True
+    $ disponivel_developer_requirements = False
+    $ disponivel_developer_project = False
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = True
+    $ disponivel_developer_test = True
+
     $ game_hour = 9
     $ game_minute = 10
     play music music_office_concentrated_1 fadein 1.0

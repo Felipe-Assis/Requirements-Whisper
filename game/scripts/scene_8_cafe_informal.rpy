@@ -1,4 +1,12 @@
 label scene_8_cafe_informal:
+    $ disponivel_developer_ai = False
+    $ disponivel_developer_coding = False
+    $ disponivel_developer_management = False
+    $ disponivel_developer_requirements = False
+    $ disponivel_developer_project = False
+    $ disponivel_developer_quality = False
+    $ disponivel_developer_security = False
+    $ disponivel_developer_test = False
     play music music_coffee_break_energized fadein 1.0
     scene bg empresa_cafe_tarde
     with fade

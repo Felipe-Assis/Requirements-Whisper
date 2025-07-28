@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 22, in script call
-    call scene_19_testes_seguranca from _scene_19_testes_seguranca
-  File "game/scripts/scene_19_testes_seguranca.rpy", line 121, in script
-    developer_quality "Nossa avaliação ficou em [maturidade_percentual]% — Nível **[nivel_maturidade]**. Isso mostra como evoluímos desde o início!"
-ValueError: unsupported format character '?' (0x2014) at index 50
+  File "game/scripts/mechanics/chat_screen.rpy", line 2, in script
+    init -1 python:
+  File "game/scripts/mechanics/chat_screen.rpy", line 3, in <module>
+    import renpy.random
+ModuleNotFoundError: No module named 'renpy.random'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 22, in script call
-    call scene_19_testes_seguranca from _scene_19_testes_seguranca
-  File "game/scripts/scene_19_testes_seguranca.rpy", line 121, in script
-    developer_quality "Nossa avaliação ficou em [maturidade_percentual]% — Nível **[nivel_maturidade]**. Isso mostra como evoluímos desde o início!"
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 121, in say
-    what = what % tag_quoting_dict
-ValueError: unsupported format character '?' (0x2014) at index 50
+  File "game/scripts/mechanics/chat_screen.rpy", line 2, in script
+    init -1 python:
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Program Files (x86)\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/mechanics/chat_screen.rpy", line 3, in <module>
+    import renpy.random
+ModuleNotFoundError: No module named 'renpy.random'
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 The Requirements Whisperer 1.0
-Sun Jul 27 21:36:54 2025
+Sun Jul 27 22:37:45 2025
