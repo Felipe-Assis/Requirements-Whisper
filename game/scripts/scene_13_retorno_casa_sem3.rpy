@@ -41,7 +41,7 @@ label scene_13_retorno_casa_sem3:
     "{i}Você reflete sobre como a prática do projeto faz tudo aquilo fazer sentido — e que, por mais que documentar pareça trabalhoso, é o que torna o desenvolvimento possível em equipe.{/i}"
 
     "{i}Antes de dormir, recebe uma mensagem rápida do grupo da equipe:{/i}"
-    play sound "audio/cell_vibration.ogg"
+    play sound "audio/effects/cell_vibration.ogg"
     show developer_requirements portrait at left_zoom
     developer_requirements "(mensagem no grupo) Pessoal, parabéns pelo empenho hoje! Documento ficou ótimo. Amanhã, seguimos para a próxima etapa juntos!"
     hide developer_requirements

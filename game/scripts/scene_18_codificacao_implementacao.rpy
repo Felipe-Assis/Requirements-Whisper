@@ -4,7 +4,7 @@ label scene_18_codificacao_implementacao:
     with dissolve
 
     $ advance_minutes(14)
-    play sound "audio/teclado.ogg"
+    play sound "audio/effects/teclado.ogg"
     "{i}O dia começa com a equipe focada: hoje é o grande momento da codificação.{/i}"
     "{i}Você se senta ao lado de [NOME_DEVELOPER_CODING] e [NOME_DEVELOPER_TEST]. Ambos já estão imersos no projeto.{/i}"
 
@@ -56,7 +56,7 @@ label scene_18_codificacao_implementacao:
             $ tempo_gasto += 2
             $ bugs_detectados += 1
             $ feedback_coding = "Colaboração rendeu bons resultados, mas ainda restam detalhes para revisar."
-            play sound "audio/cell_vibration.ogg"
+            play sound "audio/effects/cell_vibration.ogg"
             show developer_ai positive at center_zoom
             developer_ai "Se precisar de snippet pra validação de dados ou até automação, te mando agora!"
             show developer_quality thinking at right_zoom2
@@ -112,7 +112,7 @@ label scene_18_codificacao_implementacao:
 
     # Decisão: se não finalizou no escritório, ramifica para trabalhar em casa ou terminar no próximo dia
     if not finalizou_no_escritorio:
-        play sound "audio/porta_abrindo.ogg"
+        play sound "audio/effects/porta_abrindo.ogg"
         scene bg transito_noite
         with fade
         "{i}Já é noite quando você deixa o escritório, cansado(a) e levando o notebook para casa. Ainda falta terminar parte do módulo...{/i}"
@@ -145,7 +145,7 @@ label scene_18_codificacao_implementacao:
         "{i}• Parabéns! Ganhou o selo 'Código sem Bugs' no inventário.{/i}"
         $ inventario.append("selo_codigo_sem_bugs")
 
-    play sound "audio/feedback_positive.ogg"
+    play sound "audio/effects/feedback_positive.ogg"
     scene bg escritorio_interior_noite
     with fade
     $ advance_minutes(21)

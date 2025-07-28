@@ -5,7 +5,7 @@ label scene_14_discussao_arquitetura:
 
     $ advance_minutes(10)
     "{i}Logo cedo, você encontra parte da equipe reunida na sala de reuniões. No quadro branco, rabiscos de fluxos e caixas já começam a aparecer.{/i}"
-    play sound "audio/ambiente_reuniao.ogg"
+    play sound "audio/effects/ambiente_reuniao.ogg"
 
     show developer_project serious at left_zoom
     show developer_coding serious at right_zoom
@@ -18,7 +18,7 @@ label scene_14_discussao_arquitetura:
 
     show developer_test enthusiastic at center_zoom
     developer_test "E do ponto de vista de testes, quanto mais modular e desacoplado, mais fácil automatizar cenários e detectar bugs!"
-    play sound "audio/feedback_positive.ogg"
+    play sound "audio/effects/feedback_positive.ogg"
 
     $ advance_minutes(4)
     "{i}A conversa esquenta, desenhos de diagramas aparecem no quadro (placeholder: [[Imagem de Diagrama de Componentes]]) enquanto os argumentos se multiplicam.{/i}"
@@ -49,7 +49,7 @@ label scene_14_discussao_arquitetura:
     developer_test "Mas microsserviços facilitam testes independentes, e permitem escalar partes críticas sem mexer no sistema todo!"
 
     # developer_ai entra, disruptivo
-    play sound "audio/porta_abrindo.ogg"
+    play sound "audio/effects/porta_abrindo.ogg"
     show developer_ai positive at right_zoom2
     developer_ai "Posso jogar uma ideia? Já pensaram em usar funções serverless para alguns módulos? Baixo custo e atualização super rápida!"
 
@@ -65,14 +65,14 @@ label scene_14_discussao_arquitetura:
             developer_project "Vai facilitar o onboarding de quem entrar no projeto. Documentação clara vai ser fundamental!"
             show developer_coding thinking at right_zoom
             developer_coding "Menos armadilhas, menos microgerenciamento. Gosto da sua linha."
-            play sound "audio/feedback_positive.ogg"
+            play sound "audio/effects/feedback_positive.ogg"
         "Sugiro microsserviços, pensando na escalabilidade futura.":
             $ flag_arquitetura = "microsservicos"
             show developer_test enthusiastic at center_zoom
             developer_test "Adoro! Vai dar pra brincar com testes automatizados em cada serviço. Vamos caprichar na integração."
             show developer_ai positive at right_zoom2
             developer_ai "Com cloud bem configurada, escalamos cada módulo conforme o uso. Só precisamos de uma boa estratégia de monitoramento."
-            play sound "audio/feedback_tech.ogg"
+            play sound "audio/effects/feedback_tech.ogg"
         "Proponho uma abordagem híbrida, com base em modularização progressiva.":
             $ flag_arquitetura = "hibrido"
             show developer_project thinking at left_zoom
@@ -81,7 +81,7 @@ label scene_14_discussao_arquitetura:
             developer_coding "Vai exigir mais revisão, mas pode equilibrar entrega rápida e escalabilidade."
             show developer_ai thinking at right_zoom2
             developer_ai "Gostei. Se precisar automatizar migração, posso ajudar com scripts e pipelines."
-            play sound "audio/feedback_curious.ogg"
+            play sound "audio/effects/feedback_curious.ogg"
 
     # Placeholder de diagrama exibido na tela para visualização (depois trocar por imagem real)
     show expression "images/diagrams/placeholder_arquitetura.png" as diagrama at center_zoom
@@ -111,7 +111,7 @@ label scene_14_discussao_arquitetura:
     "{i}Horas se passam, a luz do escritório muda. O grupo faz pausas para café e logo todos voltam animados para finalizar os detalhes.{/i}"
 
     # Pequena interrupção casual
-    play sound "audio/cell_vibration.ogg"
+    play sound "audio/effects/cell_vibration.ogg"
     show developer_quality positive at right_zoom2
     developer_quality "(mensagem no chat) Se precisarem de revisão de documentação técnica, me avisem! Quero ver esses diagramas bem feitos!"
     hide developer_quality

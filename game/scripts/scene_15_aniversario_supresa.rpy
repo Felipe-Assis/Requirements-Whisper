@@ -19,7 +19,7 @@ label scene_15_aniversario_surpresa:
         "Fico responsável por comprar o bolo na padaria.":
             $ amizade_developer_security += 2
             $ amizade_developer_requirements += 1
-            play sound "audio/cell_vibration.ogg"
+            play sound "audio/effects/cell_vibration.ogg"
             show developer_quality positive at right_zoom2
             developer_quality "Genial, [player_name]! Bolo é o mais importante, todo mundo vai adorar."
             $ inventario.append("bolo")
@@ -44,7 +44,7 @@ label scene_15_aniversario_surpresa:
     menu:
         "Deseja cuidar de algum detalhe extra?"
         "Baixar uma playlist divertida para animar a sala.":
-            play sound "audio/music_party.ogg"
+            play sound "audio/effects/music_party.ogg"
             show developer_test enthusiastic at left_zoom
             developer_test "Essa seleção tá top! Já quero dançar comendo brigadeiro."
             $ amizade_developer_test += 1
@@ -65,7 +65,7 @@ label scene_15_aniversario_surpresa:
     hide developer_requirements
 
     # TRANSIÇÃO VISUAL PARA O ESCRITÓRIO DECORADO
-    play sound "audio/ambiente_agitado.ogg"
+    play sound "audio/effects/ambiente_agitado.ogg"
     scene bg escritorio_interior_festa
     with fade
     "{i}A sala é fechada rapidinho para montar a surpresa. Cada um colabora: bolo, balões, música e cartões tomam conta do ambiente. O escritório, agora decorado, ganha vida com as cores e a expectativa do grupo.{/i}"
@@ -74,7 +74,7 @@ label scene_15_aniversario_surpresa:
     # Chegada do aniversariante
     show developer_security serious at center_zoom
     developer_security "Pessoal, por que está tudo tão quieto por aqui...?"
-    play sound "audio/aplausos.ogg"
+    play sound "audio/effects/aplausos.ogg"
     "{i}De repente, todos surgem juntos:{/i}"
 
     show developer_ai positive at left_zoom_2
@@ -93,7 +93,7 @@ label scene_15_aniversario_surpresa:
 
     show developer_security serious at center_zoom
     developer_security "Nossa, gente... Nem sei o que dizer. Vocês são demais!"
-    play sound "audio/feedback_positive.ogg"
+    play sound "audio/effects/feedback_positive.ogg"
 
     menu:
         "Como você deseja parabenizar [NOME_DEVELOPER_SECURITY]?"

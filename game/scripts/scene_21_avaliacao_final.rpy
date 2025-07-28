@@ -15,17 +15,17 @@ label scene_21_avaliacao_final:
     # Transição: trajeto até o instituto
     scene bg transito_tarde
     with dissolve
-    play sound "audio/onibus.ogg"
+    play sound "audio/effects/onibus.ogg"
     "{i}Após o almoço, a equipe pega o ônibus rumo ao Instituto. O trânsito do Rio de Janeiro, como sempre, é imprevisível. Todos revisam mentalmente os pontos principais da apresentação.{/i}"
 
     # Chegada ao Instituto
     scene bg fachada_instituto_tarde
     with fade
-    play sound "audio/passos.ogg"
+    play sound "audio/effects/passos.ogg"
     "{i}Você desce do ônibus e segue com o grupo até a sala de reuniões do Instituto, sentindo a responsabilidade pesar — e o orgulho também.{/i}"
 
     # Sala de reunião: início da apresentação
-    scene bg sala_reuniao_tarde
+    scene bg escritorio_medica
     with dissolve
 
     show developer_requirements enthusiastic at left_zoom
@@ -109,19 +109,20 @@ label scene_21_avaliacao_final:
     developer_requirements "Fico feliz demais pelo reconhecimento. Parabéns, [player_name] — seu desenvolvimento ficou claro do início ao fim."
 
     # Mini feedback da equipe
-    show developer_coding positive at left_zoom
+    show developer_coding positive at left_zoom_2
     developer_coding "Mandou bem! Que venha o próximo desafio!"
-    show developer_test positive at right_zoom2
+    show developer_test positive at center_zoom
     developer_test "Que orgulho do time. Fomos além de bugs e entregamos valor!"
 
     # Final especial se amizade total máxima
     if amizade_total >= 50:
+        hide developer_test
         show developer_management enthusiastic at center_zoom
         developer_management "Orgulho de ver como você evoluiu como profissional e colega. O time é a prova de que colaboração faz a diferença!"
         hide developer_management
 
     # Padding: clima de celebração e encerramento da reunião
-    play sound "audio/aplausos.ogg"
+    play sound "audio/effects/aplausos.ogg"
     "{i}A reunião termina em clima de vitória. Fotos, abraços, contatos trocados — e a certeza de que o semestre foi transformador.{/i}"
 
     # Reflexão e aprendizado final

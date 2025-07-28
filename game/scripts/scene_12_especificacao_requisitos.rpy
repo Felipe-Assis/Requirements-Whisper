@@ -165,7 +165,7 @@ label scene_12_especificacao_requisitos:
     hide developer_requirements
     hide developer_quality
 
-    play sound "audio/cell_vibration.ogg"
+    play sound "audio/effects/cell_vibration.ogg"
     show developer_ai portrait at left_zoom
     developer_ai "(mensagem no grupo) Fiquei animado com a revisão! Um dia quero automatizar parte desse checklist com IA, viu? (risos)"
     hide developer_ai

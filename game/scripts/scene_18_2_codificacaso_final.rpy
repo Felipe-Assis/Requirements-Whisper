@@ -4,7 +4,7 @@ label scene_18_2_codificacao_final:
     with dissolve
 
     $ advance_minutes(11)
-    play sound "audio/teclado.ogg"
+    play sound "audio/effects/teclado.ogg"
     "{i}Você chega cedo ao escritório, determinado(a) a finalizar o módulo de cadastro de pacientes com máxima qualidade.{/i}"
     show developer_coding serious at left_zoom
     show developer_test enthusiastic at right_zoom
@@ -128,7 +128,7 @@ label scene_18_2_codificacao_final:
     developer_ai "Bora pensar juntos em automatizar ainda mais o fluxo na próxima sprint!"
     hide developer_ai
 
-    play sound "audio/feedback_positive.ogg"
+    play sound "audio/effects/feedback_positive.ogg"
     scene bg escritorio_interior_tarde
     with fade
     $ advance_minutes(17)

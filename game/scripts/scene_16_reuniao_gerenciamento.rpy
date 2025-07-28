@@ -3,7 +3,7 @@ label scene_16_reuniao_gerenciamento:
     scene bg escritorio_interior_manha
     with dissolve
 
-    play sound "audio/ambiente_reuniao.ogg"
+    play sound "audio/effects/ambiente_reuniao.ogg"
     $ advance_minutes(8)
     "{i}O novo dia começa com o time reunido em torno do quadro branco. A luz da manhã invade a sala enquanto todos ajeitam seus blocos de anotações e cafés.{/i}"
 
@@ -123,7 +123,7 @@ label scene_16_reuniao_gerenciamento:
 
     scene bg escritorio_interior_tarde
     with dissolve
-    play sound "audio/xicara_cafe.ogg"
+    play sound "audio/effects/xicara_cafe.ogg"
     $ advance_minutes(25)
     "{i}Horas depois, já à tarde, o time faz uma pausa para um café rápido e revisão das decisões.{/i}"
 

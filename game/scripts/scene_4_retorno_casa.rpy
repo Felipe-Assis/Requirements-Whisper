@@ -15,7 +15,7 @@ label scene_4_retorno_casa:
     $ advance_minutes(120) # Viagem de volta para casa
     "O dia chega ao fim e, depois de um longo expediente, você embarca no ônibus para casa."
     "As luzes da cidade passam rápido pela janela enquanto você relembra tudo o que aconteceu hoje no escritório."
-    play sound "audio/bus.ogg"
+    play sound "audio/effects/bus.ogg"
     pause 1.2
 
     # Chegando em casa
@@ -38,7 +38,7 @@ label scene_4_retorno_casa:
     $ advance_minutes(7)
     # Simulando uso do notebook/celular
     "Enquanto termina de organizar as ideias, seu celular vibra com uma notificação de mensagem."
-    play sound "audio/cell_vibration.ogg"
+    play sound "audio/effects/cell_vibration.ogg"
     pause 0.6
 
     show developer_requirements portrait at left_zoom

@@ -1,7 +1,7 @@
 label scene_6_entrevista_stakeholders:
 
     play music music_office_relaxed fadein 1.0
-    scene bg sala_reuniao_manha
+    scene bg escritorio_medica
     with fade
 
     $ advance_minutes(5)

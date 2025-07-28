@@ -77,7 +77,7 @@ label scene_10_criacao_casos_uso:
     $ advance_minutes(4)
 
     # Recebe uma mensagem de developer_quality sugerindo revisão futura
-    play sound "audio/cell_vibration.ogg"
+    play sound "audio/effects/cell_vibration.ogg"
     show developer_quality positive at right_zoom
     developer_quality "(mensagem pelo chat) Assim que terminar, me manda esses casos de uso! Vou revisar antes de documentarmos tudo oficialmente. Ah, capriche nos fluxos alternativos e exceções!"
     show developer_requirements enthusiastic at left_zoom

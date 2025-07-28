@@ -129,7 +129,7 @@ label scene_1_quarto:
     $ advance_minutes(4)
 
     "Você anota todos os detalhes da vaga e finaliza a candidatura pelo notebook."
-    play sound "audio/send_email.ogg"
+    play sound "audio/effectssend_email.ogg"
     $ advance_minutes(1)
 
     "Depois de terminar, sente que merece um pouco de organização. Hora de preparar tudo para o novo desafio."

@@ -9,7 +9,7 @@ label scene_5_preparacao_entrevista:
 
     $ advance_minutes(7)
     "O alarme toca mais uma vez... Você percebe que perdeu a hora!"
-    play sound "audio/alarm_clock.ogg"
+    play sound "audio/effects/alarm_clock.ogg"
     "Num salto, você se veste, arruma a mochila às pressas e corre para não perder o ônibus."
     $ advance_minutes(5)
 
@@ -18,7 +18,7 @@ label scene_5_preparacao_entrevista:
     $ advance_minutes(20)
     "Enquanto espera o ônibus, você sente aquele frio na barriga: hoje é dia de entrevistar os stakeholders do projeto."
     "O trânsito parece mais lento que o normal. Você aproveita para revisar rapidamente suas anotações no celular: perguntas sobre funcionalidades, fluxos, restrições e detalhes do dia a dia no Instituto."
-    play sound "audio/bus.ogg"
+    play sound "audio/effects/bus.ogg"
     pause 0.8
     $ advance_minutes(10)
 

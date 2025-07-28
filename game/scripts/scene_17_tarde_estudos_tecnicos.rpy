@@ -6,7 +6,7 @@ label scene_17_tarde_estudos_tecnicos:
     $ advance_minutes(11)
     "{i}Após a reunião de gerenciamento, a equipe retorna ao trabalho. Você decide aproveitar a tarde para revisar algumas teorias essenciais no notebook.{/i}"
 
-    play sound "audio/notebook_open.ogg"
+    play sound "audio/effects/notebook_open.ogg"
     show expression "images/items/notebook.png" as notebook at center_zoom
     "{i}Você abre seu material digital e encontra uma lista de tópicos para revisar:{/i}"
 
@@ -72,7 +72,7 @@ label scene_17_tarde_estudos_tecnicos:
             "O tempo voa enquanto você revisa conceitos e testa seus conhecimentos."
 
             # Padding de estudo — transição para noite
-            play sound "audio/music_focus.ogg"
+            play sound "audio/effects/music_focus.ogg"
             scene bg escritorio_interior_noite
             with fade
             $ advance_minutes(32)
@@ -93,7 +93,7 @@ label scene_17_tarde_estudos_tecnicos:
     if total_acertos == total_perguntas:
         "Excelente desempenho! Você desbloqueia o item especial: 'Medalha de Estudioso'."
         $ inventario.append("medalha_estudioso")
-        play sound "audio/recompensa.ogg"
+        play sound "audio/effects/recompensa.ogg"
     elif total_acertos >= (total_perguntas // 2):
         "Bom desempenho! Continue praticando para ficar ainda mais afiado(a)."
     else:

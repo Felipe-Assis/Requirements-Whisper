@@ -114,9 +114,9 @@ label scene_20_deploy_final:
 
     # Intervenção divertida: ligação do stakeholder (mensagem no celular)
     play sound "audio/cell_vibration.ogg"
-    show expression "images/ui/phone_placeholder.png" at right_zoom2
+    show expression "images/items/celular.png" at right_zoom2
     "{i}Seu celular vibra: é o stakeholder ansioso, querendo saber do deploy.{/i}"
-    show developer_requirements thinking at left_zoom
+    show developer_requirements portrait at right_zoom
     developer_requirements "(no viva-voz) Pode ficar tranquilo, Dr. Almeida! A equipe está conferindo tudo, logo estará no ar!"
     hide developer_requirements
 
@@ -157,10 +157,11 @@ label scene_20_deploy_final:
 
     # Feedback coletivo — clima de vitória
     play sound "audio/aplausos.ogg"
-    show developer_management enthusiastic at left_zoom
+    show developer_coding neutral at left_zoom_2
+    show developer_management thinking at left_zoom
     show developer_quality positive at right_zoom
     show developer_test positive at center_zoom
-    show developer_ai enthusiastic at right_zoom2
+    show developer_ai positive at right_zoom2
     developer_management "Parabéns, equipe! Deploy concluído. Cliente feliz, usuários protegidos, e aprendizados para a vida toda."
     developer_quality "Qualidade até o fim! Vocês mostraram o que é Engenharia de Software na prática."
     developer_test "Bugs não tiveram vez! Orgulho do time."

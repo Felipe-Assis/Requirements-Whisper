@@ -7,7 +7,7 @@ label scene_9_retorno_casa_sem2:
 
     $ advance_minutes(35)
     "{i}O segundo dia de entrevistas chega ao fim. Você embarca em um ônibus lotado, o cansaço pesando nas costas, mas a mente cheia de ideias.{/i}"
-    play sound "audio/bus.ogg"
+    play sound "audio/effects/bus.ogg"
     pause 1.0
 
     "{i}Enquanto olha pela janela e observa as luzes da cidade, você relembra os principais pontos levantados nas conversas com os stakeholders.{/i}"

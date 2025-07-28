@@ -130,7 +130,7 @@ label scene_19_testes_seguranca:
     # Padding: Revisão coletiva e resolução colaborativa de bugs/vulns
     scene bg escritorio_interior_tarde
     with dissolve
-    play sound "audio/ambiente_reuniao.ogg"
+    play sound "audio/effects/ambiente_reuniao.ogg"
     "{i}À tarde, o time se reúne para debater as vulnerabilidades e bugs encontrados, documentando as correções e discutindo oportunidades de melhoria contínua.{/i}"
 
     # Pequena ramificação: pedir ajuda
@@ -156,11 +156,11 @@ label scene_19_testes_seguranca:
     if bugs_encontrados + vulnerabilidades >= 3:
         "{i}Você desbloqueou a conquista: 'Caçador de Bugs & Vulns'!{/i}"
         $ inventario.append("conquista_bug_vuln")
-        play sound "audio/recompensa.ogg"
+        play sound "audio/effects/recompensa.ogg"
     elif maturidade_percentual >= 91:
         "{i}Time em nível 'Excelente': conquista 'Guardião da Privacidade e Segurança' adicionada ao inventário!{/i}"
         $ inventario.append("conquista_guardiao_privacidade")
-        play sound "audio/recompensa.ogg"
+        play sound "audio/effects/recompensa.ogg"
 
     scene bg quarto_noite
     with fade
