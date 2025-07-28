@@ -1,4 +1,9 @@
 # Arquivo: backgrounds.rpy
+
+tela_conquistas
+
+image bg tela_conquistas = im.Scale("images/bg/tela_conquistas.png", config.screen_width, config.screen_height)
+
 image bg fachada_instituto_tarde = im.Scale("images/bg/fachada_instituto_tarde.png", config.screen_width, config.screen_height)
 
 image bg escritorio_medica = im.Scale("images/bg/escritorio_medica.png", config.screen_width, config.screen_height)
