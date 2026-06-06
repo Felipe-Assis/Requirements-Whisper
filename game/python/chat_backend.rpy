@@ -8,6 +8,11 @@
 # A normalização de resposta é unificada num único normalize_resposta(raw) -> list[str].
 # O backend pode retornar: uma string simples, uma JSON list, ou uma lista
 # stringificada ("[...]"); normalize_resposta trata os três casos.
+#
+# i18n: as respostas do backend chegam em RUNTIME e NÃO passam pela tradução
+# estática do Ren'Py (tl/). Para localizar o chat, mude o BACKEND — ex.: um campo
+# "language" no payload, ou assistant_id por idioma em AMIGOS_DATA. Só os literais
+# locais aqui (avisos/erros) são traduzíveis via _().
 
 # URL base do backend, centralizada num único ponto (ambos os transportes a usam).
 define BACKEND_BASE_URL = "http://15.229.14.83:8000"

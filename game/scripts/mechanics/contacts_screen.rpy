@@ -41,7 +41,7 @@ screen contact_tile(cid):
             hbox:
                 spacing 1
                 xalign 0.5
-                text "💗" size 16 color "#FF70A6" yalign 0.5
+                text "♥" size 16 color "#FF70A6" yalign 0.5
                 bar:
                     value _amizade
                     range 10
