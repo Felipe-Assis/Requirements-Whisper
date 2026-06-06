@@ -1,34 +1,9 @@
-# Arquivo: characters.rpy
+# characters.rpy
 # -------------------------------
-# DEFINIÇÕES CENTRALIZADAS DE NOMES E CORES
+# DEFINIÇÃO DOS PERSONAGENS + MAPEAMENTO DAS IMAGENS
 # -------------------------------
-
-define NOME_DEVELOPER_TEST = "César"     # developer_test
-define NOME_DEVELOPER_CODING = "Joseph"       # developer_coding
-define NOME_DEVELOPER_MANAGEMENT = "Robert"   # developer_management
-define NOME_DEVELOPER_REQUIREMENTS = "Emily"   # developer_requirements
-
-define NOME_DEVELOPER_AI = "Lucas"       # developer_ai
-define NOME_DEVELOPER_QUALITY = "Daiana"     # developer_quality
-define NOME_DEVELOPER_PROJECT = "Heitor"     # developer_project
-define NOME_DEVELOPER_SECURITY = "Mateus"     # developer_security
-
-define NOME_DOUTORA_1 = "Dra. Michelle"
-define NOME_DOUTORA_2 = "Dra. Nathalia"
-
-define COR_DEVELOPER_TEST = "#4CA3FF"
-define COR_DEVELOPER_CODING = "#B8B8B8"
-define COR_DEVELOPER_MANAGEMENT = "#FFA500"
-define COR_DEVELOPER_REQUIREMENTS = "#FF70A6"
-
-define COR_DEVELOPER_AI = "#7DE2D1"
-define COR_DEVELOPER_QUALITY = "#F3C262"
-define COR_DEVELOPER_PROJECT = "#A377FF"
-define COR_DEVELOPER_SECURITY = "#7E9B8A"
-
-# -------------------------------
-# DEFINIÇÃO DOS PERSONAGENS
-# -------------------------------
+# NOME_*/COR_* defines live in data/character_names.rpy.
+# Sprite-position transforms live in ui/styles/sprite_transforms.rpy.
 
 define developer_test = Character(NOME_DEVELOPER_TEST, color=COR_DEVELOPER_TEST)
 define developer_coding = Character(NOME_DEVELOPER_CODING, color=COR_DEVELOPER_CODING)
@@ -113,37 +88,3 @@ image developer_test positive = "images/characters/developer_test/confident.png"
 image developer_test enthusiastic = "images/characters/developer_test/enthusiastic.png"
 image developer_test serious = "images/characters/developer_test/serious.png"
 image developer_test thinking = "images/characters/developer_test/thinking.png"
-
-# -------------------------------
-# TRANSFORMS DE SPRITES
-# -------------------------------
-transform sprite_zoom:
-    zoom 0.55
-    xalign 0.5
-    yalign 1.0
-
-transform left_zoom:
-    xalign 0.0
-    yalign 1.0
-    zoom 0.6
-
-
-transform left_zoom_2:
-    xalign 0.2
-    yalign 1.0
-    zoom 0.6
-
-transform center_zoom:
-    xalign 0.5
-    yalign 1.0
-    zoom 0.6
-
-transform right_zoom:
-    xalign 1.0
-    yalign 1.0
-    zoom 0.6
-
-transform right_zoom2:
-    xalign 0.8
-    yalign 1.0
-    zoom 0.6

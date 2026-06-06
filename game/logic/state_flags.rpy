@@ -1,3 +1,9 @@
+# state_flags.rpy
+#
+# Inventory item_* flags, per-contact contato_* (met) / disponivel_* (reachable
+# now) gating flags, plus the inventory toggle and the selected-contact var.
+# All kept at init -1 (same priority as before the split).
+
 init -1:
     default inventory_enabled = True  # Set to True for testing, can change in-game
 
@@ -41,18 +47,3 @@ init -1:
     default disponivel_developer_test = False
     default disponivel_doutora_1 = True
     default disponivel_doutora_2 = True
-
-    default game_hour = 7      # Horas (inteiro, 0-23)
-    default game_minute = 0    # Minutos (inteiro, 0-59)
-    default show_clock = False  # Se quiser poder ocultar facilmente
-
-    # Função para atualizar o horário, se preferir
-    init python:
-        def set_time(hour, minute):
-            store.game_hour = hour
-            store.game_minute = minute
-
-        def advance_minutes(minutes):
-            total = store.game_hour * 60 + store.game_minute + minutes
-            store.game_hour = (total // 60) % 24
-            store.game_minute = total % 60
