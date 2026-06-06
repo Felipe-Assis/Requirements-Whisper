@@ -1,0 +1,16 @@
+# Ren'Py compiled bytecode (regenerated from .rpy on each run)
+*.rpyc
+*.rpymc
+*.rpyb
+
+# Ren'Py runtime data
+game/saves/
+game/cache/
+
+# Ren'Py diagnostics (regenerated on each run)
+log.txt
+errors.txt
+traceback.txt
+
+# Build / distribution output
+/build/

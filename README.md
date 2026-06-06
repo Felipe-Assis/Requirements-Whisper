@@ -1,21 +1,14 @@
-Visual novel desenvolvida como trabalho da disciplina de Projeto de Jogos (UFRJ).
-O objetivo é ensinar conceitos de Engenharia de Software de forma interativa e aplicada, simulando situações reais de desenvolvimento de sistemas na área da saúde.
+# The Requirements Whisperer
 
-O jogador assume o papel de um estagiário, participando de todas as etapas do ciclo de vida do software: requisitos, especificação, design, codificação, testes, deploy e interação com diferentes membros da equipe e stakeholders. As escolhas influenciam o andamento do projeto, relacionamentos e finais.
+Visual novel educacional (Ren'Py, PT-BR) desenvolvida na disciplina de Projeto de Jogos (UFRJ).
+O jogador assume o papel de um estagiário e percorre todo o ciclo de vida de um software na área
+da saúde — requisitos, especificação, design, codificação, testes e deploy — onde as escolhas
+afetam os relacionamentos e o final.
 
-Principais destaques:
-    - Ciclo completo de Engenharia de Software, com desafios práticos em cada etapa
-    - Sistema de amizades e escolhas que afetam a narrativa
-    - Diálogos naturais e ambiente descontraído, inspirado no cotidiano de equipes de TI
-    - Requisitos e artefatos reais de projetos de software como base para as interações
+## Como iniciar
 
-Requisitos:
-    - Ren'Py 8.2+
-    - Python 3.8+
+Requisitos: Ren'Py 8.2+ (inclui Python 3.8+).
 
-Como rodar:
-- Clone este repositório
-- Abra no Ren'Py Launcher
-- Execute o projeto
-
-Contribuições são bem-vindas.
+1. Clone este repositório.
+2. Abra o **Ren'Py Launcher** e adicione/selecione a pasta do projeto (a raiz que contém `game/`).
+3. Clique em **Launch Project** para jogar.
