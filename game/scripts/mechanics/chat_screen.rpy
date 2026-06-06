@@ -17,7 +17,7 @@ screen chat_with_backend(char_name=NOME_DEVELOPER_REQUIREMENTS, char_image="imag
         padding (32, 32)
         has vbox
 
-        text "Bate-papo" size 28 bold True xalign 0.5
+        text _("Bate-papo") size 28 bold True xalign 0.5
 
         # Foto do personagem, centralizada e pequena
         add char_image xpos 0.5 ypos 0.0 xanchor 0.5 yanchor 0.0 zoom 0.18
@@ -43,17 +43,17 @@ screen chat_with_backend(char_name=NOME_DEVELOPER_REQUIREMENTS, char_image="imag
                             text "[msg]" size 21 color "#fff" xalign 0.0
 
         if is_waiting:
-            text "[char_name] está digitando..." color "#ff9" size 18 xalign 0.5
+            text _("[char_name] está digitando...") color "#ff9" size 18 xalign 0.5
 
         hbox:
             xfill True
             spacing 6
             input id "chat_input" value VariableInputValue("user_input") length 200 size 20 xmaximum 400 ymaximum 36 xalign 0.0
-            textbutton "Enviar" action [
+            textbutton _("Enviar") action [
                 Function(send_and_update_chat, user_input)
             ] text_size 20 style "chat_send_button" sensitive (not is_waiting and user_input.strip() != "") xalign 1.0
 
-        textbutton "Fechar" action Return() xalign 1.0 text_size 16
+        textbutton _("Fechar") action Return() xalign 1.0 text_size 16
 
     key "K_RETURN" action If(not is_waiting and user_input.strip() != "", Function(send_and_update_chat, user_input))
 
@@ -73,7 +73,7 @@ label chat_amigo:
             add_friendship_point(amigo_selecionado, 1)
 
         else:
-            char_name = "Contato"
+            char_name = _("Contato")
             char_image = "images/characters/doutora_1/portrait.png"
             renpy.store.current_assistant_id = "asst_default"
     "Você decide conversar com [char_name]."

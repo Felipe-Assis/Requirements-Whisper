@@ -7,6 +7,6 @@ init python:
         var_name = f"item_{item_name}"
         if hasattr(store, var_name):
             setattr(store, var_name, True)
-            renpy.notify(f"Item adicionado ao inventário: {item_name.replace('_',' ').capitalize()}")
+            renpy.notify(_("Item adicionado ao inventário: {item}").format(item=item_name.replace('_',' ').capitalize()))
         else:
-            renpy.notify("Item não reconhecido.")
+            renpy.notify(_("Item não reconhecido."))

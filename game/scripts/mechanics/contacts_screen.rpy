@@ -68,7 +68,7 @@ screen contacts_screen():
         vbox:
             spacing 15
 
-            text "Contatos" size 40 color "#fff"
+            text _("Contatos") size 40 color "#fff"
 
             hbox:
                 spacing 50
@@ -88,4 +88,4 @@ screen contacts_screen():
                     size 20
                     xalign 0.5
 
-            textbutton "Fechar" action Return() xalign 0.5
+            textbutton _("Fechar") action Return() xalign 0.5

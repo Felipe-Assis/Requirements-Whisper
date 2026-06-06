@@ -65,10 +65,10 @@ label scene_1_quarto:
     pause 0.6
     $ advance_minutes(3)
 
-    $ player_name = renpy.input("Nome completo:")
+    $ player_name = renpy.input(_("Nome completo:"))
     $ player_name = player_name.strip()
     while player_name == "":
-        $ player_name = renpy.input("Por favor, digite um nome válido:")
+        $ player_name = renpy.input(_("Por favor, digite um nome válido:"))
         $ player_name = player_name.strip()
 
     menu:
@@ -81,10 +81,10 @@ label scene_1_quarto:
             $ player_gender = "Outro"
     $ advance_minutes(2)
 
-    $ player_age = renpy.input("Qual sua idade?")
+    $ player_age = renpy.input(_("Qual sua idade?"))
     $ player_age = player_age.strip()
     while not player_age.isdigit() or int(player_age) < 12 or int(player_age) > 99:
-        $ player_age = renpy.input("Por favor, digite uma idade válida (12-99):")
+        $ player_age = renpy.input(_("Por favor, digite uma idade válida (12-99):"))
         $ player_age = player_age.strip()
     $ player_age = int(player_age)
     $ advance_minutes(2)

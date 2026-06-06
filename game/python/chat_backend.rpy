@@ -41,7 +41,7 @@ init python:
     def send_message_to_backend(user_message, callback):
         if is_web():
             # Mostra aviso e retorna vazio no web
-            callback(["Funcionalidade de chat indisponível na versão Web. Baixe o jogo para usar este recurso."])
+            callback([_("Funcionalidade de chat indisponível na versão Web. Baixe o jogo para usar este recurso.")])
         else:
             respostas = send_message_to_backend_desktop(user_message)
             callback(respostas)
@@ -64,7 +64,7 @@ init python:
 
         except Exception as e:
             print("[DEBUG] Erro ao enviar mensagem:", e)
-            return [f"Erro ao enviar mensagem: {e}"]
+            return [_("Erro ao enviar mensagem: {e}").format(e=e)]
 
 
     def send_message_to_backend_web(user_message, callback):
@@ -114,7 +114,7 @@ init python:
                 for resposta in respostas:
                     chat_history.append(("assistant", resposta))
             else:
-                chat_history.append(("assistant", "Nenhuma resposta recebida."))
+                chat_history.append(("assistant", _("Nenhuma resposta recebida.")))
             is_waiting = False
             renpy.exports.restart_interaction()
 

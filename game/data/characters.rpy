@@ -16,7 +16,7 @@ define developer_project = Character(NOME_DEVELOPER_PROJECT, color=COR_DEVELOPER
 define developer_security = Character(NOME_DEVELOPER_SECURITY, color=COR_DEVELOPER_SECURITY)
 
 
-define npc_roommate = Character("Colega de República", color="#8EC07C")
+define npc_roommate = Character(_("Colega de República"), color="#8EC07C")
 
 define doutora_1 = Character(NOME_DOUTORA_1, color="#B45F06")
 define doutora_2 = Character(NOME_DOUTORA_2, color="#4CAF50")

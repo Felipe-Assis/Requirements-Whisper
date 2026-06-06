@@ -26,11 +26,11 @@ init python:
             # Notifica nome amigável, se possível
             try:
                 nome = AMIGOS_DATA[contact_id]["name"]
-                renpy.notify(f"Contato adicionado: {nome}")
+                renpy.notify(_("Contato adicionado: {nome}").format(nome=nome))
             except:
-                renpy.notify(f"Contato adicionado: {contact_id.replace('_',' ').capitalize()}")
+                renpy.notify(_("Contato adicionado: {nome}").format(nome=contact_id.replace('_',' ').capitalize()))
         else:
-            renpy.notify("Contato já adicionado.")
+            renpy.notify(_("Contato já adicionado."))
 
 
     def add_friendship_point(character_id, amount=0.5):
@@ -47,9 +47,9 @@ init python:
             # Notificação: tenta usar nome bonito se existir em AMIGOS_DATA
             try:
                 nome = AMIGOS_DATA[character_id]["name"]
-                renpy.notify(f"Pontos de amizade com {nome} +{amount} (Total: {new_value})")
+                renpy.notify(_("Pontos de amizade com {nome} +{amount} (Total: {new_value})").format(nome=nome, amount=amount, new_value=new_value))
             except:
-                renpy.notify(f"Pontos de amizade com {character_id.replace('_',' ').capitalize()} +{amount} (Total: {new_value})")
+                renpy.notify(_("Pontos de amizade com {nome} +{amount} (Total: {new_value})").format(nome=character_id.replace('_',' ').capitalize(), amount=amount, new_value=new_value))
             # Debug opcional no log
             renpy.log(f"Pontos de amizade de {var_name}: {new_value}")
         else:
