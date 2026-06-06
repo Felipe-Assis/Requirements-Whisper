@@ -12,6 +12,7 @@ Análises técnicas do jogo (migração de engine, arquitetura e bugs críticos)
 
 ## Por onde começar
 
-Ordem decidida: **(1) refatorar** com `plans/...-refatoracao-manutenibilidade.md` (corrige os pontos
-críticos pelo caminho), depois **(2) migrar** para 8.5.3 com `plans/...-migracao-e-reestruturacao.md`.
-Referências de apoio: `pontos-criticos.md` e `migracao-renpy-8.5.3.md`.
+**(1) Refatoração — CONCLUÍDA** na branch `refatoracao` (Fases 0–6; lint 100% limpo; pontos críticos
+P1–P7 corrigidos pelo caminho). **(2) Migração 8.5.3 — próxima:** `plans/...-migracao-e-reestruturacao.md`
+(revisado para o código já refatorado; só resta a migração de engine — recompilar sob Python 3.12,
+threading do chat, replay/full_restart, flags de render). Referências: `pontos-criticos.md` e `migracao-renpy-8.5.3.md`.
