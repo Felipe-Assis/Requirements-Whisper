@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(renpy.exe:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/detect-agent.sh", "timeout": 5 }
+        ]
+      }
+    ]
+  }
+}
