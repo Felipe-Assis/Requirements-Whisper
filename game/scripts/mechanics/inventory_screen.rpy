@@ -1,5 +1,32 @@
 default selected_item_description = ""
 
+# Tabela de dados dos itens da Mochila (Fase 4.3).
+# Ordem de exibicao explicita no grid 5x2.
+define ITENS_ORDER = ["notebook", "celular", "bloco_de_notas", "caneta", "garrafinha"]
+
+# Descricoes movidas para fora dos handlers `hovered` inline dos tiles.
+define ITENS_DESC = {
+    "notebook": "{b}Notebook{/b} {vspace=10} {i}Ferramenta essencial de qualquer dev. Carregado de códigos, sonhos e deadlines.{/i}",
+    "celular": "{b}Celular{/b} {vspace=10} {i}Usado para comunicação com colegas de equipe, anotações rápidas e, claro, memes no grupo.{/i}",
+    "bloco_de_notas": "{b}Bloco de Notas{/b} {vspace=10} {i}Útil para anotar requisitos durante entrevistas ou reuniões importantes.{/i}",
+    "caneta": "{b}Caneta Azul{/b} {vspace=10} {i}Companheira fiel para anotar qualquer coisa, inclusive ideias geniais ou rabiscos.{/i}",
+    "garrafinha": "{b}Garrafinha de Água{/b} {vspace=10} {i}Hidratação é vida. Não esqueça de beber água!{/i}",
+}
+
+# Tile unico parametrizado: reproduz UM tile atual.
+# Visuais/props identicos; celular abre os contatos, os demais sao display-only (NullAction).
+screen inventory_tile(item_id):
+    if getattr(store, "item_" + item_id):
+        imagebutton:
+            idle "item [item_id]_idle"
+            hover "item [item_id]_hover"
+            hovered SetVariable("selected_item_description", ITENS_DESC[item_id])
+            unhovered SetVariable("selected_item_description", "")
+            if item_id == "celular":
+                action [Hide("inventory_screen"), Show("contacts_screen")]
+            else:
+                action NullAction()
+
 screen inventory_screen():
     tag inventory
     modal True
@@ -22,48 +49,8 @@ screen inventory_screen():
 
                 grid 5 2 spacing 15:
 
-
-                    if item_notebook:
-                        imagebutton:
-                            idle "item notebook_idle"
-                            hover "item notebook_hover"
-                            hovered SetVariable("selected_item_description", "{b}Notebook{/b} {vspace=10} {i}Ferramenta essencial de qualquer dev. Carregado de códigos, sonhos e deadlines.{/i}")
-                            unhovered SetVariable("selected_item_description", "")
-                            action NullAction()
-
-                    if item_celular:
-                        imagebutton:
-                            idle "item celular_idle"
-                            hover "item celular_hover"
-                            hovered SetVariable("selected_item_description", "{b}Celular{/b} {vspace=10} {i}Usado para comunicação com colegas de equipe, anotações rápidas e, claro, memes no grupo.{/i}")
-                            unhovered SetVariable("selected_item_description", "")
-                            action [Hide("inventory_screen"), Show("contacts_screen")]
-
-
-                    if item_bloco_de_notas:
-                        imagebutton:
-                            idle "item bloco_de_notas_idle"
-                            hover "item bloco_de_notas_hover"
-                            hovered SetVariable("selected_item_description", "{b}Bloco de Notas{/b} {vspace=10} {i}Útil para anotar requisitos durante entrevistas ou reuniões importantes.{/i}")
-                            unhovered SetVariable("selected_item_description", "")
-                            action NullAction()
-
-                    if item_caneta:
-                        imagebutton:
-                            idle "item caneta_idle"
-                            hover "item caneta_hover"
-                            hovered SetVariable("selected_item_description", "{b}Caneta Azul{/b} {vspace=10} {i}Companheira fiel para anotar qualquer coisa, inclusive ideias geniais ou rabiscos.{/i}")
-                            unhovered SetVariable("selected_item_description", "")
-                            action NullAction()
-
-
-                    if item_garrafinha:
-                        imagebutton:
-                            idle "item garrafinha_idle"
-                            hover "item garrafinha_hover"
-                            hovered SetVariable("selected_item_description", "{b}Garrafinha de Água{/b} {vspace=10} {i}Hidratação é vida. Não esqueça de beber água!{/i}")
-                            unhovered SetVariable("selected_item_description", "")
-                            action NullAction()
+                    for item_id in ITENS_ORDER:
+                        use inventory_tile(item_id)
 
                 # Área de descrição embaixo do grid
             frame:
