@@ -14,3 +14,6 @@ traceback.txt
 
 # Build / distribution output
 /build/
+
+# Tool/automation artifacts
+.playwright-mcp/
