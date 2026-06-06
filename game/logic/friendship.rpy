@@ -15,9 +15,7 @@ default amizade_doutora_2 = 0.0
 
 init python:
     def add_contact(contact_id):
-        # Inicializa o set de contatos se não existir
-        if not hasattr(store, 'contacts'):
-            store.contacts = set()
+        # store.contacts é garantido pelo `default contacts = set()` em state_flags.rpy
         # Adiciona ao set, se ainda não estiver
         if contact_id not in store.contacts:
             store.contacts.add(contact_id)

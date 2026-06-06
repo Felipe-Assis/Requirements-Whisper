@@ -25,6 +25,9 @@ init -1:
     # Variáveis de controle de quais contatos estão disponíveis
     default amigo_selecionado = ""
 
+    # Conjunto de contatos já adicionados (preenchido por add_contact).
+    default contacts = set()
+
     default contato_developer_ai = False
     default contato_developer_coding = False
     default contato_developer_management = False

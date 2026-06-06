@@ -12,6 +12,47 @@ transform contact_icon:
     xysize (140, 140)
 
 
+# Um único tile de contato, parametrizado por cid (id canônico do contato).
+# Lê o estado via getattr(store, ...) e os dados (nome/desc) de AMIGOS_DATA.
+# Substitui os 10 blocos copy-paste que existiam antes.
+screen contact_tile(cid):
+    $ _contato = getattr(store, "contato_" + cid)
+    if _contato:
+        $ _disponivel = getattr(store, "disponivel_" + cid)
+        $ _amizade = getattr(store, "amizade_" + cid)
+        $ _nome = AMIGOS_DATA[cid]["name"]
+        $ _desc = AMIGOS_DATA[cid]["desc"]
+        vbox:
+            spacing 3
+            xalign 0.5
+            if _disponivel:
+                imagebutton:
+                    idle "%s portrait" % cid
+                    hover "%s portrait" % cid
+                    at contact_icon
+                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\n%s" % (_nome, _desc))]
+                    unhovered [SetVariable("selected_contact_description", "")]
+                    action [SetVariable("amigo_selecionado", cid), Hide("contacts_screen"), Jump("chat_amigo")]
+            else:
+                imagebutton:
+                    idle "%s portrait" % cid
+                    at contact_icon, grayscale_icon
+
+            hbox:
+                spacing 1
+                xalign 0.5
+                text "💗" size 16 color "#FF70A6" yalign 0.5
+                bar:
+                    value _amizade
+                    range 10
+                    xmaximum 80
+                    ymaximum 10
+                    left_bar friendship_color(_amizade)
+                    right_bar "#eee"
+                    thumb None
+                    yalign 0.5
+
+
 screen contacts_screen():
     tag contacts
     modal True
@@ -34,384 +75,8 @@ screen contacts_screen():
 
                 grid 5 2 spacing 30:  # Aumente a grid se quiser mais linhas/colunas
 
-                    # AI (Lucas)
-                    if contato_developer_ai:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_ai:
-                                imagebutton:
-                                    idle "developer_ai portrait"
-                                    hover "developer_ai portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nEspecialista em IA e ML. Animado, detalhista, sempre com ideias inovadoras." % NOME_DEVELOPER_AI)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_ai"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_ai portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_ai
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_ai == 10 else
-                                        "#A4EB9E" if amizade_developer_ai >= 8 else
-                                        "#FFEB3B" if amizade_developer_ai >= 5 else
-                                        "#FFA149" if amizade_developer_ai >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Coding (Joseph)
-                    if contato_developer_coding:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_coding:
-                                imagebutton:
-                                    idle "developer_coding portrait"
-                                    hover "developer_coding portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\\nDesenvolvedor sênior, crítico e experiente, já liderou vários projetos." % NOME_DEVELOPER_CODING)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_coding"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_coding portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_coding
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_coding == 10 else
-                                        "#A4EB9E" if amizade_developer_coding >= 8 else
-                                        "#FFEB3B" if amizade_developer_coding >= 5 else
-                                        "#FFA149" if amizade_developer_coding >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Management (Robert)
-                    if contato_developer_management:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_management:
-                                imagebutton:
-                                    idle "developer_management portrait"
-                                    hover "developer_management portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nGerente jovem, organizado, querido pela equipe." % NOME_DEVELOPER_MANAGEMENT)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_management"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_management portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_management
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_management == 10 else
-                                        "#A4EB9E" if amizade_developer_management >= 8 else
-                                        "#FFEB3B" if amizade_developer_management >= 5 else
-                                        "#FFA149" if amizade_developer_management >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Requirements (Emily)
-                    if contato_developer_requirements:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_requirements:
-                                imagebutton:
-                                    idle "developer_requirements portrait"
-                                    hover "developer_requirements portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\\nEspecialista em requisitos, comunicativa, detalhista e proativa." % NOME_DEVELOPER_REQUIREMENTS)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_requirements"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_requirements portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_requirements
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_requirements == 10 else
-                                        "#A4EB9E" if amizade_developer_requirements >= 8 else
-                                        "#FFEB3B" if amizade_developer_requirements >= 5 else
-                                        "#FFA149" if amizade_developer_requirements >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Quality (Daiana)
-                    if contato_developer_quality:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_quality:
-                                imagebutton:
-                                    idle "developer_quality portrait"
-                                    hover "developer_quality portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nApaixonada por ensinar e qualidade de software." % NOME_DEVELOPER_QUALITY)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_quality"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_quality portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_quality
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_quality == 10 else
-                                        "#A4EB9E" if amizade_developer_quality >= 8 else
-                                        "#FFEB3B" if amizade_developer_quality >= 5 else
-                                        "#FFA149" if amizade_developer_quality >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Project (Heitor)
-                    if contato_developer_project:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_project:
-                                imagebutton:
-                                    idle "developer_project portrait"
-                                    hover "developer_project portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nArquiteto de software e bancos, fala pouco, mas certeiro." % NOME_DEVELOPER_PROJECT)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_project"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_project portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_project
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_project == 10 else
-                                        "#A4EB9E" if amizade_developer_project >= 8 else
-                                        "#FFEB3B" if amizade_developer_project >= 5 else
-                                        "#FFA149" if amizade_developer_project >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Security (Mateus)
-                    if contato_developer_security:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_security:
-                                imagebutton:
-                                    idle "developer_security portrait"
-                                    hover "developer_security portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nSenior, fala devagar e preza segurança dos sistemas." % NOME_DEVELOPER_SECURITY)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_security"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_security portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_security
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_security == 10 else
-                                        "#A4EB9E" if amizade_developer_security >= 8 else
-                                        "#FFEB3B" if amizade_developer_security >= 5 else
-                                        "#FFA149" if amizade_developer_security >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-                    # Test (César)
-                    if contato_developer_test:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_developer_test:
-                                imagebutton:
-                                    idle "developer_test portrait"
-                                    hover "developer_test portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem prodígio dos testes, faz tudo com eficiência." % NOME_DEVELOPER_TEST)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "developer_test"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "developer_test portrait"
-                                    at contact_icon, grayscale_icon
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_developer_test
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_developer_test == 10 else
-                                        "#A4EB9E" if amizade_developer_test >= 8 else
-                                        "#FFEB3B" if amizade_developer_test >= 5 else
-                                        "#FFA149" if amizade_developer_test >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-
-                    if contato_doutora_1:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_doutora_1:
-                                imagebutton:
-                                    idle "doutora_1 portrait"
-                                    hover "doutora_1 portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nExperiente médica." % NOME_DOUTORA_1)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "doutora_1"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "doutora_1 portrait"
-                                    at contact_icon, grayscale_icon
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_doutora_1
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_doutora_1 == 10 else
-                                        "#A4EB9E" if amizade_doutora_1 >= 8 else
-                                        "#FFEB3B" if amizade_doutora_1 >= 5 else
-                                        "#FFA149" if amizade_doutora_1 >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
-
-
-
-                    if contato_doutora_2:
-                        vbox:
-                            spacing 3
-                            xalign 0.5
-                            if disponivel_doutora_2:
-                                imagebutton:
-                                    idle "doutora_2 portrait"
-                                    hover "doutora_2 portrait"
-                                    at contact_icon
-                                    hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem médica." % NOME_DOUTORA_2)]
-                                    unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "doutora_2"), Hide("contacts_screen"), Jump("chat_amigo")]
-                            else:
-                                imagebutton:
-                                    idle "doutora_2 portrait"
-                                    at contact_icon, grayscale_icon
-
-                            hbox:
-                                spacing 1
-                                xalign 0.5
-                                text "💗" size 16 color "#FF70A6" yalign 0.5
-                                bar:
-                                    value amizade_doutora_2
-                                    range 10
-                                    xmaximum 80
-                                    ymaximum 10
-                                    left_bar (
-                                        "#44D067" if amizade_doutora_2 == 10 else
-                                        "#A4EB9E" if amizade_doutora_2 >= 8 else
-                                        "#FFEB3B" if amizade_doutora_2 >= 5 else
-                                        "#FFA149" if amizade_doutora_2 >= 3 else
-                                        "#FF5353"
-                                    )
-                                    right_bar "#eee"
-                                    thumb None
-                                    yalign 0.5
+                    for cid in CONTACTS_ORDER:
+                        use contact_tile(cid)
 
             frame:
                 background "#222a"
