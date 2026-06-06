@@ -61,7 +61,7 @@ label scene_1_quarto:
 
     # Preenchendo o currículo
     "Você liga o notebook, conecta à internet e percebe que precisa atualizar seu currículo antes de começar a busca."
-    show expression "images/items/notebook.png" as notebook at center_zoom
+    show item notebook_fechado as notebook at center_zoom
     pause 0.6
     $ advance_minutes(3)
 
@@ -93,7 +93,7 @@ label scene_1_quarto:
     with dissolve
 
     "Ótimo, [player_name]! Currículo atualizado. Agora sim, hora de procurar vagas de estágio."
-    play sound "audio/effects/computer_typing.wav"
+    play sound "audio/effects/computer_typing.ogg"
     $ advance_minutes(4)
     "Você se levanta, pega o notebook e senta à escrivaninha, decidido(a) a começar a busca pelas melhores vagas."
     $ advance_minutes(1)
@@ -129,7 +129,7 @@ label scene_1_quarto:
     $ advance_minutes(4)
 
     "Você anota todos os detalhes da vaga e finaliza a candidatura pelo notebook."
-    play sound "audio/effectssend_email.ogg"
+    play sound "audio/effects/computer_typing.ogg"
     $ advance_minutes(1)
 
     "Depois de terminar, sente que merece um pouco de organização. Hora de preparar tudo para o novo desafio."

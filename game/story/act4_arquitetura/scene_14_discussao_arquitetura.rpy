@@ -58,7 +58,7 @@ label scene_14_discussao_arquitetura:
     developer_test "Mas microsserviços facilitam testes independentes, e permitem escalar partes críticas sem mexer no sistema todo!"
 
     # developer_ai entra, disruptivo
-    play sound "audio/effects/porta_abrindo.ogg"
+    play sound "audio/effects/abrindo_porta.ogg"
     show developer_ai positive at right_zoom2
     developer_ai "Posso jogar uma ideia? Já pensaram em usar funções serverless para alguns módulos? Baixo custo e atualização super rápida!"
 
@@ -81,7 +81,7 @@ label scene_14_discussao_arquitetura:
             developer_test "Adoro! Vai dar pra brincar com testes automatizados em cada serviço. Vamos caprichar na integração."
             show developer_ai positive at right_zoom2
             developer_ai "Com cloud bem configurada, escalamos cada módulo conforme o uso. Só precisamos de uma boa estratégia de monitoramento."
-            play sound "audio/effects/feedback_tech.ogg"
+            play sound "audio/effects/feedback_positive.ogg"
         "Proponho uma abordagem híbrida, com base em modularização progressiva.":
             $ flag_arquitetura = "hibrido"
             show developer_project thinking at left_zoom
@@ -90,10 +90,8 @@ label scene_14_discussao_arquitetura:
             developer_coding "Vai exigir mais revisão, mas pode equilibrar entrega rápida e escalabilidade."
             show developer_ai thinking at right_zoom2
             developer_ai "Gostei. Se precisar automatizar migração, posso ajudar com scripts e pipelines."
-            play sound "audio/effects/feedback_curious.ogg"
+            play sound "audio/effects/feedback_positive.ogg"
 
-    # Placeholder de diagrama exibido na tela para visualização (depois trocar por imagem real)
-    show expression "images/diagrams/placeholder_arquitetura.png" as diagrama at center_zoom
     "{i}Você faz um esboço no notebook e projeta para o grupo. O diagrama (placeholder) vira o centro da discussão.{/i}"
 
     # Debate extra: prós e contras (pode exibir dicas)
@@ -105,8 +103,6 @@ label scene_14_discussao_arquitetura:
 
     show developer_project thinking at left_zoom
     developer_project "E vamos detalhar no banco: índices para CPF, datas de exame e campo ativo para facilitar buscas rápidas. Versionamento de registros é essencial para histórico clínico!"
-
-    hide diagrama
 
     $ advance_minutes(8)
     # Passagem do tempo para tarde: mudança de cenário

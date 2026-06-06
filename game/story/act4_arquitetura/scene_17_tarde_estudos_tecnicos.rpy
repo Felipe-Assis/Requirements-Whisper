@@ -16,7 +16,7 @@ label scene_17_tarde_estudos_tecnicos:
     "{i}Após a reunião de gerenciamento, a equipe retorna ao trabalho. Você decide aproveitar a tarde para revisar algumas teorias essenciais no notebook.{/i}"
 
     play sound "audio/effects/notebook_open.ogg"
-    show expression "images/items/notebook.png" as notebook at center_zoom
+    show item notebook_fechado as notebook at center_zoom
     "{i}Você abre seu material digital e encontra uma lista de tópicos para revisar:{/i}"
 
     window hide
@@ -81,7 +81,6 @@ label scene_17_tarde_estudos_tecnicos:
             "O tempo voa enquanto você revisa conceitos e testa seus conhecimentos."
 
             # Padding de estudo — transição para noite
-            play sound "audio/effects/music_focus.ogg"
             scene bg escritorio_interior_noite
             with fade
             $ advance_minutes(32)

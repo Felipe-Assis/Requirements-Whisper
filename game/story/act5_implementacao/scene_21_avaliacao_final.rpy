@@ -26,7 +26,7 @@ label scene_21_avaliacao_final:
     # Transição: trajeto até o instituto
     scene bg transito_tarde
     with dissolve
-    play sound "audio/effects/onibus.ogg"
+    play sound "audio/effects/bus.ogg"
     "{i}Após o almoço, a equipe pega o ônibus rumo ao Instituto. O trânsito do Rio de Janeiro, como sempre, é imprevisível. Todos revisam mentalmente os pontos principais da apresentação.{/i}"
 
     # Chegada ao Instituto
@@ -42,8 +42,8 @@ label scene_21_avaliacao_final:
     show developer_requirements enthusiastic at left_zoom
     developer_requirements "Sejam bem-vindos! Dr. Almeida e Enfermeira Marta estão aguardando. Respirem fundo — vocês estão prontos!"
 
-    show expression "images/npcs/dr_almeida.png" as doutora_1 at right_zoom
-    show expression "images/npcs/enf_marta.png" as doutora_2 at right_zoom2
+    show doutora_1 portrait at right_zoom
+    show doutora_2 portrait at right_zoom2
 
     "{i}A equipe se organiza. Você apresenta o sistema, mostrando as principais funcionalidades, relatórios, telas e os diferenciais do projeto. Os stakeholders acompanham atentos.{/i}"
 

@@ -14,7 +14,7 @@ label scene_20_deploy_final:
     with fade
 
     $ advance_minutes(9)
-    play sound "audio/ambiente_reuniao.ogg"
+    play sound "audio/effects/ambiente_reuniao.ogg"
     "{i}O clima no escritório é de expectativa: hoje é dia de deploy! Todos estão presentes — a energia contagia.{/i}"
 
     show developer_management serious at left_zoom
@@ -28,11 +28,9 @@ label scene_20_deploy_final:
     pause 1.1
     window show
 
-    show expression "images/ui/checklist_deploy.png" as checklist at center_zoom
     "{i}Checklist final:\n• Código revisado\n• Testes automatizados rodando\n{/i}"
     "{i}• Documentação atualizada\n• Backup realizado\n{/i}"
     "{i}• Ambiente de produção pronto\n• Script de rollback disponível{/i}"
-    hide checklist
 
     $ checklist_deploy = []
     $ acertos_deploy = 0
@@ -76,7 +74,7 @@ label scene_20_deploy_final:
 
     "{i}Checklist concluído! Última pausa para café e integração do time.{/i}"
 
-    play sound "audio/xicara_cafe.ogg"
+    play sound "audio/effects/xicara_cafe.ogg"
     scene bg empresa_cafe_tarde
     with dissolve
 
@@ -123,7 +121,7 @@ label scene_20_deploy_final:
             hide developer_ai
 
     # Intervenção divertida: ligação do stakeholder (mensagem no celular)
-    play sound "audio/cell_vibration.ogg"
+    play sound "audio/effects/cell_vibration.ogg"
     show expression "images/items/celular.png" at right_zoom2
     "{i}Seu celular vibra: é o stakeholder ansioso, querendo saber do deploy.{/i}"
     show developer_requirements portrait at right_zoom
@@ -160,13 +158,10 @@ label scene_20_deploy_final:
             developer_quality "Ótima decisão! Mais vale um sistema seguro do que um deploy apressado. Avise os stakeholders da nova previsão de entrega."
             hide developer_quality
 
-    # Exibe placeholder de tela de sucesso do deploy
-    show expression "images/ui/placeholder_sucesso_deploy.png" as sucesso at center_zoom
     "{i}A equipe vê a mensagem: 'Deploy realizado com sucesso! Parabéns!' — O sistema está oficialmente no ar, com monitoramento ativo e checklist final arquivado.{/i}"
-    hide sucesso
 
     # Feedback coletivo — clima de vitória
-    play sound "audio/aplausos.ogg"
+    play sound "audio/effects/aplausos.ogg"
     show developer_coding neutral at left_zoom_2
     show developer_management thinking at left_zoom
     show developer_quality positive at right_zoom

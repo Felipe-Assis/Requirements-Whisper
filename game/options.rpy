@@ -196,6 +196,17 @@ init python:
     build.documentation('*.txt')
 
 
+## Missing-image safety net ####################################################
+##
+## Degrades any remaining missing image into a visible placeholder instead of
+## crashing the game.
+
+init python:
+    def _img_ausente(fn):
+        return Text("[imagem ausente: %s]" % fn, size=20, color="#f55")
+    config.missing_image_callback = _img_ausente
+
+
 ## A Google Play license key is required to perform in-app purchases. It can be
 ## found in the Google Play developer console, under "Monetize" > "Monetization
 ## Setup" > "Licensing".

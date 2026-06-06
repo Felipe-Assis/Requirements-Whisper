@@ -25,7 +25,7 @@ label scene_10_criacao_casos_uso:
 
     "{i}Você senta ao lado de [NOME_DEVELOPER_REQUIREMENTS] e abre o notebook. Juntos, começam a mapear os passos do cadastro de pacientes, histórico de saúde e registro de atendimentos.{/i}"
 
-    show expression "images/items/notebook.png" as notebook at center_zoom
+    show item notebook_fechado as notebook at center_zoom
     developer_requirements "Por exemplo, UC1: Cadastro de Paciente. O profissional deve preencher todos os dados de identificação: nome, idade, endereço, profissão, escolaridade, telefone, e por aí vai."
     developer_requirements "O sistema precisa garantir que campos obrigatórios estejam destacados e facilitar o preenchimento — puxando informações anteriores, quando houver."
     hide notebook

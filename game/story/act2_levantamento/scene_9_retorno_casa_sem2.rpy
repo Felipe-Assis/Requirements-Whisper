@@ -29,7 +29,7 @@ label scene_9_retorno_casa_sem2:
     $ advance_minutes(10)
 
     "{i}Já no seu quarto, você coloca a mochila sobre a cama, abre o notebook e revisa cada anotação feita ao longo do dia.{/i}"
-    show expression "images/items/notebook.png" as notebook at center_zoom
+    show item notebook_fechado as notebook at center_zoom
     pause 0.7
 
     "Você lê atentamente:\n• Problemas enfrentados no sistema atual\n• Demandas prioritárias do diretor médico e da enfermeira\n• Dilemas entre relatórios e notificações\n• Sugestões de melhoria e integrações necessárias"

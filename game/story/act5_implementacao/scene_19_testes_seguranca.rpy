@@ -23,7 +23,6 @@ label scene_19_testes_seguranca:
 
     # Exibe checklist baseado nos artefatos reais
     "{i}No notebook, você abre o checklist de testes:{/i}"
-    show expression "images/ui/checklist_teste_seguranca.png" as checklist at center_zoom
     window hide
     pause 1.2
     window show
@@ -100,8 +99,6 @@ label scene_19_testes_seguranca:
                     developer_test "Testou o backup? Simular restauração é obrigatório! Melhor prevenir do que remediar."
                     hide developer_test
         $ revisoes += 1
-
-    hide checklist
 
     # Inclusão da avaliação de conformidade (questionário de maturidade)
     "{i}Antes da reunião de fechamento, [NOME_DEVELOPER_SECURITY] sugere uma autoavaliação rápida usando o modelo de maturidade de privacidade e segurança.{/i}"

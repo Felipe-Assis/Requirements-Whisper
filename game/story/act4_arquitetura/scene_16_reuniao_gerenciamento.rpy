@@ -22,8 +22,6 @@ label scene_16_reuniao_gerenciamento:
     developer_management "Vamos revisar nosso cronograma e discutir riscos do projeto. Gerenciar bem o tempo e priorizar as tarefas é tão importante quanto codar."
     developer_requirements "Trouxe aqui a lista de funcionalidades e requisitos priorizados. Lembrem: nem tudo cabe na primeira entrega."
 
-    # Exibição visual do cronograma (placeholder)
-    show expression "images/diagrams/placeholder_cronograma.png" as cronograma at center_zoom
     "{i}No projetor, aparece o cronograma inicial do projeto (placeholder). Você nota algumas tarefas críticas destacadas e outras de menor prioridade.{/i}"
 
     # NOVO BLOCO: Discussão de andamento
@@ -126,7 +124,6 @@ label scene_16_reuniao_gerenciamento:
             developer_management "Temos um time competente, mas recomendo cautela para não sermos reativos demais."
             developer_requirements "A experiência conta, mas planejamento é sempre um diferencial."
 
-    hide cronograma
     hide developer_management
     hide developer_requirements
 

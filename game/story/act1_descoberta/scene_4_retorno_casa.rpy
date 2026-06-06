@@ -26,7 +26,7 @@ label scene_4_retorno_casa:
     $ advance_minutes(180)
 
     "De volta ao seu quarto, você senta na cama, tira o notebook da mochila e decide revisar as anotações do dia."
-    show expression "images/items/notebook.png" as notebook at center_zoom
+    show item notebook_fechado as notebook at center_zoom
     pause 0.5
 
     "Você abre o arquivo de anotações:"

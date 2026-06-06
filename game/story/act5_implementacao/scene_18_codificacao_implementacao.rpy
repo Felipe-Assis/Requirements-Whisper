@@ -120,7 +120,7 @@ label scene_18_codificacao_implementacao:
 
     # Decisão: se não finalizou no escritório, ramifica para trabalhar em casa ou terminar no próximo dia
     if not finalizou_no_escritorio:
-        play sound "audio/effects/porta_abrindo.ogg"
+        play sound "audio/effects/abrindo_porta.ogg"
         scene bg transito_noite
         with fade
         "{i}Já é noite quando você deixa o escritório, cansado(a) e levando o notebook para casa. Ainda falta terminar parte do módulo...{/i}"

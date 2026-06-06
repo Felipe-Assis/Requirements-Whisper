@@ -321,7 +321,7 @@ label chat_amigo:
 
         else:
             char_name = "Contato"
-            char_image = "images/characters/generic_portrait.png"
+            char_image = "images/characters/doutora_1/portrait.png"
             renpy.store.current_assistant_id = "asst_default"
     "Você decide conversar com [char_name]."
     call screen chat_with_backend(char_name=char_name, char_image=char_image)

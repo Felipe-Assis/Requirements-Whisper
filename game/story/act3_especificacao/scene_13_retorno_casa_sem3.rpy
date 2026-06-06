@@ -22,7 +22,7 @@ label scene_13_retorno_casa_sem3:
     $ advance_minutes(20)
 
     "{i}De volta ao seu quarto, você larga a mochila e liga o notebook para revisar o documento finalizado durante o expediente.{/i}"
-    show expression "images/items/notebook.png" as notebook at center_zoom
+    show item notebook_fechado as notebook at center_zoom
     pause 0.6
 
     "Ao reler cada item, você lembra de uma conversa recente com [NOME_DEVELOPER_QUALITY]:"

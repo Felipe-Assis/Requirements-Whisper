@@ -52,7 +52,7 @@ label scene_15_aniversario_surpresa:
     menu:
         "Deseja cuidar de algum detalhe extra?"
         "Baixar uma playlist divertida para animar a sala.":
-            play sound "audio/effects/music_party.ogg"
+            play sound "audio/effects/ambiente_reuniao.ogg"
             show developer_test enthusiastic at left_zoom
             developer_test "Essa seleção tá top! Já quero dançar comendo brigadeiro."
             $ amizade_developer_test += 1
@@ -74,7 +74,7 @@ label scene_15_aniversario_surpresa:
     hide developer_requirements
 
     # TRANSIÇÃO VISUAL PARA O ESCRITÓRIO DECORADO
-    play sound "audio/effects/ambiente_agitado.ogg"
+    play sound "audio/effects/ambiente_reuniao.ogg"
     scene bg escritorio_interior_festa
     with fade
     "{i}A sala é fechada rapidinho para montar a surpresa. Cada um colabora: bolo, balões, música e cartões tomam conta do ambiente. O escritório, agora decorado, ganha vida com as cores e a expectativa do grupo.{/i}"

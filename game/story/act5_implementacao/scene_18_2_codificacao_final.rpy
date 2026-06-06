@@ -14,9 +14,7 @@ label scene_18_2_codificacao_final:
 
     # Mini-game visual: revisão/correção final
     "{i}Você abre o PR (Pull Request) no sistema de versionamento, pronto para a revisão final.{/i}"
-    show expression "images/ui/pr_placeholder.png" as pr at center_zoom
     "{i}No diff, identifica:\n1. Função pouco legível\n2. Campo sem validação\n3. Documentação técnica desatualizada{/i}"
-    hide pr
 
     $ revisoes_realizadas = []
     $ revisoes_restantes = ["função", "validação", "documentação"]
@@ -52,7 +50,6 @@ label scene_18_2_codificacao_final:
         $ revisoes += 1
 
     # Visual do checklist de revisão
-    show expression "images/ui/checklist_placeholder.png" as checklist at right_zoom2
     "{i}Checklist de revisão preenchido:{/i}"
     if "função" in revisoes_realizadas:
         "✔ Função refatorada"
@@ -66,7 +63,6 @@ label scene_18_2_codificacao_final:
         "✔ Documentação revisada"
     else:
         "✖ Documentação revisada"
-    hide checklist
     pause 0.7
 
     # Feedback de outro NPC para dinâmica
