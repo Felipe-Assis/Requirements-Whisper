@@ -8,3 +8,4 @@ default user_input = ""
 default server_response = ""
 default chat_history = []  # lista de tuplas (autor, mensagem)
 default is_waiting = False
+default pending_response = None  # buffer transitório: worker thread publica aqui; main thread drena

@@ -102,6 +102,36 @@ init python:
         ).then(on_response)
 
 
+    def process_respostas(respostas):
+        # Roda na WORKER thread (desktop) ou no callback do fetch (web).
+        # NÃO toca chat_history/is_waiting aqui (mutar store fora da main thread
+        # é inseguro no 8.5). Apenas publica no buffer; drain_pending_response()
+        # drena na main thread via o timer da screen chat_with_backend.
+        store.pending_response = respostas if respostas else []
+        renpy.restart_interaction()  # acorda a tela; o timer drena na main thread
+
+    def drain_pending_response():
+        # Roda na MAIN thread (via timer da screen). Único ponto que muta
+        # chat_history/is_waiting a partir de uma resposta do backend.
+        if store.pending_response is not None:
+            if store.pending_response:
+                for r in store.pending_response:
+                    chat_history.append(("assistant", r))
+            else:
+                chat_history.append(("assistant", _("Nenhuma resposta recebida.")))
+            store.pending_response = None
+            store.is_waiting = False
+            renpy.restart_interaction()
+
+    def __reset_chat_transient():
+        # Estado transitório do chat nunca deve sobreviver a save/load/rollback.
+        store.is_waiting = False
+        store.user_input = ""
+        store.server_response = ""
+        store.pending_response = None
+    config.after_load_callbacks = config.after_load_callbacks + [__reset_chat_transient]
+
+
     def send_and_update_chat(user_message):
         global is_waiting, chat_history, user_input
 
@@ -109,19 +139,6 @@ init python:
         is_waiting = True
         user_input = ""
         renpy.exports.restart_interaction()
-
-        def process_respostas(respostas):
-            global is_waiting, chat_history
-            print("[DEBUG] Adicionando respostas ao chat_history:", respostas)
-            # respostas já vem normalizada (list[str]) por normalize_resposta;
-            # aqui só iteramos e anexamos — sem 2º ast.literal_eval.
-            if respostas:
-                for resposta in respostas:
-                    chat_history.append(("assistant", resposta))
-            else:
-                chat_history.append(("assistant", _("Nenhuma resposta recebida.")))
-            is_waiting = False
-            renpy.exports.restart_interaction()
 
         if is_web():
             # Chama a função de envio passando o processador como callback

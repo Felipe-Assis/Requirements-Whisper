@@ -17,6 +17,10 @@ screen chat_with_backend(char_name=NOME_DEVELOPER_REQUIREMENTS, char_image="imag
         padding (32, 32)
         has vbox
 
+        # Dreno na MAIN thread: tica só enquanto o chat está aberto; aplica a
+        # resposta publicada pela worker thread em store.pending_response.
+        timer 0.1 repeat True action Function(drain_pending_response)
+
         text _("Bate-papo") size 28 bold True xalign 0.5
 
         # Foto do personagem, centralizada e pequena
@@ -61,6 +65,8 @@ screen chat_with_backend(char_name=NOME_DEVELOPER_REQUIREMENTS, char_image="imag
 # --- LABEL GENÉRICO DE CHAT ---
 label chat_amigo:
     $ chat_history = []
+    $ pending_response = None   # descarta resposta tardia de uma conversa anterior
+    $ is_waiting = False
     python:
         # Busca os dados do amigo selecionado
         amigo_info = AMIGOS_DATA.get(amigo_selecionado, None)
