@@ -2,7 +2,6 @@ label scene_1_quarto:
     $ player_gender = ""
     $ player_name = ""
     $ player_age = ""
-    $ inventory = []
 
     scene bg quarto_manha
     with fade

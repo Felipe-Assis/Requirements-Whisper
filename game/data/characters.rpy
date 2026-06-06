@@ -42,6 +42,8 @@ image developer_ai portrait = "images/characters/developer_ai/portrait.png"
 image developer_ai concentrated = "images/characters/developer_ai/concentrated.png"
 image developer_ai positive = "images/characters/developer_ai/positive.png"
 image developer_ai thinking = "images/characters/developer_ai/thinking.png"
+# alias (atributo sem arte própria)
+image developer_ai enthusiastic = "images/characters/developer_ai/positive.png"
 
 # --- developer_coding---
 image developer_coding portrait = "images/characters/developer_coding/portrait.png"
@@ -54,6 +56,9 @@ image developer_coding thinking = "images/characters/developer_coding/thinking.p
 image developer_management portrait = "images/characters/developer_management/portrait.png"
 image developer_management serious = "images/characters/developer_management/serious.png"
 image developer_management thinking = "images/characters/developer_management/thinking.png"
+# alias (atributo sem arte própria)
+image developer_management positive = "images/characters/developer_management/thinking.png"
+image developer_management enthusiastic = "images/characters/developer_management/thinking.png"
 
 # --- developer_project---
 image developer_project portrait = "images/characters/developer_project/portrait.png"
@@ -61,12 +66,16 @@ image developer_project confident = "images/characters/developer_project/confide
 image developer_project neutral = "images/characters/developer_project/confident.png"
 image developer_project serious = "images/characters/developer_project/serious.png"
 image developer_project thinking = "images/characters/developer_project/thinking.png"
+# alias (atributo sem arte própria)
+image developer_project positive = "images/characters/developer_project/confident.png"
 
 # --- developer_quality ---
 image developer_quality portrait = "images/characters/developer_quality/portrait.png"
 image developer_quality positive = "images/characters/developer_quality/positive.png"
 image developer_quality serious = "images/characters/developer_quality/serious.png"
 image developer_quality thinking = "images/characters/developer_quality/thinking.png"
+# alias (atributo sem arte própria)
+image developer_quality enthusiastic = "images/characters/developer_quality/positive.png"
 
 # --- developer_requirements---
 image developer_requirements portrait = "images/characters/developer_requirements/portrait.png"
@@ -80,6 +89,8 @@ image developer_requirements thinking = "images/characters/developer_requirement
 image developer_security portrait = "images/characters/developer_security/portrait.png"
 image developer_security serious = "images/characters/developer_security/serious.png"
 image developer_security thinking = "images/characters/developer_security/thinking.png"
+# alias (atributo sem arte própria)
+image developer_security enthusiastic = "images/characters/developer_security/thinking.png"
 
 # --- developer_test --
 image developer_test portrait = "images/characters/developer_test/portrait.png"
