@@ -89,14 +89,3 @@ screen inventory_button():
             ypos 30
             xysize (120,120)
             focus_mask True
-
-# Função python para adicionar itens
-init python:
-    def add_to_inventory(item_name):
-        store_vars = renpy.store.__dict__
-        var_name = f"item_{item_name}"
-        if var_name in store_vars:
-            setattr(renpy.store, var_name, True)
-            renpy.notify(f"Item adicionado ao inventário: {item_name.replace('_',' ').capitalize()}")
-        else:
-            renpy.notify("Item não reconhecido.")

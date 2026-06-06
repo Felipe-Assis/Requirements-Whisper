@@ -69,12 +69,8 @@ label chat_amigo:
             char_image = amigo_info["portrait"]
             renpy.store.current_assistant_id = amigo_info["assistant_id"]
 
-            # --- Incrementa afinidade dinamicamente ---
-            var_name = f"amizade_{amigo_selecionado}"
-            if var_name in store.__dict__:
-                store.__dict__[var_name] = min(store.__dict__[var_name] + 1, 10)
-            else:
-                store.__dict__[var_name] = 1
+            # --- Incrementa afinidade dinamicamente (via helper com clamp 0..10) ---
+            add_friendship_point(amigo_selecionado, 1)
 
         else:
             char_name = "Contato"
