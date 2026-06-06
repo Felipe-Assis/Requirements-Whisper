@@ -1,12 +1,5 @@
 label scene_21_avaliacao_final:
-    $ disponivel_developer_ai = False
-    $ disponivel_developer_coding = False
-    $ disponivel_developer_management = False
-    $ disponivel_developer_requirements = False
-    $ disponivel_developer_project = False
-    $ disponivel_developer_quality = False
-    $ disponivel_developer_security = False
-    $ disponivel_developer_test = False
+    $ set_available()
     $ disponivel_doutora_1 = False
     $ disponivel_doutora_2 = False
 

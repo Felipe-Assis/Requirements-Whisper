@@ -1,12 +1,5 @@
 label scene_12_especificacao_requisitos:
-    $ disponivel_developer_ai = True
-    $ disponivel_developer_coding = True
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = False
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = False
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = True
+    $ set_available("developer_ai", "developer_coding", "developer_management", "developer_project", "developer_security", "developer_test")
 
     play music music_office_focused_2 fadein 1.0
     scene bg escritorio_interior_tarde

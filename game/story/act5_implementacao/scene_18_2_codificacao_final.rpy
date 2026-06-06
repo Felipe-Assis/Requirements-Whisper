@@ -138,14 +138,7 @@ label scene_18_2_codificacao_final:
     with fade
     $ advance_minutes(12)
 
-    $ disponivel_developer_ai = True
-    $ disponivel_developer_coding = True
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = True
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = True
+    $ set_available('all')
     "{i}Em casa, você reflete sobre como descansar, planejar e revisar cada parte do código mudou a forma de encarar o projeto.{/i}"
     "{i}A teoria de boas práticas faz ainda mais sentido após superar um ciclo intenso de codificação.{/i}"
 

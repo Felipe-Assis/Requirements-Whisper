@@ -1,12 +1,5 @@
 label scene_18_codificacao_implementacao:
-    $ disponivel_developer_ai = False
-    $ disponivel_developer_coding = False
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = False
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = False
+    $ set_available("developer_management", "developer_requirements", "developer_project", "developer_security")
     play music music_office_concentrated_1 fadein 1.0
     scene bg escritorio_interior_manha
     with dissolve
@@ -159,14 +152,7 @@ label scene_18_codificacao_implementacao:
     $ advance_minutes(21)
     "{i}O expediente termina com aquele misto de alívio e aprendizado. Você está se tornando cada vez mais profissional e preparado(a) para os próximos desafios.{/i}"
 
-    $ disponivel_developer_ai = True
-    $ disponivel_developer_coding = True
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = True
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = True
+    $ set_available('all')
 
     play music music_home_reflecting fadein 1.3
     scene bg quarto_noite

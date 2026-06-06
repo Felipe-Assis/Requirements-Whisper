@@ -1,12 +1,5 @@
 label scene_9_retorno_casa_sem2:
-    $ disponivel_developer_ai = True
-    $ disponivel_developer_coding = True
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = True
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = True
+    $ set_available('all')
 
     $ game_hour = 21
     $ game_minute = 00

@@ -1,12 +1,5 @@
 label scene_14_discussao_arquitetura:
-    $ disponivel_developer_ai = False
-    $ disponivel_developer_coding = False
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = False
-    $ disponivel_developer_quality = True
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = False
+    $ set_available("developer_management", "developer_requirements", "developer_quality", "developer_security")
 
     play music music_office_concentrated_2 fadein 1.0
     scene bg escritorio_interior_manha

@@ -50,3 +50,24 @@ init -1:
     default disponivel_developer_test = False
     default disponivel_doutora_1 = True
     default disponivel_doutora_2 = True
+
+
+init python:
+    # Lista canônica dos 8 desenvolvedores (ids usados nos flags disponivel_*).
+    DEVELOPERS = [
+        "developer_ai",
+        "developer_coding",
+        "developer_management",
+        "developer_requirements",
+        "developer_quality",
+        "developer_project",
+        "developer_security",
+        "developer_test",
+    ]
+
+    def set_available(*ids):
+        # Reseta os 8 disponivel_developer_* e habilita apenas os ids passados.
+        # set_available('all') habilita todos. NÃO mexe nos flags das doutoras.
+        targets = DEVELOPERS if ids == ("all",) else ids
+        for d in DEVELOPERS:
+            setattr(store, "disponivel_" + d, d in targets)

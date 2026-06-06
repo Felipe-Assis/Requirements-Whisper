@@ -1,12 +1,5 @@
 label scene_15_aniversario_surpresa:
-    $ disponivel_developer_ai = False
-    $ disponivel_developer_coding = False
-    $ disponivel_developer_management = False
-    $ disponivel_developer_requirements = False
-    $ disponivel_developer_project = False
-    $ disponivel_developer_quality = False
-    $ disponivel_developer_security = False
-    $ disponivel_developer_test = False
+    $ set_available()
     play music music_office_relaxed fadein 1.0
     scene bg escritorio_interior_tarde
     with dissolve

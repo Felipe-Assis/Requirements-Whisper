@@ -1,12 +1,5 @@
 label scene_4_retorno_casa:
-    $ disponivel_developer_ai = True
-    $ disponivel_developer_coding = True
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = True
-    $ disponivel_developer_security = True
-    $ disponivel_developer_test = True
+    $ set_available('all')
     # Transição: ônibus/cidade à noite
     play music music_streets_focused fadein 1.8
     scene bg transito_noite

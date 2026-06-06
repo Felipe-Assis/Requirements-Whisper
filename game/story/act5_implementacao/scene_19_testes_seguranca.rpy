@@ -1,12 +1,5 @@
 label scene_19_testes_seguranca:
-    $ disponivel_developer_ai = False
-    $ disponivel_developer_coding = False
-    $ disponivel_developer_management = True
-    $ disponivel_developer_requirements = True
-    $ disponivel_developer_project = True
-    $ disponivel_developer_quality = False
-    $ disponivel_developer_security = False
-    $ disponivel_developer_test = False
+    $ set_available("developer_management", "developer_requirements", "developer_project")
 
     play music music_office_concentrated_1 fadein 1.0
     scene bg escritorio_interior_manha
