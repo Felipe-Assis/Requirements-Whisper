@@ -57,8 +57,7 @@ image item mochila_com_notebook_hover = Transform("items/mochila_com_notebook.pn
 
 
 # Notebook fechado
-image item notebook= Transform("items/notebook_fechado.png", zoom=0.35)
-image item notebook = Transform("items/notebook_fechado.png", zoom=0.2)
+image item notebook = Transform("items/notebook_fechado.png", zoom=0.35)
 image item notebook_idle = Transform("items/notebook_fechado.png", xysize=(128, 128))
 image item notebook_hover = Transform("items/notebook_aberto.png", xysize=(128, 128))
 

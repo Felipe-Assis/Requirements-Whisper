@@ -387,7 +387,7 @@ screen contacts_screen():
                                     at contact_icon
                                     hovered [SetVariable("selected_contact_description", "{b}%s{/b}\nJovem médica." % NOME_DOUTORA_2)]
                                     unhovered [SetVariable("selected_contact_description", "")]
-                                    action [SetVariable("amigo_selecionado", "amizade_doutora_2"), Hide("contacts_screen"), Jump("chat_amigo")]
+                                    action [SetVariable("amigo_selecionado", "doutora_2"), Hide("contacts_screen"), Jump("chat_amigo")]
                             else:
                                 imagebutton:
                                     idle "doutora_2 portrait"

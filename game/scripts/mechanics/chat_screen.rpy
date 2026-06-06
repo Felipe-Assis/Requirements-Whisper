@@ -273,11 +273,6 @@ style chat_log_viewport:
     xsize 550
 
 style chat_send_button is default
-style chat_log_viewport:
-    ysize 350
-    xsize 550
-
-style chat_send_button is default
 style chat_send_button:
     padding (12,6)
     background "#346aff"
