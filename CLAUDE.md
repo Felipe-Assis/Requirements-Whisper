@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-"The Requirements Whisperer" (`config.name`) is an educational Ren'Py visual novel built as a UFRJ Game Design course project. The player is an intern living through the full software-engineering lifecycle (requirements, specification, design, coding, testing, deploy) of a clinical healthcare web system, while choices affect friendships, branching, and the ending. The narrative content and all UI strings are in Brazilian Portuguese. Requires Ren'Py 8.2+ / Python 3.8+ (developed/tested with the SDK at `C:\Program Files (x86)\renpy-8.3.7-sdk`).
+"The Requirements Whisperer" (`config.name`) is an educational Ren'Py visual novel built as a UFRJ Game Design course project. The player is an intern living through the full software-engineering lifecycle (requirements, specification, design, coding, testing, deploy) of a clinical healthcare web system, while choices affect friendships, branching, and the ending. The narrative content and all UI strings are in Brazilian Portuguese. Developed and tested with Ren'Py 8.3.7 (build `8.3.7.25031702`; SDK at `C:\Program Files (x86)\renpy-8.3.7-sdk`); minimum Ren'Py 8.2+ / Python 3.8+.
 
 ## Common commands
 

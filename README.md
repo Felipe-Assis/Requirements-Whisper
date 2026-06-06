@@ -7,7 +7,7 @@ afetam os relacionamentos e o final.
 
 ## Como iniciar
 
-Requisitos: Ren'Py 8.2+ (inclui Python 3.8+).
+Requisitos: Ren'Py 8.3.7 (desenvolvido/testado nesta versão; mínimo 8.2+). Inclui Python 3.8+.
 
 1. Clone este repositório.
 2. Abra o **Ren'Py Launcher** e adicione/selecione a pasta do projeto (a raiz que contém `game/`).
