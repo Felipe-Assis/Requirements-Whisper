@@ -23,7 +23,12 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "1.1"
+
+## Migração 8.5.3: preserva o comportamento de render do 8.3.7 EXPLICITAMENTE
+## (não depender do parse de config.version pelos shims de compat do 00compat.rpy).
+define config.zoom_zaxis = False           # 8.5 default = True (zoom passa a afetar o eixo Z)
+define config.old_show_expression = True   # mantém o `show expression` legado usado nas cenas
 
 
 ## Text that is placed on the game's about screen. Place the text between the

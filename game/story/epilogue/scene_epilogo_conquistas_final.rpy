@@ -79,7 +79,7 @@ label scene_epilogo_conquistas_final:
     menu:
         "O que deseja fazer agora?"
         "Jogar novamente (novo ciclo, novos desafios)":
-            jump start
+            $ renpy.full_restart()
         "Ver créditos finais":
             jump creditos_finais
         "Encerrar":

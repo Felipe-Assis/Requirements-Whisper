@@ -23,11 +23,8 @@ init python:
 
 
     def is_web():
-        try:
-            import emscripten
-            return True
-        except ImportError:
-            return False
+        # API suportada no 8.5.3 (substitui o probe frágil `import emscripten`).
+        return renpy.variant("web")
 
     def normalize_resposta(resposta_api):
         if isinstance(resposta_api, str):
