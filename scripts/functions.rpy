@@ -105,12 +105,22 @@ screen player_formulario():
                     color "#eaf3f7"
                     size 36
                     xsize 850
-            text "Emblema do avatar (só muda seu perfil)" style "rw_caption"
+            text "Emblema do perfil (só muda sua identificação)" style "rw_caption"
             hbox:
                 spacing 18
-                textbutton "Ideias" style "rw_action" action SetVariable("player_avatar", "ideias")
-                textbutton "Código" style "rw_action" action SetVariable("player_avatar", "codigo")
-                textbutton "Diálogo" style "rw_action" action SetVariable("player_avatar", "dialogo")
+                for badge_id, badge_name in [("ideias", "Ideias"), ("codigo", "Código"), ("dialogo", "Diálogo")]:
+                    textbutton (badge_name + (" · selecionado" if player_avatar == badge_id else "")):
+                        style "rw_action"
+                        selected player_avatar == badge_id
+                        action SetVariable("player_avatar", badge_id)
+                        id ("profile_badge_" + badge_id)
+            hbox:
+                spacing 24
+                use profile_badge(player_avatar)
+                vbox:
+                    spacing 10
+                    text "Prévia do emblema" style "rw_caption"
+                    text ("Seu perfil: " + (player_name.strip() or "Alex")) style "rw_caption" substitute False
             text "Não pedimos idade nem dados de contato. O perfil fica neste jogo." style "rw_caption" size 24
             hbox:
                 spacing 24

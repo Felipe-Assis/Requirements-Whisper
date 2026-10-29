@@ -2,6 +2,25 @@ default player_name = "Alex"
 default player_gender = ""
 default player_avatar = "ideias"
 
+screen profile_badge(badge):
+    frame:
+        background Solid("#294651")
+        padding (18, 12)
+        xsize 180
+        ysize 110
+        vbox:
+            align (0.5, 0.5)
+            spacing 2
+            if badge == "codigo":
+                text "</>" color "#51c8b6" size 44 xalign 0.5
+                text "Código" color "#eaf3f7" size 24 xalign 0.5
+            elif badge == "dialogo":
+                text "[ [ ] ]" substitute False color "#51c8b6" size 40 xalign 0.5
+                text "Diálogo" color "#eaf3f7" size 24 xalign 0.5
+            else:
+                text "*" color "#51c8b6" size 48 xalign 0.5
+                text "Ideias" color "#eaf3f7" size 24 xalign 0.5
+
 define player = Character("[player_name]", color="#51c8b6")
 
 image sabrina neutral = "images/characters/sabrina/neutral.png"

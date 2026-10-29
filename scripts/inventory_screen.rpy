@@ -51,6 +51,8 @@ screen inventory_screen():
                             text info["desc"] style "rw_caption" xmaximum 760
                             if selected_item == "notebook" and notebook_in_bag:
                                 text "Guardado na mochila." color "#51c8b6" size 26
+                            if selected_item == "notebook" and notebook_available:
+                                textbutton "Consultar registros" style "rw_action" action [Hide("inventory_screen"), Show("learning_notebook")] id "inventory_notebook"
                         else:
                             text "Escolha um objeto na lista." style "rw_caption"
             text "Esc ou I também fecha o inventário." style "rw_caption" size 24

@@ -1,4 +1,4 @@
-﻿# Melhoria do jogo — 29/10/2026
+# Melhoria do jogo — 29/10/2026
 
 Janela de trabalho: 18:02–18:47 UTC (15:02–15:47 Brasília).
 TodoWrite não está disponível nesta sessão; este arquivo mantém o acompanhamento.
@@ -13,8 +13,8 @@ Direção: preservar Ren’Py e os recursos existentes; transformar a preparaç�
 
 ## Continuação sem limite de tempo — agentes Sol
 
-- [in_progress] Definir os contratos e distribuir a conclusão da versão demonstrável.
-- [pending] Implementar negociação, aplicação final e encerramento da jornada.
-- [pending] Integrar notebook de requisitos, perfil visual e navegação acessível.
-- [pending] Validar fluxo completo, persistência, layouts e corrigir achados de revisão.
-- [pending] Preparar execução/distribuição local, atualizar documentação e integrar na main.
+- [completed] Definir os contratos e distribuir a conclusão da versão demonstrável.
+- [completed] Implementar negociação, aplicação final e encerramento da jornada.
+- [completed] Integrar notebook de requisitos, perfil visual e navegação acessível.
+- [completed] Validar fluxo completo, persistência, layouts e corrigir achados de revisão.
+- [in_progress] Preparar execução/distribuição local, atualizar documentação e integrar na main.

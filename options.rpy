@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "1.1-demo"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -190,6 +190,10 @@ init python:
     build.classify('game/tests/**', None)
     build.classify('docs/**', None)
     build.classify('game/docs/**', None)
+    build.classify('tools/**', None)
+    build.classify('game/tools/**', None)
+    build.classify('audio/**', None)
+    build.classify('game/audio/**', None)
 
     ## To archive files, classify them as 'archive'.
 

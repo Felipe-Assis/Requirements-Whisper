@@ -214,6 +214,7 @@ screen choice(items):
 
     # A rolagem mantém escolhas longas acima da caixa de diálogo, sem reduzir a fonte.
     viewport:
+        id "choice_scroll"
         xalign 0.5
         ypos 24
         xsize (gui.choice_button_width + 36)
@@ -275,6 +276,8 @@ screen quick_menu():
 
             textbutton _("Voltar") action Rollback()
             textbutton _("Histórico") action ShowMenu('history')
+            if notebook_available:
+                textbutton _("Notebook") action Show("learning_notebook")
             textbutton _("Pular") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Automático") action Preference("auto-forward", "toggle")
             textbutton _("Salvar") action ShowMenu('save')
@@ -777,6 +780,7 @@ screen preferences():
     use game_menu(_("Preferências"), scroll="viewport"):
 
         vbox:
+            textbutton _("Ajustar leitura e acessibilidade") action ShowMenu("rw_accessibility")
 
             hbox:
                 box_wrap True
@@ -811,7 +815,7 @@ screen preferences():
 
                     bar value Preference("text speed")
 
-                    label _("Tempo do avanão automático")
+                    label _("Tempo do avanço automático")
 
                     bar value Preference("auto-forward time")
 
@@ -1570,6 +1574,8 @@ screen quick_menu():
             textbutton _("Voltar") action Rollback()
             textbutton _("Pular") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Automático") action Preference("auto-forward", "toggle")
+            if notebook_available:
+                textbutton _("Notebook") action Show("learning_notebook")
             textbutton _("Menu") action ShowMenu()
 
 
@@ -1604,6 +1610,11 @@ style game_menu_navigation_frame:
 style game_menu_content_frame:
     variant "small"
     top_margin 0
+
+# A navegação compacta ocupa 90 pixels a mais que a versão de computador.
+style game_menu_viewport:
+    variant "small"
+    xsize 1260
 
 style pref_vbox:
     variant "small"
@@ -1683,6 +1694,7 @@ screen rw_accessibility():
 
             label _("Movimento")
             textbutton (_("Transições: desativadas") if _preferences.transitions == 0 else _("Transições: ativadas")):
+                id "rw_transitions"
                 xsize 1100
                 action InvertSelected(Preference("transitions", "toggle"))
             text _("Essa opção controla as transições do Ren'Py; animações próprias das cenas podem continuar."):

@@ -1,6 +1,7 @@
 define sabrina = Character("Sabrina · mentora", color="#b9dbe9")
 define carlos = Character("Carlos · usuário", color="#e8cba4")
 
+default mission_stage = 0
 default mission_score = 0
 default mission_elicitation = False
 default mission_ambiguity = False
@@ -15,6 +16,25 @@ default mission_rule = ""
 default mission_criterion = ""
 
 label scene_2_estagio:
+    $ notebook_available = True
+    show screen learning_hud
+    $ mission_stage = 0
+    $ negotiation_complete = False
+    $ negotiation_agreement = ""
+    $ negotiation_change = ""
+    $ negotiation_impact = ""
+    $ negotiation_option = ""
+    $ transfer_complete = False
+    $ transfer_requirement = ""
+    $ transfer_criterion = ""
+    $ transfer_request = ""
+    $ journey_complete = False
+    $ planning_complete = False
+    $ planning_selected = []
+    $ planning_coverage = 0
+    $ planning_used = 0
+    $ planning_items = []
+    $ planning_missing = []
     $ mission_score = 0
     $ mission_elicitation = False
     $ mission_ambiguity = False
@@ -77,6 +97,7 @@ label mission_elicitation_choice:
 
     show carlos serious at colleague_right
     carlos "[mission_problem]"
+    $ mission_stage = 1
     "Você registra o episódio, as pessoas envolvidas e o efeito do problema."
     sabrina "Isso é elicitação de requisitos: buscar e compreender as necessidades das pessoas envolvidas. Esta conversa é uma das formas de fazer isso."
 
@@ -101,6 +122,7 @@ label mission_ambiguity_choice:
                 sabrina "Vamos registrar a resposta e confirmar se entendemos."
 
     carlos "[mission_rule]"
+    $ mission_stage = 2
     sabrina "Essa regra resolve uma parte concreta do problema. Ainda não prova que o sistema inteiro será fácil de usar."
     sabrina "Para avaliar facilidade de uso, depois precisaremos observar pessoas realizando tarefas e combinar critérios com elas."
     "Você lê a regra de volta para Carlos."
@@ -150,6 +172,7 @@ label mission_acceptance_choice:
 
     sabrina "Nossa primeira condição de aceitação fica assim:"
     "[mission_criterion]"
+    $ mission_stage = 3
     show carlos confident at colleague_right
     carlos "Com esse exemplo, consigo conferir se vocês entenderam o que preciso."
     sabrina "Um exemplo não cobre tudo. Vamos investigar uma situação que ainda pode mudar o comportamento esperado."
@@ -204,6 +227,7 @@ label mission_edge_case_choice:
             "Como você incorpora a revisão?"
             "Registro o caso limite e confirmo o resultado esperado com Carlos.":
                 sabrina "Agora essa situação também faz parte do acordo."
+    $ mission_stage = 4
     "Caso limite confirmado: [mission_edge_criterion]"
     sabrina "Buscar exceções cedo evita que uma regra pareça completa só porque funciona no exemplo mais simples."
 
@@ -235,6 +259,10 @@ label mission_review:
 
     menu:
         "Fim da primeira missão · O que você quer fazer?"
+        "Continuar: negociar uma mudança":
+            call scene_4_negociacao
+            call scene_5_sintese
+            jump journey_review
         "Planejar a primeira entrega (atividade opcional)":
             call scene_3_planejamento
             jump mission_review_actions
@@ -247,6 +275,9 @@ label mission_review:
         "Refazer a missão neste contexto":
             jump scene_2_estagio
         "Experimentar outra vaga":
+            $ notebook_available = False
+            hide screen learning_hud
+            hide screen learning_notebook
             call escolher_vaga(explorar=True)
             jump scene_2_estagio
         "Encerrar e voltar ao menu principal":
@@ -261,12 +292,19 @@ label mission_review_actions:
             "Critério de aceitação: [mission_criterion]"
             "Caso limite: [mission_edge_criterion]"
             jump mission_review_actions
+        "Continuar: negociar uma mudança":
+            call scene_4_negociacao
+            call scene_5_sintese
+            jump journey_review
         "Planejar a primeira entrega (atividade opcional)":
             call scene_3_planejamento
             jump mission_review_actions
         "Refazer a missão neste contexto":
             jump scene_2_estagio
         "Experimentar outra vaga":
+            $ notebook_available = False
+            hide screen learning_hud
+            hide screen learning_notebook
             call escolher_vaga(explorar=True)
             jump scene_2_estagio
         "Encerrar e voltar ao menu principal":
