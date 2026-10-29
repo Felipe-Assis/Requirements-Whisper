@@ -1,4 +1,4 @@
-﻿testsuite planning:
+testsuite planning:
     before testcase:
         if not screen "main_menu":
             run MainMenu(confirm=False)
@@ -66,4 +66,3 @@
         click "Voltar ao resumo da missão"
         pause until "Planejar a primeira entrega"
         assert eval mission_score == 4
-

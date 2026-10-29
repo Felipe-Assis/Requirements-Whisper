@@ -28,12 +28,13 @@ A atividade de planejamento usa uma capacidade fictícia de dois itens e não at
 
 Os testes usam Ren'Py 8.5.3 no Windows e percorrem a interface real. Capturas do motor permitem revisar menu, preparação, perfil, acessibilidade e escolhas com fonte ampliada. A execução de testes e o lint são registrados na entrega; voz, Android, iOS e navegador precisam de validação própria.
 
-As artes e músicas já estavam no diretório antes desta intervenção. Não foram gerados novos arquivos de imagem nem ativadas as faixas musicais. A origem e os créditos desses recursos ainda precisam ser documentados antes de uma distribuição pública.
+As artes e músicas já estavam no diretório antes desta intervenção. Não foi criada nova arte para o jogo nem ativadas as faixas musicais. A origem e os créditos desses recursos ainda precisam ser documentados antes de uma distribuição pública.
 
 ## Resultado da verificação
 
 - Ren'Py 8.5.3: lint sem erros; 116 blocos de diálogo e 17 menus.
 - Suite completa com capturas opcionais: 15 casos, 131 verificações, nenhum erro.
+- Cópia limpa criada por `git archive`: 14 testes funcionais e 131 verificações passaram sem depender de arquivos ignorados; a captura opcional ficou desativada nessa rodada.
 - Caminhos exercitados: três contextos, respostas adequadas e distratores, revisão orientada, repetição, troca de vaga, planejamento com cobertura 0/1/2, inventário, navegação inicial por teclado e menu de acessibilidade.
 - Salvar/carregar restaura pontuação e escolhas; rollback até a decisão anterior permite mudar a resposta sem acumular pontos.
 - Capturas revisadas com fonte maior. O menu de planejamento ganhou rolagem para não se sobrepor ao diálogo; PgDn e retorno foram exercitados no motor.

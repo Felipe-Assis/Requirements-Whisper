@@ -1,4 +1,4 @@
-﻿define sabrina = Character("Sabrina · mentora", color="#b9dbe9")
+define sabrina = Character("Sabrina · mentora", color="#b9dbe9")
 define carlos = Character("Carlos · usuário", color="#e8cba4")
 
 default mission_score = 0
@@ -271,4 +271,3 @@ label mission_review_actions:
             jump scene_2_estagio
         "Encerrar e voltar ao menu principal":
             return
-
