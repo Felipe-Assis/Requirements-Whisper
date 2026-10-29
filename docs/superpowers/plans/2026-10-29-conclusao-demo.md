@@ -52,6 +52,6 @@ Arquivos: `screens.rpy`, `gui.rpy`, `tests/accessibility.rpy`.
 Arquivos: `options.rpy`, `script.rpy`, scripts de execução/build se necessários, documentação.
 
 - [x] Rodar testes no motor com saves isolados e lint, revisar capturas e executar revisão independente.
-- [ ] Preparar pacote local Windows ou launcher reproduzível, verificando a inicialização do artefato.
-- [ ] Atualizar avaliação com resultados reais e limitações; limpar temporários próprios.
-- [ ] Commitar e integrar na main local, sem push automático.
+- [x] Preparar pacote local Windows ou launcher reproduzível, verificando a inicialização do artefato.
+- [x] Atualizar avaliação com resultados reais e limitações. Limpeza posterior bloqueada pela política; temporários restantes documentados.
+- [x] Commitar e integrar na main local, sem push automático.

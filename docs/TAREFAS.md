@@ -17,4 +17,6 @@ Direção: preservar Ren’Py e os recursos existentes; transformar a preparaç�
 - [completed] Implementar negociação, aplicação final e encerramento da jornada.
 - [completed] Integrar notebook de requisitos, perfil visual e navegação acessível.
 - [completed] Validar fluxo completo, persistência, layouts e corrigir achados de revisão.
-- [in_progress] Preparar execução/distribuição local, atualizar documentação e integrar na main.
+- [completed] Preparar execução/distribuição local, atualizar documentação e integrar na main.
+
+- [in_progress] Remover os temporários de validação restantes. Bloqueado pela política de execução, inclusive com caminhos literais; lista em docs/AVALIACAO.md. A implementação, os testes, o pacote e a integração local estão concluídos.
