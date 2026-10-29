@@ -1,0 +1,140 @@
+# Traduções dos controles nativos usados pelo jogo.
+translate None strings:
+
+    old "Self-voicing disabled."
+    new "Leitura em voz alta desativada."
+
+    old "Clipboard voicing enabled. "
+    new "Leitura pela área de transferência ativada. "
+
+    old "Self-voicing enabled. "
+    new "Leitura em voz alta ativada. "
+
+    old "bar"
+    new "barra"
+
+    old "selected"
+    new "selecionado"
+
+    old "viewport"
+    new "área de rolagem"
+
+    old "horizontal scroll"
+    new "rolagem horizontal"
+
+    old "vertical scroll"
+    new "rolagem vertical"
+
+    old "activate"
+    new "ativar"
+
+    old "deactivate"
+    new "desativar"
+
+    old "increase"
+    new "aumentar"
+
+    old "decrease"
+    new "diminuir"
+
+    old "Accessibility Menu. Use up and down arrows to navigate, and enter to activate buttons and bars."
+    new "Menu de acessibilidade. Use as setas para navegar e Enter para ativar botões e barras."
+
+    old "Font Override"
+    new "Fonte do texto"
+
+    old "Default"
+    new "Padrão"
+
+    old "Text Size Scaling"
+    new "Escala do texto"
+
+    old "Reset"
+    new "Redefinir"
+
+    old "Line Spacing Scaling"
+    new "Espaço entre linhas"
+
+    old "High Contrast Text"
+    new "Texto com alto contraste"
+
+    old "Enable"
+    new "Ativar"
+
+    old "Disable"
+    new "Desativar"
+
+    old "Self-Voicing"
+    new "Leitura em voz alta"
+
+    old "Self-voicing support is limited when using a touch screen."
+    new "A leitura em voz alta tem suporte limitado em telas sensíveis ao toque."
+
+    old "Off"
+    new "Desativada"
+
+    old "Text-to-speech"
+    new "Síntese de voz"
+
+    old "Clipboard"
+    new "Área de transferência"
+
+    old "Debug"
+    new "Depuração"
+
+    old "Voice Volume"
+    new "Volume das vozes"
+
+    old "Self-Voicing Volume Drop"
+    new "Redução de volume durante a leitura"
+
+    old "The options on this menu are intended to improve accessibility. They may not work with all games, and some combinations of options may render the game unplayable. This is not an issue with the game or engine. For the best results when changing fonts, try to keep the text size the same as it originally was."
+    new "Estes ajustes podem facilitar a leitura. Algumas combinações de fonte, tamanho e espaçamento podem cortar textos ou controles. Se isso acontecer, use Redefinir e tente ajustes menores."
+
+    old "Return"
+    new "Voltar"
+
+    old "Automatic saves"
+    new "Salvamentos automáticos"
+
+    old "Quick saves"
+    new "Salvamentos rápidos"
+
+    old "Quick save complete."
+    new "Salvamento rápido concluído."
+
+    old "Quick save."
+    new "Salvar rápido."
+
+    old "Are you sure?"
+    new "Deseja continuar?"
+
+    old "Are you sure you want to delete this save?"
+    new "Excluir este salvamento? Não será possível recuperá-lo."
+
+    old "Are you sure you want to overwrite your save?"
+    new "Substituir este salvamento pelo progresso atual?"
+
+    old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
+    new "Carregar este salvamento?\nO progresso não salvo será perdido."
+
+    old "Are you sure you want to quit?"
+    new "Sair do jogo? Salve antes para manter seu progresso."
+
+    old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
+    new "Voltar ao menu inicial?\nO progresso não salvo será perdido."
+
+    old "Are you sure you want to continue where you left off?"
+    new "Continuar de onde você parou?"
+
+    old "Are you sure you want to end the replay?"
+    new "Encerrar o replay?"
+
+    old "Are you sure you want to begin skipping?"
+    new "Começar a pular diálogos?"
+
+    old "Are you sure you want to skip to the next choice?"
+    new "Pular até a próxima escolha?"
+
+    old "Are you sure you want to skip unseen dialogue to the next choice?"
+    new "Pular diálogos ainda não lidos até a próxima escolha?"

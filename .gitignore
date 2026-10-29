@@ -250,3 +250,10 @@ tl/
 cache/
 tmp/
 saves/
+
+.idea/
+
+# Capturas locais e resultados de testes Ren'Py
+tests/screenshots/
+tests/results/
+.test-saves/
