@@ -1,3 +1,6 @@
+# Acertos do quiz extra; None quando o jogador não fez as perguntas extras.
+default acertos_extra = None
+
 label scene_17_tarde_estudos_tecnicos:
     $ set_available("developer_coding", "developer_management", "developer_requirements", "developer_project", "developer_security", "developer_test")
 
@@ -23,6 +26,7 @@ label scene_17_tarde_estudos_tecnicos:
     # Minijogo didático: quiz de revisão rápida
     "{i}Você resolve testar seus conhecimentos com um quiz rápido no notebook:{/i}"
     $ acertos_quiz = 0
+    $ acertos_extra = None
 
     menu:
         "O que é um critério de aceitação eficaz para um requisito?"
@@ -82,7 +86,7 @@ label scene_17_tarde_estudos_tecnicos:
 
     # Estatísticas/resumo de desempenho do estudo
     $ total_acertos = acertos_quiz
-    if "acertos_extra" in globals():
+    if acertos_extra is not None:
         $ total_acertos += acertos_extra
         $ total_perguntas = 4
     else:
@@ -96,7 +100,7 @@ label scene_17_tarde_estudos_tecnicos:
         $ inventario.append("medalha_estudioso")
         play sound "audio/effects/recompensa.ogg"
     elif total_acertos >= (total_perguntas // 2):
-        "Bom desempenho! Continue praticando para ficar ainda mais afiado(a)."
+        "Bom desempenho! Continue praticando para afiar ainda mais o conhecimento."
     else:
         "Valeu o esforço! O importante é nunca parar de aprender."
 
@@ -106,17 +110,17 @@ label scene_17_tarde_estudos_tecnicos:
             show developer_quality positive at right_zoom
             developer_quality "Ótimo! Sempre recomendo ler sobre as métricas ISO/IEC 25010: manutenibilidade, funcionalidade, usabilidade, eficiência, confiabilidade, portabilidade e segurança."
             developer_quality "Se quiser, tenho um template de checklist para revisar requisitos e código. Vou te enviar por e-mail!"
-            $ amizade_developer_quality += 1
+            $ add_friendship_point("developer_quality", 1)
             $ inventario.append("checklist_qualidade")
             hide developer_quality
         "Prefiro consultar [NOME_DEVELOPER_AI] para discutir machine learning.":
             show developer_ai positive at right_zoom
             developer_ai "Topa uma call? Posso te mostrar notebooks práticos de classificação, clusterização e até uns exemplos reais de predição de exames médicos."
             developer_ai "Ah, e tem vários datasets públicos para você experimentar algoritmos sem medo!"
-            $ amizade_developer_ai += 1
+            $ add_friendship_point("developer_ai", 1)
             $ inventario.append("notebook_ml_exemplo")
             hide developer_ai
-        "Vou pesquisar sozinho(a) por enquanto.":
+        "Vou pesquisar por conta própria por enquanto.":
             "Você decide seguir pelos seus próprios caminhos, mas anota dúvidas para discutir depois com a equipe."
 
     show developer_test enthusiastic at left_zoom
@@ -124,7 +128,7 @@ label scene_17_tarde_estudos_tecnicos:
     hide developer_test
 
     $ inventario.append("anotacoes_tecnicas")
-    "Você salva suas anotações, fecha o notebook e sente-se pronto(a) para os desafios dos próximos dias."
+    "Você salva suas anotações, fecha o notebook e sente que tem base para os desafios dos próximos dias."
     $ set_available('all')
     play music music_home_reflecting fadein 1.3
     scene bg quarto_noite

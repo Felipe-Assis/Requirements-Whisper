@@ -3,26 +3,25 @@ label scene_18_2_codificacao_final:
     scene bg escritorio_interior_manha
     with dissolve
 
+    $ set_time(8, 0)
     $ advance_minutes(11)
     play sound "audio/effects/teclado.ogg"
-    "{i}Você chega cedo ao escritório, determinado(a) a finalizar o módulo de cadastro de pacientes com máxima qualidade.{/i}"
+    "{i}Depois de uma boa noite de sono, você chega cedo ao escritório com uma meta: finalizar o módulo de cadastro de pacientes com o máximo de qualidade.{/i}"
     show developer_coding serious at left_zoom
     show developer_test enthusiastic at right_zoom
+    with dissolve
 
     developer_coding "Foco total agora, [player_name]. Lembre-se: pequenas revisões fazem grande diferença!"
-    developer_test confident "Se quiser revisar juntos, estou por aqui. Vários olhos enxergam mais bugs!"
+    show developer_test confident at right_zoom
+    developer_test "Se quiser revisar juntos, estou por aqui. Vários olhos enxergam mais bugs!"
 
     # Mini-game visual: revisão/correção final
-    "{i}Você abre o PR (Pull Request) no sistema de versionamento, pronto para a revisão final.{/i}"
+    "{i}Você abre o PR (Pull Request) no sistema de versionamento para a revisão final.{/i}"
     "{i}No diff, identifica:\n1. Função pouco legível\n2. Campo sem validação\n3. Documentação técnica desatualizada{/i}"
 
     $ revisoes_realizadas = []
     $ revisoes_restantes = ["função", "validação", "documentação"]
 
-    $ opcoes = [("função", "Refatora a função para código limpo."),
-                ("validação", "Adiciona validação ao campo do formulário."),
-                ("documentação", "Chama [NOME_DEVELOPER_QUALITY] para revisar documentação técnica."),
-                ("automacao", "Pede dica para [NOME_DEVELOPER_AI] sobre automação de testes.")]
     $ revisoes = 0
     while revisoes < 2:
         menu:
@@ -30,23 +29,29 @@ label scene_18_2_codificacao_final:
             "Refatora a função para código limpo." if "função" in revisoes_restantes:
                 $ revisoes_realizadas.append("função")
                 $ revisoes_restantes.remove("função")
-                developer_coding positive "Excelente! Código limpo facilita a vida de todo mundo, inclusive a sua no futuro."
-                $ amizade_developer_coding += 1
+                show developer_coding positive at left_zoom
+                developer_coding "Excelente! Código limpo facilita a vida de todo mundo, inclusive a sua no futuro."
+                $ add_friendship_point("developer_coding", 1)
             "Adiciona validação ao campo." if "validação" in revisoes_restantes:
                 $ revisoes_realizadas.append("validação")
                 $ revisoes_restantes.remove("validação")
-                developer_test thinking "Boa! Validação previne bugs e problemas para o usuário final."
-                $ amizade_developer_test += 1
+                show developer_test thinking at right_zoom
+                developer_test "Boa! Validação previne bugs e problemas para o usuário final."
+                $ add_friendship_point("developer_test", 1)
             "Chama [NOME_DEVELOPER_QUALITY] para revisar documentação." if "documentação" in revisoes_restantes:
                 $ revisoes_realizadas.append("documentação")
                 $ revisoes_restantes.remove("documentação")
                 show developer_quality positive at center_zoom
                 developer_quality "Ótima iniciativa! Documentação clara agiliza suporte e facilita onboarding de novos devs."
-                $ amizade_developer_quality += 1
+                $ add_friendship_point("developer_quality", 1)
                 hide developer_quality
-            "Pede dica para [NOME_DEVELOPER_AI] sobre automação de testes.":
-                developer_ai positive "Se quiser, te passo um script para rodar cenários de teste automaticamente!"
-                $ amizade_developer_ai += 1
+            "Pede dica para [NOME_DEVELOPER_AI] sobre automação de testes." if "automacao" not in revisoes_realizadas:
+                $ revisoes_realizadas.append("automacao")
+                show developer_ai positive at center_zoom
+                developer_ai "Se quiser, te passo um script para rodar cenários de teste automaticamente!"
+                developer_ai "Só que o script ajuda a achar bug, não corrige o que já está no diff, viu?"
+                hide developer_ai
+                $ add_friendship_point("developer_ai", 1)
         $ revisoes += 1
 
     # Visual do checklist de revisão
@@ -74,19 +79,27 @@ label scene_18_2_codificacao_final:
     menu:
         "Tudo pronto! Como deseja entregar o módulo?"
         "Faz uma demo para a equipe antes de dar merge.":
-            developer_coding enthusiastic "Ótima prática! Demonstração facilita feedback imediato e fortalece o trabalho em equipe."
-            developer_test positive "Assim todo mundo aprende com a solução!"
-            $ amizade_developer_coding += 1
-            $ amizade_developer_test += 1
+            show developer_coding positive at left_zoom
+            developer_coding "Ótima prática! Demonstração facilita feedback imediato e fortalece o trabalho em equipe."
+            show developer_test positive at right_zoom
+            developer_test "Assim todo mundo aprende com a solução!"
+            $ add_friendship_point("developer_coding", 1)
+            $ add_friendship_point("developer_test", 1)
             $ entrega_pr = "demo"
         "Comenta no pull request e detalha as decisões tomadas.":
-            developer_coding positive "Transparência na revisão é fundamental. Isso é maturidade técnica!"
-            $ amizade_developer_coding += 1
+            show developer_coding positive at left_zoom
+            developer_coding "Transparência na revisão é fundamental. Isso é maturidade técnica!"
+            $ add_friendship_point("developer_coding", 1)
             $ entrega_pr = "pr"
         "Entrega direto, mas deixa um recado avisando no grupo.":
-            developer_test neutral "Importante avisar, mas tente sempre garantir uma revisão coletiva antes. Previne sustos!"
-            $ amizade_developer_test += 1
+            show developer_test thinking at right_zoom
+            developer_test "Importante avisar, mas tente sempre garantir uma revisão coletiva antes. Previne sustos!"
+            $ add_friendship_point("developer_test", 1)
             $ entrega_pr = "direto"
+
+    hide developer_coding
+    hide developer_test
+    with dissolve
 
     # Exibe a tela de listagem de pacientes após merge/entrega
     show expression "images/artifacts/main_screen_old.png" as tela_final at center_zoom
@@ -96,13 +109,19 @@ label scene_18_2_codificacao_final:
 
     # Estatísticas finais e feedback
     "Resumo da revisão:"
-    if len(revisoes_realizadas) == 2:
+    if len(revisoes_realizadas) - revisoes_realizadas.count("automacao") == 2:
         "Você concluiu 2 revisões essenciais!"
         if "função" in revisoes_realizadas and "validação" in revisoes_realizadas:
             "Seu código ficou robusto, limpo e seguro!"
             $ inventario.append("badge_codigo_limpo")
+            # Com a função refatorada e a validação no lugar, os bugs de ontem
+            # foram corrigidos: o caminho do descanso também chega ao selo.
+            $ bugs_detectados = 0
+            if "selo_codigo_sem_bugs" not in inventario:
+                "Os bugs encontrados ontem foram corrigidos na revisão. Você ganhou o selo 'Código sem Bugs' no inventário."
+                $ inventario.append("selo_codigo_sem_bugs")
     else:
-        "Uma revisão só já faz diferença, mas sempre tente revisar mais."
+        "Uma revisão já faz diferença, mas ainda ficou ponto aberto no diff. Na próxima, tente revisar mais."
 
     if entrega_pr == "demo":
         "Sua demonstração foi elogiada por todos!"

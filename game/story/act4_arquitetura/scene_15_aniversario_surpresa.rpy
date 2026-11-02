@@ -4,7 +4,7 @@ label scene_15_aniversario_surpresa:
     scene bg escritorio_interior_tarde
     with dissolve
 
-    $ advance_minutes(13)
+    $ set_time(15, 0)
     "{i}Já no dia seguinte...{/i}"
     "{i}O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
     "{i}Você percebe que a equipe está querendo organizar algo especial, mas ninguém se prontificou ainda.{/i}"
@@ -18,24 +18,24 @@ label scene_15_aniversario_surpresa:
     menu:
         "Como você contribui para o aniversário surpresa?"
         "Fico responsável por comprar o bolo na padaria.":
-            $ amizade_developer_security += 2
-            $ amizade_developer_requirements += 1
+            $ add_friendship_point("developer_security", 2)
+            $ add_friendship_point("developer_requirements", 1)
             play sound "audio/effects/cell_vibration.ogg"
             show developer_quality positive at right_zoom2
             developer_quality "Genial, [player_name]! Bolo é o mais importante, todo mundo vai adorar."
             $ inventario.append("bolo")
             hide developer_quality
         "Faço uma vaquinha rápida pelo chat e compro docinhos e salgadinhos.":
-            $ amizade_developer_security += 1
-            $ amizade_developer_ai += 1
+            $ add_friendship_point("developer_security", 1)
+            $ add_friendship_point("developer_ai", 1)
             show developer_ai enthusiastic at right_zoom
             developer_ai "Gostei! Gente unida até no pix, festa colaborativa é sucesso."
             $ inventario.append("docinhos")
             $ inventario.append("salgadinhos")
             hide developer_ai
         "Sugiro fazer cartões de parabéns assinados por toda a equipe.":
-            $ amizade_developer_security += 2
-            $ amizade_developer_project += 1
+            $ add_friendship_point("developer_security", 2)
+            $ add_friendship_point("developer_project", 1)
             show developer_project confident at right_zoom
             developer_project "Boa! Gestos simples valem muito. Eu topo ajudar a desenhar algo especial."
             $ inventario.append("cartão")
@@ -48,18 +48,18 @@ label scene_15_aniversario_surpresa:
             play sound "audio/effects/ambiente_reuniao.ogg"
             show developer_test enthusiastic at left_zoom
             developer_test "Essa seleção tá top! Já quero dançar comendo brigadeiro."
-            $ amizade_developer_test += 1
+            $ add_friendship_point("developer_test", 1)
             hide developer_test
         "Providenciar balões e enfeites coloridos.":
             show developer_quality positive at right_zoom2
             developer_quality "Adorei a decoração! Vai deixar tudo mais alegre."
-            $ amizade_developer_quality += 1
+            $ add_friendship_point("developer_quality", 1)
             hide developer_quality
         "Preparar uma apresentação de slides com fotos engraçadas da equipe.":
             hide developer_requirements
             show developer_coding positive at left_zoom
             developer_coding "Que nostalgia, [player_name]! Boa ideia para dar boas risadas juntos."
-            $ amizade_developer_coding += 1
+            $ add_friendship_point("developer_coding", 1)
             hide developer_coding
 
     show developer_requirements positive at left_zoom
@@ -93,24 +93,24 @@ label scene_15_aniversario_surpresa:
     hide developer_quality
     hide developer_coding
 
-    show developer_security serious at center_zoom
+    show developer_security thinking at center_zoom
     developer_security "Nossa, gente... Nem sei o que dizer. Vocês são demais!"
     play sound "audio/effects/feedback_positive.ogg"
 
     menu:
         "Como você deseja parabenizar [NOME_DEVELOPER_SECURITY]?"
         "Desejo sucesso e agradeço pela parceria no projeto.":
-            $ amizade_developer_security += 1
+            $ add_friendship_point("developer_security", 1)
             show developer_security enthusiastic at center_zoom
             developer_security "Valeu, [player_name]! É uma honra trabalhar contigo."
             hide developer_security
         "Brinco sobre 'testar o bolo' para garantir qualidade.":
-            $ amizade_developer_quality += 1
+            $ add_friendship_point("developer_quality", 1)
             show developer_quality positive at right_zoom
             developer_quality "Hahaha, essa foi boa! Pode confiar que o controle de qualidade aqui é sério."
             hide developer_quality
         "Faço um trocadilho sobre bugs e ataques, arrancando risos da equipe.":
-            $ amizade_developer_ai += 1
+            $ add_friendship_point("developer_ai", 1)
             show developer_ai positive at left_zoom
             developer_ai "Piada digna de deploy em sexta-feira à noite!"
             hide developer_ai

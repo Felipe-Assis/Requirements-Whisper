@@ -1,11 +1,12 @@
 label scene_8_cafe_informal:
-    $ set_available()
+    # No café estão Joseph, César e Lucas; o resto da equipe segue no chat.
+    $ set_available("developer_management", "developer_project", "developer_quality", "developer_requirements", "developer_security")
     play music music_coffee_break_energized fadein 1.0
     scene bg empresa_cafe_tarde
     with fade
 
     $ advance_minutes(12)
-    "{i}No meio da tarde, após um intenso período de revisão de requisitos, você percebe que parte da equipe está reunida na cafeteria do escritório.{/i}"
+    "{i}No meio da tarde, depois da revisão dos requisitos, você percebe que parte da equipe está reunida na cafeteria do escritório.{/i}"
     with dissolve
     "{i}O aroma do café recém-passado se espalha pelo ambiente.{/i}"
 
@@ -92,6 +93,6 @@ label scene_8_cafe_informal:
     scene bg escritorio_interior_tarde
     with dissolve
     $ advance_minutes(7)
-    "{i}Revigorado(a) pelo café e pela conversa, você retorna ao trabalho com novas ideias e a certeza de que não está sozinho(a) nessa jornada.{/i}"
+    "{i}Com energia renovada pelo café e pela conversa, você volta ao trabalho com novas ideias e a certeza de que não está enfrentando essa jornada sem apoio.{/i}"
 
     return

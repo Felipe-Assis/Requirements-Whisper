@@ -30,15 +30,14 @@ label scene_13_retorno_casa_sem3:
     pause 0.7
     window show
 
-    "• Use sempre verbos no infinitivo nos requisitos (ex: 'Permitir cadastro de paciente')\n• Critérios de aceitação devem ser objetivos e fáceis de testar"
-    "\n• Prefira frases curtas e sem ambiguidade\n• Separe o que é necessidade real do usuário de opiniões ou desejos"
+    "• Use sempre verbos no infinitivo nos requisitos (ex: 'Permitir cadastro de paciente')\n• Critérios de aceitação devem ser objetivos e fáceis de testar\n• Prefira frases curtas e sem ambiguidade\n• Separe o que é necessidade real do usuário de opiniões ou desejos"
 
     "Abre seu aplicativo de notas e compara com o material da disciplina de Engenharia de Software. Um trecho chama a atenção:"
     window hide
     pause 0.7
     window show
 
-    "*‘Documentação não serve só para auditar ou apresentar: ela é memória coletiva, base para testes e para evoluir o sistema sem medo no futuro.’*"
+    "{i}Documentação não serve só para auditar ou apresentar: ela é memória coletiva, base para testes e para evoluir o sistema sem medo no futuro.{/i}"
 
     "{i}Você reflete sobre como a prática do projeto faz tudo aquilo fazer sentido — e que, por mais que documentar pareça trabalhoso, é o que torna o desenvolvimento possível em equipe.{/i}"
 
@@ -48,9 +47,9 @@ label scene_13_retorno_casa_sem3:
     developer_requirements "(mensagem no grupo) Pessoal, parabéns pelo empenho hoje! Documento ficou ótimo. Amanhã, seguimos para a próxima etapa juntos!"
     hide developer_requirements
 
-    "Estamos chegando na parte crítica do projeto..."
-    "Talvez seja interessante eu falar com mais alguém para sincronizar."
+    "{i}O projeto está chegando na parte crítica. Talvez seja bom falar com mais alguém da equipe antes de dormir.{/i}"
 
+    hide notebook
     call screen contacts_screen
 
 

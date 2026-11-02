@@ -1,5 +1,6 @@
 label scene_10_criacao_casos_uso:
-    $ set_available("developer_coding", "developer_management", "developer_security", "developer_test")
+    # Emily, Lucas e César passam pela mesa; Heitor e Daiana falam pelo chat.
+    $ set_available("developer_coding", "developer_management", "developer_project", "developer_quality", "developer_security")
 
     $ game_hour = 9
     $ game_minute = 10
@@ -8,7 +9,7 @@ label scene_10_criacao_casos_uso:
     with fade
 
     $ advance_minutes(8)
-    "{i}Novo dia, novas tarefas. Você chega cedo ao escritório, determinado(a) a estruturar os primeiros casos de uso do sistema.{/i}"
+    "{i}Novo dia, novas tarefas. Você chega cedo ao escritório, com vontade de estruturar os primeiros casos de uso do sistema.{/i}"
     "{i}O ambiente está silencioso, exceto pelo som de teclados e o aroma do café recém-passado.{/i}"
     with dissolve
 
@@ -51,7 +52,7 @@ label scene_10_criacao_casos_uso:
     show developer_ai positive at right_zoom
     developer_ai "Vocês já pensaram em usar esses dados para automatizar alertas? Se a gente coletar padrões de evolução clínica, podemos sugerir intervenções com IA ou gerar relatórios inteligentes no futuro!"
     show developer_requirements enthusiastic at left_zoom
-    developer_requirements "Seria incrível! Por enquanto, o foco é garantir que o fluxo básico funcione, mas vamos deixar isso anotado como caso de uso desejável, como integração com o app 'Adeus Cigarro' e geração automática de indicadores."
+    developer_requirements "Seria incrível! Por enquanto, o foco é garantir que o fluxo básico funcione, mas vamos deixar isso anotado como caso de uso desejável, como a integração com o app móvel do ByeByeFumo e a geração automática de indicadores."
     hide developer_ai
     $ advance_minutes(2)
 
@@ -62,7 +63,7 @@ label scene_10_criacao_casos_uso:
     developer_requirements "Colaboração fundamental, [NOME_DEVELOPER_TEST]. Documentar fluxos alternativos e exceções evita falhas depois. Já vou separar para você revisar!"
     hide developer_test
 
-    $ advance_minutes(5)
+    $ advance_minutes(110)
     "{i}Após algumas horas intensas, vocês decidem fazer uma pausa para alongar e conversar.{/i}"
     show developer_requirements neutral at left_zoom
     menu:
@@ -94,5 +95,6 @@ label scene_10_criacao_casos_uso:
     $ advance_minutes(15)
     "{i}Com os principais fluxos definidos, revisados e anotados (Cadastro de Paciente, Registro de Histórico, Comorbidades, Escalas, Acompanhamento e Integração), você sente que está ganhando ritmo no projeto.{/i}"
     "{i}As colaborações estão fluindo cada vez melhor e, a cada etapa, o sistema vai ganhando forma nos detalhes.{/i}"
+    $ registrar("saude_reg_casos_uso")
 
     return

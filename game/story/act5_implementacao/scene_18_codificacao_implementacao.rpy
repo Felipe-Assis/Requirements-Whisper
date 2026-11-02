@@ -4,6 +4,7 @@ label scene_18_codificacao_implementacao:
     scene bg escritorio_interior_manha
     with dissolve
 
+    $ set_time(9, 0)
     $ advance_minutes(14)
     play sound "audio/effects/teclado.ogg"
     "{i}O dia começa com a equipe focada: hoje é o grande momento da codificação.{/i}"
@@ -116,14 +117,20 @@ label scene_18_codificacao_implementacao:
         play sound "audio/effects/abrindo_porta.ogg"
         scene bg transito_noite
         with fade
-        "{i}Já é noite quando você deixa o escritório, cansado(a) e levando o notebook para casa. Ainda falta terminar parte do módulo...{/i}"
+        $ set_time(19, 40)
+        "{i}Já é noite quando você deixa o escritório, com o corpo cansado e o notebook na mochila. Ainda falta terminar parte do módulo...{/i}"
         menu:
             "Como prefere lidar com o trabalho restante?"
             "Virar a noite e entregar tudo ainda hoje.":
-                "{i}Você trabalha até tarde, mas termina a implementação. No dia seguinte, chega exausto(a), mas orgulhoso(a) do resultado.{/i}"
+                play music music_home_reflecting fadein 1.3
+                scene bg quarto_noite
+                with fade
+                "{i}Em casa, você abre o notebook na escrivaninha e segue sem pausa, entre um café e outro.{/i}"
+                $ set_time(3, 10)
+                "{i}Passa das três da manhã quando o último teste fica verde. Você fecha o notebook, mas a cabeça não desliga.{/i}"
                 $ energia_diaria = 1
             "Deixar para finalizar pela manhã, descansando e evitando erros por cansaço.":
-                "{i}Você prioriza o descanso, acordando cedo para revisar com calma no escritório. Chega mais disposto(a) para encarar os testes finais.{/i}"
+                "{i}Você prioriza o descanso e decide acordar cedo para revisar com calma no escritório.{/i}"
                 call scene_18_2_codificacao_final from _scene_18_2_codificacao_final
                 return
 
@@ -147,19 +154,27 @@ label scene_18_codificacao_implementacao:
         $ inventario.append("selo_codigo_sem_bugs")
 
     play sound "audio/effects/feedback_positive.ogg"
-    scene bg escritorio_interior_noite
-    with fade
-    $ advance_minutes(21)
-    "{i}O expediente termina com aquele misto de alívio e aprendizado. Você está se tornando cada vez mais profissional e preparado(a) para os próximos desafios.{/i}"
+    if finalizou_no_escritorio:
+        scene bg escritorio_interior_noite
+        with fade
+        $ advance_minutes(21)
+        "{i}O expediente termina com aquele misto de alívio e aprendizado. A cada semana, o trabalho fica mais natural e os próximos desafios assustam menos.{/i}"
 
-    $ set_available('all')
+        $ set_available('all')
 
-    play music music_home_reflecting fadein 1.3
-    scene bg quarto_noite
-    with fade
-    $ advance_minutes(17)
-    "{i}Em casa, você relembra como aplicar conceitos avançados de programação, testabilidade e boas práticas mudou o resultado do projeto.{/i}"
-    "{i}A teoria da faculdade, finalmente, faz sentido na prática.{/i}"
+        play music music_home_reflecting fadein 1.3
+        scene bg quarto_noite
+        with fade
+        $ advance_minutes(17)
+        "{i}Em casa, você relembra como aplicar conceitos avançados de programação, testabilidade e boas práticas mudou o resultado do projeto.{/i}"
+        "{i}A teoria da faculdade, finalmente, faz sentido na prática.{/i}"
+    else:
+        $ set_available('all')
+        scene bg quarto_manha
+        with fade
+        $ set_time(7, 0)
+        "{i}Quando o despertador toca, parece que você acabou de deitar. O módulo está entregue, mas o cansaço cobra o preço: [NOME_DEVELOPER_TEST] já avisou no grupo que encontrou falhas para corrigir.{/i}"
+        "{i}A noite em claro rendeu código, mas também os erros que só a pressa e o sono deixam passar.{/i}"
 
     window hide
     pause 1.1

@@ -116,12 +116,29 @@ init 1 python:
         },
     ]
 
-    # Só conquistas que as cenas concedem hoje. conquista_guardiao_privacidade
-    # fica de fora: scene_19 fixa a maturidade em 85 e nunca chega aos 91.
+    # Só conquistas que as cenas concedem. O selo "Código sem Bugs" sai na
+    # scene_18 (boas práticas) ou na scene_18_2 (função e validação revisadas);
+    # os selos de deploy saem das escolhas da scene_20; a de privacidade, da
+    # maturidade calculada na scene_19.
     ROUTES["saude"]["achievements"] = [
         {"id": "selo_codigo_sem_bugs", "inv": "selo_codigo_sem_bugs",
          "title": _("Código sem Bugs"),
-         "desc": _("Terminou a codificação sem bugs detectados.")},
+         "desc": _("Terminou a codificação sem bugs pendentes.")},
+        {"id": "conquista_guardiao_privacidade", "inv": "conquista_guardiao_privacidade",
+         "title": _("Privacidade Levada a Sério"),
+         "desc": _("Levou a autoavaliação de maturidade em privacidade e segurança ao nível Excelente.")},
+        {"id": "badge_devops", "inv": "badge_devops",
+         "title": _("Visão DevOps"),
+         "desc": _("Sugeriu o deploy com Docker e pipeline de CI/CD automatizada.")},
+        {"id": "badge_bug_buster", "inv": "badge_bug_buster",
+         "title": _("Bug Crítico Resolvido"),
+         "desc": _("Achou o vazamento de memória e corrigiu o bug crítico antes do deploy.")},
+        {"id": "badge_team_work", "inv": "badge_team_work",
+         "title": _("Trabalho em Equipe"),
+         "desc": _("Dividiu o bug crítico com a equipe para achar o gargalo mais rápido.")},
+        {"id": "badge_resiliencia", "inv": "badge_resiliencia",
+         "title": _("Resiliência"),
+         "desc": _("Preferiu o rollback seguro a um deploy apressado.")},
         {"id": "conquista_bug_vuln", "inv": "conquista_bug_vuln",
          "title": _("Caça a Bugs e Vulnerabilidades"),
          "desc": _("Encontrou pelo menos três bugs ou vulnerabilidades nos testes.")},

@@ -44,14 +44,14 @@ label scene_5_preparacao_entrevista:
             developer_requirements "Sem problemas! Acontece com todo mundo. O importante é estar aqui agora."
         "Fiquei revisando as perguntas no caminho para não fazer feio na entrevista!":
             $ add_friendship_point("developer_requirements", 1)
-            developer_requirements "Ótimo! Proatividade faz toda diferença nessas horas. Mostra que você está realmente comprometido."
+            developer_requirements "Ótimo! Proatividade faz toda diferença nessas horas. Mostra compromisso de verdade."
         "Quase perdi a hora, mas prometo que foi só hoje!":
             developer_requirements "Relaxa, não sou chefe para brigar por isso! Só não vai virar rotina, hein?"
     $ advance_minutes(3)
 
     "Você percebe um café recém-passado na copa da empresa."
     menu:
-        "Deseja pegar um café para você e para developer_requirements?"
+        "Deseja pegar um café para você e para [NOME_DEVELOPER_REQUIREMENTS]?"
         "Sim, pego dois cafés e ofereço um para ela.":
             $ add_friendship_point("developer_requirements", 1)
             "Você pega duas xícaras e entrega uma para [NOME_DEVELOPER_REQUIREMENTS]."
@@ -66,20 +66,20 @@ label scene_5_preparacao_entrevista:
 
     # Orientação sobre a entrevista, reforço de amizade e contexto técnico
     show developer_requirements enthusiastic at left_zoom
-    developer_requirements "Hoje você vai participar da entrevista com dois stakeholders: o diretor médico e uma das enfermeiras que mais usam o sistema."
-    developer_requirements "Prepare perguntas que ajudem a entender tanto as necessidades técnicas quanto o dia a dia deles. Lembre-se: o objetivo é captar dores reais, não só o que o sistema deveria fazer."
-    developer_requirements "Perguntas abertas ajudam a extrair mais detalhes. Ouça com atenção, anote pontos-chave e não tenha medo de perguntar sobre situações do cotidiano — muitas vezes surgem requisitos importantes fora do roteiro!"
+    developer_requirements "Hoje você vai participar da entrevista com duas stakeholders: a [NOME_DOUTORA_1] e a [NOME_DOUTORA_2], médicas do Instituto que usam o sistema atual todos os dias."
+    developer_requirements "Prepare perguntas que ajudem a entender tanto as necessidades técnicas quanto o dia a dia delas. Lembre-se: o objetivo é captar dores reais, não só o que o sistema deveria fazer."
+    developer_requirements "Perguntas abertas ajudam a extrair mais detalhes. Peça exemplos de situações reais, anote pontos-chave e não tenha medo de perguntar sobre o cotidiano — muitas vezes surgem requisitos importantes fora do roteiro!"
     developer_requirements "Aliás, seu notebook já tem um roteiro inicial e o questionário clínico do Instituto. Mas se sentir confiança, pode improvisar e aprofundar onde achar necessário. Escuta ativa é tudo!"
     $ advance_minutes(5)
 
-    "Vocês seguem juntos até a sala de reuniões. O clima é de leve tensão, mas também de expectativa pelo que você pode aprender hoje."
+    "Vocês pegam o ônibus juntos até o Instituto, onde as médicas atendem. O clima é de leve tensão, mas também de expectativa pelo que você pode aprender hoje."
     hide developer_requirements
 
     # Transição/padding antes da próxima cena
     play music music_office_concentrated_2 fadein 0.8
     scene black
     with fade
-    $ advance_minutes(3)
+    $ advance_minutes(15)
     "Alguns minutos depois, tudo pronto para começar a entrevista..."
 
     return

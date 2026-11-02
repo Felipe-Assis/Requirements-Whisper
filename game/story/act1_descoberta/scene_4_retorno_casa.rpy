@@ -5,7 +5,7 @@ label scene_4_retorno_casa:
     scene bg transito_noite
     with dissolve
 
-    $ advance_minutes(120) # Viagem de volta para casa
+    $ advance_minutes(150) # Resto do expediente e viagem de volta para casa
     "O dia chega ao fim e, depois de um longo expediente, você embarca no ônibus para casa."
     "As luzes da cidade passam rápido pela janela enquanto você relembra tudo o que aconteceu hoje no escritório."
     play sound "audio/effects/bus.ogg"
@@ -16,7 +16,7 @@ label scene_4_retorno_casa:
     play music music_home_reflecting fadein 2.0
     scene bg quarto_noite
     with fade
-    $ advance_minutes(180)
+    $ advance_minutes(60)
 
     "De volta ao seu quarto, você senta na cama, tira o notebook da mochila e decide revisar as anotações do dia."
     show item notebook_fechado as notebook at center_zoom
@@ -37,7 +37,7 @@ label scene_4_retorno_casa:
 
     show developer_requirements portrait at left_zoom
     developer_requirements "(mensagem pelo app) Olá, [player_name]! Parabéns pelo seu primeiro dia! Se precisar de qualquer coisa, pode contar comigo. Amanhã começamos a preparar as entrevistas com os stakeholders. Inclusive, não esquece de revisar o questionário clínico que está no drive da equipe!"
-    "Você sorri e sente um leve alívio por estar sendo bem acolhido(a) na equipe."
+    "Você sorri. É um alívio sentir que a equipe te acolheu bem."
     hide developer_requirements
     $ add_friendship_point("developer_requirements", 1)
     $ advance_minutes(2)
@@ -62,7 +62,7 @@ label scene_4_retorno_casa:
     with dissolve
     $ advance_minutes(5)
 
-    "Deitado(a), você pega o celular novamente e faz uma pequena anotação para não esquecer:"
+    "Já na cama, você pega o celular novamente e faz uma pequena anotação para não esquecer:"
     "Hoje percebi como a teoria sobre metodologias ágeis vista na faculdade realmente faz sentido no mundo real."
     "A colaboração da equipe e a comunicação constante foram essenciais para entender como o trabalho flui na prática."
 

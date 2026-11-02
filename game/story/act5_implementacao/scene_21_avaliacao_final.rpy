@@ -8,6 +8,7 @@ label scene_21_avaliacao_final:
     scene bg escritorio_interior_manha
     with fade
 
+    $ set_time(8, 30)
     $ advance_minutes(12)
     "{i}O último dia começa. O escritório está mais silencioso que o normal; todos preparam documentos e apresentações para o grande encontro de entrega.{/i}"
 
@@ -19,6 +20,7 @@ label scene_21_avaliacao_final:
     # Transição: trajeto até o instituto
     scene bg transito_tarde
     with dissolve
+    $ set_time(13, 20)
     play sound "audio/effects/bus.ogg"
     "{i}Após o almoço, a equipe pega o ônibus rumo ao Instituto. O trânsito do Rio de Janeiro, como sempre, é imprevisível. Todos revisam mentalmente os pontos principais da apresentação.{/i}"
 
@@ -33,10 +35,11 @@ label scene_21_avaliacao_final:
     with dissolve
 
     show developer_requirements enthusiastic at left_zoom
-    developer_requirements "Sejam bem-vindos! Dr. Almeida e Enfermeira Marta estão aguardando. Respirem fundo — vocês estão prontos!"
+    developer_requirements "Chegamos! A [NOME_DOUTORA_1] e a [NOME_DOUTORA_2] já estão aguardando. Respirem fundo — o trabalho está pronto para ser mostrado!"
 
-    show doutora_1 portrait at right_zoom
-    show doutora_2 portrait at right_zoom2
+    show doutora_1 neutral at right_zoom
+    show doutora_2 neutral at right_zoom2
+    with dissolve
 
     "{i}A equipe se organiza. Você apresenta o sistema, mostrando as principais funcionalidades, relatórios, telas e os diferenciais do projeto. Os stakeholders acompanham atentos.{/i}"
 
@@ -62,9 +65,7 @@ label scene_21_avaliacao_final:
         $ resultado_tech = "Padrao"
 
     # Stakeholders avaliam (final alternativo)
-    show doutora_1 neutral at right_zoom
     doutora_1 "Fiquei muito satisfeita com o resultado! O sistema está fácil de usar, não precisei de manual pra achar o que eu queria. É uma grande mudança para a nossa rotina."
-    show doutora_2 neutral at right_zoom2
     doutora_2 "De verdade, adorei o jeito que vocês deixaram tudo claro e simples. Preencher os dados do paciente ficou bem menos cansativo."
 
     # Comentários das médicas mais humanos e de rotina
@@ -73,6 +74,12 @@ label scene_21_avaliacao_final:
 
     doutora_1 "Agradeço por terem paciência em ouvir nossas reclamações e sugestões. Em outros projetos, ninguém parava para perguntar o que era realmente importante para a gente."
     doutora_2 "Eu senti que nossas opiniões foram levadas a sério. Isso faz a gente se sentir parte do projeto também!"
+
+    # Volta ao acordo de escopo da scene_14 (integração com o Adeus Cigarro).
+    if s14_acordo_escopo == "base_primeiro":
+        doutora_1 "E sobre o Adeus Cigarro: confesso que fiquei chateada na hora. Mas o autosave e as escalas eram mesmo o mais urgente. Agora quero marcar aquela investigação da integração."
+    elif s14_acordo_escopo == "investigar_agora":
+        doutora_1 "E obrigada por terem investigado a integração com o Adeus Cigarro antes de prometer. Esperar alguns dias valeu: agora sei o que dá para fazer e o que depende do outro app."
 
     if resultado_tech == "DevOps":
         doutora_1 "Se vocês dizem que agora fica mais fácil pra atualizar, melhor ainda! Só não me deixem sem sistema justo no plantão, hein?"
@@ -130,7 +137,7 @@ label scene_21_avaliacao_final:
     "{i}A reunião termina em clima de vitória. Fotos, abraços, contatos trocados — e a certeza de que o semestre foi transformador.{/i}"
 
     # Reflexão e aprendizado final
-    "{i}No ônibus, a cidade passa pela janela. Você pensa em tudo que viveu: erros, acertos, amizades, superações, aprendizado e, principalmente, confiança em si mesmo.{/i}"
+    "{i}No ônibus, a cidade passa pela janela. Você pensa em tudo que viveu: erros, acertos, amizades, superações, aprendizado e, principalmente, a confiança que foi ganhando pelo caminho.{/i}"
 
     scene bg quarto_noite
     with dissolve
@@ -141,7 +148,7 @@ label scene_21_avaliacao_final:
     window show
 
     "{i}Fim da Semana 8 — Projeto entregue, ciclo concluído.{/i}"
-    "{i}Você percebeu que a prática consolidou tudo que aprendeu na universidade, e que está pronto(a) para os próximos desafios.{/i}"
+    "{i}Você percebeu que a prática consolidou tudo que aprendeu na universidade, e que agora tem base para encarar os próximos desafios.{/i}"
     "{i}Lembre-se: na Engenharia de Software, aprender com o time, ouvir o usuário e revisar cada detalhe são diferenciais para qualquer projeto de sucesso.{/i}"
 
     return

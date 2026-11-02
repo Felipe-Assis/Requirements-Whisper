@@ -108,11 +108,11 @@ label scene_11_almoco_equipe:
                     show developer_coding neutral at right_zoom2
                     developer_coding "Não esqueçam de manter o padrão no código dos testes, hein! Qualquer dúvida me chama."
                     hide developer_coding
-                "Fico curioso(a) sobre IA aplicada à saúde.":
+                "Tenho curiosidade sobre IA aplicada à saúde.":
                     $ add_friendship_point("developer_ai", 1)
                     if get_friendship_point("developer_ai") >= 4:
                         show developer_ai positive at right_zoom
-                        developer_ai "Legal te ver engajado(a) nisso! Tenho um artigo salvo só pra você, depois te mando no chat."
+                        developer_ai "Legal ver seu interesse nisso! Tenho um artigo salvo só pra você, depois te mando no chat."
                     else:
                         show developer_ai positive at right_zoom
                         developer_ai "Tem muita coisa inovadora surgindo! Se quiser, te passo uns artigos legais."
@@ -153,7 +153,7 @@ label scene_11_almoco_equipe:
                     $ add_friendship_point("developer_quality", 1)
                     if get_friendship_point("developer_quality") >= 5:
                         show developer_quality enthusiastic at left_zoom
-                        developer_quality "Você sempre atento(a) aos detalhes! Vou te passar meu checklist exclusivo depois."
+                        developer_quality "Você não deixa escapar um detalhe! Vou te passar meu checklist exclusivo depois."
                     else:
                         show developer_quality enthusiastic at left_zoom
                         developer_quality "Processo de revisão, testes e checklist bem definidos. Depois te mostro nossa rotina."
@@ -203,7 +203,7 @@ label scene_11_almoco_equipe:
 
     show developer_security serious at left_zoom
     if get_friendship_point("developer_security") >= 4:
-        developer_security "[player_name], obrigado(a) por sempre pensar em segurança! Se quiser se aprofundar, me chama depois."
+        developer_security "[player_name], obrigado por sempre pensar em segurança! Se quiser se aprofundar, me chama depois."
     else:
         developer_security "E, [player_name], se quiser conversar sobre proteção de dados, só procurar!"
     hide developer_security

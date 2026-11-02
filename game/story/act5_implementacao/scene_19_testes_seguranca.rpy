@@ -1,3 +1,7 @@
+# Pontos da autoavaliação de maturidade (0 a 12): testes de segurança feitos
+# hoje (até 6) mais as três respostas do questionário (até 6).
+default s19_pontos_maturidade = 0
+
 label scene_19_testes_seguranca:
     $ set_available("developer_management", "developer_requirements", "developer_project")
 
@@ -5,6 +9,7 @@ label scene_19_testes_seguranca:
     scene bg escritorio_interior_manha
     with dissolve
 
+    $ set_time(9, 0)
     $ advance_minutes(10)
     "{i}Novo dia. O clima no escritório é diferente: hoje o foco é testar o sistema, validar requisitos e reforçar a segurança da informação.{/i}"
 
@@ -93,19 +98,57 @@ label scene_19_testes_seguranca:
                     hide developer_test
         $ revisoes += 1
 
+    $ registrar("saude_reg_testes")
+
     # Inclusão da avaliação de conformidade (questionário de maturidade)
     "{i}Antes da reunião de fechamento, [NOME_DEVELOPER_SECURITY] sugere uma autoavaliação rápida usando o modelo de maturidade de privacidade e segurança.{/i}"
 
     show developer_security serious at right_zoom
-    developer_security "Preencha o checklist: cada resposta 'Sim' vale 2 pontos, 'Parcialmente' vale 1, 'Não' ou 'Não sei' valem 0. Use só 'Não se aplica' se realmente não couber ao projeto."
+    with dissolve
+    developer_security "Funciona assim: cada teste de segurança que fizemos hoje conta ponto. Depois, três perguntas sobre como o time trabalha."
+    developer_security "Prática adequada vale 2 pontos, meia solução vale 1, e o resto vale 0. Sem chutar para cima, combinado?"
+
+    # Testes de segurança feitos hoje: 2 pontos cada, até 3 testes.
+    $ s19_pontos_maturidade = 2 * min(3, len([t for t in ("permissoes", "injeção", "autenticacao", "logs") if t in testes_realizados]))
+
+    menu:
+        "Os relatórios de pesquisa da [NOME_DOUTORA_1] exportam dados de pacientes. O que o time faz?"
+        "Anonimiza os dados antes da exportação: sem nome, CPF ou contato.":
+            $ s19_pontos_maturidade += 2
+            developer_security "Isso. Pesquisa precisa dos números, não de quem é o paciente. É o que a LGPD pede."
+        "Coloca senha no arquivo exportado.":
+            $ s19_pontos_maturidade += 1
+            developer_security "Ajuda, mas é meia solução. Se a senha vazar, os dados vão junto com nome e CPF."
+        "Exporta tudo; quem recebe é médica e sabe o que faz.":
+            developer_security "Confiar na pessoa não protege o arquivo. Planilha se perde, vai para e-mail errado, fica em pendrive."
+
+    menu:
+        "Alguém alterou o peso de um paciente no prontuário. Como saber quem foi?"
+        "Pelo log de auditoria: usuário, data, campo e valor anterior.":
+            $ s19_pontos_maturidade += 2
+            developer_security "Exato. Em dado clínico, rastreabilidade é requisito, não luxo."
+        "Restaurando o backup da véspera e comparando.":
+            $ s19_pontos_maturidade += 1
+            developer_security "Mostra o que mudou, mas não quem mudou. E dá um trabalho enorme."
+        "Perguntando no grupo da equipe médica.":
+            developer_security "Aí depende da memória de cada um. Não dá para auditar assim."
+
+    menu:
+        "E se houver um vazamento de dados amanhã?"
+        "Seguir o plano de resposta: conter, avaliar o impacto e avisar o Instituto e os pacientes afetados.":
+            $ s19_pontos_maturidade += 2
+            developer_security "Isso. Com o plano escrito, ninguém precisa improvisar sob pressão."
+        "Corrigir a falha logo e avisar só se alguém perguntar.":
+            developer_security "Esconder piora tudo. A LGPD exige comunicar, e o Instituto perde a confiança no sistema."
+        "Ainda não temos plano, mas a gente resolve na hora.":
+            $ s19_pontos_maturidade += 1
+            developer_security "Pelo menos é sincero. Fica como pendência: o plano precisa existir antes do deploy."
     hide developer_security
+    with dissolve
 
-    "{i}Você e a equipe respondem perguntas sobre: privacidade de dados,{/i}"
-    "{i}práticas de segurança (OWASP, RBAC, backups, criptografia), conformidade legal (LGPD), e governança do projeto.{/i}"
-    "{i}O sistema gera automaticamente a pontuação e mostra o nível de maturidade do time, de Inexistente a Excelente.{/i}"
+    "{i}O notebook soma os pontos dos testes de segurança e das respostas e mostra o nível de maturidade do time, de Inexistente a Excelente.{/i}"
 
-    # Feedback dinâmico do resultado (simulação)
-    $ maturidade_percentual = 85   # Exemplo de cálculo fictício, pode ser ramificado depois
+    $ maturidade_percentual = s19_pontos_maturidade * 100 // 12
     if maturidade_percentual >= 91:
         $ nivel_maturidade = "Excelente"
     elif maturidade_percentual >= 71:
@@ -118,7 +161,11 @@ label scene_19_testes_seguranca:
         $ nivel_maturidade = "Inexistente"
 
     show developer_quality positive at left_zoom
+    with dissolve
     developer_quality "Nossa avaliação ficou em [maturidade_percentual]\% — Nível [nivel_maturidade]. Isso mostra como evoluímos desde o início!"
+    if maturidade_percentual < 91:
+        show developer_quality thinking at left_zoom
+        developer_quality "Para chegar ao Excelente, falta cobrir mais testes de segurança ou fechar as práticas que ficaram pela metade."
     hide developer_quality
 
     show developer_security thinking at right_zoom
@@ -152,11 +199,11 @@ label scene_19_testes_seguranca:
 
     # Feedback final e conquistas
     if bugs_encontrados + vulnerabilidades >= 3:
-        "{i}Você desbloqueou a conquista: 'Caçador de Bugs & Vulns'!{/i}"
+        "{i}Você desbloqueou a conquista: 'Caça a Bugs e Vulnerabilidades'!{/i}"
         $ inventario.append("conquista_bug_vuln")
         play sound "audio/effects/recompensa.ogg"
-    elif maturidade_percentual >= 91:
-        "{i}Time em nível 'Excelente': conquista 'Guardião da Privacidade e Segurança' adicionada ao inventário!{/i}"
+    if maturidade_percentual >= 91:
+        "{i}Time em nível 'Excelente': conquista 'Privacidade Levada a Sério' adicionada ao inventário!{/i}"
         $ inventario.append("conquista_guardiao_privacidade")
         play sound "audio/effects/recompensa.ogg"
 

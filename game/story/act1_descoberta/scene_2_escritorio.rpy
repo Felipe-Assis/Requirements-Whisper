@@ -18,13 +18,13 @@ label scene_2_escritorio:
         "{i}Na recepção, uma jovem de sorriso simpático te espera, já segurando uma prancheta digital com anotações do projeto.{/i}"
 
         show developer_requirements enthusiastic at left_zoom
-        developer_requirements "Olá, você deve ser o [player_name], certo? Seja bem-vindo ao nosso time!"
+        developer_requirements "Olá! Você deve ser [player_name], certo? Que bom ter você no nosso time!"
         $ add_contact("developer_requirements")
         $ advance_minutes(2)
 
         developer_requirements "Eu sou a [NOME_DEVELOPER_REQUIREMENTS], engenheira de software responsável pela parte de requisitos desse projeto."
         $ add_friendship_point("developer_requirements")
-        developer_requirements "Hoje vou te apresentar à equipe. Preparado(a) para conhecer quem vai te acompanhar nessa jornada?"
+        developer_requirements "Hoje vou te apresentar à equipe. Vamos conhecer quem vai te acompanhar nessa jornada?"
         $ advance_minutes(1)
 
         "{i}Ela te conduz por um corredor até uma sala de trabalho ampla e iluminada, com computadores, quadros brancos e post-its por toda parte.{/i}"
@@ -34,7 +34,7 @@ label scene_2_escritorio:
         show developer_test enthusiastic at right_zoom
         developer_requirements "Esse é o [NOME_DEVELOPER_TEST], nosso expert em testes!"
         $ add_contact("developer_test")
-        developer_test "Oi! Bem-vindo! Sou apaixonado por desafios de teste e validação. Não se assuste se me ver codando e automatizando até o café!"
+        developer_test "Oi! Que bom ter você aqui! Sou apaixonado por desafios de teste e validação. Não se assuste se me ver codando e automatizando até o café!"
         $ add_friendship_point("developer_test")
         pause 0.4
         hide developer_test with dissolve
@@ -95,7 +95,7 @@ label scene_2_escritorio:
         pause 0.3
         hide developer_security with dissolve
 
-        # Sabrina retorna para integração
+        # developer_requirements retoma a apresentação
         show developer_requirements neutral at left_zoom
         developer_requirements "O time todo está animado com o projeto! Vamos desenvolver um sistema inovador para acompanhamento de pacientes, baseado nos formulários do NETT e focado em saúde pulmonar."
         developer_requirements "Logo você vai participar de reuniões e poderá dar sugestões. O segredo aqui é colaboração, curiosidade e organização!"

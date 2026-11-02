@@ -6,6 +6,7 @@ label scene_20_deploy_final:
     scene bg escritorio_interior_manha
     with fade
 
+    $ set_time(9, 0)
     $ advance_minutes(9)
     play sound "audio/effects/ambiente_reuniao.ogg"
     "{i}O clima no escritório é de expectativa: hoje é dia de deploy! Todos estão presentes — a energia contagia.{/i}"
@@ -65,6 +66,7 @@ label scene_20_deploy_final:
             developer_project "Nunca deixe para depois! Backup salva projetos e empregos. Documente sempre o hash do backup."
             hide developer_project
 
+    $ registrar("saude_reg_implantacao")
     "{i}Checklist concluído! Última pausa para café e integração do time.{/i}"
 
     play sound "audio/effects/xicara_cafe.ogg"
@@ -86,7 +88,7 @@ label scene_20_deploy_final:
     # Decisão de deploy
     scene bg escritorio_interior_tarde
     with dissolve
-    $ advance_minutes(13)
+    $ set_time(13, 30)
 
     "{i}De volta à sala, é hora de decidir onde será feito o deploy. [NOME_DEVELOPER_CODING] e [NOME_DEVELOPER_PROJECT] trazem opções para debate.{/i}"
 
@@ -112,13 +114,19 @@ label scene_20_deploy_final:
             show developer_ai enthusiastic at center_zoom
             developer_ai "Amo! Menos dependência, mais agilidade — e menos 'funciona só na minha máquina'! Automatize os secrets e tokens, hein."
             hide developer_ai
+            if "docker" not in inventario:
+                $ inventario.append("docker")
+            if "badge_devops" not in inventario:
+                "{i}Você ganhou o selo 'Visão DevOps' no inventário.{/i}"
+                $ inventario.append("badge_devops")
 
     # Intervenção divertida: ligação do stakeholder (mensagem no celular)
     play sound "audio/effects/cell_vibration.ogg"
-    show expression "images/items/celular.png" at right_zoom2
-    "{i}Seu celular vibra: é o stakeholder ansioso, querendo saber do deploy.{/i}"
+    show expression "images/items/celular.png" as celular_deploy at right_zoom2
+    "{i}Seu celular vibra: é a [NOME_DOUTORA_1], ansiosa, querendo saber do deploy.{/i}"
+    hide celular_deploy
     show developer_requirements portrait at right_zoom
-    developer_requirements "(no viva-voz) Pode ficar tranquilo, Dr. Almeida! A equipe está conferindo tudo, logo estará no ar!"
+    developer_requirements "(no viva-voz) Pode ficar tranquila, [NOME_DOUTORA_1]! A equipe está conferindo tudo, logo estará no ar!"
     hide developer_requirements
 
     "{i}O time troca olhares e sorri, sentindo a pressão e a responsabilidade do momento. Hora de unir forças para o grande push final!{/i}"
@@ -128,7 +136,7 @@ label scene_20_deploy_final:
     with dissolve
     $ advance_minutes(8)
 
-    "{i}Tudo pronto... mas um bug crítico aparece no teste final: sistema trava quando cadastra mais de 1000 pacientes.{/i}"
+    "{i}Tudo pronto... mas um bug crítico aparece no teste final: o sistema trava quando cadastra mais de 1000 pacientes.{/i}"
     show developer_test thinking at left_zoom
     developer_test "Bora debugar rapidinho? Time unido resolve tudo!"
     hide developer_test
@@ -137,8 +145,10 @@ label scene_20_deploy_final:
         "Como você resolve o bug crítico?"
         "Identifico vazamento de memória e otimizo a função.":
             show developer_coding positive at left_zoom
-            developer_coding "Mandou bem! Resolver esse tipo de problema rápido é sinal de desenvolvedor experiente. Já documenta a solução para evitar recorrência."
+            developer_coding "Mandou bem! Resolver esse tipo de problema rápido é sinal de experiência. Já documenta a solução para evitar recorrência."
             hide developer_coding
+            "{i}Você ganhou o selo 'Bug Crítico Resolvido' no inventário.{/i}"
+            $ inventario.append("badge_bug_buster")
         "Divido a tarefa com [NOME_DEVELOPER_AI] e [NOME_DEVELOPER_PROJECT] para achar o gargalo.":
             show developer_ai positive at center_zoom
             show developer_project positive at right_zoom
@@ -146,10 +156,16 @@ label scene_20_deploy_final:
             developer_project "Localizei uma query lenta, otimizando agora. Valeu pela parceria!"
             hide developer_ai
             hide developer_project
+            "{i}Você ganhou o selo 'Trabalho em Equipe' no inventário.{/i}"
+            $ inventario.append("badge_team_work")
         "Rodo um script de rollback para evitar downtime e aviso a todos.":
             show developer_quality positive at right_zoom
             developer_quality "Ótima decisão! Mais vale um sistema seguro do que um deploy apressado. Avise os stakeholders da nova previsão de entrega."
             hide developer_quality
+            "{i}Com a versão anterior de volta no ar, a equipe acha a query lenta com calma em homologação e prepara um novo deploy para o fim da tarde. [NOME_DEVELOPER_REQUIREMENTS] avisa a [NOME_DOUTORA_1] da nova previsão.{/i}"
+            "{i}Você ganhou o selo 'Resiliência' no inventário.{/i}"
+            $ inventario.append("badge_resiliencia")
+            $ advance_minutes(90)
 
     "{i}A equipe vê a mensagem: 'Deploy realizado com sucesso! Parabéns!' — O sistema está oficialmente no ar, com monitoramento ativo e checklist final arquivado.{/i}"
 
@@ -181,6 +197,6 @@ label scene_20_deploy_final:
     pause 1.2
     window show
 
-    "{i}Fim da Semana 8 – O projeto foi entregue com excelência!\n\nAprendizado: Deploy é muito mais do que apertar um botão — é o resultado de planejamento, testes, comunicação, domínio técnico e espírito de equipe.{/i}"
+    "{i}O sistema está no ar.\n\nAprendizado: Deploy é muito mais do que apertar um botão — é o resultado de planejamento, testes, comunicação, domínio técnico e espírito de equipe.{/i}"
 
     return

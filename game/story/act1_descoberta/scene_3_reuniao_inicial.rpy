@@ -1,4 +1,6 @@
 label scene_3_reuniao_inicial:
+    # A equipe toda está na sala de reuniões.
+    $ set_available()
     scene bg sala_reunioes_tarde
     with dissolve
 
@@ -26,6 +28,7 @@ label scene_3_reuniao_inicial:
     developer_requirements "{b}4. Codificação{/b}: escrever o código em si, colocando tudo em prática."
     developer_requirements "{b}5. Testes e validação{/b}: garantir que tudo funciona e é seguro."
     developer_requirements "{b}6. Implantação{/b}: colocar o sistema para rodar e monitorar o uso."
+    $ registrar("saude_reg_ciclo")
     $ advance_minutes(6)
     developer_quality "Isso mesmo! Qualidade nasce com bons requisitos e especificações. Sem isso, fica impossível testar direito."
     $ advance_minutes(2)
@@ -74,7 +77,7 @@ label scene_3_reuniao_inicial:
     show developer_quality thinking at right_zoom
     show developer_security serious at right_zoom2
     developer_quality "Às vezes, a maior dificuldade nem é técnica... É alinhar o entendimento entre todo mundo! Nossos documentos de requisitos ajudam muito nisso."
-    developer_security "E lembrar que segurança não é só um detalhe no final, tem que ser pensada desde o início — já está no {i}especificação técnica{/i}."
+    developer_security "E lembrar que segurança não é só um detalhe no final, tem que ser pensada desde o início — já está na {i}especificação técnica{/i}."
     hide developer_quality
     hide developer_security
     $ advance_minutes(2)
@@ -88,9 +91,8 @@ label scene_3_reuniao_inicial:
     hide developer_ai
     hide developer_coding
     $ advance_minutes(3)
-    show developer_requirements thinking at center_zoom
 
-    # Pergunta do jogador sobre o que será esperado dele(a)
+    # Pergunta sobre como o jogador prefere aprender
     show developer_requirements enthusiastic at left_zoom
     developer_requirements "E você, [player_name], como prefere aprender? Mais mão na massa ou acompanhando os colegas nas reuniões?"
     menu:
@@ -100,7 +102,7 @@ label scene_3_reuniao_inicial:
             show developer_coding serious at right_zoom
             developer_coding "Ótimo, sempre que quiser, pode me chamar para revisar o código juntos."
             hide developer_coding
-        "Gosto de observar e anotar tudo antes de tentar sozinho(a).":
+        "Gosto de observar e anotar tudo antes de tentar.":
             $ add_friendship_point("developer_requirements", 1)
             developer_requirements "Adoro pessoas organizadas! No início, anotar tudo faz diferença."
         "Posso ajudar no que for preciso!":
@@ -113,7 +115,7 @@ label scene_3_reuniao_inicial:
     # Mini-evento social: developer_quality sugere um café rápido para relaxar
     show developer_quality positive at right_zoom
     developer_quality "Antes de continuarmos, que tal um café? Troca de ideia descontraída faz bem para o time."
-    "O grupo ri e concorda, criando clima acolhedor. Você se sente mais integrado à equipe."
+    "O grupo ri e concorda, criando clima acolhedor. Você se sente cada vez mais parte da equipe."
     hide developer_quality
     $ advance_minutes(4)
 
