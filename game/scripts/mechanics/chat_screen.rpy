@@ -4,6 +4,7 @@
 # -------------------------------
 # Dados:    AMIGOS_DATA + bootstrap de current_assistant_id -> data/friends_data.rpy
 # Backend:  is_web / normalize_resposta / send_* / send_and_update_chat -> python/chat_backend.rpy
+#           (contatos com assistant_id None respondem local: send_offline_reply)
 # user_id:  generate_user_id + default user_id -> python/user_id.rpy
 # Estilos:  chat_log_viewport / chat_send_button / *_msg_frame -> ui/styles/chat_styles.rpy
 
@@ -75,8 +76,11 @@ label chat_amigo:
             char_image = amigo_info["portrait"]
             renpy.store.current_assistant_id = amigo_info["assistant_id"]
 
-            # --- Incrementa afinidade dinamicamente (via helper com clamp 0..10) ---
-            add_friendship_point(amigo_selecionado, 1)
+            # +1 de amizade só na primeira conversa com cada contato desde o
+            # último set_available; abrir o chat de novo não acumula pontos.
+            if amigo_selecionado not in chat_amizade_dada:
+                chat_amizade_dada.add(amigo_selecionado)
+                add_friendship_point(amigo_selecionado, 1)
 
         else:
             char_name = _("Contato")

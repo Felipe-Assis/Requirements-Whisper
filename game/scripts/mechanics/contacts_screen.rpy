@@ -75,7 +75,7 @@ screen contacts_screen():
 
                 grid 5 2 spacing 30:  # Aumente a grid se quiser mais linhas/colunas
 
-                    for cid in CONTACTS_ORDER:
+                    for cid in route_contacts_order():
                         use contact_tile(cid)
 
             frame:

@@ -51,9 +51,37 @@ init -1:
     default disponivel_doutora_1 = True
     default disponivel_doutora_2 = True
 
+    # Rotas Startup (st_*) e Corporativo (co_*). Disponibilidade controlada
+    # por set_available, incluindo os stakeholders.
+    default contato_st_mentora = False
+    default contato_st_techlead = False
+    default contato_st_mobile = False
+    default contato_st_qualidade = False
+    default contato_st_ceo = False
+    default contato_st_estudante = False
+    default contato_co_mentora = False
+    default contato_co_legado = False
+    default contato_co_dev = False
+    default contato_co_qualidade = False
+    default contato_co_supervisora = False
+    default contato_co_solicitante = False
+
+    default disponivel_st_mentora = False
+    default disponivel_st_techlead = False
+    default disponivel_st_mobile = False
+    default disponivel_st_qualidade = False
+    default disponivel_st_ceo = False
+    default disponivel_st_estudante = False
+    default disponivel_co_mentora = False
+    default disponivel_co_legado = False
+    default disponivel_co_dev = False
+    default disponivel_co_qualidade = False
+    default disponivel_co_supervisora = False
+    default disponivel_co_solicitante = False
+
 
 init python:
-    # Lista canônica dos 8 desenvolvedores (ids usados nos flags disponivel_*).
+    # Lista canônica dos 8 desenvolvedores (equipe da rota saúde em ROUTES).
     DEVELOPERS = [
         "developer_ai",
         "developer_coding",
@@ -66,8 +94,13 @@ init python:
     ]
 
     def set_available(*ids):
-        # Reseta os 8 disponivel_developer_* e habilita apenas os ids passados.
-        # set_available('all') habilita todos. NÃO mexe nos flags das doutoras.
-        targets = DEVELOPERS if ids == ("all",) else ids
-        for d in DEVELOPERS:
-            setattr(store, "disponivel_" + d, d in targets)
+        # Reseta os disponivel_* da rota atual (route_contact_ids) e habilita
+        # apenas os ids passados; set_available('all') habilita todos da rota.
+        # Na saúde isso são só os 8 developers: as doutoras seguem à mão.
+        managed = route_contact_ids()
+        targets = managed if ids == ("all",) else ids
+        for cid in managed:
+            setattr(store, "disponivel_" + cid, cid in targets)
+        # Nova cena (ou novo momento): o chat volta a poder dar +1 de amizade
+        # uma vez por contato.
+        store.chat_amizade_dada = set()

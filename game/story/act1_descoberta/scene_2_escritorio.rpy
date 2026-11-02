@@ -109,12 +109,8 @@ label scene_2_escritorio:
         stop music fadeout 2.0
 
     else:
-        "{i}Você passa a tarde esperando por respostas das empresas...{/i}"
-        if chosen_job == "startup":
-            "{i}A startup de tecnologia não respondeu seu e-mail.{/i}"
-        elif chosen_job == "corporativo":
-            "{i}A grande empresa enviou uma resposta automática, dizendo que o processo seletivo já foi encerrado.{/i}"
-        "{i}Talvez seja melhor tentar se candidatar para outra vaga.{/i}"
-        jump scene_1_quarto
+        # Startup e Corporativo: a chegada fica na primeira cena de cada rota
+        # (rota_startup / rota_corporativo, despachadas em script.rpy).
+        return
 
     return

@@ -129,8 +129,29 @@ init python:
     config.after_load_callbacks = config.after_load_callbacks + [__reset_chat_transient]
 
 
+    def chat_is_offline(cid):
+        # Contatos sem assistente remoto (rotas Startup e Corporativo).
+        info = AMIGOS_DATA.get(cid)
+        return info is not None and info.get("assistant_id") is None
+
+    def send_offline_reply(user_message):
+        # Roda na MAIN thread (ação do botão/tecla): sem rede, sem is_waiting.
+        # Responde com a próxima fala roteirizada do contato, em rodízio.
+        cid = store.amigo_selecionado
+        falas = AMIGOS_DATA[cid].get("offline") or [_("Agora não dá para responder. Te chamo depois!")]
+        idx = store.chat_offline_idx.get(cid, 0) % len(falas)
+        store.chat_history.append(("user", user_message))
+        store.chat_history.append(("assistant", renpy.translate_string(falas[idx])))
+        store.chat_offline_idx[cid] = (idx + 1) % len(falas)
+        store.user_input = ""
+        renpy.restart_interaction()
+
     def send_and_update_chat(user_message):
         global is_waiting, chat_history, user_input
+
+        if chat_is_offline(store.amigo_selecionado):
+            send_offline_reply(user_message)
+            return
 
         chat_history.append(("user", user_message))
         is_waiting = True

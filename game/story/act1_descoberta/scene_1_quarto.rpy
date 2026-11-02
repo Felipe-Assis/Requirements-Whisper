@@ -119,10 +119,12 @@ label scene_1_quarto:
             "A possibilidade de aprendizado técnico e impacto social é ainda maior."
         "2. Desenvolvimento mobile em uma startup de tecnologia voltada para educação financeira":
             $ chosen_job = "startup"
+            "{i}Vaga: estágio em desenvolvimento mobile na Trocado, que faz o app de mesmo nome para universitários controlarem os gastos do mês.{/i}"
             "Startups costumam ser ambientes dinâmicos e cheios de desafios."
             "Quem sabe seja a chance de crescer rápido e aprender com um time enxuto e criativo?"
         "3. Estágio em manutenção de sistemas legados em uma grande corporação nacional":
             $ chosen_job = "corporativo"
+            "{i}Vaga: estágio no Grupo Vértice, distribuidora de energia, na equipe que mantém o SGC, o sistema de chamados internos usado desde 2008.{/i}"
             "Estabilidade, benefícios e a experiência de atuar em uma empresa tradicional."
             "Talvez seja uma boa forma de entender a rotina e os processos de equipes grandes."
     $ advance_minutes(4)

@@ -12,6 +12,22 @@ default amizade_developer_security = 0.0
 default amizade_doutora_1 = 0.0
 default amizade_doutora_2 = 0.0
 
+# Rota Startup
+default amizade_st_mentora = 0.0
+default amizade_st_techlead = 0.0
+default amizade_st_mobile = 0.0
+default amizade_st_qualidade = 0.0
+default amizade_st_ceo = 0.0
+default amizade_st_estudante = 0.0
+
+# Rota Corporativo
+default amizade_co_mentora = 0.0
+default amizade_co_legado = 0.0
+default amizade_co_dev = 0.0
+default amizade_co_qualidade = 0.0
+default amizade_co_supervisora = 0.0
+default amizade_co_solicitante = 0.0
+
 
 init python:
     def add_contact(contact_id):
