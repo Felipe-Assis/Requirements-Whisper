@@ -30,9 +30,13 @@ screen contact_tile(cid):
                     idle "%s portrait" % cid
                     hover "%s portrait" % cid
                     at contact_icon
+                    alt _nome
                     hovered [SetVariable("selected_contact_description", "{b}%s{/b}\n%s" % (_nome, _desc))]
                     unhovered [SetVariable("selected_contact_description", "")]
-                    action [SetVariable("amigo_selecionado", cid), Hide("contacts_screen"), Jump("chat_amigo")]
+                    # Call, não Jump: aberta por "call screen" numa cena, o
+                    # return de chat_amigo volta para a cena; com Jump ele
+                    # encerrava a cena e pulava o resto dela.
+                    action [SetVariable("amigo_selecionado", cid), Hide("contacts_screen"), Call("chat_amigo")]
             else:
                 imagebutton:
                     idle "%s portrait" % cid
