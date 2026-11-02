@@ -45,6 +45,8 @@ PERSONAGENS = {
     "co_qualidade": ("Ingrid", "neutral"), "co_supervisora": ("Rosângela", "neutral"),
     "co_solicitante": ("Edson", "neutral"),
 }
+# Pose de onde sai o retrato, quando a âncora tem a mão na frente do rosto (aceno).
+POSE_RETRATO = {"developer_test": "serious", "st_mobile": "serious"}
 # Âncoras já aprovadas na página de comparação: entram como saída pronta, sem nova geração.
 APROVADAS = {"developer_requirements__neutral": "estilo-c-emily.png", "st_mentora__neutral": "estilo-c-taina.png",
              "bg__escritorio_interior_manha": "estilo-c-escritorio.png"}
@@ -85,7 +87,7 @@ for cid, (nome, ancora) in PERSONAGENS.items():
                 tarefas.append({"id": tid, "prompt": prompt, "refs": [f"{pasta}/{pose}.png", REF_PERSONAGEM[0]],
                                 "depends": base_id})
         item = {"id": tid, "kind": "sprite", "dest": f"images/characters/{cid}/{pose}.png"}
-        if pose == ancora:
+        if pose == POSE_RETRATO.get(cid, ancora):
             item["portrait"] = f"images/characters/{cid}/portrait.png"
         saidas.append(item)
 

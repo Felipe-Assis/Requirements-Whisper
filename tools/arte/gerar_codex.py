@@ -8,6 +8,9 @@ Saída: pasta_staging/<id>/out.png. Tarefas com out.png existente são puladas, 
 import json, os, shutil, subprocess, sys, threading, time
 from concurrent.futures import ThreadPoolExecutor
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from gerar_codex_util import imagem_da_sessao  # noqa: E402
+
 tarefas = json.load(open(sys.argv[1], encoding="utf-8"))
 staging = os.path.abspath(sys.argv[2])
 paralelo = int(sys.argv[3]) if len(sys.argv) > 3 else 3
@@ -50,14 +53,19 @@ def rodar(t):
         cmd += ["-i", r]
     texto = INSTRUCAO.format(saida=saida(tid).replace("\\", "/"), prompt=t["prompt"])
     for tentativa in (1, 2):
-        with open(os.path.join(pasta, f"run{tentativa}.log"), "w", encoding="utf-8") as log:
+        log_path = os.path.join(pasta, f"run{tentativa}.log")
+        with open(log_path, "w", encoding="utf-8") as log:
             try:
                 subprocess.run(cmd, input=texto, text=True, encoding="utf-8", stdout=log,
                                stderr=subprocess.STDOUT, timeout=1200)
             except subprocess.TimeoutExpired:
                 log.write("\nTIMEOUT\n")
+        propria = imagem_da_sessao(log_path)
+        if propria:
+            shutil.copyfile(propria, saida(tid))
+            return tid, f"ok (tentativa {tentativa}, imagem da sessão)"
         if os.path.exists(saida(tid)):
-            return tid, f"ok (tentativa {tentativa})"
+            return tid, f"ok (tentativa {tentativa}, cópia do Codex: confira)"
     return tid, "FALHOU"
 
 

@@ -29,8 +29,7 @@
   {
    "id": "developer_test__enthusiastic",
    "kind": "sprite",
-   "dest": "images/characters/developer_test/enthusiastic.png",
-   "portrait": "images/characters/developer_test/portrait.png"
+   "dest": "images/characters/developer_test/enthusiastic.png"
   },
   {
    "id": "developer_test__confident",
@@ -40,7 +39,8 @@
   {
    "id": "developer_test__serious",
    "kind": "sprite",
-   "dest": "images/characters/developer_test/serious.png"
+   "dest": "images/characters/developer_test/serious.png",
+   "portrait": "images/characters/developer_test/portrait.png"
   },
   {
    "id": "developer_test__thinking",
@@ -186,13 +186,13 @@
   {
    "id": "st_mobile__neutral",
    "kind": "sprite",
-   "dest": "images/characters/st_mobile/neutral.png",
-   "portrait": "images/characters/st_mobile/portrait.png"
+   "dest": "images/characters/st_mobile/neutral.png"
   },
   {
    "id": "st_mobile__serious",
    "kind": "sprite",
-   "dest": "images/characters/st_mobile/serious.png"
+   "dest": "images/characters/st_mobile/serious.png",
+   "portrait": "images/characters/st_mobile/portrait.png"
   },
   {
    "id": "st_mobile__thinking",

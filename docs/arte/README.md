@@ -22,6 +22,17 @@ https://claude.ai/artifact/4wNJSGy4HhqwEEcpALx8X1
 | `rotas-novas-2026-11-02.json` | 12 personagens, 9 fundos e 8 telas das rotas Startup e Corporativo | prompts reconstruídos de forma exata a partir de `docs/rotas/*-assets.json` por `tools/arte/montar_rotas_novas.py`; personagens e fundos depois substituídos pelo estilo C; as 8 telas (`images/artifacts/st_*`, `co_*`) continuam em uso |
 | `comparacao-estilos-2026-11-02.json` | as 6 variações da página de comparação | registro da escolha do estilo |
 | `estilo-c.json` | regeração de todos os personagens (23) e fundos (27) no estilo C | lote atual; montado por `tools/arte/montar_estilo_c.py` |
+| `estilo-c-regeracoes.json` | 5 imagens refeitas do lote acima (2 com reforço de identidade/transparência, 3 que tinham nascido de uma âncora trocada) | aplicado junto com o lote |
+
+## Cuidado com execuções em paralelo
+
+O Codex grava cada imagem em `$CODEX_HOME/generated_images/<session id>/`. Nas primeiras rodadas, o prompt pedia
+ao próprio Codex para copiar "a imagem gerada", e com 4 execuções em paralelo ele às vezes copiou a imagem de
+outra sessão (ex.: o Vinícius saiu com o rosto do Jorge; o coworking saiu como o consultório). Desde 2026-11-02,
+`gerar_codex.py` lê o `session id` no log de cada execução e copia ele mesmo a imagem daquela sessão
+(`gerar_codex_util.py`). Para um staging antigo, `reparar_staging.py <staging>` recopia cada imagem da sua sessão e
+lista as que estavam trocadas; poses e variantes geradas a partir de uma âncora trocada precisam ser regeradas.
+Mesmo assim, toda imagem passa pela folha de contato antes de entrar no jogo.
 
 Cada tarefa tem `id`, `prompt`, `refs` (imagens anexadas, na ordem citada no prompt) e, quando depende de outra,
 `depends`: a saída dessa outra tarefa entra como **primeira** referência (identidade do personagem nas demais poses;
