@@ -1,0 +1,166 @@
+{
+  "route": "startup",
+  "characters": [
+    {
+      "id": "st_mentora",
+      "name": "Tainá Duarte",
+      "color": "#FF8A5B",
+      "sprite_dir": "images/characters/st_mentora",
+      "poses": {
+        "neutral": "Em pé, sorriso aberto, mão direita estendida à frente em gesto de boas-vindas com a palma para cima; mão esquerda segura o caderno junto ao quadril.",
+        "thinking": "Cabeça levemente inclinada, olhar para cima e para o lado, ponta de uma caneta encostada no queixo com a mão direita; caderno aberto apoiado no antebraço esquerdo.",
+        "serious": "Braços cruzados prendendo o caderno contra o peito, peso numa perna só, sobrancelhas retas, boca fechada, olhar direto."
+      },
+      "visual": "Mulher de 33 anos, parda, pele morena média tom caramelo, rosto oval, sorriso largo. Cabelo cacheado volumoso castanho-escuro preso num coque alto (puff), com cachos soltos na testa. Brincos de argola dourados médios. Camisa jeans clara de manga dobrada, aberta sobre camiseta branca com pequeno símbolo de moeda coral no peito (sem texto); calça de alfaiataria verde-oliva cropped; tênis brancos; cordão de crachá coral. Carrega um caderno de capa laranja com post-its saindo das páginas. Altura média, postura aberta e firme. Estilo do jogo: PNG RGBA 1024x1536, corpo inteiro em pé, figura do topo (y≈30) até perto da base (y≈1500), contorno fino escuro, cel shading com 1 a 2 tons de sombra, olhos grandes escuros com brilho, nariz mínimo, paleta natural levemente dessaturada, fundo transparente com halo suave. A expressão vem da pose. Retrato: recorte da pose neutral (cabeça e ombros)."
+    },
+    {
+      "id": "st_techlead",
+      "name": "Otávio Ramos",
+      "color": "#9ACD32",
+      "sprite_dir": "images/characters/st_techlead",
+      "poses": {
+        "neutral": "Segura a caneca com a mão direita na altura do peito, mão esquerda no bolso da calça, leve sorriso de canto.",
+        "thinking": "Ajusta os óculos com polegar e indicador da mão esquerda, braço direito cruzado à frente apoiando o cotovelo esquerdo, olhar para baixo, caneca na mão direita.",
+        "serious": "Ereto, as duas mãos atrás das costas, queixo levemente abaixado, olhar firme por cima dos óculos, boca reta."
+      },
+      "visual": "Homem negro de 50 anos, pele escura, alto e robusto. Cabeça raspada, barba curta grisalha bem aparada, óculos de armação redonda de metal fino. Camisa polo azul-marinho sob cardigã cinza-chumbo aberto; calça chino cáqui; sapatênis marrom; relógio analógico com pulseira de couro no pulso esquerdo. Segura uma caneca esmaltada branca com borda azul. Postura calma, ombros relaxados. Estilo do jogo: PNG RGBA 1024x1536, corpo inteiro em pé, figura do topo (y≈30) até perto da base (y≈1500), contorno fino escuro, cel shading com 1 a 2 tons de sombra, olhos grandes escuros com brilho, nariz mínimo, paleta natural levemente dessaturada, fundo transparente com halo suave. A expressão vem da pose. Retrato: recorte da pose neutral (cabeça e ombros)."
+    },
+    {
+      "id": "st_mobile",
+      "name": "Davi Matsuda",
+      "color": "#5BC0EB",
+      "sprite_dir": "images/characters/st_mobile",
+      "poses": {
+        "neutral": "Acenando com a mão direita aberta na altura do ombro, celular na mão esquerda, sorriso largo mostrando os dentes.",
+        "thinking": "Olha para a tela do celular segurado com as duas mãos na altura do peito, polegar sobre a tela, cabeça inclinada, boca de lado.",
+        "serious": "Mãos enfiadas no bolso canguru do moletom, ombros levemente erguidos, olhar de lado, boca reta, concentrado e sem graça."
+      },
+      "visual": "Homem nipo-brasileiro de 24 anos, pele clara amarelada, magro, altura média. Cabelo preto liso com franja longa repartida ao meio e laterais curtas; sem barba. Moletom oversized cinza-mescla com capuz e pequeno robô estampado no peito; camiseta preta aparecendo na barra; calça cargo preta; tênis de cano alto vermelhos. Fones de ouvido grandes pretos pendurados no pescoço. Celular Android em capinha transparente com adesivos. Postura animada, um pouco curvada. Estilo do jogo: PNG RGBA 1024x1536, corpo inteiro em pé, figura do topo (y≈30) até perto da base (y≈1500), contorno fino escuro, cel shading com 1 a 2 tons de sombra, olhos grandes escuros com brilho, nariz mínimo, paleta natural levemente dessaturada, fundo transparente com halo suave. A expressão vem da pose. Retrato: recorte da pose neutral (cabeça e ombros)."
+    },
+    {
+      "id": "st_qualidade",
+      "name": "Lorena Bezerra",
+      "color": "#E05FD0",
+      "sprite_dir": "images/characters/st_qualidade",
+      "poses": {
+        "neutral": "Tablet seguro junto ao quadril pela mão esquerda, mão direita fazendo sinal de positivo, sorriso tranquilo.",
+        "thinking": "Tablet apoiado no antebraço esquerdo, indicador direito tocando a tela, olhar concentrado para o tablet, lábios contraídos.",
+        "serious": "Tablet abraçado contra o peito com os dois braços, sobrancelhas levemente franzidas, olhar direto para a frente."
+      },
+      "visual": "Mulher branca de 30 anos, pele clara com sardas no nariz e nas bochechas, cabelo ruivo-acobreado curto em corte pixie com a lateral esquerda raspada. Óculos de armação grossa verde-água, piercing pequeno de argola na narina direita, tatuagem fina de ramo de flores no antebraço esquerdo. Jardineira jeans escura sobre camiseta listrada branca e azul-marinho; tênis de lona amarelo-mostarda; bolsa transversal pequena marrom. Segura um tablet com capa laranja. Postura ereta e atenta. Estilo do jogo: PNG RGBA 1024x1536, corpo inteiro em pé, figura do topo (y≈30) até perto da base (y≈1500), contorno fino escuro, cel shading com 1 a 2 tons de sombra, olhos grandes escuros com brilho, nariz mínimo, paleta natural levemente dessaturada, fundo transparente com halo suave. A expressão vem da pose. Retrato: recorte da pose neutral (cabeça e ombros)."
+    },
+    {
+      "id": "st_ceo",
+      "name": "Vinícius Prado",
+      "color": "#F4D35E",
+      "sprite_dir": "images/characters/st_ceo",
+      "poses": {
+        "neutral": "Braços abertos à frente na altura da cintura, palmas para cima, como quem apresenta algo; sorriso confiante.",
+        "thinking": "Mão direita no queixo, cotovelo apoiado no braço esquerdo cruzado à frente do corpo, sobrancelha erguida, olhar para cima."
+      },
+      "visual": "Homem branco de 36 anos, altura média-alta, magro atlético. Cabelo castanho-claro ondulado penteado para trás com volume, barba por fazer, olhos castanhos. Colete acolchoado sem mangas azul-petróleo sobre camisa social branca de manga dobrada até o cotovelo; calça jeans escura justa; tênis brancos de couro; smartwatch preto. Postura de palco, peito aberto. Stakeholder com 2 poses. Estilo do jogo: PNG RGBA 1024x1536, corpo inteiro em pé, figura do topo (y≈30) até perto da base (y≈1500), contorno fino escuro, cel shading com 1 a 2 tons de sombra, olhos grandes escuros com brilho, nariz mínimo, paleta natural levemente dessaturada, fundo transparente com halo suave. A expressão vem da pose. Retrato: recorte da pose neutral (cabeça e ombros)."
+    },
+    {
+      "id": "st_estudante",
+      "name": "Beatriz Tavares",
+      "color": "#8DD694",
+      "sprite_dir": "images/characters/st_estudante",
+      "poses": {
+        "neutral": "Segura a alça da mochila com a mão esquerda e mostra a tela do celular para a frente com a mão direita, sorriso tímido.",
+        "thinking": "Braços cruzados frouxos, celular numa das mãos, olhar de lado, lábios apertados, expressão desconfiada."
+      },
+      "visual": "Mulher indígena de 20 anos (povo Baré), pele morena acobreada, rosto arredondado, olhos escuros amendoados. Cabelo preto liso e longo até a cintura com franja reta. Brincos de sementes de açaí e pulseira de miçangas coloridas. Camiseta larga amarela com brasão genérico sem texto, calça jeans clara, tênis gastos. Mochila de uma alça no ombro direito com chaveiro de boto-cor-de-rosa e garrafa d'água presa na lateral. Postura simples, um pouco reservada. Stakeholder com 2 poses. Estilo do jogo: PNG RGBA 1024x1536, corpo inteiro em pé, figura do topo (y≈30) até perto da base (y≈1500), contorno fino escuro, cel shading com 1 a 2 tons de sombra, olhos grandes escuros com brilho, nariz mínimo, paleta natural levemente dessaturada, fundo transparente com halo suave. A expressão vem da pose. Retrato: recorte da pose neutral (cabeça e ombros)."
+    }
+  ],
+  "backgrounds": [
+    {
+      "file": "images/bg/startup_coworking_manha.png",
+      "define": "bg startup_coworking_manha",
+      "desc": "Coworking no segundo andar de um casarão antigo reformado em Botafogo: pé-direito alto, piso de taco, paredes de tijolo aparente pintadas de branco, janelas altas em arco com venezianas verdes abertas para árvores. Mesa longa compartilhada de madeira clara com notebooks, celulares de teste num suporte, canecas e plantas. À esquerda, parede de vidro com quadro Kanban de post-its coloridos (sem texto legível). Ao fundo, sofá verde e uma bicicleta encostada. Luz da manhã fria azul-petróleo com faixas amareladas no piso. Dois figurantes de costas. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+      "scenes": [
+        "st_01_chegada",
+        "st_04_preparacao",
+        "st_06_classificacao",
+        "st_09_historias",
+        "st_13_arquitetura",
+        "st_16_codificacao",
+        "st_17_testes_seguranca",
+        "st_18_lancamento"
+      ]
+    },
+    {
+      "file": "images/bg/startup_coworking_tarde.png",
+      "define": "bg startup_coworking_tarde",
+      "desc": "Mesmo enquadramento de startup_coworking_manha com luz de fim de tarde laranja e magenta entrando pelas janelas em arco, sombras longas, post-its mais saturados, um figurante guardando o notebook. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+      "scenes": [
+        "st_06_classificacao",
+        "st_11_inspecao",
+        "st_13_arquitetura",
+        "st_15_gestao",
+        "st_16_codificacao",
+        "st_17_testes_seguranca",
+        "st_18_lancamento"
+      ]
+    },
+    {
+      "file": "images/bg/startup_coworking_noite.png",
+      "define": "bg startup_coworking_noite",
+      "desc": "Mesmo enquadramento de startup_coworking_manha à noite: azul-marinho quase monocromático, janelas escuras com reflexo, luminárias pendentes amarelas acesas só sobre a mesa, monitores com brilho frio, cadeiras vazias. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+      "scenes": [
+        "st_11_inspecao",
+        "st_16_codificacao"
+      ]
+    },
+    {
+      "file": "images/bg/startup_terraco_noite.png",
+      "define": "bg startup_terraco_noite",
+      "desc": "Terraço do casarão do coworking à noite: deck de madeira, varal de lâmpadas amarelas, mesas baixas com caixas de pizza e copos, puffs, plantas em vasos, guarda-corpo de ferro. Ao fundo, silhueta do Pão de Açúcar e prédios iluminados de Botafogo sob céu azul-marinho. Figurantes de costas conversando. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+      "scenes": [
+        "st_14_comemoracao"
+      ]
+    },
+    {
+      "file": "images/bg/demo_day_auditorio.png",
+      "define": "bg demo_day_auditorio",
+      "desc": "Auditório pequeno de uma aceleradora: palco baixo com púlpito, telão grande atrás exibindo um gráfico genérico de linha subindo (sem texto), plateia de cadeiras pretas com figurantes de costas, holofotes, faixa lateral com padrão geométrico azul e laranja sem palavras. Luz de tarde quente misturada ao brilho frio do telão. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+      "scenes": [
+        "st_18_lancamento"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "images/artifacts/st_app_gastos.png",
+      "desc": "Duas telas de celular lado a lado em mockup limpo. Esquerda: lista de gastos do mês com cabeçalho 'Outubro', total 'R$ 100,00' em destaque, itens 'Almoço R$ 20,00', 'Bandejão R$ 4,50', 'Ônibus R$ 4,30', 'Café R$ 5,00', cada um com ícone de categoria e ícone de lixeira. Direita: a mesma tela escurecida com caixa de confirmação 'Excluir Almoço, R$ 20,00?' e botões 'Cancelar' (contorno) e 'Excluir' (coral). Paleta coral, branco e verde-menta; fonte sem serifa. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+      "scenes": [
+        "st_01_chegada",
+        "st_09_historias",
+        "st_16_codificacao"
+      ]
+    },
+    {
+      "file": "images/artifacts/st_quadro_kanban.png",
+      "desc": "Quadro Kanban digital com cinco colunas: 'Descoberta', 'Pronto para desenvolver', 'Fazendo (limite 2)', 'Revisão', 'Pronto'. Cartões com títulos curtos: 'Excluir gasto com confirmação', 'Total recalculado após sincronizar', 'Gasto duplicado no offline', 'Importação bancária (investigar)', 'Medalhas', 'Revisar textos de privacidade'. Avatares circulares pequenos nas cores coral, verde-limão, azul-céu e magenta. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+      "scenes": [
+        "st_02_reuniao_ciclo",
+        "st_15_gestao"
+      ]
+    },
+    {
+      "file": "images/artifacts/st_diagrama_arquitetura.png",
+      "desc": "Diagrama de arquitetura em estilo quadro branco limpo: celular com 'Banco local' e 'Fila de sincronização', seta 'HTTPS + id único' até a nuvem 'Funções da API', seta até o cilindro 'Banco relacional'. Caixa lateral tracejada 'Instituição parceira (Open Finance)' ligada por seta pontilhada 'consentimento'. Ao lado, quatro entidades: 'Estudante', 'Gasto (id, valor_centavos, data, categoria, origem, excluido_em)', 'Categoria', 'Consentimento (escopos, validade, revogado_em)'. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+      "scenes": [
+        "st_13_arquitetura"
+      ]
+    },
+    {
+      "file": "images/artifacts/st_painel_metricas.png",
+      "desc": "Painel de métricas de produto: cartões 'Cadastros 1.000', 'Retenção 30 dias 22%', 'Nota na loja 3,4', 'Sessões sem falha 98,7%'; gráfico de linha de cadastros subindo; gráfico de retenção caindo e depois subindo levemente; um pico marcado 'Início do semestre'. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+      "scenes": [
+        "st_01_chegada",
+        "st_15_gestao",
+        "st_18_lancamento"
+      ]
+    }
+  ]
+}

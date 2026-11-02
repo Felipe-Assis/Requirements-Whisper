@@ -1,0 +1,148 @@
+{
+  "route": "corporativo",
+  "style": "Sprites: PNG RGBA 1024x1536, corpo inteiro em pe, contorno fino escuro, cel shading chapado com 1 ou 2 tons de sombra, proporcao realista (cerca de 7 cabecas), paleta natural levemente dessaturada, fundo transparente com halo suave; expressao vem mais da pose. Retrato recortado da pose neutral. Fundos: PNG RGB 1536x1024, familia escritorio_interior (anime/cel, contorno de tinta, leve grao, sem texto legivel, figurantes de costas); manha azul-petroleo frio com luz amarelada, tarde laranja/magenta, noite azul-marinho.",
+  "characters": [
+    {
+      "id": "co_mentora",
+      "name": "Valéria Nogueira",
+      "color": "#E86A5C",
+      "sprite_dir": "images/characters/co_mentora",
+      "poses": {
+        "neutral": "Um passo a frente, palma da mao direita aberta estendida como quem convida a falar, caderno vinho apoiado no antebraco esquerdo, sorriso sereno.",
+        "thinking": "Mao no queixo com a caneta encostada no labio inferior, olhar para o lado, peso numa perna so.",
+        "serious": "Caderno abracado junto ao peito com os bracos cruzados por cima, cabeca levemente baixa olhando por cima dos oculos."
+      },
+      "visual": "46 anos aparentes, mulher negra de pele retinta, cabelo crespo natural bem curto com fios grisalhos nas temporas, oculos de armacao retangular vermelha, brincos pequenos de argola dourada. Blazer mostarda sobre blusa branca de gola canoa, calca social preta de corte reto, sapatilha preta, cracha azul pendurado no pescoco, caderno de capa dura vinho. Postura ereta e tranquila."
+    },
+    {
+      "id": "co_legado",
+      "name": "Jorge Takeda",
+      "color": "#C9A27E",
+      "sprite_dir": "images/characters/co_legado",
+      "poses": {
+        "neutral": "Segura a caneca branca com as duas maos na altura do peito, ombros relaxados, meio sorriso de canto.",
+        "thinking": "Uma mao coca a nuca, a outra segura os oculos de leitura afastados do rosto, olhar para cima como quem puxa memoria.",
+        "serious": "Bracos cruzados, caneca pendurada num dedo, queixo baixo, olhar firme para frente."
+      },
+      "visual": "61 anos aparentes, homem nipo-brasileiro de pele clara amarelada, cabelo grisalho curto penteado para tras com entradas, bigode fino grisalho, oculos de leitura pendurados no pescoco por uma cordinha. Camisa social azul-clara de manga curta com caneta no bolso, colete de la cinza sem mangas, calca de sarja caqui, sapato social marrom gasto. Caneca branca lascada com uma faixa azul. Leve barriga, ombros um pouco curvados."
+    },
+    {
+      "id": "co_dev",
+      "name": "Kauã Ferreira",
+      "color": "#8FD14F",
+      "sprite_dir": "images/characters/co_dev",
+      "poses": {
+        "neutral": "Notebook debaixo do braco esquerdo, polegar direito para cima, corpo inclinado para frente, animado.",
+        "thinking": "Notebook aberto apoiado no antebraco, outra mao no queixo, testa franzida olhando a tela.",
+        "serious": "Maos nos bolsos do moletom, ombros levemente erguidos, rosto virado de lado, olhar desconfiado."
+      },
+      "visual": "26 anos aparentes, homem brasileiro de ascendencia indigena, pele morena acobreada, cabelo preto liso ate os ombros preso em coque baixo, barba rala. Moletom verde-musgo com ziper aberto sobre camiseta preta lisa, calca jogger cinza, tenis branco, fones de ouvido grandes no pescoco, notebook prateado com adesivos coloridos sem texto. Corpo magro, postura inquieta."
+    },
+    {
+      "id": "co_qualidade",
+      "name": "Ingrid Batista",
+      "color": "#9BB8F0",
+      "sprite_dir": "images/characters/co_qualidade",
+      "poses": {
+        "neutral": "Segura o tablet virado para frente mostrando uma lista com marcas de check, sorriso aberto, pes firmes.",
+        "thinking": "Caneta stylus apoiada na tempora, tablet apoiado no quadril, olhar para o alto.",
+        "serious": "Tablet abracado ao peito com os bracos cruzados por cima, sobrancelhas franzidas, pes afastados."
+      },
+      "visual": "34 anos aparentes, mulher branca de pele clara com sardas, estatura baixa e corpo largo, cabelo curto estilo pixie tingido de platinado com a raiz escura aparente, piercing pequeno na orelha, tatuagem de um sinal de check no pulso. Camisa xadrez azul-marinho e vinho aberta sobre camiseta cinza, calca jeans escura, coturno preto de cano baixo, cracha preso no bolso. Tablet com caneta stylus."
+    },
+    {
+      "id": "co_supervisora",
+      "name": "Rosângela Arruda",
+      "color": "#D98FD0",
+      "sprite_dir": "images/characters/co_supervisora",
+      "poses": {
+        "neutral": "Ereta, uma mao segura o relatorio dobrado na altura da cintura, a outra apoiada no quadril, leve sorriso.",
+        "thinking": "Braco erguido olhando o relogio de pulso, sobrancelha arqueada, relatorio preso debaixo do braco."
+      },
+      "visual": "54 anos aparentes, mulher parda de pele morena media, cabelo castanho-escuro ondulado na altura dos ombros com mechas acobreadas, headset de call center apoiado no pescoco, relogio dourado grande no pulso. Blusa de seda verde-esmeralda, calca social cinza-chumbo, scarpin baixo preto. Relatorio impresso dobrado na mao. Postura de comando, cordial."
+    },
+    {
+      "id": "co_solicitante",
+      "name": "Edson Moura",
+      "color": "#F0C987",
+      "sprite_dir": "images/characters/co_solicitante",
+      "poses": {
+        "neutral": "Capacete branco debaixo do braco esquerdo, celular na mao direita, ombros soltos, sorriso largo.",
+        "thinking": "Olha a tela do celular com a testa franzida, mao livre na cintura, capacete pendurado no cinto."
+      },
+      "visual": "42 anos aparentes, homem negro de pele escura, cabeca raspada, barba curta bem aparada. Colete refletivo laranja de campo sobre camisa polo azul-marinho sem logotipo legivel, calca de brim, botina de seguranca marrom, capacete branco. Celular na mao. Corpo forte, postura aberta."
+    }
+  ],
+  "backgrounds": [
+    {
+      "file": "images/bg/central_atendimento_manha.png",
+      "define": "bg central_atendimento_manha",
+      "desc": "Andar aberto de central de atendimento corporativa: fileiras de baias com divisorias baixas azul-acinzentadas, monitores duplos, headsets sobre as mesas, atendentes figurantes vistos de costas. Painel de TV grande na parede com barras e numeros de fila, sem texto legivel. Janelas altas com persianas, carpete cinza, plantas, quadro com post-its. Luz fria da manha com feixes amarelados; perspectiva em altura dos olhos.",
+      "scenes": [
+        "co_04_preparacao"
+      ]
+    },
+    {
+      "file": "images/bg/central_atendimento_tarde.png",
+      "define": "bg central_atendimento_tarde",
+      "desc": "Mesmo ambiente da central de atendimento no fim da tarde: luz laranja e magenta entrando pelas persianas, menos atendentes nas baias, monitores acesos, painel de fila na parede.",
+      "scenes": [
+        "co_17_testes_seguranca",
+        "co_18_implantacao_avaliacao"
+      ]
+    },
+    {
+      "file": "images/bg/sala_servidores.png",
+      "define": "bg sala_servidores",
+      "desc": "Corredor de data center sem janelas: racks pretos com LEDs azuis e verdes, piso elevado de placas perfuradas, ar-condicionado de precisao ao fundo. No canto, um rack bege antigo destoando, com etiqueta de papel amarelada sem texto legivel. Mesa dobravel com notebook aberto e copos de cafe. Luz azulada artificial que serve a qualquer hora.",
+      "scenes": [
+        "co_02_ciclo_legado",
+        "co_18_implantacao_avaliacao"
+      ]
+    },
+    {
+      "file": "images/bg/sala_arquivo_tarde.png",
+      "define": "bg sala_arquivo_tarde",
+      "desc": "Sala de arquivo de documentacao: estantes de aco com pastas suspensas e caixas-arquivo, ficharios de lombadas coloridas, pilha de documentos encadernados em espiral sobre uma mesa, monitor de tubo velho num canto. Luz de fim de tarde laranja entrando por uma janela basculante alta, poeira visivel no feixe.",
+      "scenes": [
+        "co_04_preparacao"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "images/artifacts/co_sgc_legado.png",
+      "desc": "Tela do SGC com visual de sistema web de 2008: janela cinza, abas com degrade azul, tabela densa de chamados com fonte pequena, botoes em relevo. Detalhe do chamado 48213 com estado 'Resolvido' e o campo 'Solução' vazio destacado. Rotulos curtos em portugues.",
+      "scenes": [
+        "co_01_chegada",
+        "co_04_preparacao",
+        "co_09_historias"
+      ]
+    },
+    {
+      "file": "images/artifacts/co_farol_consulta.png",
+      "desc": "Tela do modulo Farol, limpa e atual: cartao do chamado 48213 com linha do tempo Aberto, Em atendimento, Resolvido; nome do atendente; caixa 'Solução registrada' com texto; botao 'Reabrir chamado'; selo de perfil 'Solicitante' no topo.",
+      "scenes": [
+        "co_09_historias",
+        "co_16_codificacao",
+        "co_18_implantacao_avaliacao"
+      ]
+    },
+    {
+      "file": "images/artifacts/co_farol_arquitetura.png",
+      "desc": "Diagrama limpo de arquitetura de transicao em fundo branco: bloco 'SGC (JSF + Oracle)' a esquerda, 'Camada anticorrupção / API de chamados' no meio, 'Módulo Farol' a direita; tabela 'historico_chamado (somente inclusão)' embaixo; perfis solicitante, atendente, supervisor e admin; seta tracejada para 'Aviso WhatsApp (próxima rodada)'. Caixas com cantos arredondados.",
+      "scenes": [
+        "co_13_arquitetura",
+        "co_15_gestao"
+      ]
+    },
+    {
+      "file": "images/artifacts/co_farol_auditoria.png",
+      "desc": "Tela de trilha de auditoria para supervisao: tabela com data e hora, usuario, perfil, acao, valor anterior e valor novo; uma linha com usuario 'sistema' e acao 'Encerrado automaticamente após 72 h'; icone de cadeado indicando registro imutavel; aba lateral 'Perfis' com matriz de permissoes por perfil.",
+      "scenes": [
+        "co_17_testes_seguranca",
+        "co_18_implantacao_avaliacao"
+      ]
+    }
+  ]
+}
