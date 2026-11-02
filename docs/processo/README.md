@@ -44,5 +44,8 @@ Plano: [`../plans/2026-11-02-evolucao.md`](../plans/2026-11-02-evolucao.md).
 | Pesquisa Live2D/3D | 1 agente Claude com busca web | `agentes/09-pesquisa-live2d-3d.md` | `../pesquisa/live2d-3d.md` |
 | E1 Design das intermissões | 1 agente de sistemas + 3 de rota (Claude) | `workflows/10-e1-design-intermissoes.js` | `docs/design/*.md` |
 | E3 Regeração no estilo C | Codex | `../arte/prompts/estilo-c.json` | elenco e fundos no estilo C |
+| E2/E4 Mapa, sistemas e diálogo | agentes Claude em workflow | `workflows/11-e2-e4-mapa-sistemas-dialogo.js` | intermissões, energia, mapa em camadas, destaque de fala, ambiguidade e rastreabilidade |
+| E5 Conteúdo das intermissões | alinhamento do mapa, 9 redatores, 3 agentes de encaixe nas cenas, 3 revisores (Claude) | `workflows/12-e5-conteudo-intermissoes.js` | `game/story/intermissoes/`, `game/data/intermissoes_*.rpy` |
+| Revisões da arte da Saúde (v2 a v5) | Codex, comandos montados por script | `../arte/prompts/estilo-c-saude-v*.json` e `tools/arte/montar_saude_v*.py` | elenco da Saúde no traço da Emily; padrão em `tools/arte/estilo_padrao.py` |
 
 As próximas etapas acrescentam suas linhas aqui, com o arquivo do prompt, quando forem executadas.
