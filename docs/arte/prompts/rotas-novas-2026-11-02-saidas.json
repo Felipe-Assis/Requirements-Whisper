@@ -1,0 +1,259 @@
+[
+ {
+  "id": "st_mentora__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/st_mentora/neutral.png",
+  "portrait": "images/characters/st_mentora/portrait.png"
+ },
+ {
+  "id": "st_mentora__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/st_mentora/thinking.png"
+ },
+ {
+  "id": "st_mentora__serious",
+  "kind": "sprite",
+  "dest": "images/characters/st_mentora/serious.png"
+ },
+ {
+  "id": "st_techlead__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/st_techlead/neutral.png",
+  "portrait": "images/characters/st_techlead/portrait.png"
+ },
+ {
+  "id": "st_techlead__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/st_techlead/thinking.png"
+ },
+ {
+  "id": "st_techlead__serious",
+  "kind": "sprite",
+  "dest": "images/characters/st_techlead/serious.png"
+ },
+ {
+  "id": "st_mobile__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/st_mobile/neutral.png",
+  "portrait": "images/characters/st_mobile/portrait.png"
+ },
+ {
+  "id": "st_mobile__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/st_mobile/thinking.png"
+ },
+ {
+  "id": "st_mobile__serious",
+  "kind": "sprite",
+  "dest": "images/characters/st_mobile/serious.png"
+ },
+ {
+  "id": "st_qualidade__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/st_qualidade/neutral.png",
+  "portrait": "images/characters/st_qualidade/portrait.png"
+ },
+ {
+  "id": "st_qualidade__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/st_qualidade/thinking.png"
+ },
+ {
+  "id": "st_qualidade__serious",
+  "kind": "sprite",
+  "dest": "images/characters/st_qualidade/serious.png"
+ },
+ {
+  "id": "st_ceo__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/st_ceo/neutral.png",
+  "portrait": "images/characters/st_ceo/portrait.png"
+ },
+ {
+  "id": "st_ceo__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/st_ceo/thinking.png"
+ },
+ {
+  "id": "st_estudante__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/st_estudante/neutral.png",
+  "portrait": "images/characters/st_estudante/portrait.png"
+ },
+ {
+  "id": "st_estudante__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/st_estudante/thinking.png"
+ },
+ {
+  "id": "bg__startup_coworking_manha",
+  "kind": "bg",
+  "dest": "images/bg/startup_coworking_manha.png"
+ },
+ {
+  "id": "bg__startup_coworking_tarde",
+  "kind": "bg",
+  "dest": "images/bg/startup_coworking_tarde.png"
+ },
+ {
+  "id": "bg__startup_coworking_noite",
+  "kind": "bg",
+  "dest": "images/bg/startup_coworking_noite.png"
+ },
+ {
+  "id": "bg__startup_terraco_noite",
+  "kind": "bg",
+  "dest": "images/bg/startup_terraco_noite.png"
+ },
+ {
+  "id": "bg__demo_day_auditorio",
+  "kind": "bg",
+  "dest": "images/bg/demo_day_auditorio.png"
+ },
+ {
+  "id": "art__st_app_gastos",
+  "kind": "artifact",
+  "dest": "images/artifacts/st_app_gastos.png"
+ },
+ {
+  "id": "art__st_quadro_kanban",
+  "kind": "artifact",
+  "dest": "images/artifacts/st_quadro_kanban.png"
+ },
+ {
+  "id": "art__st_diagrama_arquitetura",
+  "kind": "artifact",
+  "dest": "images/artifacts/st_diagrama_arquitetura.png"
+ },
+ {
+  "id": "art__st_painel_metricas",
+  "kind": "artifact",
+  "dest": "images/artifacts/st_painel_metricas.png"
+ },
+ {
+  "id": "co_mentora__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/co_mentora/neutral.png",
+  "portrait": "images/characters/co_mentora/portrait.png"
+ },
+ {
+  "id": "co_mentora__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/co_mentora/thinking.png"
+ },
+ {
+  "id": "co_mentora__serious",
+  "kind": "sprite",
+  "dest": "images/characters/co_mentora/serious.png"
+ },
+ {
+  "id": "co_legado__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/co_legado/neutral.png",
+  "portrait": "images/characters/co_legado/portrait.png"
+ },
+ {
+  "id": "co_legado__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/co_legado/thinking.png"
+ },
+ {
+  "id": "co_legado__serious",
+  "kind": "sprite",
+  "dest": "images/characters/co_legado/serious.png"
+ },
+ {
+  "id": "co_dev__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/co_dev/neutral.png",
+  "portrait": "images/characters/co_dev/portrait.png"
+ },
+ {
+  "id": "co_dev__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/co_dev/thinking.png"
+ },
+ {
+  "id": "co_dev__serious",
+  "kind": "sprite",
+  "dest": "images/characters/co_dev/serious.png"
+ },
+ {
+  "id": "co_qualidade__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/co_qualidade/neutral.png",
+  "portrait": "images/characters/co_qualidade/portrait.png"
+ },
+ {
+  "id": "co_qualidade__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/co_qualidade/thinking.png"
+ },
+ {
+  "id": "co_qualidade__serious",
+  "kind": "sprite",
+  "dest": "images/characters/co_qualidade/serious.png"
+ },
+ {
+  "id": "co_supervisora__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/co_supervisora/neutral.png",
+  "portrait": "images/characters/co_supervisora/portrait.png"
+ },
+ {
+  "id": "co_supervisora__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/co_supervisora/thinking.png"
+ },
+ {
+  "id": "co_solicitante__neutral",
+  "kind": "sprite",
+  "dest": "images/characters/co_solicitante/neutral.png",
+  "portrait": "images/characters/co_solicitante/portrait.png"
+ },
+ {
+  "id": "co_solicitante__thinking",
+  "kind": "sprite",
+  "dest": "images/characters/co_solicitante/thinking.png"
+ },
+ {
+  "id": "bg__central_atendimento_manha",
+  "kind": "bg",
+  "dest": "images/bg/central_atendimento_manha.png"
+ },
+ {
+  "id": "bg__central_atendimento_tarde",
+  "kind": "bg",
+  "dest": "images/bg/central_atendimento_tarde.png"
+ },
+ {
+  "id": "bg__sala_servidores",
+  "kind": "bg",
+  "dest": "images/bg/sala_servidores.png"
+ },
+ {
+  "id": "bg__sala_arquivo_tarde",
+  "kind": "bg",
+  "dest": "images/bg/sala_arquivo_tarde.png"
+ },
+ {
+  "id": "art__co_sgc_legado",
+  "kind": "artifact",
+  "dest": "images/artifacts/co_sgc_legado.png"
+ },
+ {
+  "id": "art__co_farol_consulta",
+  "kind": "artifact",
+  "dest": "images/artifacts/co_farol_consulta.png"
+ },
+ {
+  "id": "art__co_farol_arquitetura",
+  "kind": "artifact",
+  "dest": "images/artifacts/co_farol_arquitetura.png"
+ },
+ {
+  "id": "art__co_farol_auditoria",
+  "kind": "artifact",
+  "dest": "images/artifacts/co_farol_auditoria.png"
+ }
+]

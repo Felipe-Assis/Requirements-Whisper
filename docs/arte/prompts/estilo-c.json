@@ -1,0 +1,739 @@
+[
+ {
+  "id": "developer_requirements__enthusiastic",
+  "prompt": "A PRIMEIRA imagem é Emily já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/enthusiastic.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_requirements__neutral"
+ },
+ {
+  "id": "developer_requirements__serious",
+  "prompt": "A PRIMEIRA imagem é Emily já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_requirements__neutral"
+ },
+ {
+  "id": "developer_requirements__thinking",
+  "prompt": "A PRIMEIRA imagem é Emily já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_requirements__neutral"
+ },
+ {
+  "id": "developer_test__enthusiastic",
+  "prompt": "A PRIMEIRA imagem é César. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/enthusiastic.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_test__confident",
+  "prompt": "A PRIMEIRA imagem é César já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/confident.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_test__enthusiastic"
+ },
+ {
+  "id": "developer_test__serious",
+  "prompt": "A PRIMEIRA imagem é César já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_test__enthusiastic"
+ },
+ {
+  "id": "developer_test__thinking",
+  "prompt": "A PRIMEIRA imagem é César já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_test__enthusiastic"
+ },
+ {
+  "id": "developer_coding__neutral",
+  "prompt": "A PRIMEIRA imagem é Joseph. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_coding__serious",
+  "prompt": "A PRIMEIRA imagem é Joseph já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_coding__neutral"
+ },
+ {
+  "id": "developer_coding__thinking",
+  "prompt": "A PRIMEIRA imagem é Joseph já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_coding__neutral"
+ },
+ {
+  "id": "developer_management__thinking",
+  "prompt": "A PRIMEIRA imagem é Robert. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_management/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_management__serious",
+  "prompt": "A PRIMEIRA imagem é Robert já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_management/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_management__thinking"
+ },
+ {
+  "id": "developer_ai__positive",
+  "prompt": "A PRIMEIRA imagem é Lucas. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_ai/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_ai__concentrated",
+  "prompt": "A PRIMEIRA imagem é Lucas já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_ai/concentrated.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_ai__positive"
+ },
+ {
+  "id": "developer_ai__thinking",
+  "prompt": "A PRIMEIRA imagem é Lucas já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_ai/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_ai__positive"
+ },
+ {
+  "id": "developer_quality__positive",
+  "prompt": "A PRIMEIRA imagem é Daiana. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_quality__serious",
+  "prompt": "A PRIMEIRA imagem é Daiana já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_quality__positive"
+ },
+ {
+  "id": "developer_quality__thinking",
+  "prompt": "A PRIMEIRA imagem é Daiana já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_quality__positive"
+ },
+ {
+  "id": "developer_project__confident",
+  "prompt": "A PRIMEIRA imagem é Heitor. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_project/confident.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_project__serious",
+  "prompt": "A PRIMEIRA imagem é Heitor já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_project/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_project__confident"
+ },
+ {
+  "id": "developer_project__thinking",
+  "prompt": "A PRIMEIRA imagem é Heitor já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_project/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_project__confident"
+ },
+ {
+  "id": "developer_security__serious",
+  "prompt": "A PRIMEIRA imagem é Mateus. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_security/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "developer_security__thinking",
+  "prompt": "A PRIMEIRA imagem é Mateus já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_security/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_security__serious"
+ },
+ {
+  "id": "doutora_1__neutral",
+  "prompt": "A PRIMEIRA imagem é Dra. Michelle. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_1/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "doutora_2__neutral",
+  "prompt": "A PRIMEIRA imagem é Dra. Nathalia. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_2/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "amigo__base",
+  "prompt": "A PRIMEIRA imagem é colega de república. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/amigo/base.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "st_mentora__serious",
+  "prompt": "A PRIMEIRA imagem é Tainá já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_mentora__neutral"
+ },
+ {
+  "id": "st_mentora__thinking",
+  "prompt": "A PRIMEIRA imagem é Tainá já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_mentora__neutral"
+ },
+ {
+  "id": "st_techlead__neutral",
+  "prompt": "A PRIMEIRA imagem é Otávio. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_techlead/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "st_techlead__serious",
+  "prompt": "A PRIMEIRA imagem é Otávio já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_techlead/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_techlead__neutral"
+ },
+ {
+  "id": "st_techlead__thinking",
+  "prompt": "A PRIMEIRA imagem é Otávio já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_techlead/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_techlead__neutral"
+ },
+ {
+  "id": "st_mobile__neutral",
+  "prompt": "A PRIMEIRA imagem é Davi. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mobile/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "st_mobile__serious",
+  "prompt": "A PRIMEIRA imagem é Davi já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mobile/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_mobile__neutral"
+ },
+ {
+  "id": "st_mobile__thinking",
+  "prompt": "A PRIMEIRA imagem é Davi já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mobile/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_mobile__neutral"
+ },
+ {
+  "id": "st_qualidade__neutral",
+  "prompt": "A PRIMEIRA imagem é Lorena. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_qualidade/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "st_qualidade__serious",
+  "prompt": "A PRIMEIRA imagem é Lorena já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_qualidade/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_qualidade__neutral"
+ },
+ {
+  "id": "st_qualidade__thinking",
+  "prompt": "A PRIMEIRA imagem é Lorena já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_qualidade/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_qualidade__neutral"
+ },
+ {
+  "id": "st_ceo__neutral",
+  "prompt": "A PRIMEIRA imagem é Vinícius. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_ceo/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "st_ceo__thinking",
+  "prompt": "A PRIMEIRA imagem é Vinícius já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_ceo/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_ceo__neutral"
+ },
+ {
+  "id": "st_estudante__neutral",
+  "prompt": "A PRIMEIRA imagem é Bia. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_estudante/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "st_estudante__thinking",
+  "prompt": "A PRIMEIRA imagem é Bia já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_estudante/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "st_estudante__neutral"
+ },
+ {
+  "id": "co_mentora__neutral",
+  "prompt": "A PRIMEIRA imagem é Valéria. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_mentora/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "co_mentora__serious",
+  "prompt": "A PRIMEIRA imagem é Valéria já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_mentora/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_mentora__neutral"
+ },
+ {
+  "id": "co_mentora__thinking",
+  "prompt": "A PRIMEIRA imagem é Valéria já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_mentora/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_mentora__neutral"
+ },
+ {
+  "id": "co_legado__neutral",
+  "prompt": "A PRIMEIRA imagem é Jorge. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_legado/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "co_legado__serious",
+  "prompt": "A PRIMEIRA imagem é Jorge já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_legado/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_legado__neutral"
+ },
+ {
+  "id": "co_legado__thinking",
+  "prompt": "A PRIMEIRA imagem é Jorge já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_legado/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_legado__neutral"
+ },
+ {
+  "id": "co_dev__neutral",
+  "prompt": "A PRIMEIRA imagem é Kauã. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_dev/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "co_dev__serious",
+  "prompt": "A PRIMEIRA imagem é Kauã já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_dev/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_dev__neutral"
+ },
+ {
+  "id": "co_dev__thinking",
+  "prompt": "A PRIMEIRA imagem é Kauã já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_dev/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_dev__neutral"
+ },
+ {
+  "id": "co_qualidade__neutral",
+  "prompt": "A PRIMEIRA imagem é Ingrid. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_qualidade/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "co_qualidade__serious",
+  "prompt": "A PRIMEIRA imagem é Ingrid já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_qualidade/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_qualidade__neutral"
+ },
+ {
+  "id": "co_qualidade__thinking",
+  "prompt": "A PRIMEIRA imagem é Ingrid já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_qualidade/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_qualidade__neutral"
+ },
+ {
+  "id": "co_supervisora__neutral",
+  "prompt": "A PRIMEIRA imagem é Rosângela. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_supervisora/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "co_supervisora__thinking",
+  "prompt": "A PRIMEIRA imagem é Rosângela já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_supervisora/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_supervisora__neutral"
+ },
+ {
+  "id": "co_solicitante__neutral",
+  "prompt": "A PRIMEIRA imagem é Edson. Redesenhe EXATAMENTE essa pessoa, com o mesmo rosto, cabelo, tom de pele, roupa, acessórios, cores e pose, no estilo das imagens seguintes, que são só referência de estilo (não copie as pessoas delas).\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_solicitante/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-taina.png"
+  ]
+ },
+ {
+  "id": "co_solicitante__thinking",
+  "prompt": "A PRIMEIRA imagem é Edson já no estilo final: mantenha a identidade, o rosto, o cabelo, a roupa, as cores e o estilo de desenho dela. A SEGUNDA imagem mostra a POSE e a expressão desejadas (a mesma pessoa, desenhada em outro estilo). Desenhe a pessoa da primeira imagem na pose da segunda.\n\nEstilo C (aprovado): contorno escuro com leve textura de lápis/carvão, cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima, rosto simples com olhos discretos e sem brilho exagerado; anatomia e proporções corretas, mãos e pés bem desenhados, dobras de roupa coerentes, acabamento limpo. Evite o visual de anime genérico. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_solicitante/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "co_solicitante__neutral"
+ },
+ {
+  "id": "bg__escritorio_interior_tarde",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'escritorio_interior_tarde' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_tarde.png"
+  ],
+  "depends": "bg__escritorio_interior_manha"
+ },
+ {
+  "id": "bg__escritorio_interior_noite",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'escritorio_interior_noite' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_noite.png"
+  ],
+  "depends": "bg__escritorio_interior_manha"
+ },
+ {
+  "id": "bg__escritorio_interior_festa",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'escritorio_interior_festa' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_festa.png"
+  ],
+  "depends": "bg__escritorio_interior_manha"
+ },
+ {
+  "id": "bg__escritorio_interior_vazio",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'escritorio_interior_vazio' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_vazio.png"
+  ],
+  "depends": "bg__escritorio_interior_manha"
+ },
+ {
+  "id": "bg__quarto_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'quarto_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/quarto_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__quarto_noite",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'quarto_noite' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/quarto_noite.png"
+  ],
+  "depends": "bg__quarto_manha"
+ },
+ {
+  "id": "bg__transito_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'transito_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/transito_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__transito_tarde",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'transito_tarde' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/transito_tarde.png"
+  ],
+  "depends": "bg__transito_manha"
+ },
+ {
+  "id": "bg__transito_noite",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'transito_noite' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/transito_noite.png"
+  ],
+  "depends": "bg__transito_manha"
+ },
+ {
+  "id": "bg__sala_reunioes_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'sala_reunioes_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__sala_reunioes_tarde",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'sala_reunioes_tarde' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_tarde.png"
+  ],
+  "depends": "bg__sala_reunioes_manha"
+ },
+ {
+  "id": "bg__empresa_cafe_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'empresa_cafe_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/empresa_cafe_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__empresa_cafe_tarde",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'empresa_cafe_tarde' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/empresa_cafe_tarde.png"
+  ],
+  "depends": "bg__empresa_cafe_manha"
+ },
+ {
+  "id": "bg__empresa_exterior_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'empresa_exterior_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/empresa_exterior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__empresa_exterior_noite",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'empresa_exterior_noite' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/empresa_exterior_noite.png"
+  ],
+  "depends": "bg__empresa_exterior_manha"
+ },
+ {
+  "id": "bg__startup_coworking_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'startup_coworking_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/startup_coworking_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__startup_coworking_tarde",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'startup_coworking_tarde' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/startup_coworking_tarde.png"
+  ],
+  "depends": "bg__startup_coworking_manha"
+ },
+ {
+  "id": "bg__startup_coworking_noite",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'startup_coworking_noite' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/startup_coworking_noite.png"
+  ],
+  "depends": "bg__startup_coworking_manha"
+ },
+ {
+  "id": "bg__central_atendimento_manha",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'central_atendimento_manha'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/central_atendimento_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__central_atendimento_tarde",
+  "prompt": "A PRIMEIRA imagem é o ambiente já no estilo final. A SEGUNDA é a variante atual 'central_atendimento_tarde' (outro horário ou situação). Desenhe o MESMO ambiente da primeira, com o mesmo enquadramento e móveis, mas com a iluminação, o horário e os elementos da segunda, no estilo da primeira.\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/central_atendimento_tarde.png"
+  ],
+  "depends": "bg__central_atendimento_manha"
+ },
+ {
+  "id": "bg__cozinha_noite",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'cozinha_noite'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/cozinha_noite.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__refeitorio_tarde",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'refeitorio_tarde'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/refeitorio_tarde.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__escritorio_medica",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'escritorio_medica'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_medica.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__fachada_instituto_tarde",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'fachada_instituto_tarde'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/fachada_instituto_tarde.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__demo_day_auditorio",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'demo_day_auditorio'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/demo_day_auditorio.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__sala_arquivo_tarde",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'sala_arquivo_tarde'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_arquivo_tarde.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__sala_servidores",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'sala_servidores'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_servidores.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ },
+ {
+  "id": "bg__startup_terraco_noite",
+  "prompt": "A PRIMEIRA imagem é o fundo atual 'startup_terraco_noite'. Redesenhe o MESMO ambiente, com a mesma composição, móveis, objetos, horário e enquadramento, no estilo da SEGUNDA imagem (só referência de estilo).\n\nEstilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. Figurantes só ao longe, de costas e sem rosto. Sem texto legível. Fundo de visual novel em paisagem 3:2.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/startup_terraco_noite.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-escritorio.png"
+  ]
+ }
+]

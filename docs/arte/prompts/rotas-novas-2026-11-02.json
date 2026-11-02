@@ -1,0 +1,370 @@
+[
+ {
+  "id": "st_mentora__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Tainá Duarte. Mulher de 33 anos, parda, pele morena média tom caramelo, rosto oval, sorriso largo. Cabelo cacheado volumoso castanho-escuro preso num coque alto (puff), com cachos soltos na testa. Brincos de argola dourados médios. Camisa jeans clara de manga dobrada, aberta sobre camiseta branca com pequeno símbolo de moeda coral no peito (sem texto); calça de alfaiataria verde-oliva cropped; tênis brancos; cordão de crachá coral. Carrega um caderno de capa laranja com post-its saindo das páginas. Altura média, postura aberta e firme.\n\nPose: Em pé, sorriso aberto, mão direita estendida à frente em gesto de boas-vindas com a palma para cima; mão esquerda segura o caderno junto ao quadril.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "st_mentora__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_mentora__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Tainá Duarte. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Cabeça levemente inclinada, olhar para cima e para o lado, ponta de uma caneta encostada no queixo com a mão direita; caderno aberto apoiado no antebraço esquerdo.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_mentora__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_mentora__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Tainá Duarte. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Braços cruzados prendendo o caderno contra o peito, peso numa perna só, sobrancelhas retas, boca fechada, olhar direto.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_techlead__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Otávio Ramos. Homem negro de 50 anos, pele escura, alto e robusto. Cabeça raspada, barba curta grisalha bem aparada, óculos de armação redonda de metal fino. Camisa polo azul-marinho sob cardigã cinza-chumbo aberto; calça chino cáqui; sapatênis marrom; relógio analógico com pulseira de couro no pulso esquerdo. Segura uma caneca esmaltada branca com borda azul. Postura calma, ombros relaxados.\n\nPose: Segura a caneca com a mão direita na altura do peito, mão esquerda no bolso da calça, leve sorriso de canto.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "st_techlead__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_techlead__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Otávio Ramos. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Ajusta os óculos com polegar e indicador da mão esquerda, braço direito cruzado à frente apoiando o cotovelo esquerdo, olhar para baixo, caneca na mão direita.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_techlead__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_techlead__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Otávio Ramos. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Ereto, as duas mãos atrás das costas, queixo levemente abaixado, olhar firme por cima dos óculos, boca reta.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_mobile__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Davi Matsuda. Homem nipo-brasileiro de 24 anos, pele clara amarelada, magro, altura média. Cabelo preto liso com franja longa repartida ao meio e laterais curtas; sem barba. Moletom oversized cinza-mescla com capuz e pequeno robô estampado no peito; camiseta preta aparecendo na barra; calça cargo preta; tênis de cano alto vermelhos. Fones de ouvido grandes pretos pendurados no pescoço. Celular Android em capinha transparente com adesivos. Postura animada, um pouco curvada.\n\nPose: Acenando com a mão direita aberta na altura do ombro, celular na mão esquerda, sorriso largo mostrando os dentes.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "st_mobile__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_mobile__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Davi Matsuda. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Olha para a tela do celular segurado com as duas mãos na altura do peito, polegar sobre a tela, cabeça inclinada, boca de lado.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_mobile__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_mobile__neutral",
+  "prompt": "ATENÇÃO À CONSISTÊNCIA: é o MESMO rapaz da imagem anexada: cabelo preto CURTO e liso com franja (não é cabelo comprido nem chanel), moletom cinza com o pequeno robô no peito, fone de ouvido preto no pescoço, calça cargo preta, tênis vermelho-escuro. Rosto masculino idêntico.\n\nA PRIMEIRA imagem anexada é o personagem Davi Matsuda. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Mãos enfiadas no bolso canguru do moletom, ombros levemente erguidos, olhar de lado, boca reta, concentrado e sem graça.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.",
+  "observacao": "regerado com reforço de consistência"
+ },
+ {
+  "id": "st_qualidade__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Lorena Bezerra. Mulher branca de 30 anos, pele clara com sardas no nariz e nas bochechas, cabelo ruivo-acobreado curto em corte pixie com a lateral esquerda raspada. Óculos de armação grossa verde-água, piercing pequeno de argola na narina direita, tatuagem fina de ramo de flores no antebraço esquerdo. Jardineira jeans escura sobre camiseta listrada branca e azul-marinho; tênis de lona amarelo-mostarda; bolsa transversal pequena marrom. Segura um tablet com capa laranja. Postura ereta e atenta.\n\nPose: Tablet seguro junto ao quadril pela mão esquerda, mão direita fazendo sinal de positivo, sorriso tranquilo.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "st_qualidade__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_qualidade__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Lorena Bezerra. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Tablet apoiado no antebraço esquerdo, indicador direito tocando a tela, olhar concentrado para o tablet, lábios contraídos.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_qualidade__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_qualidade__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Lorena Bezerra. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Tablet abraçado contra o peito com os dois braços, sobrancelhas levemente franzidas, olhar direto para a frente.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_ceo__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Vinícius Prado. Homem branco de 36 anos, altura média-alta, magro atlético. Cabelo castanho-claro ondulado penteado para trás com volume, barba por fazer, olhos castanhos. Colete acolchoado sem mangas azul-petróleo sobre camisa social branca de manga dobrada até o cotovelo; calça jeans escura justa; tênis brancos de couro; smartwatch preto. Postura de palco, peito aberto. Stakeholder com 2 poses.\n\nPose: Braços abertos à frente na altura da cintura, palmas para cima, como quem apresenta algo; sorriso confiante.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "st_ceo__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_ceo__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Vinícius Prado. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Mão direita no queixo, cotovelo apoiado no braço esquerdo cruzado à frente do corpo, sobrancelha erguida, olhar para cima.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "st_estudante__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Beatriz Tavares. Mulher indígena de 20 anos (povo Baré), pele morena acobreada, rosto arredondado, olhos escuros amendoados. Cabelo preto liso e longo até a cintura com franja reta. Brincos de sementes de açaí e pulseira de miçangas coloridas. Camiseta larga amarela com brasão genérico sem texto, calça jeans clara, tênis gastos. Mochila de uma alça no ombro direito com chaveiro de boto-cor-de-rosa e garrafa d'água presa na lateral. Postura simples, um pouco reservada. Stakeholder com 2 poses.\n\nPose: Segura a alça da mochila com a mão esquerda e mostra a tela do celular para a frente com a mão direita, sorriso tímido.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "st_estudante__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "st_estudante__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Beatriz Tavares. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Braços cruzados frouxos, celular numa das mãos, olhar de lado, lábios apertados, expressão desconfiada.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "bg__startup_coworking_manha",
+  "prompt": "Fundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático).\n\nCoworking no segundo andar de um casarão antigo reformado em Botafogo: pé-direito alto, piso de taco, paredes de tijolo aparente pintadas de branco, janelas altas em arco com venezianas verdes abertas para árvores. Mesa longa compartilhada de madeira clara com notebooks, celulares de teste num suporte, canecas e plantas. À esquerda, parede de vidro com quadro Kanban de post-its coloridos (sem texto legível). Ao fundo, sofá verde e uma bicicleta encostada. Luz da manhã fria azul-petróleo com faixas amareladas no piso. Dois figurantes de costas. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png"
+  ]
+ },
+ {
+  "id": "bg__startup_coworking_tarde",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png"
+  ],
+  "depends": "bg__startup_coworking_manha",
+  "prompt": "A PRIMEIRA imagem anexada é o ambiente base. Gere o MESMO ambiente, com o mesmo enquadramento, móveis e composição, mudando só a iluminação e os detalhes descritos.\n\nMesmo enquadramento de startup_coworking_manha com luz de fim de tarde laranja e magenta entrando pelas janelas em arco, sombras longas, post-its mais saturados, um figurante guardando o notebook. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.\n\nFundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático)."
+ },
+ {
+  "id": "bg__startup_coworking_noite",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png"
+  ],
+  "depends": "bg__startup_coworking_manha",
+  "prompt": "A PRIMEIRA imagem anexada é o ambiente base. Gere o MESMO ambiente, com o mesmo enquadramento, móveis e composição, mudando só a iluminação e os detalhes descritos.\n\nMesmo enquadramento de startup_coworking_manha à noite: azul-marinho quase monocromático, janelas escuras com reflexo, luminárias pendentes amarelas acesas só sobre a mesa, monitores com brilho frio, cadeiras vazias. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.\n\nFundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático)."
+ },
+ {
+  "id": "bg__startup_terraco_noite",
+  "prompt": "Fundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático).\n\nTerraço do casarão do coworking à noite: deck de madeira, varal de lâmpadas amarelas, mesas baixas com caixas de pizza e copos, puffs, plantas em vasos, guarda-corpo de ferro. Ao fundo, silhueta do Pão de Açúcar e prédios iluminados de Botafogo sob céu azul-marinho. Figurantes de costas conversando. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png"
+  ]
+ },
+ {
+  "id": "bg__demo_day_auditorio",
+  "prompt": "Fundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático).\n\nAuditório pequeno de uma aceleradora: palco baixo com púlpito, telão grande atrás exibindo um gráfico genérico de linha subindo (sem texto), plateia de cadeiras pretas com figurantes de costas, holofotes, faixa lateral com padrão geométrico azul e laranja sem palavras. Luz de tarde quente misturada ao brilho frio do telão. Fundo PNG RGB 1536x1024 na família escritorio_interior: ilustração anime com contorno de tinta escura, sombreamento suave, grão leve, perspectiva na altura dos olhos, figurantes de costas, sem texto legível.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png"
+  ]
+ },
+ {
+  "id": "art__st_app_gastos",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nDuas telas de celular lado a lado em mockup limpo. Esquerda: lista de gastos do mês com cabeçalho 'Outubro', total 'R$ 100,00' em destaque, itens 'Almoço R$ 20,00', 'Bandejão R$ 4,50', 'Ônibus R$ 4,30', 'Café R$ 5,00', cada um com ícone de categoria e ícone de lixeira. Direita: a mesma tela escurecida com caixa de confirmação 'Excluir Almoço, R$ 20,00?' e botões 'Cancelar' (contorno) e 'Excluir' (coral). Paleta coral, branco e verde-menta; fonte sem serifa. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+  "refs": []
+ },
+ {
+  "id": "art__st_quadro_kanban",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nQuadro Kanban digital com cinco colunas: 'Descoberta', 'Pronto para desenvolver', 'Fazendo (limite 2)', 'Revisão', 'Pronto'. Cartões com títulos curtos: 'Excluir gasto com confirmação', 'Total recalculado após sincronizar', 'Gasto duplicado no offline', 'Importação bancária (investigar)', 'Medalhas', 'Revisar textos de privacidade'. Avatares circulares pequenos nas cores coral, verde-limão, azul-céu e magenta. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+  "refs": []
+ },
+ {
+  "id": "art__st_diagrama_arquitetura",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nDiagrama de arquitetura em estilo quadro branco limpo: celular com 'Banco local' e 'Fila de sincronização', seta 'HTTPS + id único' até a nuvem 'Funções da API', seta até o cilindro 'Banco relacional'. Caixa lateral tracejada 'Instituição parceira (Open Finance)' ligada por seta pontilhada 'consentimento'. Ao lado, quatro entidades: 'Estudante', 'Gasto (id, valor_centavos, data, categoria, origem, excluido_em)', 'Categoria', 'Consentimento (escopos, validade, revogado_em)'. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+  "refs": []
+ },
+ {
+  "id": "art__st_painel_metricas",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nPainel de métricas de produto: cartões 'Cadastros 1.000', 'Retenção 30 dias 22%', 'Nota na loja 3,4', 'Sessões sem falha 98,7%'; gráfico de linha de cadastros subindo; gráfico de retenção caindo e depois subindo levemente; um pico marcado 'Início do semestre'. Ilustração plana e limpa com leve contorno, textos curtos em português e legíveis, pensada para aparecer centralizada sobre o fundo (PNG com transparência ao redor do quadro).",
+  "refs": []
+ },
+ {
+  "id": "co_mentora__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Valéria Nogueira. 46 anos aparentes, mulher negra de pele retinta, cabelo crespo natural bem curto com fios grisalhos nas temporas, oculos de armacao retangular vermelha, brincos pequenos de argola dourada. Blazer mostarda sobre blusa branca de gola canoa, calca social preta de corte reto, sapatilha preta, cracha azul pendurado no pescoco, caderno de capa dura vinho. Postura ereta e tranquila.\n\nPose: Um passo a frente, palma da mao direita aberta estendida como quem convida a falar, caderno vinho apoiado no antebraco esquerdo, sorriso sereno.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "co_mentora__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_mentora__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Valéria Nogueira. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Mao no queixo com a caneta encostada no labio inferior, olhar para o lado, peso numa perna so.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_mentora__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_mentora__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Valéria Nogueira. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Caderno abracado junto ao peito com os bracos cruzados por cima, cabeca levemente baixa olhando por cima dos oculos.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_legado__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Jorge Takeda. 61 anos aparentes, homem nipo-brasileiro de pele clara amarelada, cabelo grisalho curto penteado para tras com entradas, bigode fino grisalho, oculos de leitura pendurados no pescoco por uma cordinha. Camisa social azul-clara de manga curta com caneta no bolso, colete de la cinza sem mangas, calca de sarja caqui, sapato social marrom gasto. Caneca branca lascada com uma faixa azul. Leve barriga, ombros um pouco curvados.\n\nPose: Segura a caneca branca com as duas maos na altura do peito, ombros relaxados, meio sorriso de canto.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "co_legado__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_legado__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Jorge Takeda. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Uma mao coca a nuca, a outra segura os oculos de leitura afastados do rosto, olhar para cima como quem puxa memoria.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_legado__serious",
+  "refs": [],
+  "depends": "co_legado__neutral",
+  "prompt": "A ÚNICA imagem anexada é o Jorge, um senhor de uns 60 anos. Desenhe ESSE MESMO homem (não uma mulher, não outra pessoa). ATENÇÃO À CONSISTÊNCIA: o colete é CINZA (o mesmo da imagem anexada), a camisa é azul-clara de manga curta, calça cáqui, sapatos marrons, cabelo grisalho, bigode, óculos pendurados na camisa. Não troque a cor de nenhuma peça.\n\nA PRIMEIRA imagem anexada é o personagem Jorge Takeda. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Bracos cruzados, caneca pendurada num dedo, queixo baixo, olhar firme para frente.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.",
+  "observacao": "regerado com reforço de consistência"
+ },
+ {
+  "id": "co_dev__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Kauã Ferreira. 26 anos aparentes, homem brasileiro de ascendencia indigena, pele morena acobreada, cabelo preto liso ate os ombros preso em coque baixo, barba rala. Moletom verde-musgo com ziper aberto sobre camiseta preta lisa, calca jogger cinza, tenis branco, fones de ouvido grandes no pescoco, notebook prateado com adesivos coloridos sem texto. Corpo magro, postura inquieta.\n\nPose: Notebook debaixo do braco esquerdo, polegar direito para cima, corpo inclinado para frente, animado.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "co_dev__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_dev__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Kauã Ferreira. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Notebook aberto apoiado no antebraco, outra mao no queixo, testa franzida olhando a tela.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_dev__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_dev__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Kauã Ferreira. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Maos nos bolsos do moletom, ombros levemente erguidos, rosto virado de lado, olhar desconfiado.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_qualidade__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Ingrid Batista. 34 anos aparentes, mulher branca de pele clara com sardas, estatura baixa e corpo largo, cabelo curto estilo pixie tingido de platinado com a raiz escura aparente, piercing pequeno na orelha, tatuagem de um sinal de check no pulso. Camisa xadrez azul-marinho e vinho aberta sobre camiseta cinza, calca jeans escura, coturno preto de cano baixo, cracha preso no bolso. Tablet com caneta stylus.\n\nPose: Segura o tablet virado para frente mostrando uma lista com marcas de check, sorriso aberto, pes firmes.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "co_qualidade__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_qualidade__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Ingrid Batista. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Caneta stylus apoiada na tempora, tablet apoiado no quadril, olhar para o alto.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_qualidade__serious",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_qualidade__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Ingrid Batista. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Tablet abracado ao peito com os bracos cruzados por cima, sobrancelhas franzidas, pes afastados.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_supervisora__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Rosângela Arruda. 54 anos aparentes, mulher parda de pele morena media, cabelo castanho-escuro ondulado na altura dos ombros com mechas acobreadas, headset de call center apoiado no pescoco, relogio dourado grande no pulso. Blusa de seda verde-esmeralda, calca social cinza-chumbo, scarpin baixo preto. Relatorio impresso dobrado na mao. Postura de comando, cordial.\n\nPose: Ereta, uma mao segura o relatorio dobrado na altura da cintura, a outra apoiada no quadril, leve sorriso.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "co_supervisora__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_supervisora__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Rosângela Arruda. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Braco erguido olhando o relogio de pulso, sobrancelha arqueada, relatorio preso debaixo do braco.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "co_solicitante__neutral",
+  "prompt": "Sprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose.\n\nPersonagem: Edson Moura. 42 anos aparentes, homem negro de pele escura, cabeca raspada, barba curta bem aparada. Colete refletivo laranja de campo sobre camisa polo azul-marinho sem logotipo legivel, calca de brim, botina de seguranca marrom, capacete branco. Celular na mao. Corpo forte, postura aberta.\n\nPose: Capacete branco debaixo do braco esquerdo, celular na mao direita, ombros soltos, sorriso largo.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/serious.png"
+  ]
+ },
+ {
+  "id": "co_solicitante__thinking",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+  ],
+  "depends": "co_solicitante__neutral",
+  "prompt": "A PRIMEIRA imagem anexada é o personagem Edson Moura. Gere a MESMA pessoa, com o mesmo rosto, cabelo, roupa, acessórios, cores e estilo de desenho, mudando só a pose e a expressão.\n\nNova pose: Olha a tela do celular com a testa franzida, mao livre na cintura, capacete pendurado no cinto.\n\nSprite de personagem para visual novel. Corpo inteiro em pé, do topo da cabeça aos pés visíveis, centralizado, de frente ou levemente 3/4, fundo totalmente transparente (PNG com canal alfa), sem sombra no chão, sem cenário, sem texto, formato retrato 2:3. Siga o estilo das imagens de referência: ilustração anime/cartoon ocidentalizada SIMPLES e limpa, traço fino escuro, cores chapadas com no máximo 1-2 tons de sombra suave, poucos detalhes de textura, olhos grandes escuros com brilho branco, nariz mínimo, boca simples, paleta natural levemente dessaturada, proporção realista (~7 cabeças). A expressão é transmitida principalmente pela pose."
+ },
+ {
+  "id": "bg__central_atendimento_manha",
+  "prompt": "Fundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático).\n\nAndar aberto de central de atendimento corporativa: fileiras de baias com divisorias baixas azul-acinzentadas, monitores duplos, headsets sobre as mesas, atendentes figurantes vistos de costas. Painel de TV grande na parede com barras e numeros de fila, sem texto legivel. Janelas altas com persianas, carpete cinza, plantas, quadro com post-its. Luz fria da manha com feixes amarelados; perspectiva em altura dos olhos.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png"
+  ]
+ },
+ {
+  "id": "bg__central_atendimento_tarde",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png"
+  ],
+  "depends": "bg__central_atendimento_manha",
+  "prompt": "A PRIMEIRA imagem anexada é o ambiente base. Gere o MESMO ambiente, com o mesmo enquadramento, móveis e composição, mudando só a iluminação e os detalhes descritos.\n\nMesmo ambiente da central de atendimento no fim da tarde: luz laranja e magenta entrando pelas persianas, menos atendentes nas baias, monitores acesos, painel de fila na parede.\n\nFundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático)."
+ },
+ {
+  "id": "bg__sala_servidores",
+  "prompt": "Fundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático).\n\nCorredor de data center sem janelas: racks pretos com LEDs azuis e verdes, piso elevado de placas perfuradas, ar-condicionado de precisao ao fundo. No canto, um rack bege antigo destoando, com etiqueta de papel amarelada sem texto legivel. Mesa dobravel com notebook aberto e copos de cafe. Luz azulada artificial que serve a qualquer hora.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png"
+  ]
+ },
+ {
+  "id": "bg__sala_arquivo_tarde",
+  "prompt": "Fundo de visual novel em paisagem 3:2, sem texto legível, sem personagens em primeiro plano (figurantes só ao longe, de costas e sem rosto). Siga o estilo das imagens de referência: ilustração anime/cel com contorno fino de tinta escura, sombreamento suave, leve textura de papel, perspectiva na altura dos olhos, cores conforme o horário (manhã: azul-petróleo frio com luz amarelada; tarde: laranja e magenta de pôr do sol; noite: azul-marinho quase monocromático).\n\nSala de arquivo de documentacao: estantes de aco com pastas suspensas e caixas-arquivo, ficharios de lombadas coloridas, pilha de documentos encadernados em espiral sobre uma mesa, monitor de tubo velho num canto. Luz de fim de tarde laranja entrando por uma janela basculante alta, poeira visivel no feixe.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/sala_reunioes_manha.png"
+  ]
+ },
+ {
+  "id": "art__co_sgc_legado",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nTela do SGC com visual de sistema web de 2008: janela cinza, abas com degrade azul, tabela densa de chamados com fonte pequena, botoes em relevo. Detalhe do chamado 48213 com estado 'Resolvido' e o campo 'Solução' vazio destacado. Rotulos curtos em portugues.",
+  "refs": []
+ },
+ {
+  "id": "art__co_farol_consulta",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nTela do modulo Farol, limpa e atual: cartao do chamado 48213 com linha do tempo Aberto, Em atendimento, Resolvido; nome do atendente; caixa 'Solução registrada' com texto; botao 'Reabrir chamado'; selo de perfil 'Solicitante' no topo.",
+  "refs": []
+ },
+ {
+  "id": "art__co_farol_arquitetura",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nDiagrama limpo de arquitetura de transicao em fundo branco: bloco 'SGC (JSF + Oracle)' a esquerda, 'Camada anticorrupção / API de chamados' no meio, 'Módulo Farol' a direita; tabela 'historico_chamado (somente inclusão)' embaixo; perfis solicitante, atendente, supervisor e admin; seta tracejada para 'Aviso WhatsApp (próxima rodada)'. Caixas com cantos arredondados.",
+  "refs": []
+ },
+ {
+  "id": "art__co_farol_auditoria",
+  "prompt": "Ilustração de uma tela/artefato de software para aparecer dentro de uma visual novel: plana, limpa, contorno leve, textos curtos em português do Brasil escritos corretamente e legíveis, sem marcas reais. Fundo transparente ao redor do quadro (PNG com alfa).\n\nTela de trilha de auditoria para supervisao: tabela com data e hora, usuario, perfil, acao, valor anterior e valor novo; uma linha com usuario 'sistema' e acao 'Encerrado automaticamente após 72 h'; icone de cadeado indicando registro imutavel; aba lateral 'Perfis' com matriz de permissoes por perfil.",
+  "refs": []
+ }
+]

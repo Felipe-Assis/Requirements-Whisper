@@ -1,0 +1,472 @@
+{
+ "aprovadas": {
+  "developer_requirements__neutral": "estilo-c-emily.png",
+  "st_mentora__neutral": "estilo-c-taina.png",
+  "bg__escritorio_interior_manha": "estilo-c-escritorio.png"
+ },
+ "saidas": [
+  {
+   "id": "developer_requirements__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/developer_requirements/neutral.png",
+   "portrait": "images/characters/developer_requirements/portrait.png"
+  },
+  {
+   "id": "developer_requirements__enthusiastic",
+   "kind": "sprite",
+   "dest": "images/characters/developer_requirements/enthusiastic.png"
+  },
+  {
+   "id": "developer_requirements__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_requirements/serious.png"
+  },
+  {
+   "id": "developer_requirements__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_requirements/thinking.png"
+  },
+  {
+   "id": "developer_test__enthusiastic",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/enthusiastic.png",
+   "portrait": "images/characters/developer_test/portrait.png"
+  },
+  {
+   "id": "developer_test__confident",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/confident.png"
+  },
+  {
+   "id": "developer_test__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/serious.png"
+  },
+  {
+   "id": "developer_test__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/thinking.png"
+  },
+  {
+   "id": "developer_coding__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/developer_coding/neutral.png",
+   "portrait": "images/characters/developer_coding/portrait.png"
+  },
+  {
+   "id": "developer_coding__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_coding/serious.png"
+  },
+  {
+   "id": "developer_coding__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_coding/thinking.png"
+  },
+  {
+   "id": "developer_management__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_management/thinking.png",
+   "portrait": "images/characters/developer_management/portrait.png"
+  },
+  {
+   "id": "developer_management__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_management/serious.png"
+  },
+  {
+   "id": "developer_ai__positive",
+   "kind": "sprite",
+   "dest": "images/characters/developer_ai/positive.png",
+   "portrait": "images/characters/developer_ai/portrait.png"
+  },
+  {
+   "id": "developer_ai__concentrated",
+   "kind": "sprite",
+   "dest": "images/characters/developer_ai/concentrated.png"
+  },
+  {
+   "id": "developer_ai__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_ai/thinking.png"
+  },
+  {
+   "id": "developer_quality__positive",
+   "kind": "sprite",
+   "dest": "images/characters/developer_quality/positive.png",
+   "portrait": "images/characters/developer_quality/portrait.png"
+  },
+  {
+   "id": "developer_quality__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_quality/serious.png"
+  },
+  {
+   "id": "developer_quality__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_quality/thinking.png"
+  },
+  {
+   "id": "developer_project__confident",
+   "kind": "sprite",
+   "dest": "images/characters/developer_project/confident.png",
+   "portrait": "images/characters/developer_project/portrait.png"
+  },
+  {
+   "id": "developer_project__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_project/serious.png"
+  },
+  {
+   "id": "developer_project__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_project/thinking.png"
+  },
+  {
+   "id": "developer_security__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_security/serious.png",
+   "portrait": "images/characters/developer_security/portrait.png"
+  },
+  {
+   "id": "developer_security__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_security/thinking.png"
+  },
+  {
+   "id": "doutora_1__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_1/neutral.png",
+   "portrait": "images/characters/doutora_1/portrait.png"
+  },
+  {
+   "id": "doutora_2__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_2/neutral.png",
+   "portrait": "images/characters/doutora_2/portrait.png"
+  },
+  {
+   "id": "amigo__base",
+   "kind": "sprite",
+   "dest": "images/characters/amigo/base.png",
+   "portrait": "images/characters/amigo/portrait.png"
+  },
+  {
+   "id": "st_mentora__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/st_mentora/neutral.png",
+   "portrait": "images/characters/st_mentora/portrait.png"
+  },
+  {
+   "id": "st_mentora__serious",
+   "kind": "sprite",
+   "dest": "images/characters/st_mentora/serious.png"
+  },
+  {
+   "id": "st_mentora__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/st_mentora/thinking.png"
+  },
+  {
+   "id": "st_techlead__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/st_techlead/neutral.png",
+   "portrait": "images/characters/st_techlead/portrait.png"
+  },
+  {
+   "id": "st_techlead__serious",
+   "kind": "sprite",
+   "dest": "images/characters/st_techlead/serious.png"
+  },
+  {
+   "id": "st_techlead__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/st_techlead/thinking.png"
+  },
+  {
+   "id": "st_mobile__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/st_mobile/neutral.png",
+   "portrait": "images/characters/st_mobile/portrait.png"
+  },
+  {
+   "id": "st_mobile__serious",
+   "kind": "sprite",
+   "dest": "images/characters/st_mobile/serious.png"
+  },
+  {
+   "id": "st_mobile__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/st_mobile/thinking.png"
+  },
+  {
+   "id": "st_qualidade__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/st_qualidade/neutral.png",
+   "portrait": "images/characters/st_qualidade/portrait.png"
+  },
+  {
+   "id": "st_qualidade__serious",
+   "kind": "sprite",
+   "dest": "images/characters/st_qualidade/serious.png"
+  },
+  {
+   "id": "st_qualidade__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/st_qualidade/thinking.png"
+  },
+  {
+   "id": "st_ceo__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/st_ceo/neutral.png",
+   "portrait": "images/characters/st_ceo/portrait.png"
+  },
+  {
+   "id": "st_ceo__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/st_ceo/thinking.png"
+  },
+  {
+   "id": "st_estudante__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/st_estudante/neutral.png",
+   "portrait": "images/characters/st_estudante/portrait.png"
+  },
+  {
+   "id": "st_estudante__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/st_estudante/thinking.png"
+  },
+  {
+   "id": "co_mentora__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/co_mentora/neutral.png",
+   "portrait": "images/characters/co_mentora/portrait.png"
+  },
+  {
+   "id": "co_mentora__serious",
+   "kind": "sprite",
+   "dest": "images/characters/co_mentora/serious.png"
+  },
+  {
+   "id": "co_mentora__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/co_mentora/thinking.png"
+  },
+  {
+   "id": "co_legado__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/co_legado/neutral.png",
+   "portrait": "images/characters/co_legado/portrait.png"
+  },
+  {
+   "id": "co_legado__serious",
+   "kind": "sprite",
+   "dest": "images/characters/co_legado/serious.png"
+  },
+  {
+   "id": "co_legado__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/co_legado/thinking.png"
+  },
+  {
+   "id": "co_dev__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/co_dev/neutral.png",
+   "portrait": "images/characters/co_dev/portrait.png"
+  },
+  {
+   "id": "co_dev__serious",
+   "kind": "sprite",
+   "dest": "images/characters/co_dev/serious.png"
+  },
+  {
+   "id": "co_dev__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/co_dev/thinking.png"
+  },
+  {
+   "id": "co_qualidade__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/co_qualidade/neutral.png",
+   "portrait": "images/characters/co_qualidade/portrait.png"
+  },
+  {
+   "id": "co_qualidade__serious",
+   "kind": "sprite",
+   "dest": "images/characters/co_qualidade/serious.png"
+  },
+  {
+   "id": "co_qualidade__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/co_qualidade/thinking.png"
+  },
+  {
+   "id": "co_supervisora__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/co_supervisora/neutral.png",
+   "portrait": "images/characters/co_supervisora/portrait.png"
+  },
+  {
+   "id": "co_supervisora__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/co_supervisora/thinking.png"
+  },
+  {
+   "id": "co_solicitante__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/co_solicitante/neutral.png",
+   "portrait": "images/characters/co_solicitante/portrait.png"
+  },
+  {
+   "id": "co_solicitante__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/co_solicitante/thinking.png"
+  },
+  {
+   "id": "bg__escritorio_interior_manha",
+   "kind": "bg",
+   "dest": "images/bg/escritorio_interior_manha.png"
+  },
+  {
+   "id": "bg__escritorio_interior_tarde",
+   "kind": "bg",
+   "dest": "images/bg/escritorio_interior_tarde.png"
+  },
+  {
+   "id": "bg__escritorio_interior_noite",
+   "kind": "bg",
+   "dest": "images/bg/escritorio_interior_noite.png"
+  },
+  {
+   "id": "bg__escritorio_interior_festa",
+   "kind": "bg",
+   "dest": "images/bg/escritorio_interior_festa.png"
+  },
+  {
+   "id": "bg__escritorio_interior_vazio",
+   "kind": "bg",
+   "dest": "images/bg/escritorio_interior_vazio.png"
+  },
+  {
+   "id": "bg__quarto_manha",
+   "kind": "bg",
+   "dest": "images/bg/quarto_manha.png"
+  },
+  {
+   "id": "bg__quarto_noite",
+   "kind": "bg",
+   "dest": "images/bg/quarto_noite.png"
+  },
+  {
+   "id": "bg__transito_manha",
+   "kind": "bg",
+   "dest": "images/bg/transito_manha.png"
+  },
+  {
+   "id": "bg__transito_tarde",
+   "kind": "bg",
+   "dest": "images/bg/transito_tarde.png"
+  },
+  {
+   "id": "bg__transito_noite",
+   "kind": "bg",
+   "dest": "images/bg/transito_noite.png"
+  },
+  {
+   "id": "bg__sala_reunioes_manha",
+   "kind": "bg",
+   "dest": "images/bg/sala_reunioes_manha.png"
+  },
+  {
+   "id": "bg__sala_reunioes_tarde",
+   "kind": "bg",
+   "dest": "images/bg/sala_reunioes_tarde.png"
+  },
+  {
+   "id": "bg__empresa_cafe_manha",
+   "kind": "bg",
+   "dest": "images/bg/empresa_cafe_manha.png"
+  },
+  {
+   "id": "bg__empresa_cafe_tarde",
+   "kind": "bg",
+   "dest": "images/bg/empresa_cafe_tarde.png"
+  },
+  {
+   "id": "bg__empresa_exterior_manha",
+   "kind": "bg",
+   "dest": "images/bg/empresa_exterior_manha.png"
+  },
+  {
+   "id": "bg__empresa_exterior_noite",
+   "kind": "bg",
+   "dest": "images/bg/empresa_exterior_noite.png"
+  },
+  {
+   "id": "bg__startup_coworking_manha",
+   "kind": "bg",
+   "dest": "images/bg/startup_coworking_manha.png"
+  },
+  {
+   "id": "bg__startup_coworking_tarde",
+   "kind": "bg",
+   "dest": "images/bg/startup_coworking_tarde.png"
+  },
+  {
+   "id": "bg__startup_coworking_noite",
+   "kind": "bg",
+   "dest": "images/bg/startup_coworking_noite.png"
+  },
+  {
+   "id": "bg__central_atendimento_manha",
+   "kind": "bg",
+   "dest": "images/bg/central_atendimento_manha.png"
+  },
+  {
+   "id": "bg__central_atendimento_tarde",
+   "kind": "bg",
+   "dest": "images/bg/central_atendimento_tarde.png"
+  },
+  {
+   "id": "bg__cozinha_noite",
+   "kind": "bg",
+   "dest": "images/bg/cozinha_noite.png"
+  },
+  {
+   "id": "bg__refeitorio_tarde",
+   "kind": "bg",
+   "dest": "images/bg/refeitorio_tarde.png"
+  },
+  {
+   "id": "bg__escritorio_medica",
+   "kind": "bg",
+   "dest": "images/bg/escritorio_medica.png"
+  },
+  {
+   "id": "bg__fachada_instituto_tarde",
+   "kind": "bg",
+   "dest": "images/bg/fachada_instituto_tarde.png"
+  },
+  {
+   "id": "bg__demo_day_auditorio",
+   "kind": "bg",
+   "dest": "images/bg/demo_day_auditorio.png"
+  },
+  {
+   "id": "bg__sala_arquivo_tarde",
+   "kind": "bg",
+   "dest": "images/bg/sala_arquivo_tarde.png"
+  },
+  {
+   "id": "bg__sala_servidores",
+   "kind": "bg",
+   "dest": "images/bg/sala_servidores.png"
+  },
+  {
+   "id": "bg__startup_terraco_noite",
+   "kind": "bg",
+   "dest": "images/bg/startup_terraco_noite.png"
+  }
+ ]
+}
