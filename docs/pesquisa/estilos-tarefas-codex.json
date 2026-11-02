@@ -1,0 +1,51 @@
+[
+  {
+    "id": "emily_novo",
+    "prompt": "A PRIMEIRA imagem é a Emily (mulher jovem, pele morena, cabelo preto liso preso em rabo de cavalo alto com franja lateral, camiseta branca/creme de manga curta, calça jeans azul-clara com barra dobrada, tênis azul-claro; pose: mão direita estendida apresentando algo, mão esquerda no bolso, sorriso aberto). Redesenhe EXATAMENTE essa pessoa, roupa e pose, mas no ESTILO DA SEGUNDA imagem: traço fino escuro e limpo, cel shading com 1-2 tons de sombra, mais acabamento e detalhe, proporções e mãos corretas. Sprite de visual novel, corpo inteiro em pé da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+    "refs": [
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/neutral.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png"
+    ]
+  },
+  {
+    "id": "emily_mescla",
+    "prompt": "A PRIMEIRA imagem é a Emily (mulher jovem, pele morena, cabelo preto liso preso em rabo de cavalo alto com franja lateral, camiseta branca/creme de manga curta, calça jeans azul-clara com barra dobrada, tênis azul-claro; pose: mão direita estendida apresentando algo, mão esquerda no bolso, sorriso aberto). Redesenhe EXATAMENTE essa pessoa, roupa e pose num estilo MESCLADO entre a primeira e a segunda imagem: do estilo da PRIMEIRA mantenha o contorno com leve textura de lápis/carvão, as cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima e rosto simples com olhos discretos; da SEGUNDA traga anatomia e proporções corretas, mãos bem desenhadas, dobras de roupa coerentes e acabamento limpo. Evite o visual de anime genérico (olhos enormes e brilhantes, rosto muito estilizado). Sprite de visual novel, corpo inteiro em pé da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+    "refs": [
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/neutral.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png"
+    ]
+  },
+  {
+    "id": "taina_original",
+    "prompt": "A PRIMEIRA imagem é a Tainá (mulher de 33 anos, parda, cabelo cacheado volumoso castanho-escuro preso em coque alto, brincos de argola dourados, camisa jeans clara aberta sobre camiseta branca com símbolo de moeda coral, calça verde-oliva cropped, tênis brancos, crachá coral, caderno laranja com post-its; pose: mão estendida em boas-vindas). Redesenhe EXATAMENTE essa pessoa, roupa e pose, mas no ESTILO DA SEGUNDA E DA TERCEIRA imagens: contorno escuro irregular com textura de carvão/lápis, cores chapadas suaves e dessaturadas, pouquíssimo detalhe, sombra mínima, rosto simples com olhos escuros pequenos e boca simples, aparência de ilustração feita à mão e não de anime polido. Sprite de visual novel, corpo inteiro em pé da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+    "refs": [
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/neutral.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_quality/positive.png"
+    ]
+  },
+  {
+    "id": "taina_mescla",
+    "prompt": "A PRIMEIRA imagem é a Tainá (mulher de 33 anos, parda, cabelo cacheado volumoso castanho-escuro preso em coque alto, brincos de argola dourados, camisa jeans clara aberta sobre camiseta branca com símbolo de moeda coral, calça verde-oliva cropped, tênis brancos, crachá coral, caderno laranja com post-its; pose: mão estendida em boas-vindas). Redesenhe EXATAMENTE essa pessoa, roupa e pose num estilo MESCLADO: da SEGUNDA imagem (estilo original) mantenha o contorno com leve textura de lápis/carvão, as cores suaves e levemente dessaturadas, formas simples com poucos detalhes, sombra mínima e rosto simples com olhos discretos; da PRIMEIRA (estilo novo) mantenha anatomia e proporções corretas, mãos bem desenhadas, dobras de roupa coerentes e acabamento limpo. Evite o visual de anime genérico (olhos enormes e brilhantes, rosto muito estilizado). Sprite de visual novel, corpo inteiro em pé da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+    "refs": [
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_requirements/neutral.png"
+    ]
+  },
+  {
+    "id": "escritorio_novo",
+    "prompt": "A PRIMEIRA imagem é o escritório da equipe (manhã). Redesenhe o MESMO ambiente, com a mesma composição, móveis, janelas e enquadramento, mas no ESTILO DA SEGUNDA imagem: traço limpo, mais detalhe e acabamento, luz da manhã fria azul-petróleo com faixas de sol amareladas, figurantes só de costas e sem rosto. Fundo de visual novel em paisagem 3:2, sem texto legível.",
+    "refs": [
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/startup_coworking_manha.png"
+    ]
+  },
+  {
+    "id": "escritorio_mescla",
+    "prompt": "A PRIMEIRA imagem é o escritório da equipe (manhã). Redesenhe o MESMO ambiente, com a mesma composição, móveis, janelas e enquadramento, num estilo MESCLADO: da PRIMEIRA mantenha a paleta suave e levemente dessaturada, a textura de papel e o clima de ilustração feita à mão; da SEGUNDA traga perspectiva mais precisa, linhas mais limpas, objetos mais bem definidos e luz mais clara. Luz da manhã fria azul-petróleo com faixas de sol amareladas, figurantes só de costas e sem rosto. Fundo de visual novel em paisagem 3:2, sem texto legível.",
+    "refs": [
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/escritorio_interior_manha.png",
+      "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/bg/startup_coworking_manha.png"
+    ]
+  }
+]
