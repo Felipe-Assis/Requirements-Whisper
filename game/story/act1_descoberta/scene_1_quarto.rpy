@@ -64,11 +64,10 @@ label scene_1_quarto:
     pause 0.6
     $ advance_minutes(3)
 
-    $ player_name = renpy.input(_("Nome completo:"))
-    $ player_name = player_name.strip()
-    while player_name == "":
-        $ player_name = renpy.input(_("Por favor, digite um nome válido:"))
-        $ player_name = player_name.strip()
+    # Nome opcional (vazio vira Alex). O nome aparece nas falas, então { e [
+    # não podem entrar: viram tags ou interpolação do Ren'Py.
+    $ player_name = renpy.input(_("Nome do personagem (opcional; tecle Enter para usar Alex):"), length=24, exclude="{}[]\\")
+    $ player_name = player_name.replace("{", "").replace("[", "").strip() or "Alex"
 
     menu:
         "Qual seu gênero?"
@@ -80,12 +79,7 @@ label scene_1_quarto:
             $ player_gender = "Outro"
     $ advance_minutes(2)
 
-    $ player_age = renpy.input(_("Qual sua idade?"))
-    $ player_age = player_age.strip()
-    while not player_age.isdigit() or int(player_age) < 12 or int(player_age) > 99:
-        $ player_age = renpy.input(_("Por favor, digite uma idade válida (12-99):"))
-        $ player_age = player_age.strip()
-    $ player_age = int(player_age)
+    # A idade não é mais pedida (player_age segue com o default "").
     $ advance_minutes(2)
 
     hide notebook

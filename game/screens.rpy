@@ -4,6 +4,15 @@
 
 init offset = -1
 
+## Acessibilidade: texto maior nas falas, nomes, escolhas e histórico. Fica em
+## persistent para valer em todos os saves. A variante "small" já usa a escala
+## de texto do celular, então o ajuste só vale fora dela.
+default persistent.texto_maior = False
+
+init python:
+    def texto_maior_ativo():
+        return bool(persistent.texto_maior) and not renpy.variant("small")
+
 
 ################################################################################
 ## Styles
@@ -97,17 +106,23 @@ style frame:
 
 screen say(who, what):
 
+    $ maior = texto_maior_ativo()
+
     window:
         id "window"
+        ## No modo texto maior a caixa cresce; o textbox.png só varia na
+        ## horizontal, então esticá-lo na vertical não muda o desenho.
+        ysize (390 if maior else gui.textbox_height)
+        background (Frame("gui/textbox.png", 0, 0) if maior else Image("gui/textbox.png", xalign=0.5, yalign=1.0))
 
         if who is not None:
 
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                text who id "who" size (52 if maior else gui.name_text_size)
 
-        text what id "what"
+        text what id "what" size (42 if maior else gui.text_size)
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -207,9 +222,28 @@ style input:
 screen choice(items):
     style_prefix "choice"
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+    $ maior = texto_maior_ativo()
+    $ altura_fala = 390 if maior else gui.textbox_height
+
+    ## Com texto maior ou muitas opções, a lista rola (roda do mouse ou
+    ## Page Up/Page Down) em vez de ficar atrás da caixa de diálogo.
+    viewport:
+        id "choice_scroll"
+        xalign 0.5
+        ypos ((config.screen_height - altura_fala) // 2)
+        yanchor 0.5
+        ymaximum (config.screen_height - altura_fala - 40)
+        mousewheel True
+        draggable True
+        pagekeys True
+        scrollbars "vertical"
+        vscrollbar_unscrollable "hide"
+
+        vbox:
+            ypos 0
+            yanchor 0.0
+            for i in items:
+                textbutton i.caption action i.action text_size (42 if maior else gui.choice_button_text_size)
 
 
 style choice_vbox is vbox
@@ -228,6 +262,14 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
+
+## Barra da lista de escolhas com cores sólidas (gui/scrollbar não tem as
+## imagens dos estados selected/insensitive).
+style choice_vscrollbar is vscrollbar:
+    xsize 14
+    base_bar Solid("#ffffff1a")
+    thumb Solid(gui.accent_color)
+    unscrollable "hide"
 
 
 ## Quick Menu screen ###########################################################
@@ -733,7 +775,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Preferências"), scroll="viewport"):
 
         vbox:
 
@@ -744,16 +786,15 @@ screen preferences():
 
                     vbox:
                         style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        label _("Tela")
+                        textbutton _("Janela") action Preference("display", "window")
+                        textbutton _("Tela cheia") action Preference("display", "fullscreen")
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    label _("Pular")
+                    textbutton _("Texto não lido") action Preference("skip", "toggle")
+                    textbutton _("Após escolhas") action Preference("after choices", "toggle")
 
                 vbox:
                     style_prefix "radio"
@@ -761,8 +802,21 @@ screen preferences():
                     textbutton _("Português") action Language(None)
                     textbutton _("English") action Language("english")
 
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
+                ## Acessibilidade: o estado vem escrito no botão, não só na cor.
+                vbox:
+                    style_prefix "check"
+                    xsize 520
+                    label _("Acessibilidade")
+                    textbutton (_("Texto maior: sim") if persistent.texto_maior else _("Texto maior: não")):
+                        id "pref_texto_maior"
+                        action ToggleField(persistent, "texto_maior")
+                    textbutton (_("Texto instantâneo: sim") if _preferences.text_cps == 0 else _("Texto instantâneo: não")):
+                        id "pref_texto_instantaneo"
+                        selected (_preferences.text_cps == 0)
+                        action If(_preferences.text_cps == 0, Preference("text speed", 40), Preference("text speed", 0))
+                    textbutton (_("Transições: desligadas") if _preferences.transitions == 0 else _("Transições: ligadas")):
+                        id "pref_sem_transicoes"
+                        action InvertSelected(Preference("transitions", "toggle"))
 
             null height (4 * gui.pref_spacing)
 
@@ -772,48 +826,55 @@ screen preferences():
 
                 vbox:
 
-                    label _("Text Speed")
+                    label _("Velocidade do texto")
 
                     bar value Preference("text speed")
 
-                    label _("Auto-Forward Time")
+                    label _("Tempo do avanço automático")
 
                     bar value Preference("auto-forward time")
 
                 vbox:
 
                     if config.has_music:
-                        label _("Music Volume")
+                        label _("Volume da música")
 
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        label _("Sound Volume")
+                        label _("Volume dos efeitos")
 
                         hbox:
                             bar value Preference("sound volume")
 
                             if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                                textbutton _("Testar") action Play("sound", config.sample_sound)
 
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Volume da voz")
 
                         hbox:
                             bar value Preference("voice volume")
 
                             if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                                textbutton _("Testar") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
+                        textbutton _("Silenciar tudo"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+
+            null height (2 * gui.pref_spacing)
+
+            text _("Texto maior aumenta falas, nomes, escolhas e histórico. Sem transições desliga as transições do Ren'Py; algumas animações das cenas podem continuar. Teclado: setas movem o foco, Enter confirma, Esc abre e fecha menus."):
+                size 26
+                color "#cccccc"
+                xmaximum 1300
 
 
 style pref_label is gui_label
@@ -902,13 +963,18 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    ## Texto maior: cada fala ocupa a altura que precisar (viewport em vez de
+    ## vpgrid com altura fixa).
+    $ maior = texto_maior_ativo()
+
+    use game_menu(_("Histórico"), scroll=("vpgrid" if gui.history_height and not maior else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
 
         style_prefix "history"
 
         for h in _history_list:
 
             window:
+                ysize (None if maior else gui.history_height)
 
                 ## This lays things out properly if history_height is None.
                 has fixed:
@@ -919,6 +985,7 @@ screen history():
                     label h.who:
                         style "history_name"
                         substitute False
+                        text_size (44 if maior else gui.label_text_size)
 
                         ## Take the color of the who text from the Character, if
                         ## set.
@@ -928,9 +995,10 @@ screen history():
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                 text what:
                     substitute False
+                    size (40 if maior else gui.interface_text_size)
 
         if not _history_list:
-            label _("The dialogue history is empty.")
+            label _("Nenhuma fala ainda.")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.

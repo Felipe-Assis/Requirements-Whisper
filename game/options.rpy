@@ -189,6 +189,14 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
 
+    # Testes no motor, documentação, ferramentas e saídas locais não vão no
+    # pacote do jogador.
+    build.classify('game/tests/**', None)
+    build.classify('docs/**', None)
+    build.classify('tools/**', None)
+    build.classify('dist/**', None)
+    build.classify('.test-saves/**', None)
+
     ## To archive files, classify them as 'archive'.
 
     # build.classify('game/**.png', 'archive')
@@ -207,8 +215,20 @@ init python:
 ## crashing the game.
 
 init python:
+    import base64
+
+    # O callback precisa devolver um image manipulator (o motor chama .load()
+    # nele); um Text quebrava toda imagem ausente, inclusive na tela de
+    # Preferências, cujo tema não traz os estados check/radio/selected.
+    _PNG_TRANSPARENTE = base64.b64decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII=")
+
     def _img_ausente(fn):
-        return Text("[imagem ausente: %s]" % fn, size=20, color="#f55")
+        renpy.log("imagem ausente: %s" % fn)
+        if fn.startswith("gui/"):
+            # Estado de botão/barra sem arquivo no tema: nada no lugar.
+            return im.Data(_PNG_TRANSPARENTE, "transparente.png")
+        # Arte ainda não entregue: o marcador padrão do Ren'Py, visível.
+        return im.Image("_missing_image.png")
     config.missing_image_callback = _img_ausente
 
 

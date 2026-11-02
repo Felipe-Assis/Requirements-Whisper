@@ -6,7 +6,7 @@ define ITENS_ORDER = ["notebook", "celular", "bloco_de_notas", "caneta", "garraf
 
 # Descricoes movidas para fora dos handlers `hovered` inline dos tiles.
 define ITENS_DESC = {
-    "notebook": _("{b}Notebook{/b} {vspace=10} {i}Ferramenta essencial de qualquer dev. Carregado de códigos, sonhos e deadlines.{/i}"),
+    "notebook": _("{b}Notebook{/b} {vspace=10} {i}Ferramenta essencial de qualquer dev. Carregado de códigos, sonhos e deadlines.{/i} {vspace=10} Abra para consultar os registros do projeto."),
     "celular": _("{b}Celular{/b} {vspace=10} {i}Usado para comunicação com colegas de equipe, anotações rápidas e, claro, memes no grupo.{/i}"),
     "bloco_de_notas": _("{b}Bloco de Notas{/b} {vspace=10} {i}Útil para anotar requisitos durante entrevistas ou reuniões importantes.{/i}"),
     "caneta": _("{b}Caneta Azul{/b} {vspace=10} {i}Companheira fiel para anotar qualquer coisa, inclusive ideias geniais ou rabiscos.{/i}"),
@@ -14,16 +14,23 @@ define ITENS_DESC = {
 }
 
 # Tile unico parametrizado: reproduz UM tile atual.
-# Visuais/props identicos; celular abre os contatos, os demais sao display-only (NullAction).
+# Celular abre os contatos, notebook abre os registros da rota
+# (notebook_screen.rpy); os demais sao display-only (NullAction).
+# hovered tambem dispara no foco por teclado, entao a descricao aparece ao
+# navegar com as setas.
 screen inventory_tile(item_id):
     if getattr(store, "item_" + item_id):
         imagebutton:
-            idle "item [item_id]_idle"
-            hover "item [item_id]_hover"
+            id ("inv_" + item_id)
+            idle ("item " + item_id + "_idle")
+            hover ("item " + item_id + "_hover")
+            alt ITENS_DESC[item_id]
             hovered SetVariable("selected_item_description", ITENS_DESC[item_id])
             unhovered SetVariable("selected_item_description", "")
             if item_id == "celular":
                 action [Hide("inventory_screen"), Show("contacts_screen")]
+            elif item_id == "notebook":
+                action [Hide("inventory_screen"), Show("notebook_registros")]
             else:
                 action NullAction()
 
@@ -31,6 +38,11 @@ screen inventory_screen():
     tag inventory
     modal True
     zorder 100
+
+    # Aberta por ShowMenu: Return() encerra o menu. Por Show (testes), Hide.
+    $ fechar_mochila = If(_menu, Return(), Hide("inventory_screen"))
+    key "game_menu" action fechar_mochila
+    key "K_i" action fechar_mochila
 
     frame:
         background "#0008"
@@ -63,7 +75,12 @@ screen inventory_screen():
                     size 20
                     xalign 0.5
 
-            textbutton _("Fechar") action Return() xalign 0.5
+            text _("Setas escolhem um item, Enter usa, Esc ou I fecha."):
+                color "#cccccc"
+                size 20
+                xalign 0.5
+
+            textbutton _("Fechar") action fechar_mochila xalign 0.5 id "inventory_fechar"
 
 # Botão de acesso ao inventário
 screen inventory_button():
@@ -72,6 +89,7 @@ screen inventory_button():
             idle "item mochila_idle"
             hover "item mochila_aberta_vazia_idle"
             action ShowMenu("inventory_screen")
+            alt _("Mochila")
             xpos 30
             ypos 30
             xysize (120,120)

@@ -17,3 +17,7 @@ traceback.txt
 
 # Tool/automation artifacts
 .playwright-mcp/
+
+# Saves dos testes no motor e pacotes gerados por tools/build-windows.ps1
+.test-saves/
+/dist/

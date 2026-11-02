@@ -4,6 +4,9 @@ label scene_epilogo_conquistas_final:
 
     "Parabéns, [player_name]! Você concluiu o ciclo do projeto e deixou sua marca como engenheiro(a) de software."
 
+    # Resumo da rota jogada (tela resumo_rota, no fim deste arquivo).
+    call screen resumo_rota
+
 #     # Tela de conquistas/troféus
 #     "Veja algumas das conquistas desbloqueadas ao longo do jogo:"
 #
@@ -93,3 +96,87 @@ label creditos_finais:
     "Agradecimentos especiais aos colegas, professores e todos que colaboraram direta ou indiretamente."
     "Obrigado por jogar!"
     return
+
+
+# -------------------------------
+# Resumo da rota jogada
+# -------------------------------
+# Lê o contrato de logic/learning.rpy: conquistas da rota, registros do
+# notebook, decisões (primeira tentativa) e exercícios de escrita.
+screen resumo_rota():
+    modal True
+    zorder 110
+
+    $ empresa = route_data()["empresa"]
+    $ conquistas = route_achievements()
+    $ obtidas = [a for a in conquistas if achievement_unlocked(a)]
+    $ n_obtidas = len(obtidas)
+    $ n_conquistas = len(conquistas)
+    $ n_reg, total_reg = registros_contagem()
+    $ adequadas, com_apoio = resumo_decisoes()
+    $ confirmadas, pendentes = resumo_escritas()
+    $ tam = 36 if texto_maior_ativo() else 28
+
+    add Solid("#000000b0")
+
+    frame:
+        style "nb_painel"
+        align (0.5, 0.5)
+        xsize 1500
+        ysize 960
+
+        vbox:
+            spacing 18
+            text _("Resumo da sua jornada") style "nb_titulo"
+            text _("Empresa: [empresa!t]") style "nb_texto" size tam
+
+            viewport:
+                style_prefix "nb"
+                id "resumo_lista"
+                ysize 640
+                xfill True
+                mousewheel True
+                draggable True
+                pagekeys True
+                scrollbars "vertical"
+                vscrollbar_unscrollable "hide"
+
+                vbox:
+                    spacing 14
+                    xsize 1360
+
+                    text _("Conquistas: [n_obtidas] de [n_conquistas]") style "nb_texto" size tam color gui.accent_color bold True
+                    if obtidas:
+                        for a in obtidas:
+                            text (__(a["title"]) + " · " + __(a["desc"])) style "nb_texto" size tam xmaximum 1340
+                    else:
+                        text _("Nenhuma conquista nesta rota. Outros caminhos levam a outras.") style "nb_texto" size tam
+
+                    null height 6
+                    text _("Notebook: [n_reg] de [total_reg] registros") style "nb_texto" size tam color gui.accent_color bold True id "resumo_registros"
+
+                    null height 6
+                    text _("Decisões com feedback") style "nb_texto" size tam color gui.accent_color bold True
+                    if adequadas or com_apoio:
+                        text _("Adequadas na primeira tentativa, sem apoio: [adequadas]") style "nb_texto" size tam
+                        text _("Ajustadas depois de uma revisão orientada: [com_apoio]") style "nb_texto" size tam
+                    else:
+                        text _("Nenhuma decisão com feedback registrada nesta rota.") style "nb_texto" size tam
+
+                    null height 6
+                    text _("Exercícios de escrita") style "nb_texto" size tam color gui.accent_color bold True
+                    text _("Confirmados por você: [confirmadas] · Pendentes: [pendentes]") style "nb_texto" size tam
+
+                    null height 12
+                    text _("Este resumo descreve o que aconteceu no jogo. Ele não certifica domínio de engenharia de software: escolher bem aqui não substitui a prática com pessoas reais, a revisão da equipe e o retorno de quem usa o sistema."):
+                        style "nb_texto"
+                        size tam
+                        color "#cccccc"
+                        xmaximum 1340
+
+            textbutton _("Continuar"):
+                style "nb_botao"
+                xalign 1.0
+                id "resumo_continuar"
+                default_focus True
+                action Return()
