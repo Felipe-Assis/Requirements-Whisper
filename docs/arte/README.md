@@ -23,7 +23,10 @@ https://claude.ai/artifact/4wNJSGy4HhqwEEcpALx8X1
 | `comparacao-estilos-2026-11-02.json` | as 6 variações da página de comparação | registro da escolha do estilo |
 | `estilo-c.json` | regeração de todos os personagens (23) e fundos (27) no estilo C | lote atual; montado por `tools/arte/montar_estilo_c.py` |
 | `estilo-c-regeracoes.json` | 5 imagens refeitas do lote acima (2 com reforço de identidade/transparência, 3 que tinham nascido de uma âncora trocada) | aplicado junto com o lote |
-| `mapa.json` | mapa da cidade (E3b): base 16:9 sem os prédios, 12 lugares recortados (dependem da base), 8 ícones de atividade, o marcador "Você" e 6 telas de transição (28 tarefas) | a gerar; montado por `tools/arte/montar_mapa.py`; design em `docs/design/mapa-cidade.md`; saídas com os kinds novos `mapa`, `lugar` e `icone` de `posproc.py` |
+| `estilo-c-saude-v2.json` | elenco da Saúde refeito na proporção e no detalhe da Emily e das rotas novas, com um acessório de personalidade por personagem (1ª revisão do usuário) | aplicado; montado por `tools/arte/montar_saude_v2.py`; refeitas em `estilo-c-saude-v2-regeracoes.json` |
+| `estilo-c-saude-v3-expressoes.json` | todas as poses não âncora da Saúde com o rosto descrito por partes e referência de expressão das rotas novas (2ª revisão: "olhos quase não mudam") | aplicado; montado por `tools/arte/montar_saude_v3_expressoes.py`; Joseph e Mateus refeitos em `estilo-c-saude-v3-regeracoes.json` |
+| `estilo-c-saude-v4.json` | colega de república e Dra. Nathalia refeitos como adultos com traços próprios; poses serious, thinking e positive novas para as duas doutoras; César sério com o celular no bolso (3ª revisão) | aplicado; montado por `tools/arte/montar_saude_v4.py` |
+| `mapa.json` | mapa da cidade (E3b): base 16:9 sem os prédios, 12 lugares recortados (dependem da base), 8 ícones de atividade, o marcador "Você" e 6 telas de transição (28 tarefas) | aplicado (refeitas em `mapa-regeracoes.json`; posições finais em `mapa-coordenadas-ajustadas.json`); montado por `tools/arte/montar_mapa.py`; design em `docs/design/mapa-cidade.md`; saídas com os kinds novos `mapa`, `lugar` e `icone` de `posproc.py` |
 
 ## Cuidado com execuções em paralelo
 
