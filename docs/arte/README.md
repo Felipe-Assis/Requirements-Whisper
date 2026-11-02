@@ -15,6 +15,37 @@ https://claude.ai/artifact/4wNJSGy4HhqwEEcpALx8X1
 - **Referências de estilo** (as imagens aprovadas) em `referencias/`: `estilo-c-emily.png`, `estilo-c-taina.png`,
   `estilo-c-escritorio.png`. Toda geração nova anexa uma delas.
 
+## Referência padrão: a Emily
+
+Decisão do usuário em 2026-11-02, depois de quatro rodadas de revisão do elenco da Saúde: **o traço da Emily
+(`developer_requirements`) é o padrão de todo personagem**, novo ou refeito. Os personagens das rotas novas
+(Tainá, Kauã etc.) seguem o mesmo traço e servem de apoio.
+
+O texto e as referências ficam em `tools/arte/estilo_padrao.py` (`CORPO`, `ROSTO`, `SPRITE`, `ESTILO`, `REF_EMILY`,
+`REF_ROSTOS`). Um script de lote novo importa de lá em vez de escrever o próprio estilo:
+
+```python
+from estilo_padrao import ESTILO, REF_EMILY, REF_ROSTOS
+```
+
+O que as revisões ensinaram (cada item foi um problema real apontado pelo usuário):
+
+- **Rosto simples é o que mais pesa.** Pele chapada de um tom, íris escura simples com um brilho, nariz em traço,
+  boca em forma simples, sobrancelha grossa. Sardas, cílios desenhados, batom, sombra no nariz, rugas e textura de
+  barba deixam o personagem "detalhado demais" ao lado da Emily. Pedir "maçãs do rosto e mandíbula definidas" puxou
+  o rosto para esse lado; a idade deve vir do formato do rosto, do cabelo e da roupa.
+- **Proporção de adulto (~7,5 cabeças).** Sem isso, o gerador volta à cabeça grande e ao corpo de criança
+  (aconteceu com o colega de república).
+- **Expressão está nas sobrancelhas e nos olhos.** Em cada pose, descreva sobrancelhas, olhos, direção do olhar e
+  boca, e anexe como referência de expressão a mesma pose de um personagem das rotas novas. Pedir só "a pose da
+  imagem X" fez o gerador copiar o rosto da âncora em todas as poses.
+- **Um acessório de personalidade** (crachá, relógio, caneca, mochila, pasta, brinco) ajuda a não ficar genérico.
+- **Objeto na mão precisa caber na pose.** Com braços cruzados, o objeto vai para o bolso.
+
+`referencias/estilo-c-rostos.png` mostra cabeça e ombros de Emily, Tainá, Kauã e Dra. Michelle lado a lado. É a
+referência para o rosto. Para refazer o close-up com outros personagens:
+`python tools/arte/rostos.py saida.png img1.png img2.png ...`.
+
 ## Lotes e prompts (`prompts/`)
 
 | Arquivo | O que gerou | Situação |
@@ -25,7 +56,8 @@ https://claude.ai/artifact/4wNJSGy4HhqwEEcpALx8X1
 | `estilo-c-regeracoes.json` | 5 imagens refeitas do lote acima (2 com reforço de identidade/transparência, 3 que tinham nascido de uma âncora trocada) | aplicado junto com o lote |
 | `estilo-c-saude-v2.json` | elenco da Saúde refeito na proporção e no detalhe da Emily e das rotas novas, com um acessório de personalidade por personagem (1ª revisão do usuário) | aplicado; montado por `tools/arte/montar_saude_v2.py`; refeitas em `estilo-c-saude-v2-regeracoes.json` |
 | `estilo-c-saude-v3-expressoes.json` | todas as poses não âncora da Saúde com o rosto descrito por partes e referência de expressão das rotas novas (2ª revisão: "olhos quase não mudam") | aplicado; montado por `tools/arte/montar_saude_v3_expressoes.py`; Joseph e Mateus refeitos em `estilo-c-saude-v3-regeracoes.json` |
-| `estilo-c-saude-v4.json` | colega de república e Dra. Nathalia refeitos como adultos com traços próprios; poses serious, thinking e positive novas para as duas doutoras; César sério com o celular no bolso (3ª revisão) | aplicado; montado por `tools/arte/montar_saude_v4.py` |
+| `estilo-c-saude-v4.json` | colega de república e Dra. Nathalia refeitos como adultos com traços próprios; poses serious, thinking e positive novas para as duas doutoras; César sério com o celular no bolso (3ª revisão) | aplicado; montado por `tools/arte/montar_saude_v4.py`; colega e Nathalia substituídos pelo lote seguinte |
+| `estilo-c-saude-v5-rostos.json` | rosto do colega e das 4 poses da Nathalia simplificado no traço da Emily (4ª revisão: "detalhados demais no rosto e olhos"); originou o padrão da seção "Referência padrão: a Emily" | aplicado; montado por `tools/arte/montar_saude_v5_rostos.py`; saídas em `estilo-c-saude-v5-rostos-saidas.json` |
 | `mapa.json` | mapa da cidade (E3b): base 16:9 sem os prédios, 12 lugares recortados (dependem da base), 8 ícones de atividade, o marcador "Você" e 6 telas de transição (28 tarefas) | aplicado (refeitas em `mapa-regeracoes.json`; posições finais em `mapa-coordenadas-ajustadas.json`); montado por `tools/arte/montar_mapa.py`; design em `docs/design/mapa-cidade.md`; saídas com os kinds novos `mapa`, `lugar` e `icone` de `posproc.py` |
 
 ## Cuidado com execuções em paralelo

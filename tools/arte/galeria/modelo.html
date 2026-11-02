@@ -111,7 +111,7 @@ textarea { width: 100%; min-height: 140px; font: 14px/1.5 var(--mono); color: va
 
 <script>
 const DADOS = /*DADOS*/null;
-const CHAVE = "assets-revisao-v3";
+const CHAVE = "assets-revisao-v4";
 let marcados = new Set(), notas = "";
 try { const s = JSON.parse(localStorage.getItem(CHAVE) || "{}"); marcados = new Set(s.m || []); notas = s.n || ""; } catch (e) {}
 function guardar() { try { localStorage.setItem(CHAVE, JSON.stringify({ m: [...marcados], n: notas })); } catch (e) {} }

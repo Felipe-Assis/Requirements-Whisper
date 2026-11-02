@@ -42,8 +42,8 @@ NOTAS = {
     "developer_project": "Revisado: relógio e notebook; expressões por pose.",
     "developer_security": "Revisado: sobrecamisa e crachá de acesso; expressões por pose.",
     "doutora_1": "Revisado: crachá do Instituto e prancheta. Novas expressões: séria (preocupada), pensativa e positiva.",
-    "doutora_2": "Refeita como médica de ~32 anos: coque com caneta, sardas, pijama cirúrgico verde-água, máscara abaixada e tablet. Novas expressões: séria, pensativa e positiva.",
-    "amigo": "Refeito como adulto de ~26 anos (mestrando): barba por fazer, camiseta de time de bairro, fone no pescoço, chinelo e caneca.",
+    "doutora_2": "Refeita como médica de ~32 anos: coque com caneta, pijama cirúrgico verde-água, máscara abaixada e tablet. Rosto simplificado no traço da Emily. Expressões: séria, pensativa e positiva.",
+    "amigo": "Refeito como adulto de ~26 anos (mestrando), com camiseta de time de bairro, fone no pescoço, chinelo e caneca. Rosto simplificado no traço da Emily.",
 }
 CONTA = {}
 usados = {}
