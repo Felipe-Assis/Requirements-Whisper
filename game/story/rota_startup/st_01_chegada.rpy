@@ -75,7 +75,7 @@ label st_01_chegada:
     st_mentora "Davi, mostra o app? Melhor que qualquer apresentação."
     st_mobile "Bora. O Trocado é simples: você lança um gasto, ele entra na lista do mês e o total sobe."
 
-    show expression "images/artifacts/st_app_gastos.png" as st_tela_app at center_zoom
+    show expression "images/artifacts/st_app_gastos.png" as st_tela_app at artefato_tela
     with dissolve
     "{i}Na tela da esquerda, a lista de outubro: almoço, bandejão, ônibus, café. Cada item com um ícone de categoria. No topo, o total do mês em destaque.{/i}"
     st_mobile "Toca no mais, digita o valor, escolhe a categoria e salva. Uns cinco segundos."
@@ -101,7 +101,7 @@ label st_01_chegada:
     # O painel de métricas
     show st_mentora thinking at left_zoom
     st_mentora "Me conta: você confiaria num app que erra a sua conta? Pois é. Os números dizem a mesma coisa."
-    show expression "images/artifacts/st_painel_metricas.png" as st_painel at center_zoom
+    show expression "images/artifacts/st_painel_metricas.png" as st_painel at artefato_tela
     with dissolve
     st_mentora "Hoje são 800 estudantes no beta. A nota nas lojas está em 3,4."
     st_mentora "E esse é o número que me tira o sono: retenção de 30 dias. De cada cem estudantes que começam, quantos ainda lançam gasto um mês depois."

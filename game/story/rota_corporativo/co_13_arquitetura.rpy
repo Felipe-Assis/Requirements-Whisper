@@ -74,7 +74,7 @@ label co_13_arquitetura:
     hide co_mentora
     hide co_dev
     with dissolve
-    show expression "images/artifacts/co_farol_arquitetura.png" as co_diagrama at center_zoom
+    show expression "images/artifacts/co_farol_arquitetura.png" as co_diagrama at artefato_tela
     with dissolve
     "{i}[NOME_CO_MENTORA] projeta o diagrama. À esquerda, o SGC com o JSF e o Oracle. No meio, a camada anticorrupção e a API de chamados. À direita, o módulo Farol.{/i}"
     "{i}Uma seta tracejada leva ao aviso por WhatsApp, o desejo do [NOME_CO_SOLICITANTE] que ficou registrado sem data. Embaixo, uma tabela nova: historico_chamado.{/i}"

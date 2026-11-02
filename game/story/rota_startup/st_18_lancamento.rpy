@@ -94,7 +94,7 @@ label st_18_lancamento:
 
     "{i}Quarta-feira, meio-dia. Primeiro dia do semestre.{/i}"
 
-    show expression "images/artifacts/st_painel_metricas.png" as tela_painel at center_zoom
+    show expression "images/artifacts/st_painel_metricas.png" as tela_painel at artefato_tela
     with dissolve
     "{i}No painel, a linha de cadastros faz uma curva para cima perto do almoço. Em uma hora, chegam oito vezes mais cadastros do que num dia comum.{/i}"
     hide tela_painel

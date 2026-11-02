@@ -227,8 +227,14 @@ screen choice(items):
 
     ## Com texto maior ou muitas opções, a lista rola (roda do mouse ou
     ## Page Up/Page Down) em vez de ficar atrás da caixa de diálogo.
+    ## viewport_xfill/yfill False: o estilo padrão do viewport ocupa toda a
+    ## área, o que jogava a lista para o canto superior esquerdo. Assim ela fica
+    ## do tamanho das opções e centralizada acima da caixa de diálogo. (Sem o
+    ## prefixo, xfill/yfill iriam para o side que envolve viewport e barra.)
     viewport:
         id "choice_scroll"
+        viewport_xfill False
+        viewport_yfill False
         xalign 0.5
         ypos ((config.screen_height - altura_fala) // 2)
         yanchor 0.5
@@ -290,14 +296,14 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Voltar") action Rollback()
+            textbutton _("Histórico") action ShowMenu('history')
+            textbutton _("Pular") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Salvar") action ShowMenu('save')
+            textbutton _("Salvar rápido") action QuickSave()
+            textbutton _("Carregar rápido") action QuickLoad()
+            textbutton _("Preferências") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -338,17 +344,17 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Começar") action Start()
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("Histórico") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Salvar") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Carregar") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferências") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -356,20 +362,20 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Menu principal") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("Sobre") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("Ajuda") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Sair") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -517,7 +523,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Return"):
+    textbutton _("Voltar"):
         style "return_button"
 
         action Return()
@@ -803,20 +809,30 @@ screen preferences():
                     textbutton _("English") action Language("english")
 
                 ## Acessibilidade: o estado vem escrito no botão, não só na cor.
+                ## A explicação fica ao lado dos botões, visível sem rolar.
                 vbox:
                     style_prefix "check"
-                    xsize 520
+                    xsize 1300
                     label _("Acessibilidade")
-                    textbutton (_("Texto maior: sim") if persistent.texto_maior else _("Texto maior: não")):
-                        id "pref_texto_maior"
-                        action ToggleField(persistent, "texto_maior")
-                    textbutton (_("Texto instantâneo: sim") if _preferences.text_cps == 0 else _("Texto instantâneo: não")):
-                        id "pref_texto_instantaneo"
-                        selected (_preferences.text_cps == 0)
-                        action If(_preferences.text_cps == 0, Preference("text speed", 40), Preference("text speed", 0))
-                    textbutton (_("Transições: desligadas") if _preferences.transitions == 0 else _("Transições: ligadas")):
-                        id "pref_sem_transicoes"
-                        action InvertSelected(Preference("transitions", "toggle"))
+                    hbox:
+                        spacing 40
+                        vbox:
+                            xsize 520
+                            textbutton (_("Texto maior: sim") if persistent.texto_maior else _("Texto maior: não")):
+                                id "pref_texto_maior"
+                                action ToggleField(persistent, "texto_maior")
+                            textbutton (_("Texto instantâneo: sim") if _preferences.text_cps == 0 else _("Texto instantâneo: não")):
+                                id "pref_texto_instantaneo"
+                                selected (_preferences.text_cps == 0)
+                                action If(_preferences.text_cps == 0, Preference("text speed", 40), Preference("text speed", 0))
+                            textbutton (_("Transições: desligadas") if _preferences.transitions == 0 else _("Transições: ligadas")):
+                                id "pref_sem_transicoes"
+                                action InvertSelected(Preference("transitions", "toggle"))
+                        text _("Texto maior aumenta falas, nomes, escolhas, histórico e as telas de atividades. Sem transições desliga as transições do Ren'Py; algumas animações das cenas podem continuar. Teclado: setas movem o foco, Enter confirma, Esc abre e fecha menus."):
+                            size 24
+                            color "#cccccc"
+                            xsize 700
+                            yalign 0.0
 
             null height (4 * gui.pref_spacing)
 
@@ -869,12 +885,6 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
-            null height (2 * gui.pref_spacing)
-
-            text _("Texto maior aumenta falas, nomes, escolhas e histórico. Sem transições desliga as transições do Ren'Py; algumas animações das cenas podem continuar. Teclado: setas movem o foco, Enter confirma, Esc abre e fecha menus."):
-                size 26
-                color "#cccccc"
-                xmaximum 1300
 
 
 style pref_label is gui_label
@@ -1292,7 +1302,7 @@ screen skip_indicator():
         hbox:
             spacing 9
 
-            text _("Skipping")
+            text _("Pulando")
 
             text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
             text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
@@ -1601,8 +1611,8 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Voltar") action Rollback()
+            textbutton _("Pular") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menu") action ShowMenu()
 

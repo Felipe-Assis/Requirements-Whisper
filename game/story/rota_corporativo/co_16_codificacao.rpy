@@ -96,7 +96,7 @@ label co_16_codificacao:
     with dissolve
     co_dev "Abri meu pull request da tela de consulta. Revisa para mim? Segundo olhar sempre acha alguma coisa."
 
-    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at center_zoom
+    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at artefato_tela
     with dissolve
     "{i}Na homologação, o Farol mostra o chamado 48213: linha do tempo, nome do atendente, caixa de solução registrada e o botão Reabrir chamado.{/i}"
     "{i}O título do pull request diz: \"Exibir estado e solução; desabilitar Resolver com descrição vazia.\" Todos os testes estão verdes.{/i}"
@@ -177,7 +177,7 @@ label co_16_codificacao:
 
     "{i}Quarta-feira, fim da tarde. Os testes de caracterização rodam a cada commit. O fuso do Norte segue registrado como problema: sem pressa e sem esquecimento.{/i}"
 
-    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at center_zoom
+    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at artefato_tela
     with dissolve
     "{i}Na homologação, o chamado 48213 aparece como deveria: Resolvido, com atendente e solução. Um chamado de teste com três espaços na descrição é recusado e fica Em atendimento.{/i}"
     hide tela_farol

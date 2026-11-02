@@ -21,7 +21,8 @@ default registros = set()
 # False (precisou de revisão orientada). Só a primeira tentativa conta.
 default aprendizagem = {}
 
-# eid -> {"req", "crit", "checks": 0-4, "status": "confirmado"|"pendente"}.
+# eid -> {"req", "crit", "checks": 0-4, "status": "confirmado"|"pendente",
+#         "marcas": [4 bools da autoavaliação]} ("marcas" falta em saves antigos).
 # req e crit ficam guardados com { e [ escapados (ver escapar_texto).
 default escritas = {}
 

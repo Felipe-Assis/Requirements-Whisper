@@ -35,8 +35,19 @@ init python:
         checks = sum(1 for m in store.escrita_marcas if m)
         if status == "confirmado" and not (req and crit and checks == 4):
             status = "pendente"
-        store.escritas[eid] = {"req": req, "crit": crit, "checks": checks, "status": status}
+        store.escritas[eid] = {"req": req, "crit": crit, "checks": checks, "status": status,
+                               "marcas": [bool(m) for m in store.escrita_marcas]}
         return status
+
+    def escrita_marcas_salvas(eid):
+        # Marcas da autoavaliação guardadas em escritas[eid]. Saves anteriores
+        # só têm "checks": com 4, todas valem; com menos, não há como saber
+        # quais eram, e a pessoa marca de novo.
+        anterior = store.escritas.get(eid) or {}
+        marcas = anterior.get("marcas")
+        if marcas and len(marcas) == 4:
+            return [bool(m) for m in marcas]
+        return [anterior.get("checks", 0) == 4] * 4
 
     def planejamento_indices(itens, necessarios):
         # Aceita índices ou os próprios textos dos itens.
@@ -90,11 +101,12 @@ init python:
 # -------------------------------
 label exercicio_escrita(eid, pedido):
     # Escrita livre de um requisito e de um critério de aceitação. Guarda em
-    # escritas[eid] = {"req", "crit", "checks", "status"}; chamado de novo
-    # com o mesmo eid, retoma o rascunho. O jogo não avalia o significado do
-    # texto: quem escreve confere os quatro pontos.
+    # escritas[eid] = {"req", "crit", "checks", "status", "marcas"}; chamado
+    # de novo com o mesmo eid, retoma o rascunho e as marcas da autoavaliação.
+    # O jogo não avalia o significado do texto: quem escreve confere os
+    # quatro pontos.
     $ escrita_atual = dict(escritas.get(eid, {"req": "", "crit": ""}))
-    $ escrita_marcas = [False, False, False, False]
+    $ escrita_marcas = escrita_marcas_salvas(eid)
     if escrita_atual["req"] or escrita_atual["crit"]:
         "Você retoma o rascunho guardado no notebook. Cada campo começa com o texto anterior: edite ou confirme com Enter."
     else:
@@ -158,7 +170,8 @@ screen escrita_input(prompt, pedido="", etapa=1):
     modal True
     zorder 130
 
-    $ tam = 40 if texto_maior_ativo() else 32
+    $ maior = texto_maior_ativo()
+    $ tam = 40 if maior else 32
 
     add Solid("#000000c8")
 
@@ -172,28 +185,38 @@ screen escrita_input(prompt, pedido="", etapa=1):
             spacing 22
             text _("Exercício de escrita · campo [etapa] de 2") style "nb_titulo"
             if pedido:
+                vbox:
+                    spacing 8
+                    text _("Pedido") style "nb_secao" size (tam - 8)
+                    frame:
+                        style "nb_cartao"
+                        text pedido style "nb_texto" size (tam - 4) xmaximum 1460
+            text prompt style "nb_secao" size tam bold False xmaximum 1460
+            # Caixa de digitação com borda na cor de destaque: mostra onde o
+            # texto entra mesmo antes de digitar.
+            frame:
+                background Solid(gui.accent_color)
+                padding (3, 3)
+                xfill True
                 frame:
                     style "nb_cartao"
-                    text pedido style "nb_texto" size (tam - 4) xmaximum 1460
-            text prompt style "nb_texto" size tam color gui.accent_color xmaximum 1460
-            frame:
-                style "nb_cartao"
-                ysize 340
-                input:
-                    id "input"
-                    size tam
-                    color "#ffffff"
-                    xmaximum 1440
-            text _("Digite e tecle Enter para concluir o campo. O texto não é corrigido automaticamente."):
-                style "nb_texto"
-                size 22
-                color "#bbbbbb"
+                    ysize (360 if maior else 300)
+                    input:
+                        id "input"
+                        size tam
+                        color "#ffffff"
+                        xmaximum 1440
+            text _("Digite e tecle Enter para concluir o campo (até 400 caracteres). O texto não é corrigido automaticamente."):
+                style "nb_dica"
+                size (26 if maior else 22)
 
 screen escrita_revisao(pedido):
     modal True
     zorder 130
 
-    $ tam = 36 if texto_maior_ativo() else 28
+    $ maior = texto_maior_ativo()
+    $ tam = 36 if maior else 28
+    $ tam_ui = 32 if maior else 26
     $ marcadas = sum(1 for m in escrita_marcas if m)
     $ pode_confirmar = bool(escrita_atual["req"] and escrita_atual["crit"] and marcadas == 4)
 
@@ -203,16 +226,17 @@ screen escrita_revisao(pedido):
         style "nb_painel"
         align (0.5, 0.5)
         xsize 1600
-        ysize 1000
+        ysize 1040
+        padding (48, 32)
 
         vbox:
-            spacing 16
+            spacing 14
             text _("Revise seu rascunho") style "nb_titulo"
 
             viewport:
                 style_prefix "nb"
                 id "escrita_revisao_texto"
-                ysize 330
+                ysize (430 if maior else 470)
                 xfill True
                 mousewheel True
                 draggable True
@@ -220,44 +244,55 @@ screen escrita_revisao(pedido):
                 scrollbars "vertical"
                 vscrollbar_unscrollable "hide"
                 vbox:
-                    spacing 10
+                    spacing 6
                     xsize 1460
-                    text _("Pedido") style "nb_texto" color gui.accent_color bold True
+                    text _("Pedido") style "nb_secao" size tam_ui
                     text pedido style "nb_texto" size tam xmaximum 1440
-                    text _("Requisito") style "nb_texto" color gui.accent_color bold True
+                    null height 6
+                    text _("Requisito") style "nb_secao" size tam_ui
                     # req/crit já estão escapados: a substituição mostra { e [ literais.
                     text (escrita_atual["req"] or __("(vazio)")) style "nb_texto" size tam xmaximum 1440
-                    text _("Critério de aceitação") style "nb_texto" color gui.accent_color bold True
+                    null height 6
+                    text _("Critério de aceitação") style "nb_secao" size tam_ui
                     text (escrita_atual["crit"] or __("(vazio)")) style "nb_texto" size tam xmaximum 1440
 
-            text _("Autoavaliação: marque o que seu rascunho já tem ([marcadas] de 4).") style "nb_texto" bold True
+            text _("Texto longo: role com a roda do mouse ou Page Up / Page Down."):
+                style "nb_dica"
 
-            for i, pergunta in enumerate(ESCRITA_PERGUNTAS):
-                textbutton (__(pergunta) + (__(" · sim") if escrita_marcas[i] else __(" · ainda não"))):
-                    style "nb_botao"
-                    xfill True
-                    id ("escrita_marca_%d" % i)
-                    selected escrita_marcas[i]
-                    action ToggleDict(escrita_marcas, i)
+            text _("Autoavaliação: marque o que seu rascunho já tem ([marcadas] de 4).") style "nb_texto" size tam_ui bold True
 
-            if not pode_confirmar:
-                text _("Para confirmar, preencha os dois campos e marque os quatro pontos. Você também pode guardar como pendente."):
-                    style "nb_texto"
-                    size 22
-                    color "#bbbbbb"
+            vbox:
+                spacing 8
+                for i, pergunta in enumerate(ESCRITA_PERGUNTAS):
+                    textbutton (__(pergunta) + (__(" · sim") if escrita_marcas[i] else __(" · ainda não"))):
+                        style "nb_botao"
+                        text_size tam_ui
+                        padding (28, 10)
+                        xfill True
+                        id ("escrita_marca_%d" % i)
+                        selected escrita_marcas[i]
+                        action ToggleDict(escrita_marcas, i)
+
+            if pode_confirmar:
+                text _("Tudo marcado. Você pode guardar como confirmado.") style "nb_dica"
+            else:
+                text _("Para confirmar, preencha os dois campos e marque os quatro pontos. Você também pode guardar como pendente.") style "nb_dica"
 
             hbox:
                 spacing 20
                 textbutton _("Reescrever o rascunho"):
                     style "nb_botao"
+                    text_size tam_ui
                     id "escrita_reescrever"
                     action Return("reescrever")
                 textbutton _("Guardar como confirmado"):
                     style "nb_botao"
+                    text_size tam_ui
                     id "escrita_confirmar"
                     sensitive pode_confirmar
                     action Return("confirmado")
                 textbutton _("Guardar como pendente"):
                     style "nb_botao"
+                    text_size tam_ui
                     id "escrita_pendente"
                     action Return("pendente")

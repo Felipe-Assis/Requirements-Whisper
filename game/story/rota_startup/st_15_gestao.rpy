@@ -25,7 +25,7 @@ label st_15_gestao:
     hide st_mobile
     with dissolve
 
-    show expression "images/artifacts/st_quadro_kanban.png" as st_kanban at center_zoom
+    show expression "images/artifacts/st_quadro_kanban.png" as st_kanban at artefato_tela
     with dissolve
 
     st_mentora "Esse é o quadro de hoje. A correção do duplicado já está em “Fazendo”, com o id único que o Davi montou na fila."
@@ -145,7 +145,7 @@ label .feedback_plano:
 
     hide st_ceo
     with dissolve
-    show expression "images/artifacts/st_painel_metricas.png" as st_painel at center_zoom
+    show expression "images/artifacts/st_painel_metricas.png" as st_painel at artefato_tela
     with dissolve
     "{i}O painel aparece no telão: cadastros subindo depois da festa dos mil. Ao lado, a retenção de 30 dias, parada em 22%%.{/i}"
     hide st_painel

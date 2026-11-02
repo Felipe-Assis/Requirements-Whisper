@@ -143,7 +143,7 @@ label co_15_gestao:
     with fade
 
     "{i}À tarde, a equipe escreve a RFC. Você cuida da seção de impacto: quem usa, quais tabelas o Farol lê, o que acontece com a central se algo falhar.{/i}"
-    show expression "images/artifacts/co_farol_arquitetura.png" as co_diagrama at center_zoom
+    show expression "images/artifacts/co_farol_arquitetura.png" as co_diagrama at artefato_tela
     with dissolve
     "{i}O diagrama da semana passada vai como anexo. Cada caixa ganha um responsável e um teste.{/i}"
     hide co_diagrama

@@ -20,7 +20,7 @@ label co_04_preparacao:
     $ advance_minutes(40)
     "{i}VPN, senha, notebook sem rede, sistema de campo fora do ar. Você marca cada chamado estranho.{/i}"
 
-    show expression "images/artifacts/co_sgc_legado.png" as tela_sgc at center_zoom
+    show expression "images/artifacts/co_sgc_legado.png" as tela_sgc at artefato_tela
     with dissolve
     "{i}No monitor, o SGC abre o chamado 48213. Estado: Resolvido. Campo Solução: vazio.{/i}"
     "{i}Ele não está sozinho. Na contagem final, nove dos 30 chamados estão assim.{/i}"

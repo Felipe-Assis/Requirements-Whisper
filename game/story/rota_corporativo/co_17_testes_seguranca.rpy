@@ -25,7 +25,7 @@ label co_17_testes_seguranca:
     co_dev "Unidade e integração são comigo. A carga eu rodo à noite, para não assustar a central."
     co_qualidade "[player_name], perfis e regressão ficam com você e comigo. Começa pelos perfis."
 
-    show expression "images/artifacts/co_farol_auditoria.png" as tela_auditoria at center_zoom
+    show expression "images/artifacts/co_farol_auditoria.png" as tela_auditoria at artefato_tela
     with dissolve
     "{i}[NOME_CO_QUALIDADE] abre a tela da trilha de auditoria. Na aba lateral, a matriz de permissões: solicitante, atendente, supervisor e admin, cada um com o que pode e o que não pode.{/i}"
     hide tela_auditoria
@@ -184,7 +184,7 @@ label co_17_testes_seguranca:
     with dissolve
     co_supervisora "Vinte segundos. Isso cabe no meu TMA. Paulo, de novo, agora com o modelo de VPN."
 
-    show expression "images/artifacts/co_farol_auditoria.png" as tela_auditoria at center_zoom
+    show expression "images/artifacts/co_farol_auditoria.png" as tela_auditoria at artefato_tela
     with dissolve
     "{i}Na trilha, uma linha chama a atenção: usuário \"sistema\", ação \"Encerrado automaticamente após 72 h sem retorno do solicitante\". Ao lado, um cadeado.{/i}"
     hide tela_auditoria

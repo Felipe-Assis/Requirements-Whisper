@@ -9,8 +9,11 @@
 # A Mochila abre por ShowMenu (contexto de menu): ali, fechar = Return(), que
 # encerra o menu. Fora dele (Show direto, testes), fechar = Hide.
 
+# Estilos nb_*: painel das telas de mecânica (notebook, atividades, resumo do
+# epílogo, Mochila, contatos e chat). Fundo opaco atrás de todo texto; o
+# estado de botões e marcas vem escrito no texto, não só na cor.
 style nb_painel is frame:
-    background Solid("#101820f2")
+    background Solid("#101820")
     padding (48, 40)
 
 style nb_titulo is text:
@@ -22,8 +25,16 @@ style nb_texto is text:
     color "#ffffff"
     size 28
 
+style nb_secao is nb_texto:
+    color gui.accent_color
+    bold True
+
+style nb_dica is nb_texto:
+    size 22
+    color "#c0c8d0"
+
 style nb_cartao is frame:
-    background Solid("#ffffff14")
+    background Solid("#1f2730")
     padding (28, 22)
     xfill True
 
@@ -35,14 +46,22 @@ style nb_vscrollbar is vscrollbar:
     thumb Solid(gui.accent_color)
     unscrollable "hide"
 
+# Foco (teclado ou mouse) = fundo na cor de destaque com texto escuro.
+# Marcado = fundo azul-acinzentado; desabilitado = mais escuro, texto apagado.
+# selected_hover é explícito para o foco continuar visível num item marcado.
 style nb_botao is button:
-    background Solid("#ffffff1f")
+    background Solid("#2a333d")
     hover_background Solid(gui.accent_color)
+    selected_background Solid("#285a85")
+    selected_hover_background Solid(gui.accent_color)
+    insensitive_background Solid("#171f27")
     padding (28, 16)
 
 style nb_botao_text is text:
     color "#ffffff"
     hover_color "#101820"
+    selected_hover_color "#101820"
+    insensitive_color "#7d8894"
     size 28
 
 screen notebook_registros():
@@ -87,7 +106,7 @@ screen notebook_registros():
             viewport:
                 style_prefix "nb"
                 id "notebook_lista"
-                ysize 650
+                ysize 680
                 xfill True
                 mousewheel True
                 draggable True
@@ -117,12 +136,10 @@ screen notebook_registros():
                                 else:
                                     text (__(rec["title"]) + __(" · pendente")):
                                         style "nb_texto"
-                                        color "#bbbbbb"
+                                        color "#c0c8d0"
                                         bold True
                                         size (tam_texto + 2)
-                                    text _("Continue a história para registrar este conteúdo.") style "nb_texto" color "#bbbbbb" size tam_texto
+                                    text _("Continue a história para registrar este conteúdo.") style "nb_texto" color "#c0c8d0" size tam_texto
 
             text _("Role com a roda do mouse ou Page Up / Page Down."):
-                style "nb_texto"
-                size 22
-                color "#bbbbbb"
+                style "nb_dica"

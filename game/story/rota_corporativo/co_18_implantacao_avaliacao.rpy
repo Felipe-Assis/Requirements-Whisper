@@ -179,7 +179,7 @@ label co_18_implantacao_avaliacao:
     co_solicitante "Fala! Minha vez. Sábado à tarde, o notebook do Wellington voltou a perder a VPN."
     co_solicitante "O chamado dizia Resolvido, com a solução escrita. Só que não resolveu. Reabri pelo celular, na porta da subestação, com o motivo."
 
-    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at center_zoom
+    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at artefato_tela
     with dissolve
     "{i}Na tela, o chamado do Wellington aparece de volta Em atendimento. A solução anterior continua guardada no histórico.{/i}"
     hide tela_farol
@@ -189,7 +189,7 @@ label co_18_implantacao_avaliacao:
     $ co_calcular_final()
 
     if co_final_resultado in ("excelente", "bom"):
-        show expression "images/artifacts/co_farol_auditoria.png" as tela_auditoria at center_zoom
+        show expression "images/artifacts/co_farol_auditoria.png" as tela_auditoria at artefato_tela
         with dissolve
         co_supervisora "O bloqueio e a trilha mudaram minha semana. Pela primeira vez sei o que minha equipe fez sem perguntar."
         hide tela_auditoria

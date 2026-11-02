@@ -63,7 +63,7 @@ label co_01_chegada:
 
     $ advance_minutes(20)
     "{i}[NOME_CO_MENTORA] puxa uma cadeira para você ao lado da mesa dela e abre o SGC no monitor.{/i}"
-    show expression "images/artifacts/co_sgc_legado.png" as tela_sgc at center_zoom
+    show expression "images/artifacts/co_sgc_legado.png" as tela_sgc at artefato_tela
     with dissolve
     "{i}A tela é cinza, com abas em degradê azul e botões em relevo. A tabela de chamados tem uma letra tão pequena que você chega mais perto.{/i}"
     co_mentora "Olha o chamado 48213. O que você vê aí?"

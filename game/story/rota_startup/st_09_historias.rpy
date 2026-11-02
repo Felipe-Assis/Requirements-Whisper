@@ -91,7 +91,7 @@ label st_09_historias:
     show st_mobile neutral at right_zoom
     st_mobile "Aproveitei o domingo e fiz um protótipo rapidinho da confirmação. Olha só."
 
-    show expression "images/artifacts/st_app_gastos.png" as st_prototipo at center_zoom
+    show expression "images/artifacts/st_app_gastos.png" as st_prototipo at artefato_tela
     with dissolve
     "{i}Na tela da esquerda, a lista de outubro: total de R$ 100, o almoço de R$ 20, o bandejão, o ônibus, o café.{/i}"
     "{i}Na da direita, a mesma lista escurecida e uma caixa no meio: \"Excluir Almoço, R$ 20,00?\". Dois botões: Cancelar e Excluir.{/i}"

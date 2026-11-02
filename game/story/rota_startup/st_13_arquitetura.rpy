@@ -31,7 +31,7 @@ label st_13_arquitetura:
     hide st_techlead
     with dissolve
 
-    show expression "images/artifacts/st_diagrama_arquitetura.png" as st_diagrama at center_zoom
+    show expression "images/artifacts/st_diagrama_arquitetura.png" as st_diagrama at artefato_tela
     with dissolve
 
     st_techlead "Veja bem. Começa no celular. O app guarda cada lançamento num banco local, dentro do aparelho. Por isso a Bia consegue lançar o bandejão mesmo sem sinal."

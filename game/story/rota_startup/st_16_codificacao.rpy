@@ -24,7 +24,7 @@ label st_16_codificacao:
 
     hide st_mobile
     hide st_techlead
-    show expression "images/artifacts/st_app_gastos.png" as tela_app at center_zoom
+    show expression "images/artifacts/st_app_gastos.png" as tela_app at artefato_tela
     with dissolve
 
     "{i}Na tela da esquerda, a lista do mês: total de R$ 100,00 e o almoço de R$ 20,00 no topo. Na da direita, a caixa que pergunta \"Excluir Almoço, R$ 20,00?\", com os botões Cancelar e Excluir.{/i}"

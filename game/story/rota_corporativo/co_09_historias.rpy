@@ -19,7 +19,7 @@ label co_09_historias:
     co_mentora "Bom dia, [player_name]. Hoje a gente transforma conversa em especificação. Vamos por partes."
     co_mentora "Lembra do episódio do [NOME_CO_SOLICITANTE]? O notebook do Wellington sem VPN, três ligações e um dia de campo perdido."
 
-    show expression "images/artifacts/co_sgc_legado.png" as tela_sgc at center_zoom
+    show expression "images/artifacts/co_sgc_legado.png" as tela_sgc at artefato_tela
     with dissolve
     co_mentora "E lembra deste aqui. Chamado 48213: Resolvido, campo Solução em branco. Para quem abriu, é como se nada tivesse acontecido."
     hide tela_sgc
@@ -119,7 +119,7 @@ label co_09_historias:
     with dissolve
     co_dev "Lembra do protótipo que eu te mostrei no primeiro dia? Mexi nele no fim de semana. Não conta pro [NOME_CO_LEGADO] que eu trabalhei no domingo."
 
-    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at center_zoom
+    show expression "images/artifacts/co_farol_consulta.png" as tela_farol at artefato_tela
     with dissolve
     "{i}Na tela, um cartão limpo com o chamado 48213: linha do tempo, nome do atendente, uma caixa \"Solução registrada\" e um botão \"Reabrir chamado\".{/i}"
     co_dev "Linha do tempo, quem pegou, o que foi feito. Bem diferente do cinza de 2008, né?"

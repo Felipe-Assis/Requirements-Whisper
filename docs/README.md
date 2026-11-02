@@ -4,6 +4,9 @@ Análises técnicas do jogo (migração de engine, arquitetura e bugs críticos)
 
 ## Índice
 
+- [plans/2026-11-02-integracao-rotas.md](plans/2026-11-02-integracao-rotas.md) — integração da demo curta e rotas longas **Startup** e **Corporativo** (decisões, fases, resultado). **← trabalho mais recente.**
+- [rotas/startup.md](rotas/startup.md) e [rotas/corporativo.md](rotas/corporativo.md) — bíblias das rotas novas (elenco, arco de 8 semanas, cena a cena, registros, conquistas, final); `rotas/*-assets.json` descreve a arte gerada.
+
 - [migracao-renpy-8.5.3.md](migracao-renpy-8.5.3.md) — migração Ren'Py **8.3.7 → 8.5.3**: esforço, o que muda, passo a passo (o que baixar/modificar), vantagens e desvantagens.
 - [reestruturacao-projeto.md](reestruturacao-projeto.md) — avaliação de **reestruturação/reorganização** (o que vale a pena, o que é over-engineering, restrições do modelo Ren'Py).
 - [pontos-criticos.md](pontos-criticos.md) — **pontos que podem quebrar o jogo** (P1–P7) e ações de correção, com verificação adversarial (inclui evidência do lint 8.5.3).

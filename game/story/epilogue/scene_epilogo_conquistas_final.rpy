@@ -133,7 +133,7 @@ screen resumo_rota():
             viewport:
                 style_prefix "nb"
                 id "resumo_lista"
-                ysize 640
+                ysize (650 if tam > 28 else 670)
                 xfill True
                 mousewheel True
                 draggable True

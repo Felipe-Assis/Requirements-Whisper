@@ -211,8 +211,10 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+## Opção sem foco em cinza claro (o #888888 original ficava com contraste
+## baixo sobre a faixa escura); com foco, texto escuro sobre a faixa azul clara.
+define gui.choice_button_text_idle_color = '#d8dde3'
+define gui.choice_button_text_hover_color = "#101820"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 

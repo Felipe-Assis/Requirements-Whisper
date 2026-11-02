@@ -39,7 +39,7 @@ label st_02_reuniao_ciclo:
     $ advance_minutes(15)
 
     # O quadro Kanban
-    show expression "images/artifacts/st_quadro_kanban.png" as st_kanban at center_zoom
+    show expression "images/artifacts/st_quadro_kanban.png" as st_kanban at artefato_tela
     with dissolve
     st_mentora "Esse é o nosso quadro. Cinco colunas: descoberta, pronto para desenvolver, fazendo, revisão e pronto."
     st_mentora "Repara no limite da coluna Fazendo: no máximo duas tarefas por pessoa. Quer puxar a terceira? Primeiro termina uma ou pede ajuda."
