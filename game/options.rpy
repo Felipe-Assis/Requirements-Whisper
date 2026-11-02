@@ -224,6 +224,10 @@ init python:
 
     def _img_ausente(fn):
         renpy.log("imagem ausente: %s" % fn)
+        if fn == "_missing_image.png":
+            # O próprio marcador falhou (ex.: arquivo aberto na predição):
+            # devolver ele de novo entraria em recursão sem fim.
+            return None
         if fn.startswith("gui/"):
             # Estado de botão/barra sem arquivo no tema: nada no lugar.
             return im.Data(_PNG_TRANSPARENTE, "transparente.png")

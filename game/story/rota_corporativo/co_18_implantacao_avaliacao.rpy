@@ -26,6 +26,8 @@ label co_18_implantacao_avaliacao:
     co_qualidade "Quatro: carga do histórico. Cinco: testes de fumaça. Seis: ligar o Farol para os usuários."
     co_qualidade "Critério de parada da carga: zero registro corrompido. Está na RFC, assinado."
     co_mentora "A [NOME_CO_SUPERVISORA] está de plantão no telefone. Ela disse que vai dormir de headset."
+    if energia_cansaco():
+        co_qualidade "[player_name], hoje você lê o roteiro em voz alta e confere cada passo. O terminal fica com quem dormiu. Não é castigo, é gestão de risco."
 
     $ set_time(0, 5)
     scene bg sala_servidores
@@ -69,7 +71,10 @@ label co_18_implantacao_avaliacao:
     co_qualidade "Critério de parada: zero registro corrompido. Não deu zero."
     co_qualidade "[player_name], faltam menos de duas horas de janela. Fala o que você faria."
 
-    menu:
+    # Pista de ajudar a Ingrid no ensaio (semana 7). Fora da contagem.
+    call pista_lembrar("co_p_parada") from _pl_co18_janela
+
+    menu (tipo="trabalho"):
         "Faltam menos de duas horas de janela. O que fazer?"
 
         "Corrigir os registros na mão direto no banco de produção.":
@@ -95,7 +100,7 @@ label co_18_implantacao_avaliacao:
         show co_mentora thinking at right_zoom
         with dissolve
         co_mentora "Calma. O que o plano aprovado diz para esse caso?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
 
             "Passou do critério de parada: volta o passo 4, segue o resto e registra o problema.":
@@ -119,7 +124,7 @@ label co_18_implantacao_avaliacao:
     co_dev "Desculpa, gente. Fui eu que escrevi o script da carga. Eu devia ter pegado isso."
     "{i}[NOME_CO_DEV] anda de um lado para o outro, com o fone no pescoço e um copo de café vazio na mão.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "[NOME_CO_DEV] está nervoso. O que você faz?"
 
         "\"Seguimos o roteiro. Foi para isso que ensaiamos.\"":
@@ -159,6 +164,7 @@ label co_18_implantacao_avaliacao:
     with dissolve
     co_qualidade "Mudança dentro da janela. Registro fechado às 4h15. Se não está registrado, não aconteceu. Está registrado."
     co_legado "Vão para casa. A Tia Neide e eu cuidamos do resto. Brincadeira, eu também vou."
+    $ energia_gastar(3, _("janela de madrugada"))
 
     play music music_office_motivated fadein 1.5
     scene bg central_atendimento_tarde
@@ -173,6 +179,8 @@ label co_18_implantacao_avaliacao:
     with dissolve
 
     co_mentora "[NOME_CO_SUPERVISORA], [NOME_CO_SOLICITANTE], obrigada por virem. Hoje quem conduz a conversa é [player_name]."
+    if energia_cansaco():
+        "{i}[NOME_CO_MENTORA] chega perto e fala baixo: \"Dormiu pouco, eu sei. Começa pelo número da [NOME_CO_SUPERVISORA] e vai devagar.\"{/i}"
     "{i}[NOME_CO_MENTORA] se senta e deixa a ponta da mesa para você. Você abre o relatório e começa pelo que aconteceu, não pelo que foi feito.{/i}"
     co_supervisora "Número é comigo. Ligação de cobrança de andamento era 18\% da central. Em dois dias de Farol, caiu para 11\%."
     co_supervisora "Em dois dias. Minha equipe percebeu antes do relatório."
@@ -256,6 +264,16 @@ label co_18_implantacao_avaliacao:
         co_legado "[player_name], já gravei três Causos do SGC no wiki. O da Tia Neide teve doze visualizações. Dez são minhas."
         co_legado "Toma. A caneca de 2008. Guarda até março. Depois você decide se fica com ela ou passa para quem chegar."
         "{i}A caneca branca de faixa azul, lascada na borda, pesa mais do que parece.{/i}"
+        if mentoria_conq_corporativo:
+            co_legado "E o mapa dos causos está na primeira página do wiki. Cada causo tem uma segunda pessoa."
+        hide co_legado
+        with dissolve
+
+    # Arco de mentoria concluído sem a homenagem do wiki: fala própria do Jorge.
+    if mentoria_conq_corporativo and not co_conq_memoria:
+        show co_legado neutral at center_zoom
+        with dissolve
+        co_legado "[player_name], o mapa dos causos está na primeira página do wiki. Cada causo tem uma segunda pessoa. Março ficou menos assustador."
         hide co_legado
         with dissolve
 

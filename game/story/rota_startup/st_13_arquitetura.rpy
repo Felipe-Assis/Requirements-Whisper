@@ -63,8 +63,9 @@ label st_13_arquitetura:
     st_techlead "E o servidor acha que cada envio é um gasto novo. É como pedir uma pizza, a ligação cair e você ligar de novo. Se a pizzaria não perguntar o número do pedido, chegam duas."
     st_mobile "E a Bia paga as duas, pelo menos na tela."
     st_techlead "Então, [player_name]. Como você evitaria o gasto duplicado?"
+    call pista_lembrar("st_p_tunel") from _pl_st13_idempotencia
 
-    menu:
+    menu (tipo="trabalho"):
         "Como evitar o gasto duplicado?"
 
         "Bloquear lançamentos quando o celular estiver sem internet.":
@@ -72,7 +73,7 @@ label st_13_arquitetura:
             show st_mobile serious at right_zoom
             st_mobile "A Bia lança no ônibus e no bandejão, justamente onde o sinal some. Sem poder salvar, ela esquece o gasto e o total fica errado para menos."
             st_techlead "Trocamos um total alto demais por um total baixo demais. Pensa no número do pedido da pizza."
-            menu:
+            menu (tipo="trabalho"):
                 "Faço cada lançamento ter uma identidade própria desde o celular.":
                     st_techlead "Isso. Agora o servidor consegue reconhecer um pedido repetido."
 
@@ -86,7 +87,7 @@ label st_13_arquitetura:
             show st_techlead thinking at center_zoom
             st_techlead "E os dois cafés de R$ 5 que a Bia toma no mesmo dia? Viram um só. Trocamos um erro por outro."
             st_mobile "Valor e data não dizem quem é quem. Precisa de algo que seja só daquele lançamento."
-            menu:
+            menu (tipo="trabalho"):
                 "Faço cada lançamento ter uma identidade própria desde o celular.":
                     st_techlead "Isso. Agora o servidor consegue reconhecer um pedido repetido."
 
@@ -104,14 +105,14 @@ label st_13_arquitetura:
     st_techlead "Agora os dados. O Gasto tem o id que nasce no celular, o valor, a data, a categoria, a origem, que pode ser manual ou banco, quando foi criado e quando foi excluído."
     st_techlead "Antes de seguir, uma pergunta que parece boba. Como a gente guarda o valor?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como guardar o valor do gasto?"
 
         "Texto, do jeito que aparece na tela: “R$ 20,00”.":
             $ st_decidir("st_d13_valor", False)
             show st_mobile serious at right_zoom
             st_mobile "Aí pra somar o total eu converto tudo de volta. E na hora de ordenar, R$ 100 aparece antes de R$ 20, porque o texto compara letra por letra."
-            menu:
+            menu (tipo="trabalho"):
                 "Guardo em centavos inteiros e formato só na tela.":
                     st_techlead "Isso. O banco guarda número; a tela mostra o “R$”."
 
@@ -119,7 +120,7 @@ label st_13_arquitetura:
             $ st_decidir("st_d13_valor", False)
             st_techlead "Some 0,10 com 0,20 no computador e veja o que dá. Dá 0,30000000000000004."
             st_techlead "Num lançamento, ninguém percebe. Em mil, o centavo some ou aparece do nada. E é justamente de total errado que a Bia reclama."
-            menu:
+            menu (tipo="trabalho"):
                 "Guardo em centavos inteiros e formato só na tela.":
                     st_techlead "Isso. Conta com inteiro não tem sobra."
 
@@ -168,7 +169,7 @@ label st_13_arquitetura:
     jump st_13_negociacao
 
 label st_13_negociacao:
-    menu:
+    menu (tipo="negociacao"):
         "Como você conduz o pedido do Vinícius?"
 
         "Incluir a importação e manter o prazo, sem falar de capacidade.":
@@ -195,7 +196,7 @@ label st_13_negociacao:
             st_ceo "Um protótipo do consentimento... Investidor gosta de ver que a gente sabe o próximo passo. E eu não prometo data que não posso cumprir."
             show st_mobile neutral at center_zoom
             st_mobile "E eu entrego a base sem cortar teste."
-            menu:
+            menu (tipo="negociacao"):
                 "Rever o acordo antes de confirmar.":
                     jump st_13_negociacao
                 "Confirmar o acordo com Vinícius, Davi e Tainá.":
@@ -207,7 +208,7 @@ label st_13_negociacao:
             st_mobile "Uma semana dá pra saber se o parceiro existe e quanto custa. Construir, não dá. Mas a base fica protegida."
             show st_ceo thinking at right_zoom
             st_ceo "Data nova eu converso com o fundo, desde que a gente chegue no semestre com o total certo."
-            menu:
+            menu (tipo="negociacao"):
                 "Rever o acordo antes de confirmar.":
                     jump st_13_negociacao
                 "Confirmar o acordo com Vinícius, Davi e Tainá.":
@@ -244,7 +245,7 @@ label st_13_negociacao:
     show st_mobile neutral at right_zoom
     with dissolve
 
-    menu:
+    menu (tipo="conversa"):
         "Antes de ir embora, você..."
 
         "Agradeço ao Otávio pela paciência em reproduzir o bug.":

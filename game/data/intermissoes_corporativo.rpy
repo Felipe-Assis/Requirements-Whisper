@@ -4,8 +4,9 @@
 # -------------------------------
 # Só dados (docs/design/intermissoes-corporativo.md, seções 1.3, 3, 4 e 5). O
 # motor está em logic/intermissao.rpy; o formato de cada chave está descrito
-# no topo daquele arquivo. Todos os locais ficam na torre do Grupo Vértice
-# (um lugar só no mapa da cidade). Falas ficam nos labels de conteúdo
+# no topo daquele arquivo. Os locais de trabalho ficam na torre do Grupo
+# Vértice (um lugar só no mapa da cidade); o Parque do Aterro, a partir da
+# semana 2, é o único fora dela. Blocos sem folga de trajeto (§5). Falas ficam nos labels de conteúdo
 # (im_corporativo_s<N>_<acao>_<alvo>, im_corporativo_<acao>_<alvo>,
 # im_corporativo_mentoria_<k>, im_corporativo_abertura_<N>); sem eles, o motor
 # usa uma fala genérica.
@@ -41,6 +42,11 @@ init 3 python:
             {"id": "servidores", "nome": _("Sala de servidores"), "lugar": "torre_vertice", "sub": _("subsolo · servidores"),
              "bg": "sala_servidores",
              "abre": 7, "acoes": [], "icone": "computador"},
+            # Fora da torre, a 15 min a pé (mapa-cidade.md §2.3): descansar
+            # custa 75 min aqui. Conteúdo: im_corporativo_descansar_aterro.
+            {"id": "aterro", "nome": _("Parque do Aterro"), "lugar": "aterro", "sub": _("beira da baía"),
+             "bg": "transito_tarde",
+             "bg_semana": {8: "transito_noite"}, "abre": 2, "acoes": ["descansar"], "icone": "descansando"},
         ],
     }
 

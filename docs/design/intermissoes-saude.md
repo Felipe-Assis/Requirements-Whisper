@@ -50,7 +50,7 @@ Ids, nomes, fundos e semana de abertura iguais ao Sistemas §2.1.
 | `servidores` | Sala de servidores | `sala_servidores` | 6 | — | (600, 760) |
 
 Estado escrito no mapa antes de abrir: ambulatório "Abre na semana 2"; servidores "Abre na semana 6".
-O ambulatório fica no Instituto, do outro lado da praça: os 90 min de observar e de mentoria já incluem o trajeto.
+O ambulatório fica no Instituto, do outro lado da praça: o trajeto de 10 min a pé tem folga própria no mapa e não sai dos 90 min de observar e de mentoria.
 
 ### 1.2 Arte do mapa (E3)
 

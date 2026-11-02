@@ -79,7 +79,7 @@ label st_02_reuniao_ciclo:
     show st_mentora neutral at left_zoom
     st_mentora "[player_name], todo mundo aqui fala MVP o tempo todo. Quero saber o que você entende por isso."
 
-    menu:
+    menu (tipo="trabalho"):
         st_mentora "Para a equipe, o que é um MVP?"
         "A menor versão que resolve um problema real e nos deixa aprender com estudantes de verdade.":
             $ st_decidir("st_d02_mvp", True)
@@ -104,7 +104,7 @@ label st_02_reuniao_ciclo:
 
     if not st_d02_mvp:
         # Revisão orientada depois de um distrator.
-        menu:
+        menu (tipo="trabalho"):
             st_mentora "Junta o que eles disseram. O que sobra?"
             "Então o MVP precisa resolver um problema e gerar aprendizado com gente real?":
                 st_mentora "Exato. Pensa no total do mês."
@@ -118,7 +118,7 @@ label st_02_reuniao_ciclo:
     # Social: como aprender por aqui
     show st_mobile neutral at center_zoom
     with dissolve
-    menu:
+    menu (tipo="conversa"):
         st_mentora "Última pergunta, essa sem resposta certa. Como você prefere aprender por aqui?"
         "Fazendo junto, em par.":
             $ add_friendship_point("st_mobile", 1)

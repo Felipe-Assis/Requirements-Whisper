@@ -25,7 +25,7 @@ label st_10_almoco:
 
     "{i}A mesa se divide sozinha em duas rodas. Numa ponta, Otávio e Davi falam de mensagens de celular. Na outra, Tainá e Lorena riem de alguma avaliação da loja.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Onde você senta?"
         "Com Otávio e Davi.":
             $ add_friendship_point("st_techlead", 1)
@@ -43,7 +43,7 @@ label st_10_almoco:
             st_techlead "Depende do dia. É por isso que eu tenho cabelo branco onde ainda tenho cabelo."
             "{i}Davi ri alto. Você lembra do almoço da Bia aparecendo duas vezes no app.{/i}"
 
-            menu:
+            menu (tipo="conversa"):
                 "O que você pergunta?"
                 "Como vocês resolviam a mensagem duplicada?":
                     $ add_friendship_point("st_techlead", 1)
@@ -78,7 +78,7 @@ label st_10_almoco:
             st_mentora "Na maioria das vezes o dinheiro estava lá. O que sumia era a confiança. Saí quando percebi que queria consertar a causa, não atender a consequência."
             st_qualidade "E eu saí da sala de aula pelo mesmo motivo, só que com redação."
 
-            menu:
+            menu (tipo="conversa"):
                 "O que você pergunta?"
                 "O que você aprendeu no atendimento do banco?":
                     $ add_friendship_point("st_mentora", 1)

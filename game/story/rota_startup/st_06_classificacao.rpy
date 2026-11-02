@@ -28,7 +28,7 @@ label st_06_classificacao:
     "{i}[NOME_ST_MENTORA] te entrega o primeiro post-it.{/i}"
     "\"Excluir um gasto lançado por engano, com confirmação, e ver o total atualizado.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "Em qual coluna vai este post-it?"
 
         "Funcional: é um comportamento que o app executa.":
@@ -40,7 +40,7 @@ label st_06_classificacao:
             $ st_decidir("st_d06_funcional", False)
             show st_qualidade serious at right_zoom
             st_qualidade "Ele descreve uma ação e um resultado. Se fosse não funcional, eu mediria tempo ou carga, e não teria como testar a exclusão."
-            menu:
+            menu (tipo="trabalho"):
                 "O que você faz com o post-it?"
                 "Coloco o post-it na coluna que permite testar do jeito certo.":
                     st_qualidade "Funcional, então. Aí o teste é executar: excluir, confirmar e conferir se o gasto saiu e o total mudou."
@@ -49,7 +49,7 @@ label st_06_classificacao:
             $ st_decidir("st_d06_funcional", False)
             show st_mentora serious at left_zoom
             st_mentora "Já temos um episódio e nove avaliações. Isso é necessidade confirmada."
-            menu:
+            menu (tipo="trabalho"):
                 "O que você faz com o post-it?"
                 "Coloco o post-it na coluna que permite testar do jeito certo.":
                     show st_qualidade neutral at right_zoom
@@ -59,7 +59,7 @@ label st_06_classificacao:
     "{i}Segundo post-it, com a letra apressada de quem anotou durante a entrevista:{/i}"
     "\"A lista de gastos deve abrir rápido no 4G.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você classifica?"
 
         "Não funcional, e precisa de número: abrir em até 2 segundos em 95%% das vezes, num celular de entrada com 4G.":
@@ -71,7 +71,7 @@ label st_06_classificacao:
             $ st_decidir("st_d06_nao_funcional", False)
             show st_qualidade serious at right_zoom
             st_qualidade "A lista existir é funcional. A velocidade é uma qualidade, e qualidade se mede."
-            menu:
+            menu (tipo="trabalho"):
                 "O que você faz com o post-it?"
                 "Coloco o post-it na coluna que permite testar do jeito certo.":
                     st_qualidade "Não funcional. E escreve o número junto: até 2 segundos em 95%% das vezes, num celular de entrada com 4G. Sem número, não tem como medir."
@@ -80,7 +80,7 @@ label st_06_classificacao:
             $ st_decidir("st_d06_nao_funcional", False)
             show st_qualidade serious at right_zoom
             st_qualidade "[NOME_ST_MOBILE] vai achar rápido no celular dele, de topo de linha. A [NOME_ST_ESTUDANTE], com o celular de 2019, não."
-            menu:
+            menu (tipo="trabalho"):
                 "O que você faz com o post-it?"
                 "Coloco o post-it na coluna que permite testar do jeito certo.":
                     st_qualidade "A coluna estava certa; faltava a medida. Até 2 segundos em 95%% das vezes, num celular de entrada com 4G. Agora dá para medir."
@@ -89,7 +89,7 @@ label st_06_classificacao:
     "{i}O terceiro post-it é o mais disputado da entrevista.{/i}"
     "\"Importar gastos do banco automaticamente.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "Onde ele entra?"
 
         "Ideia a validar, que depende de restrições: consentimento do Open Finance, parceiro autorizado e LGPD.":
@@ -101,7 +101,7 @@ label st_06_classificacao:
             $ st_decidir("st_d06_ideia", False)
             show st_mentora serious at left_zoom
             st_mentora "Ninguém contou um episódio sobre isso ainda, e depende de um parceiro autorizado. Se virar obrigatório agora, ocupa o espaço da exclusão segura."
-            menu:
+            menu (tipo="trabalho"):
                 "O que você faz com o post-it?"
                 "Coloco o post-it na coluna que permite testar do jeito certo.":
                     show st_qualidade neutral at right_zoom
@@ -111,7 +111,7 @@ label st_06_classificacao:
             $ st_decidir("st_d06_ideia", False)
             show st_mentora serious at left_zoom
             st_mentora "A [NOME_ST_ESTUDANTE] não quer agora, com o total errado. A vontade de digitar menos aparece em seis avaliações. Fica como hipótese."
-            menu:
+            menu (tipo="trabalho"):
                 "O que você faz com o post-it?"
                 "Coloco o post-it na coluna que permite testar do jeito certo.":
                     show st_qualidade neutral at right_zoom
@@ -138,7 +138,7 @@ label st_06_classificacao:
     show st_qualidade serious at right_zoom
     st_qualidade "Confuso onde? Em qual passo? \"Confuso\" não é defeito, é uma sensação. Eu não consigo testar uma sensação."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você reage ao comentário?"
 
         "Me mostra como você anotaria?":

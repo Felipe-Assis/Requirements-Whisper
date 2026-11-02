@@ -48,11 +48,23 @@ label co_09_historias:
     co_dev "E se alguém digitar o número do chamado de outra pessoa?"
     co_mentora "Acesso negado. Chamado tem nome, telefone, endereço de subestação. Proteger isso também é requisito."
 
+    # Caça à ambiguidade (docs/design/intermissoes-corporativo.md, seção 6).
+    show co_mentora thinking at left_zoom
+    co_mentora "Antes do critério, olha como o pedido chegou da diretoria. É o texto do termo de abertura do Farol."
+    show co_dev neutral at right_zoom
+    co_dev "Parece ótimo. Eu assinaria embaixo."
+    co_mentora "Por isso mesmo. Marca as palavras que cada pessoa leria de um jeito."
+    call amb_atividade("co_amb_termo") from _amb_co09
+    show co_dev thinking at right_zoom
+    co_dev "Três segundos, quatro campos e um modelo. Isso eu sei programar. 'Rápida' eu não sabia."
+    show co_mentora neutral at left_zoom
+    co_mentora "Agora duas pessoas leem e entendem a mesma coisa. Era isso que faltava no termo."
+
     $ advance_minutes(45)
     show co_mentora thinking at left_zoom
     co_mentora "Agora a parte que mais importa. Como a gente sabe que essa história ficou pronta? [player_name], qual critério você escreveria?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual critério verifica a história?"
         "A pessoa solicitante deve receber atendimento de qualidade.":
             $ co_erro("co_ok_criterio")
@@ -67,7 +79,7 @@ label co_09_historias:
 
     if not co_ok_criterio:
         co_mentora "Um critério precisa de três coisas: de onde partimos, o que acontece e o que alguém consegue conferir."
-        menu:
+        menu (tipo="trabalho"):
             "O que falta para verificar?"
             "Registrar a situação inicial, a ação e o resultado que o solicitante confere.":
                 show co_mentora neutral at left_zoom
@@ -78,7 +90,10 @@ label co_09_historias:
     co_dev "Pera. E se o atendente tentar resolver sem escrever nada? Fim de turno, fila cheia, ele só quer fechar."
     co_mentora "Boa, [NOME_CO_DEV]. Isso é um caso limite. [player_name], o que você propõe?"
 
-    menu:
+    # Pista da observação na central (tempo livre da semana 2). Fora da contagem.
+    call pista_lembrar("co_p_vazio") from _pl_co09_caso_limite
+
+    menu (tipo="trabalho"):
         "E se o atendente tentar resolver sem descrever a solução?"
         "Preencho automaticamente com 'Resolvido', para não atrasar o atendimento.":
             $ co_erro("co_ok_caso_limite")
@@ -93,7 +108,7 @@ label co_09_historias:
 
     if not co_ok_caso_limite:
         co_mentora "Pensa no que o [NOME_CO_SOLICITANTE] veria na consulta em cada caso. E em quem é dona do processo da central."
-        menu:
+        menu (tipo="trabalho"):
             "Como registrar o caso e confirmar?"
             "Descrição vazia mantém Em atendimento e mostra uma orientação; confirmar com a dona da regra.":
                 show co_mentora neutral at left_zoom
@@ -134,7 +149,7 @@ label co_09_historias:
     show co_dev thinking at right_zoom
     co_dev "Entendi, entendi. Mas então... já posso começar a codar?"
 
-    menu:
+    menu (tipo="conversa"):
         "\"Posso começar a codar?\", pergunta [NOME_CO_DEV]."
         "Ainda não. Me ajuda a revisar os critérios? Assim você coda uma vez só.":
             $ add_friendship_point("co_dev", 1)

@@ -14,15 +14,21 @@ label scene_21_avaliacao_final:
 
     show developer_management serious at left_zoom
     developer_management "Pessoal, caprichem na apresentação. É nossa chance de mostrar o valor do nosso trabalho ao Instituto!"
+    if energia_cansaco():
+        developer_management "E, [player_name]: ontem foi puxado. Hoje você só precisa contar o que fizemos, do jeito que viveu."
 
     "Você confere os slides, o protótipo rodando e revisa as anotações no notebook."
+
+    # Tempo livre da semana 8 (manhã até o almoço). A música da cena volta
+    # sozinha no fim; a linha seguinte já troca o fundo.
+    call im_intermissao(8) from _im_saude_s8
 
     # Transição: trajeto até o instituto
     scene bg transito_tarde
     with dissolve
-    $ set_time(13, 20)
+    $ set_time(14, 0)
     play sound "audio/effects/bus.ogg"
-    "{i}Após o almoço, a equipe pega o ônibus rumo ao Instituto. O trânsito do Rio de Janeiro, como sempre, é imprevisível. Todos revisam mentalmente os pontos principais da apresentação.{/i}"
+    "{i}Depois de um almoço de comemoração fora do campus, a equipe pega o ônibus de volta, rumo ao Instituto. O trânsito do Rio de Janeiro, como sempre, é imprevisível. Todos revisam mentalmente os pontos principais da apresentação.{/i}"
 
     # Chegada ao Instituto
     scene bg fachada_instituto_tarde
@@ -37,7 +43,7 @@ label scene_21_avaliacao_final:
     show developer_requirements enthusiastic at left_zoom
     developer_requirements "Chegamos! A [NOME_DOUTORA_1] e a [NOME_DOUTORA_2] já estão aguardando. Respirem fundo — o trabalho está pronto para ser mostrado!"
 
-    show doutora_1 neutral at right_zoom
+    show doutora_1 positive at right_zoom
     show doutora_2 neutral at right_zoom2
     with dissolve
 
@@ -73,7 +79,12 @@ label scene_21_avaliacao_final:
     doutora_2 "As notificações de retorno e de exames pendentes vão fazer diferença. Antes eu vivia esquecendo algum acompanhamento, agora recebo o aviso certinho."
 
     doutora_1 "Agradeço por terem paciência em ouvir nossas reclamações e sugestões. Em outros projetos, ninguém parava para perguntar o que era realmente importante para a gente."
+    show doutora_2 positive at right_zoom2
     doutora_2 "Eu senti que nossas opiniões foram levadas a sério. Isso faz a gente se sentir parte do projeto também!"
+    if mentoria_conq_saude:
+        doutora_2 "E a Dona Célia, que testou a escala no tablet, perguntou de você. Ainda conta para todo mundo que o tablet nem brigou com ela."
+    elif mentoria_passos.get("saude", 0) >= 2:
+        doutora_2 "E obrigada pelas tardes no ambulatório, [player_name]. Deu para ver que você entendeu a nossa rotina."
 
     # Volta ao acordo de escopo da scene_14 (integração com o Adeus Cigarro).
     if s14_acordo_escopo == "base_primeiro":

@@ -60,7 +60,7 @@ label co_15_gestao:
     show co_qualidade thinking at right_zoom
     co_qualidade "Próximo ponto: o CAB. [player_name], como você levaria a implantação até lá?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como levar a implantação ao CAB?"
         "Registrar uma RFC normal: o que muda, impacto, janela de sábado, testes de regressão, plano de rollback e responsáveis.":
             $ co_acerto("co_ok_cab")
@@ -79,7 +79,7 @@ label co_15_gestao:
 
     if not co_ok_cab:
         co_mentora "Imagina você do outro lado da mesa, no CAB. O que precisa saber para aprovar uma mudança?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
             "O que muda, o impacto, quando, como testamos e como voltamos.":
                 show co_qualidade neutral at right_zoom
@@ -95,7 +95,10 @@ label co_15_gestao:
     co_legado "Agora o que me tira o sono: a carga do histórico. São 200 mil descrições do SGC indo para a tabela nova."
     co_legado "Tem texto de 2008, tem gente que colou do Word, tem campo com 4 mil caracteres. Isso aí tem história, e nem toda é bonita."
 
-    menu:
+    # Pista do segundo encontro da mentoria (semanas 3 e 4). Fora da contagem.
+    call pista_lembrar("co_p_acentos") from _pl_co15_risco
+
+    menu (tipo="trabalho"):
         "Como tratar o risco da carga do histórico?"
         "Deixar o [NOME_CO_LEGADO] de sobreaviso; ele resolve se der problema.":
             $ co_erro("co_ok_risco")
@@ -113,7 +116,7 @@ label co_15_gestao:
 
     if not co_ok_risco:
         co_mentora "Como descobrir o problema antes da janela, e não durante?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
             "Ensaiar com dados reais e combinar quando parar e como voltar.":
                 show co_legado neutral at left_zoom
@@ -121,14 +124,21 @@ label co_15_gestao:
                 co_qualidade "Fica como risco na RFC, com o ensaio como resposta."
 
     co_qualidade "Então tem ensaio na quarta à noite, numa cópia de produção. Quem fica comigo?"
+    if energia_cansaco():
+        co_qualidade "E você, pensa bem antes de ficar. Está com olheira de quem já fez a janela."
 
-    menu:
+    # Energia: o ensaio pesa mais e tira 30 min do tempo livre de sexta; a
+    # revisão do rollback pesa menos; descansar não gasta.
+    menu (tipo="conversa"):
         "Quem fica no ensaio de quarta à noite?"
         "\"Eu fico com você no ensaio.\"":
             $ add_friendship_point("co_qualidade", 1)
+            $ energia_gastar(2, _("ensaio de quarta até tarde"))
+            $ im_hora_extra_somar(30)
             co_qualidade "Ótimo. Eu levo o checklist, você leva a paciência. Pizza por conta do projeto, já pedi."
         "\"Reviso o roteiro de rollback com o [NOME_CO_LEGADO].\"":
             $ add_friendship_point("co_legado", 1)
+            $ energia_gastar(1, _("revisão do rollback depois do expediente"))
             co_legado "Combinado. Te mostro onde o script costuma escorregar. Traz caneta, que eu falo rápido quando o assunto é PL/SQL."
         "\"Vou descansar; tenho prova na quinta.\"":
             co_qualidade "Descanso também é gestão de risco. Boa prova. Eu te mando o resultado do ensaio."
@@ -166,6 +176,9 @@ label co_15_gestao:
     "{i}Na primeira rodada, a validação acusa 2,7\% de descrições com acentos de outro padrão. Texto antigo, de antes de alguém trocar a codificação do banco.{/i}"
     "{i}O script é corrigido ali mesmo e roda de novo. Zero registro corrompido. A equipe transforma o resultado no critério de parada da janela: um único registro corrompido, e a carga volta.{/i}"
     "{i}Na sexta, [NOME_CO_QUALIDADE] lê a RFC de ponta a ponta e devolve com dois comentários pequenos. Nenhum sobre o plano de volta.{/i}"
+
+    # Tempo livre da semana 5 (gancho B): sexta à tarde, antes do cartão.
+    call im_intermissao(5) from _im_corporativo_s5
 
     scene black
     with fade

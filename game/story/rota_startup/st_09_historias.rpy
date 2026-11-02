@@ -25,10 +25,22 @@ label st_09_historias:
     st_mentora "Caso de uso completo, com fluxo principal e todos os desvios, a gente só escreve quando o fluxo tem muitos caminhos. Para excluir um gasto, história e critério dão conta."
     $ advance_minutes(20)
 
+    # Caça à ambiguidade (docs/design/intermissoes-startup.md, seção 7).
+    show st_mentora thinking at left_zoom
+    st_mentora "Antes do cartão, um aquecimento. Na sexta, o Vinícius colou isso no quadro de ideias."
+    "\"O app deve mostrar o total do mês atualizado rapidamente e deixar a pessoa excluir gastos facilmente, sem perder dados.\""
+    st_mobile "Pô, parece ótimo."
+    st_mentora "Parece. Agora tenta escrever o teste. Marca as palavras que cada um aqui leria de um jeito."
+    call amb_atividade("st_amb_total") from _amb_st09
+    show st_mentora neutral at left_zoom
+    st_mentora "Agora o Vinícius lê e reconhece o pedido dele. E a Lorena consegue testar cada pedaço."
+    st_mobile "\"Rapidamente\" era minha palavra favorita. Era."
+    $ advance_minutes(15)
+
     show st_mentora thinking at left_zoom
     st_mentora "Rabisquei três versões do cartão no fim de semana. Me diz qual vai para o quadro."
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual história vai para o cartão?"
         "\"Como estudante que lançou um gasto por engano, quero excluí-lo com uma confirmação, para que o total do mês volte a ser confiável.\"":
             $ st_decidir("st_d09_historia", True)
@@ -38,7 +50,7 @@ label st_09_historias:
             $ st_decidir("st_d09_historia", False)
             show st_mentora serious at left_zoom
             st_mentora "Essa descreve uma tela, não uma pessoa. E sem o \"para quê\", ninguém sabe dizer se ela vale mais que outro cartão."
-            menu:
+            menu (tipo="trabalho"):
                 "Reescrevo dizendo quem é a pessoa, a ação e o benefício.":
                     pass
             show st_mentora neutral at left_zoom
@@ -47,7 +59,7 @@ label st_09_historias:
             $ st_decidir("st_d09_historia", False)
             show st_mentora serious at left_zoom
             st_mentora "Isso é um épico do tamanho do app inteiro. Não cabe numa semana e não tem como testar. Lembra o que a Bia ensinou sobre \"fácil\"?"
-            menu:
+            menu (tipo="trabalho"):
                 "Reescrevo dizendo quem é a pessoa, a ação e o benefício.":
                     pass
             show st_mentora neutral at left_zoom
@@ -59,7 +71,7 @@ label st_09_historias:
     show st_mobile thinking at right_zoom
     st_mobile "Agora a parte que me interessa. Como eu sei que terminei?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual critério verifica a regra combinada com a Bia?"
         "\"Dado um total mensal de R$ 100 com um gasto de R$ 20, quando a estudante confirmar a exclusão, o gasto sai da lista e o total passa a R$ 80.\"":
             $ st_decidir("st_d09_criterio", True)
@@ -70,7 +82,7 @@ label st_09_historias:
             $ st_decidir("st_d09_criterio", False)
             show st_mobile serious at right_zoom
             st_mobile "Mano, eu entrego um painel lindo e o total continua errado. E esse critério passa."
-            menu:
+            menu (tipo="trabalho"):
                 "Escrevo situação inicial, ação e resultado com valores.":
                     pass
             show st_mobile neutral at right_zoom
@@ -80,7 +92,7 @@ label st_09_historias:
             $ st_decidir("st_d09_criterio", False)
             show st_mobile serious at right_zoom
             st_mobile "Esse confere que o botão existe. Não diz nada do que acontece com o gasto e com o total depois do toque."
-            menu:
+            menu (tipo="trabalho"):
                 "Escrevo situação inicial, ação e resultado com valores.":
                     pass
             show st_mobile neutral at right_zoom
@@ -110,8 +122,9 @@ label st_09_historias:
 
     show st_mentora thinking at left_zoom
     st_mentora "Ela achou o caso limite antes da gente. O que a gente responde e escreve no cartão?"
+    call pista_lembrar("st_p_cancelar") from _pl_st09_limite
 
-    menu:
+    menu (tipo="trabalho"):
         "Bia pergunta: e se eu tocar em Excluir e depois cancelar?"
         "O gasto permanece e o total continua R$ 100; confirmo isso com a Bia.":
             $ st_decidir("st_d09_limite", True)
@@ -121,7 +134,7 @@ label st_09_historias:
             $ st_decidir("st_d09_limite", False)
             show st_mentora serious at left_zoom
             st_mentora "Cancelar é desistir. Se o gasto some mesmo assim, a confirmação vira enfeite. E o total desatualizado é a queixa número um das avaliações."
-            menu:
+            menu (tipo="trabalho"):
                 "Registro o caso do cancelamento e o resultado esperado, e confirmo com a Bia.":
                     pass
             show st_mentora neutral at left_zoom
@@ -130,7 +143,7 @@ label st_09_historias:
             $ st_decidir("st_d09_limite", False)
             show st_mobile serious at right_zoom
             st_mobile "Fechar a janela não prova nada. Já vi app que apagava no fundo e só mostrava depois. O teste tem que olhar a lista e o total."
-            menu:
+            menu (tipo="trabalho"):
                 "Registro o caso do cancelamento e o resultado esperado, e confirmo com a Bia.":
                     pass
             show st_mentora neutral at left_zoom
@@ -163,7 +176,7 @@ label st_09_historias:
     show st_mobile neutral at right_zoom
     st_mobile "[player_name], bora parear no protótipo à tarde? Quero ligar a confirmação na lista de verdade."
 
-    menu:
+    menu (tipo="conversa"):
         "O que você responde ao Davi?"
         "Bora!":
             $ add_friendship_point("st_mobile", 1)

@@ -47,6 +47,7 @@ label .mapa:
     call screen im_mapa(semana)
     if _return == "encerrar":
         $ im_encerrar_cedo(semana)
+        call im_ir_para_casa from _im_ir_para_casa
         jump .fim
     call im_executar(semana, _return) from _im_executar_acao
     jump .mapa
@@ -81,20 +82,39 @@ label im_deslocar(op):
     $ im_desl = im_deslocamento_info(op)
     if im_desl is None:
         return
-    if im_transicoes_ligadas():
-        if im_desl["marcador"]:
-            $ IM_DIAG.telas.append("deslocamento")
-            call screen im_deslocamento(im_semana_atual, im_desl)
-        if im_desl["tela"]:
-            $ IM_DIAG.telas.append("transicao")
-            $ im_tocar_som(im_desl["som"], im_desl["volume"])
-            call screen im_transicao(im_desl)
-            $ renpy.sound.stop(fadeout=0.2)
-    elif im_desl["tela"]:
-        $ IM_DIAG.telas.append("cartao")
-        call screen im_transicao(im_desl, cartao=True)
+    call im_trajeto_telas(im_desl) from _im_trajeto_telas_acao
     $ im_pagar_deslocamento(op, im_desl)
     $ im_tocar_som(im_desl["som_chegada"])
+    return
+
+
+label im_ir_para_casa:
+    # "Encerrar o tempo livre" = ir para casa: mesma sequência, sem cobrar
+    # minutos (o tempo livre acabou), com a porta no fim.
+    $ renpy.dynamic("im_desl")
+    $ im_desl = im_deslocamento_casa_info()
+    if im_desl is None:
+        return
+    call im_trajeto_telas(im_desl) from _im_trajeto_telas_casa
+    $ im_tocar_som(im_desl["som_chegada"])
+    return
+
+
+label im_trajeto_telas(desl):
+    # Caminhada do marcador e tela do meio (som com fade de 0,2 s), ou o
+    # cartão de texto com as transições desligadas.
+    if im_transicoes_ligadas():
+        if desl["marcador"]:
+            $ IM_DIAG.telas.append("deslocamento")
+            call screen im_deslocamento(im_semana_atual, desl)
+        if desl["tela"]:
+            $ IM_DIAG.telas.append("transicao")
+            $ im_tocar_som(desl["som"], desl["volume"], 0.2)
+            call screen im_transicao(desl)
+            $ renpy.sound.stop(fadeout=0.2)
+    elif desl["tela"]:
+        $ IM_DIAG.telas.append("cartao")
+        call screen im_transicao(desl, cartao=True)
     return
 
 

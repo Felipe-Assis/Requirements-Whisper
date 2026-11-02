@@ -36,6 +36,10 @@ default rast_atual = {}
 
 init python:
 
+    def rast_rolar_ref(adj, dy):
+        """Rola a lista de referência (requisitos e testes) pelo teclado: Alt + seta."""
+        adj.change(max(0, min(adj.range, adj.value + dy)))
+
     def rast_dados(qid):
         """Dados do quadro `qid`, procurando em todas as rotas."""
         for rota in ROUTES:
@@ -275,6 +279,7 @@ screen rast_quadro(qid, fase="quadro"):
     # rolagem da lista de critérios (segue o foco do teclado).
     default foco = None
     default rolagem = ui.adjustment()
+    default rolagem_ref = ui.adjustment()
 
     $ maior = texto_maior_ativo()
     $ tam = 30 if maior else 24
@@ -285,6 +290,10 @@ screen rast_quadro(qid, fase="quadro"):
     $ aberto = (fase == "quadro")
     $ altura = 690 if maior else 750
     $ topo = RAST_TOPO[maior]
+
+    # A lista de referência não tem foco do teclado (as setas ficam nos seletores): Alt + seta a rola.
+    key "alt_K_DOWN" action Function(rast_rolar_ref, rolagem_ref, 120)
+    key "alt_K_UP" action Function(rast_rolar_ref, rolagem_ref, -120)
 
     if aberto and foco is not None:
         key "focus_left" action Function(rast_ciclar, qid, foco[0], foco[1], -1)
@@ -320,6 +329,7 @@ screen rast_quadro(qid, fase="quadro"):
                     id "rast_referencia"
                     xsize 580
                     ysize altura
+                    yadjustment rolagem_ref
                     mousewheel True
                     draggable True
                     scrollbars "vertical"
@@ -330,6 +340,7 @@ screen rast_quadro(qid, fase="quadro"):
                         spacing 10
                         xsize 550
                         text _("Requisitos") style "nb_secao" size tam_ui
+                        text _("Pelo teclado: Alt + seta rola esta lista.") style "nb_dica" size (tam_ui - 6) xmaximum 510
                         for r in dados["requisitos"]:
                             frame:
                                 style "nb_cartao"

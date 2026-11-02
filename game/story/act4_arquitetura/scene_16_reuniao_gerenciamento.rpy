@@ -14,6 +14,8 @@ label scene_16_reuniao_gerenciamento:
     show developer_requirements thinking at right_zoom
 
     developer_management "Vamos revisar nosso cronograma e discutir riscos do projeto. Gerenciar bem o tempo e priorizar as tarefas é tão importante quanto codar."
+    if energia_cansaco():
+        developer_management "[player_name], se a semana pesou, fala. Planejar também é planejar o descanso de quem faz."
     developer_requirements "Trouxe aqui a lista de funcionalidades e requisitos priorizados. Lembrem: nem tudo cabe na primeira entrega."
 
     "{i}No projetor, aparece o cronograma do projeto: oito semanas, da elicitação à implantação. Algumas tarefas críticas estão destacadas em vermelho; outras, de menor prioridade, ficaram para o fim.{/i}"
@@ -26,7 +28,7 @@ label scene_16_reuniao_gerenciamento:
     # NOVO BLOCO: Discussão de andamento
     show developer_management thinking at left_zoom
     developer_management "Antes de tudo, queria ouvir vocês: como sentem o andamento do projeto até aqui?"
-    menu:
+    menu (tipo="trabalho"):
         "Como você avalia o progresso do time?"
         "Acho que estamos no ritmo certo, entregando com qualidade.":
             show developer_requirements positive at right_zoom
@@ -47,7 +49,7 @@ label scene_16_reuniao_gerenciamento:
     # Avaliação sobre o prazo (diretiva do usuário)
     show developer_management serious at left_zoom
     developer_management "E sobre o prazo: alguém acha que o cronograma está ficando apertado?"
-    menu:
+    menu (tipo="trabalho"):
         "Como você responde sobre o prazo?"
         "Sim, algumas tarefas estão demorando mais do que o previsto.":
             show developer_coding thinking at right_zoom2
@@ -77,7 +79,7 @@ label scene_16_reuniao_gerenciamento:
     hide developer_coding
     hide developer_ai
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você sugere organizar o trabalho da equipe?"
         "Priorizar tarefas de maior impacto, mesmo que sejam mais complexas.":
             $ flag_prioridade = "impacto"
@@ -105,6 +107,7 @@ label scene_16_reuniao_gerenciamento:
     developer_management "Agora vamos ao concreto. Para a primeira entrega, a equipe tem capacidade para dois itens. Só dois."
     developer_requirements "As doutoras confirmaram duas dores na entrevista: perder o histórico quando o sistema trava e calcular a escala HAD na mão."
     developer_management "[player_name], monte o plano. Quais itens entram?"
+    call pista_lembrar("saude_p_autosave") from _pl_s16_plano
 
     call atividade_planejamento("saude_plano", [_("Autosave do histórico de saúde"), _("Cálculo automático da escala HAD, com aviso de resposta incompleta"), _("Gráficos 3D animados no painel"), _("Integração com o app Adeus Cigarro")], [0, 1], 2)
     $ decisao("saude_plano", planejamentos["saude_plano"]["primeira_cobertura"] == 2)
@@ -127,7 +130,7 @@ label scene_16_reuniao_gerenciamento:
     with dissolve
 
     # Decisão estratégica (com flag de risco)
-    menu:
+    menu (tipo="trabalho"):
         "Como lidar com riscos e imprevistos?"
         "Planejar reuniões rápidas diárias para monitorar e ajustar o plano.":
             $ flag_risco = "daily"

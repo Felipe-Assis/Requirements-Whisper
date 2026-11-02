@@ -24,7 +24,7 @@ label scene_18_2_codificacao_final:
 
     $ revisoes = 0
     while revisoes < 2:
-        menu:
+        menu (tipo="trabalho"):
             "Qual revisão deseja fazer agora?"
             "Refatora a função para código limpo." if "função" in revisoes_restantes:
                 $ revisoes_realizadas.append("função")
@@ -76,7 +76,7 @@ label scene_18_2_codificacao_final:
     hide developer_requirements
 
     # Padding: escolha de entrega
-    menu:
+    menu (tipo="trabalho"):
         "Tudo pronto! Como deseja entregar o módulo?"
         "Faz uma demo para a equipe antes de dar merge.":
             show developer_coding positive at left_zoom

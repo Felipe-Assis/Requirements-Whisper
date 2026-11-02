@@ -1,11 +1,13 @@
 label scene_4_retorno_casa:
+    # Tempo livre da semana 1 (16h-18h), antes da volta para casa.
+    call im_intermissao(1) from _im_saude_s1
     $ set_available('all')
     # Transição: ônibus/cidade à noite
     play music music_streets_focused fadein 1.8
     scene bg transito_noite
     with dissolve
 
-    $ advance_minutes(150) # Resto do expediente e viagem de volta para casa
+    $ advance_minutes(50) # Viagem de volta para casa (o resto do expediente foi o tempo livre)
     "O dia chega ao fim e, depois de um longo expediente, você embarca no ônibus para casa."
     "As luzes da cidade passam rápido pela janela enquanto você relembra tudo o que aconteceu hoje no escritório."
     play sound "audio/effects/bus.ogg"

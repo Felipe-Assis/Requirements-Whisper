@@ -26,6 +26,8 @@ label scene_14_discussao_arquitetura:
     show developer_test enthusiastic at center_zoom
     developer_test "E do ponto de vista de testes, quanto mais modular e desacoplado, mais fácil automatizar cenários e detectar bugs!"
     play sound "audio/effects/feedback_positive.ogg"
+    if energia_cansaco():
+        developer_test "(baixinho) Tá com cara de sono, [player_name]. Pega um café; essa discussão vai longe."
 
     $ advance_minutes(4)
     "{i}A conversa esquenta. No quadro, caixas e setas ligam cadastro, prontuário, escalas e relatórios, enquanto os argumentos se multiplicam.{/i}"
@@ -64,7 +66,7 @@ label scene_14_discussao_arquitetura:
     developer_coding "Só não vamos reinventar a roda... Cada escolha dessas exige monitoramento e integrações a mais."
 
     # Player input: decisão arquitetural (flag para próximas cenas)
-    menu:
+    menu (tipo="trabalho"):
         "Qual abordagem você sugere?"
         "Defendo o monolito, priorizando simplicidade e entrega rápida.":
             $ flag_arquitetura = "monolito"
@@ -152,12 +154,13 @@ label scene_14_discussao_arquitetura:
 
     $ s14_acordo_escopo = ""
     while not s14_acordo_escopo:
-        menu:
+        menu (tipo="negociacao"):
             "Como você conduz o pedido da [NOME_DOUTORA_1]?"
             "Aceitar a integração e manter o prazo, sem falar da capacidade da equipe.":
                 $ decisao("saude_negociacao_escopo", False)
                 show developer_coding serious at left_zoom
                 developer_coding "Para caber no prazo, eu teria que cortar os testes do autosave. Não dá para prometer as duas coisas com segurança."
+                show doutora_1 serious at right_zoom
                 doutora_1 "Então eu ganharia um recurso novo e continuaria perdendo histórico no meio do plantão? Assim não serve."
                 "{i}Prometer tudo sem olhar a capacidade só empurra o problema para a véspera da entrega. Vale pensar de novo.{/i}"
             "Recusar, porque a integração não estava na especificação.":
@@ -172,7 +175,7 @@ label scene_14_discussao_arquitetura:
                 show developer_coding positive at left_zoom
                 developer_coding "Combinado. Mantemos o que já foi especificado e testado. A integração fica registrada para investigar, sem data prometida."
                 "Acordo proposto: a primeira entrega mantém o autosave do histórico e o cálculo das escalas. Na rodada seguinte, a equipe e a [NOME_DOUTORA_1] investigam a integração com o Adeus Cigarro antes de estimar uma data."
-                menu:
+                menu (tipo="negociacao"):
                     "[NOME_DOUTORA_1] e [NOME_DEVELOPER_CODING] conferem o registro."
                     "Confirmar o acordo com os dois.":
                         $ s14_acordo_escopo = "base_primeiro"
@@ -184,7 +187,7 @@ label scene_14_discussao_arquitetura:
                 show developer_coding thinking at left_zoom
                 developer_coding "Vou ver o que a API oferece, que autorizações precisamos e quanto esforço dá. Investigar não garante que a integração seja viável, viu?"
                 "Acordo proposto: a equipe investiga agora a integração com o Adeus Cigarro. A [NOME_DOUTORA_1] aceita adiar a primeira entrega; a nova data só será combinada depois da investigação, sem cortar o autosave nem as escalas."
-                menu:
+                menu (tipo="negociacao"):
                     "[NOME_DOUTORA_1] e [NOME_DEVELOPER_CODING] conferem o registro."
                     "Confirmar o acordo com os dois.":
                         $ s14_acordo_escopo = "investigar_agora"

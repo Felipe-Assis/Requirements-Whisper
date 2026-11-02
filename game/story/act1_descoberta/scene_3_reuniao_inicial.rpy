@@ -36,7 +36,7 @@ label scene_3_reuniao_inicial:
     # --- Pergunta interativa do jogador ---
     hide developer_quality
     show developer_management thinking at right_zoom
-    menu:
+    menu (tipo="conversa"):
         "Você deseja perguntar algo?"
         "Qual a importância de cada fase para o sucesso do projeto?":
             $ add_friendship_point("developer_requirements", 1)
@@ -95,7 +95,7 @@ label scene_3_reuniao_inicial:
     # Pergunta sobre como o jogador prefere aprender
     show developer_requirements enthusiastic at left_zoom
     developer_requirements "E você, [player_name], como prefere aprender? Mais mão na massa ou acompanhando os colegas nas reuniões?"
-    menu:
+    menu (tipo="conversa"):
         "Como você responde?"
         "Prefiro aprender fazendo, mas gosto de pedir dicas.":
             $ add_friendship_point("developer_coding", 1)
@@ -122,7 +122,7 @@ label scene_3_reuniao_inicial:
     # developer_security faz pergunta sobre segurança
     show developer_security serious at right_zoom
     developer_security "Alguém lembra o motivo de envolver segurança desde o início do ciclo?"
-    menu:
+    menu (tipo="conversa"):
         "Como você responde?"
         "Para evitar vulnerabilidades desde o começo.":
             $ add_friendship_point("developer_security", 1)

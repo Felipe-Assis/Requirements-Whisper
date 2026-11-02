@@ -31,7 +31,7 @@ label co_05_entrevista:
     co_mentora "[player_name] está no estágio do Projeto Farol e vai conduzir a conversa de hoje. Pode começar, [player_name]."
     "{i}Três pares de olhos se viram para você.{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você abre a conversa?"
 
         "Pergunto se preferem um aplicativo ou uma página web.":
@@ -54,7 +54,7 @@ label co_05_entrevista:
 
     if not co_ok_episodio:
         co_mentora "Volta um passo. Peça uma história, não uma opinião."
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula a abertura?"
             "[NOME_CO_SOLICITANTE], quando foi a última vez que você precisou saber de um chamado e não conseguiu?":
                 show co_mentora neutral at left_zoom
@@ -72,7 +72,7 @@ label co_05_entrevista:
     show co_solicitante neutral at right_zoom
     co_solicitante "Olha, eu não entendo de sistema. Eu só quero acompanhar fácil, sabe?"
 
-    menu:
+    menu (tipo="trabalho"):
         "O que fazer com \"fácil\"?"
 
         "Registro \"o acompanhamento deve ser fácil\".":
@@ -93,7 +93,7 @@ label co_05_entrevista:
 
     if not co_ok_ambiguidade:
         co_mentora "\"Fácil\" é o sentimento. A gente precisa da tarefa que está por trás dele."
-        menu:
+        menu (tipo="trabalho"):
             "Como você pergunta de novo?"
             "O que precisava acontecer para você não ter ligado três vezes?":
                 show co_solicitante thinking at right_zoom
@@ -113,7 +113,10 @@ label co_05_entrevista:
     co_supervisora "E cada minuto escrevendo é um minuto a menos atendendo a próxima ligação."
     "{i}Silêncio. Os dois olham para você.{/i}"
 
-    menu:
+    # Pista da observação na central (tempo livre da semana 1). Fora da contagem.
+    call pista_lembrar("co_p_ligacoes") from _pl_co05_conflito
+
+    menu (tipo="trabalho"):
         "[NOME_CO_SUPERVISORA] e [NOME_CO_SOLICITANTE] puxam para lados opostos. Como você conduz?"
 
         "Pergunto o que cada um quer evitar e busco um dado que os dois aceitem.":
@@ -136,7 +139,7 @@ label co_05_entrevista:
     if not co_ok_conflito:
         show co_mentora neutral at left_zoom
         co_mentora "Os dois querem coisas diferentes, mas talvez temam a mesma. Pergunte isso."
-        menu:
+        menu (tipo="trabalho"):
             "Como você retoma?"
             "O que cada um de vocês quer evitar?":
                 show co_solicitante neutral at right_zoom
@@ -146,6 +149,8 @@ label co_05_entrevista:
     show co_supervisora thinking at center_zoom
     "{i}Você pergunta quantas ligações da central são de gente cobrando andamento. [NOME_CO_SUPERVISORA] folheia o relatório e corre o dedo por uma coluna.{/i}"
     co_supervisora "Cobrança de andamento... 18\%. Quase uma em cada cinco ligações."
+    if "co_p_ligacoes" in pistas_usadas:
+        "{i}Você lembra dos risquinhos no post-it do Paulo. Alguém já estava contando.{/i}"
     co_supervisora "Isso é fila. E é retrabalho. Eu nunca tinha olhado por esse lado."
     show co_solicitante neutral at right_zoom
     co_solicitante "Então se a pessoa vê o que foi feito, ela não liga. E sua fila diminui."
@@ -170,7 +175,7 @@ label co_05_entrevista:
     show co_solicitante neutral at right_zoom
     co_solicitante "E eu na estrada. Foi a primeira vez que alguém da TI me perguntou o que aconteceu, em vez do que eu quero."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você se despede?"
 
         "Agradeço à [NOME_CO_SUPERVISORA] pelo dado e peço para observar a central de novo.":

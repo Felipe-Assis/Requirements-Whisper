@@ -27,7 +27,7 @@ label scene_6_entrevista_stakeholders:
     "{i}Você abre o notebook com o roteiro da entrevista e o formulário de história clínica. É sua chance de ouvir com atenção e entender o que elas precisam.{/i}"
 
     # PRIMEIRA PERGUNTA: abrir pedindo um episódio concreto.
-    menu:
+    menu (tipo="trabalho"):
         "Como você começa a entrevista?"
         "Pergunto quais funções elas gostariam de ter no sistema novo.":
             $ decisao("saude_d6_abertura", False)
@@ -42,13 +42,15 @@ label scene_6_entrevista_stakeholders:
             developer_requirements "(baixinho) Essa pergunta já traz a solução pronta. Elas podem escolher uma das opções sem contar o que realmente atrapalha."
 
     if not aprendizagem.get("saude_d6_abertura"):
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula a pergunta?"
             "Doutoras, podem me contar a última vez em que o sistema atrapalhou um atendimento?":
                 pass
 
     doutora_2 "Tenho uma bem fresca. Semana passada, no meio do plantão, o sistema travou enquanto eu preenchia o histórico de saúde de um paciente."
+    show doutora_2 serious at right_zoom
     doutora_2 "Perdi tudo. Tive que refazer a entrevista com ele, com a sala de espera cheia. E nem dava para saber quais campos eram obrigatórios antes de salvar."
+    show doutora_1 serious at center_zoom
     doutora_1 "O meu caso é outro. Um dado de consumo saiu errado no relatório da diretoria, e ninguém conseguiu descobrir quem tinha mudado o registro, nem quando."
     doutora_1 "Passei dois dias conferindo fichas de papel para corrigir os números."
     $ advance_minutes(4)
@@ -61,8 +63,10 @@ label scene_6_entrevista_stakeholders:
     "{i}Você anota: salvar automaticamente durante o preenchimento, mostrar os campos obrigatórios antes de salvar, registrar quem alterou cada dado e quando.{/i}"
 
     "{i}Você aproveita e pede que contem também como é um dia comum.{/i}"
+    show doutora_2 neutral at right_zoom
     doutora_2 "Começo cadastrando pacientes novos. São muitos dados de identificação, e o sistema podia puxar o que já existe das visitas anteriores."
     doutora_2 "Depois registro evoluções, incluo exames, confiro pendências e acompanho as tentativas de parar de fumar."
+    show doutora_1 neutral at center_zoom
     doutora_1 "Eu uso os relatórios clínicos nas reuniões com a diretoria e nas pesquisas. Preciso de filtros por estágio motivacional e por carga tabágica, e de exportar em PDF ou Excel. Hoje, exportar é um sofrimento."
     $ advance_minutes(5)
 
@@ -72,7 +76,7 @@ label scene_6_entrevista_stakeholders:
     show developer_requirements thinking at left_zoom
     developer_requirements "Parece que precisamos atender bem os dois lados. O que você acha, [player_name]?"
 
-    menu:
+    menu (tipo="negociacao"):
         "Sua opinião pode influenciar o foco dos requisitos."
         "Priorizar notificações, mas sem esquecer relatórios.":
             $ add_friendship_point("doutora_2", 1)
@@ -94,7 +98,7 @@ label scene_6_entrevista_stakeholders:
     "{i}Você volta ao cadastro, que apareceu na fala das duas.{/i}"
     doutora_2 "No fim das contas, o que eu queria mesmo é um cadastro mais prático."
 
-    menu:
+    menu (tipo="trabalho"):
         "O que fazer com a palavra \"prático\"?"
         "Anoto \"o cadastro deve ser prático\" e deixo a equipe decidir o que isso quer dizer.":
             $ decisao("saude_d6_ambiguidade", False)
@@ -108,7 +112,7 @@ label scene_6_entrevista_stakeholders:
             $ decisao("saude_d6_ambiguidade", True)
 
     if not aprendizagem.get("saude_d6_ambiguidade"):
-        menu:
+        menu (tipo="trabalho"):
             "Como você esclarece o pedido?"
             "Doutora, o que mais toma seu tempo no cadastro hoje? O que precisaria mudar?":
                 pass
@@ -121,7 +125,7 @@ label scene_6_entrevista_stakeholders:
 
     "{i}Você consulta o questionário clínico para aproveitar o tempo que resta.{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "O que mais você quer entender?"
         "Como lidam com histórico de saúde, comorbidades e psiquiatria?":
             doutora_1 "É difícil manter tudo atualizado. O sistema podia sugerir o preenchimento com base nas consultas passadas e aceitar exames digitalizados. A parte de comorbidades psiquiátricas e das escalas HAD e AUDIT ainda é muito manual."
@@ -144,6 +148,7 @@ label scene_6_entrevista_stakeholders:
 
     "{i}Ao final, as doutoras se levantam e pegam o celular.{/i}"
     doutora_1 "Se surgir qualquer dúvida, pode me chamar pelo app, viu? Prefiro resolver as coisas direto com quem está na linha de frente do sistema."
+    show doutora_2 positive at right_zoom
     doutora_2 "Exatamente! Pode contar comigo também, [player_name]. Ah, e se der, deixa a tela inicial verdinha? Combina com saúde. (risos)"
     $ add_contact("doutora_1")
     $ add_contact("doutora_2")
@@ -153,10 +158,10 @@ label scene_6_entrevista_stakeholders:
     with dissolve
 
     play music music_streets_focused fadein 0.8
-    scene bg transito_tarde
+    scene bg fachada_instituto_tarde
     with fade
     $ advance_minutes(20)
-    "{i}No ônibus de volta para o escritório, você relê as anotações. A entrevista rendeu mais do que o roteiro previa, e quase tudo de importante veio das histórias que elas contaram.{/i}"
+    "{i}Na volta pelo campus, você para num banco da praça e relê as anotações. A entrevista rendeu mais do que o roteiro previa, e quase tudo de importante veio das histórias que elas contaram.{/i}"
     $ registrar("saude_reg_entrevista")
     "{i}Você marca os pontos principais no notebook antes de chegar.{/i}"
 

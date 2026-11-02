@@ -18,6 +18,8 @@ label scene_19_testes_seguranca:
 
     developer_quality "Vamos começar pelo checklist de qualidade. Lembre-se: um sistema pode funcionar, mas só é confiável se passar nos testes."
     developer_security "E qualquer brecha de segurança pode virar dor de cabeça. Atenção máxima aos detalhes!"
+    if energia_cansaco():
+        developer_quality "Vamos devagar no checklist hoje. Teste feito com sono vira teste pulado."
 
     # Exibe checklist baseado nos artefatos reais
     "{i}No notebook, você abre o checklist de testes:{/i}"
@@ -42,7 +44,7 @@ label scene_19_testes_seguranca:
 
     $ revisoes = 0
     while revisoes < 4:
-        menu:
+        menu (tipo="trabalho"):
             "Por onde começar os testes?"
             "Testes de unidade" if "unidade" in checklist_opcoes:
                 $ testes_realizados.append("unidade")
@@ -61,7 +63,10 @@ label scene_19_testes_seguranca:
                 $ testes_realizados.append("permissoes")
                 $ checklist_opcoes.remove("permissoes")
                 show developer_security thinking at right_zoom
-                developer_security "Ótimo! Papéis mal definidos são porta de entrada para problemas sérios. Detectou um acesso indevido de usuário comum. Corrija isso logo!"
+                if rast_lacuna_achada("saude_rast_acesso"):
+                    developer_security "Ótimo! A recepção abrindo o histórico, o teste do quadro já tinha pegado. Sobrou outro: o perfil administrativo vê relatório clínico sem precisar. Corrija isso logo!"
+                else:
+                    developer_security "Ótimo! Papéis mal definidos são porta de entrada para problemas sérios. Detectou um acesso indevido de usuário comum. Corrija isso logo!"
                 $ vulnerabilidades += 1
                 hide developer_security
             "Testes de injeção" if "injeção" in checklist_opcoes:
@@ -111,7 +116,7 @@ label scene_19_testes_seguranca:
     # Testes de segurança feitos hoje: 2 pontos cada, até 3 testes.
     $ s19_pontos_maturidade = 2 * min(3, len([t for t in ("permissoes", "injeção", "autenticacao", "logs") if t in testes_realizados]))
 
-    menu:
+    menu (tipo="trabalho"):
         "Os relatórios de pesquisa da [NOME_DOUTORA_1] exportam dados de pacientes. O que o time faz?"
         "Anonimiza os dados antes da exportação: sem nome, CPF ou contato.":
             $ s19_pontos_maturidade += 2
@@ -122,7 +127,7 @@ label scene_19_testes_seguranca:
         "Exporta tudo; quem recebe é médica e sabe o que faz.":
             developer_security "Confiar na pessoa não protege o arquivo. Planilha se perde, vai para e-mail errado, fica em pendrive."
 
-    menu:
+    menu (tipo="trabalho"):
         "Alguém alterou o peso de um paciente no prontuário. Como saber quem foi?"
         "Pelo log de auditoria: usuário, data, campo e valor anterior.":
             $ s19_pontos_maturidade += 2
@@ -133,7 +138,7 @@ label scene_19_testes_seguranca:
         "Perguntando no grupo da equipe médica.":
             developer_security "Aí depende da memória de cada um. Não dá para auditar assim."
 
-    menu:
+    menu (tipo="trabalho"):
         "E se houver um vazamento de dados amanhã?"
         "Seguir o plano de resposta: conter, avaliar o impacto e avisar o Instituto e os pacientes afetados.":
             $ s19_pontos_maturidade += 2
@@ -178,8 +183,23 @@ label scene_19_testes_seguranca:
     play sound "audio/effects/ambiente_reuniao.ogg"
     "{i}À tarde, o time se reúne para debater as vulnerabilidades e bugs encontrados, documentando as correções e discutindo oportunidades de melhoria contínua.{/i}"
 
+    # O critério C3 do quadro de rastreabilidade (scene_17): com o teste
+    # escrito, a falha nem chegou; sem ele, aparece agora.
+    if rast_lacuna_achada("saude_rast_acesso"):
+        show developer_test confident at right_zoom2
+        developer_test "Uma boa notícia no meio dos bugs: a recepção abrindo o histórico de saúde nem chegou até hoje. O teste do quadro falhou na pipeline semana passada e o [NOME_DEVELOPER_CODING] corrigiu no mesmo dia."
+        hide developer_test
+    else:
+        show developer_security serious at right_zoom
+        show developer_test thinking at right_zoom2
+        developer_security "Rodei a revisão de papéis antes do almoço. A falha mais séria: o perfil recepção abre o histórico de saúde inteiro. Diagnóstico, escalas, tudo."
+        developer_test "Voltei ao quadro de rastreabilidade que a gente montou duas semanas atrás. O critério estava lá, C3: recepção abre o histórico, acesso negado. Mas nenhum teste cobria. Foi esse o elo que faltou."
+        developer_test "Já escrevi o teste que faltava. Agora ele roda em todo commit, e a correção só entra com ele passando."
+        hide developer_security
+        hide developer_test
+
     # Pequena ramificação: pedir ajuda
-    menu:
+    menu (tipo="trabalho"):
         "Enfrenta dificuldade para corrigir uma falha crítica. O que faz?"
         "Chama [NOME_DEVELOPER_CODING] para revisar código seguro.":
             show developer_coding serious at right_zoom2
@@ -191,6 +211,23 @@ label scene_19_testes_seguranca:
             hide developer_ai
         "Procura documentação e fóruns especializados.":
             "{i}Você encontra boas práticas, mas percebe que colaboração interna acelera ainda mais a solução.{/i}"
+        "Lembrar ao [NOME_DEVELOPER_SECURITY] da senha emprestada: a recepção entra com a senha da médica" (tipo="pista") if pista_tem("saude_p_papeis"):
+            $ pista_usar("saude_p_papeis")
+            show developer_security thinking at right_zoom
+            if rast_lacuna_achada("saude_rast_acesso"):
+                developer_security "A senha emprestada. O teste garante que o perfil recepção não abre o histórico. Mas, se a recepção entra com a senha da doutora, o teste passa e o problema continua."
+            else:
+                developer_security "A senha emprestada. Então corrigir o perfil não basta: se a recepção continuar com a senha da doutora, o histórico abre para a pessoa errada e a trilha registra a médica."
+            developer_security "A correção tem duas partes: um login para cada pessoa da recepção, com agenda e cadastro, e uma conversa com a [NOME_DOUTORA_2] sobre senha emprestada."
+            "{i}Vocês escrevem juntos a mensagem para a [NOME_DOUTORA_2]: sem culpa, com o motivo. A correção passa a cobrir a causa, não só o sintoma.{/i}"
+            $ add_friendship_point("developer_security", 0.5)
+            hide developer_security
+
+    $ energia_gastar(1, _("dia inteiro caçando bugs"))
+
+    # Tempo livre da semana 7. A cena seguinte já troca o fundo.
+    call im_intermissao(7) from _im_saude_s7
+    play music music_office_relaxed fadein 1.0
 
     # Fechamento: Reflexão e estatísticas
     scene bg escritorio_interior_noite

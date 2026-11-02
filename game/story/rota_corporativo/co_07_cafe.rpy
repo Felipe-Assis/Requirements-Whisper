@@ -25,7 +25,7 @@ label co_07_cafe:
     co_legado "Toda virada de ano alguém acrescenta uma linha. Ninguém nunca teve coragem de trocar por uma tabela."
     co_dev "Catorze anos de linhas de feriado. Isso já é sítio arqueológico."
 
-    menu:
+    menu (tipo="conversa"):
         "Sobre o que você puxa assunto?"
 
         "[NOME_CO_LEGADO], como era programar em 2008?":
@@ -62,7 +62,7 @@ label co_07_cafe:
     co_dev "Ou seja: em vez de demolir o prédio, a gente vai construindo do lado e mudando os moradores aos poucos."
     co_legado "Isso. E com a central atendendo o tempo todo, que ninguém aqui pode parar."
 
-    menu:
+    menu (tipo="conversa"):
         "Na discussão sobre reescrever, você..."
 
         "[NOME_CO_DEV], o que você trocaria primeiro, se pudesse?":

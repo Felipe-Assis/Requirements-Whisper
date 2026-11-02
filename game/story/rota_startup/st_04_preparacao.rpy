@@ -40,7 +40,7 @@ label st_04_preparacao:
     $ advance_minutes(40)
     "{i}Vocês sentam na ponta da mesa comprida. [NOME_ST_MENTORA] abre o caderno numa página em branco e passa a caneta para você.{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você prepara o roteiro?"
 
         "Perguntas abertas sobre situações recentes, com os dados das avaliações para confirmar o que ouvirmos.":
@@ -54,7 +54,7 @@ label st_04_preparacao:
             show st_qualidade serious at right_zoom
             st_qualidade "Eles vão opinar sobre o seu desenho, não sobre o problema deles. A conversa fica presa na sua ideia."
             st_qualidade "E se o desenho resolver a coisa errada, a gente só descobre depois de construir."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você ajusta o roteiro?"
                 "Troco por perguntas sobre a última vez que o problema aconteceu e levo os números como apoio.":
                     show st_mentora neutral at left_zoom
@@ -65,7 +65,7 @@ label st_04_preparacao:
             show st_mentora serious at left_zoom
             st_mentora "Todo mundo responde sim para tudo. Saímos com 20 prioridades e nenhuma razão."
             st_mentora "Pergunta de sim ou não fecha a conversa. A gente quer que ela abra."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você ajusta o roteiro?"
                 "Troco por perguntas sobre a última vez que o problema aconteceu e levo os números como apoio.":
                     show st_mentora neutral at left_zoom
@@ -77,7 +77,7 @@ label st_04_preparacao:
     play sound "audio/effects/xicara_cafe.ogg"
     "{i}Perto das onze, a cafeteira da copa apita. [NOME_ST_MENTORA] e [NOME_ST_QUALIDADE] se levantam para uma pausa.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Na copa, o que você faz?"
 
         "Ofereço um café para a [NOME_ST_MENTORA] antes da entrevista.":

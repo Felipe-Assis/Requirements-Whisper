@@ -124,7 +124,7 @@ label st_01_chegada:
     st_mentora "Ignora o Davi. Ou não, às vezes ele acerta."
     $ advance_minutes(20)
 
-    menu:
+    menu (tipo="conversa"):
         st_mentora "E você, [player_name]? O que mais chamou sua atenção até agora?"
         "As avaliações dos estudantes. Quero entender o que está dando errado.":
             $ add_friendship_point("st_mentora", 1)

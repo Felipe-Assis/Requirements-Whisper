@@ -13,6 +13,8 @@ label scene_20_deploy_final:
 
     show developer_management serious at left_zoom
     developer_management "Atenção, equipe! Chegou o grande momento. Vamos garantir que tudo esteja em ordem antes de ir para produção."
+    if energia_cansaco():
+        developer_management "Quem estiver no limite me avisa antes. Deploy cansado é deploy com erro."
 
     show developer_quality positive at right_zoom
     developer_quality "Vamos passar pelo checklist final juntos! Documentar cada etapa é tão importante quanto programar."
@@ -29,7 +31,7 @@ label scene_20_deploy_final:
     $ checklist_deploy = []
     $ acertos_deploy = 0
 
-    menu:
+    menu (tipo="trabalho"):
         "Documentação está atualizada e fácil de acessar?"
         "Sim, revisamos e está no Wiki da equipe.":
             show developer_quality positive at right_zoom
@@ -42,7 +44,7 @@ label scene_20_deploy_final:
 
     "{i}Checklist parcial aprovado. Agora, sobre os testes...{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "Todos os testes passaram nos últimos commits?"
         "Sim, cobertura acima de 85\% e sem falhas.":
             show developer_test confident at right_zoom
@@ -55,7 +57,7 @@ label scene_20_deploy_final:
 
     "{i}Por fim, segurança dos dados:{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "Backup do banco e dos arquivos realizado?"
         "Sim, já salvei o backup em nuvem e local.":
             show developer_project positive at right_zoom
@@ -64,6 +66,16 @@ label scene_20_deploy_final:
         "Ainda não, mas vou fazer agora.":
             show developer_project serious at right_zoom
             developer_project "Nunca deixe para depois! Backup salva projetos e empregos. Documente sempre o hash do backup."
+            hide developer_project
+        "Contar o que você viu na sala de servidores: ninguém nunca restaurou esse backup. Pedir um teste de restauração antes" (tipo="pista") if pista_tem("saude_p_backup"):
+            $ pista_usar("saude_p_backup")
+            show developer_security serious at right_zoom
+            developer_security "Eu tinha deixado isso para depois do deploy. Depois seria tarde."
+            "{i}Em vinte minutos, [NOME_DEVELOPER_PROJECT] e [NOME_DEVELOPER_SECURITY] restauram a cópia em homologação. O banco volta inteiro, mas a pasta dos exames digitalizados não estava no backup.{/i}"
+            show developer_project serious at left_zoom
+            developer_project "Se o servidor caísse amanhã, os exames anexados sumiam. Incluí a pasta e agendei um teste de restauração por mês."
+            $ add_friendship_point("developer_security", 0.5)
+            hide developer_security
             hide developer_project
 
     $ registrar("saude_reg_implantacao")
@@ -100,7 +112,7 @@ label scene_20_deploy_final:
     developer_ai "E que tal usar Docker? Garante portabilidade, facilita rollback, e a infra vira código! Posso configurar o pipeline CI/CD se quiserem."
     hide developer_ai
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual estratégia de deploy você sugere para a equipe?"
         "Servidor próprio, controle total sobre tudo.":
             show developer_coding positive at left_zoom
@@ -141,7 +153,7 @@ label scene_20_deploy_final:
     developer_test "Bora debugar rapidinho? Time unido resolve tudo!"
     hide developer_test
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você resolve o bug crítico?"
         "Identifico vazamento de memória e otimizo a função.":
             show developer_coding positive at left_zoom
@@ -166,6 +178,17 @@ label scene_20_deploy_final:
             "{i}Você ganhou o selo 'Resiliência' no inventário.{/i}"
             $ inventario.append("badge_resiliencia")
             $ advance_minutes(90)
+        "Contar o que você viu: o servidor de testes reinicia toda madrugada, e nenhum teste rodou mais de um dia" (tipo="pista") if pista_tem("saude_p_memoria"):
+            $ pista_usar("saude_p_memoria")
+            show developer_coding serious at left_zoom
+            developer_coding "Então tem algo crescendo devagar, e o reinício escondia. Vazamento de memória."
+            show developer_test enthusiastic at right_zoom
+            developer_test "Perfil de memória na listagem de pacientes... achei. Cada busca guarda a lista inteira num cache que nunca é limpo."
+            "{i}A correção leva vinte minutos. O servidor de testes deixa de reiniciar de madrugada e ganha um alerta de memória.{/i}"
+            hide developer_coding
+            hide developer_test
+            "{i}Você ganhou o selo 'Bug Crítico Resolvido' no inventário.{/i}"
+            $ inventario.append("badge_bug_buster")
 
     "{i}A equipe vê a mensagem: 'Deploy realizado com sucesso! Parabéns!' — O sistema está oficialmente no ar, com monitoramento ativo e checklist final arquivado.{/i}"
 
@@ -189,6 +212,7 @@ label scene_20_deploy_final:
     scene bg escritorio_interior_noite
     with fade
     $ advance_minutes(29)
+    $ energia_gastar(2, _("dia de deploy"))
     "{i}Ao cair da noite, a equipe celebra. Você sente orgulho do caminho, das amizades e da carreira que começa a construir.{/i}"
     "{i}Relembra cada desafio, cada sprint, cada conceito, cada apoio dos colegas e até os bugs superados com bom humor.{/i}"
     "{i}O projeto está online, mas a avaliação final ainda está por vir...{/i}"

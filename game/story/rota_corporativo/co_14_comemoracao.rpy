@@ -24,7 +24,7 @@ label co_14_comemoracao:
     with dissolve
     co_qualidade "Uma hora e meia. Dá tempo, se cada um pegar uma tarefa. Já estou montando a lista."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você ajuda na surpresa?"
         "Ajudar o [NOME_CO_DEV] com o bolo: a tela do SGC em papel de arroz.":
             $ add_friendship_point("co_dev", 1)
@@ -71,8 +71,11 @@ label co_14_comemoracao:
     with dissolve
     co_mentora "Na TI tem um nome feio para isso: fator ônibus. É uma pergunta simples. Se uma pessoa sair, o que vai embora junto com ela?"
     co_legado "Eu sei. Está tudo aqui na cabeça, e isso é um risco. Eu mesmo devia ter resolvido antes."
+    # Arco de mentoria (Causos do SGC): só texto, não muda a homenagem nem o final.
+    if mentoria_passos.get("corporativo", 0) >= 2:
+        co_legado "[player_name] já ouviu alguns causos meus e anotou tudo com data. Foi aí que eu vi o tamanho do que não está escrito."
 
-    menu:
+    menu (tipo="conversa"):
         "Que homenagem você propõe?"
         "\"Um wiki 'Causos do SGC': o [NOME_CO_LEGADO] conta, a gente grava e registra.\"":
             $ add_friendship_point("co_legado", 1)

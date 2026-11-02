@@ -38,7 +38,7 @@ label scene_5_preparacao_entrevista:
     # Chegada ao escritório, developer_requirements já está lá
     show developer_requirements thinking at left_zoom
     developer_requirements "Bom dia, [player_name]! Achei que você não ia chegar... Tudo bem por aí?"
-    menu:
+    menu (tipo="conversa"):
         "Como você responde?"
         "Desculpe o atraso, o ônibus demorou demais.":
             developer_requirements "Sem problemas! Acontece com todo mundo. O importante é estar aqui agora."
@@ -50,7 +50,7 @@ label scene_5_preparacao_entrevista:
     $ advance_minutes(3)
 
     "Você percebe um café recém-passado na copa da empresa."
-    menu:
+    menu (tipo="conversa"):
         "Deseja pegar um café para você e para [NOME_DEVELOPER_REQUIREMENTS]?"
         "Sim, pego dois cafés e ofereço um para ela.":
             $ add_friendship_point("developer_requirements", 1)
@@ -72,7 +72,7 @@ label scene_5_preparacao_entrevista:
     developer_requirements "Aliás, seu notebook já tem um roteiro inicial e o questionário clínico do Instituto. Mas se sentir confiança, pode improvisar e aprofundar onde achar necessário. Escuta ativa é tudo!"
     $ advance_minutes(5)
 
-    "Vocês pegam o ônibus juntos até o Instituto, onde as médicas atendem. O clima é de leve tensão, mas também de expectativa pelo que você pode aprender hoje."
+    "Vocês atravessam juntos a praça do campus até o Instituto, onde as médicas atendem. O clima é de leve tensão, mas também de expectativa pelo que você pode aprender hoje."
     hide developer_requirements
 
     # Transição/padding antes da próxima cena

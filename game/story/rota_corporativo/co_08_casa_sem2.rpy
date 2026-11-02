@@ -37,7 +37,7 @@ label co_08_casa_sem2:
     "{i}É uma foto do comentário \"NAO MEXER - JT 2010\", agora dentro de uma moldura dourada desenhada, com uma plaquinha embaixo: \"Patrimônio tombado\".{/i}"
     co_dev "(mensagem) Já mandei imprimir. Segunda vai para a parede do lado do calendário da [NOME_CO_QUALIDADE]."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você responde ao [NOME_CO_DEV]?"
 
         "Tombado pelo patrimônio. Ninguém mexe.":

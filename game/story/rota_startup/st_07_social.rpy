@@ -23,7 +23,7 @@ label st_07_social:
     play sound "audio/effects/xicara_cafe.ogg"
     "{i}Vocês sentam numa mesinha perto da janela. Três cafés, uma cesta de pão de queijo e um celular de teste que [NOME_ST_MOBILE] não larga nem aqui.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Sobre o que você puxa conversa?"
 
         "Como foi seu primeiro app, [NOME_ST_MOBILE]?":
@@ -75,7 +75,7 @@ label st_07_social:
     st_qualidade "Ah, mês que vem eu faço um teste de usabilidade com calouros. Cinco estudantes usando o app na minha frente, sem eu ajudar."
     st_mobile "E sábado, a partida. Tem vaga no time, [player_name]."
 
-    menu:
+    menu (tipo="conversa"):
         "Os dois esperam sua resposta."
 
         "Topo assistir ao teste de usabilidade com os calouros.":

@@ -1,4 +1,6 @@
 label scene_9_retorno_casa_sem2:
+    # Tempo livre da semana 2 (fim da tarde do dia da entrevista).
+    call im_intermissao(2) from _im_saude_s2
     $ set_available('all')
 
     $ game_hour = 21

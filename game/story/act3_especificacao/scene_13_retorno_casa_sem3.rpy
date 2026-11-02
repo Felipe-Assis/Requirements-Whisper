@@ -1,4 +1,6 @@
 label scene_13_retorno_casa_sem3:
+    # Tempo livre da semana 3 (sexta, 15h; a especificação foi na véspera).
+    call im_intermissao(3) from _im_saude_s3
     $ set_available('all')
 
     play music music_streets_focused fadein 1.0
@@ -44,7 +46,7 @@ label scene_13_retorno_casa_sem3:
     "{i}Antes de dormir, recebe uma mensagem rápida do grupo da equipe:{/i}"
     play sound "audio/effects/cell_vibration.ogg"
     show developer_requirements portrait at left_zoom
-    developer_requirements "(mensagem no grupo) Pessoal, parabéns pelo empenho hoje! Documento ficou ótimo. Amanhã, seguimos para a próxima etapa juntos!"
+    developer_requirements "(mensagem no grupo) Pessoal, parabéns pelo empenho nesta semana! Documento ficou ótimo. Semana que vem, seguimos para a próxima etapa juntos!"
     hide developer_requirements
 
     "{i}O projeto está chegando na parte crítica. Talvez seja bom falar com mais alguém da equipe antes de dormir.{/i}"

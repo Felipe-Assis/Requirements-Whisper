@@ -53,7 +53,7 @@ label co_03_casa_sem1:
     hide co_mentora
     with dissolve
 
-    menu:
+    menu (tipo="conversa"):
         "O que você responde para a [NOME_CO_MENTORA]?"
 
         "\"Valeu! Vou dar uma olhada e anotar as dúvidas.\"":

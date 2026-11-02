@@ -578,6 +578,28 @@ init 999 python in autopiloto:
 
     # ---------------- laço principal ----------------
 
+    def _rastreabilidade(scope):
+        # Quadro: liga cada critério ao requisito e ao teste certos. No modo "ultima" o piloto
+        # liga a lacuna a um teste qualquer (não acha a falta), para exercitar o bug na semana de
+        # testes; nos outros modos deixa a lacuna sem teste (acha a falta). Depois, continua.
+        if scope.get("fase", "quadro") != "quadro":
+            return True
+        qid = scope["qid"]
+        dados = store.rast_dados(qid)
+        lig = {}
+        for c in dados["criterios"]:
+            teste = c["teste"]
+            if c["id"] == dados["lacuna"] and ap.modo == "ultima" and dados["testes"]:
+                teste = dados["testes"][0]["id"]
+            lig[c["id"]] = [c["de"], teste]
+        return ("conferir", lig)
+
+    def _ambiguidade(scope):
+        # Marca exatamente as palavras vagas; as reescritas passam pelo menu comum (choice).
+        if scope.get("fase", "marcar") != "marcar":
+            return True
+        return ("conferir", list(store.amb_vagas(scope["aid"])))
+
     def _tela(nome):
         ap.telas[nome] = ap.telas.get(nome, 0) + 1
 
@@ -654,6 +676,17 @@ init 999 python in autopiloto:
             ap.resumo_registros = w.text[0] if w is not None else None
         elif renpy.get_screen("notebook_registros"):
             _tela("notebook_registros")
+        elif renpy.get_screen("rast_escolher"):
+            # Seletor aberto por clique; o piloto liga tudo direto no quadro.
+            _tela("rast_escolher")
+            renpy.hide_screen("rast_escolher")
+            valor = None
+        elif renpy.get_screen("rast_quadro"):
+            _tela("rast_quadro")
+            valor = _rastreabilidade(renpy.get_screen("rast_quadro").scope)
+        elif renpy.get_screen("amb_marcar"):
+            _tela("amb_marcar")
+            valor = _ambiguidade(renpy.get_screen("amb_marcar").scope)
 
         if valor is not None:
             renpy.end_interaction(valor)

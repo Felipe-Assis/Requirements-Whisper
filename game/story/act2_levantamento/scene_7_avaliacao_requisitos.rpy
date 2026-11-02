@@ -38,7 +38,7 @@ label scene_7_avaliacao_requisitos:
 
     developer_quality "E anotou as sugestões de melhoria também, ótimo! Mas posso sugerir uma coisa?"
 
-    menu:
+    menu (tipo="conversa"):
         "Como você reage à sugestão de feedback?"
         "Claro, quero sempre melhorar!":
             $ add_friendship_point("developer_quality", 1)
@@ -57,7 +57,7 @@ label scene_7_avaliacao_requisitos:
 
     # ITEM 1: funcional
     "Item 1: \"Calcular a carga tabágica a partir dos cigarros por dia e dos anos de fumo.\""
-    menu:
+    menu (tipo="trabalho"):
         "1 de 3 · Como você classifica esse item?"
         "Requisito não funcional.":
             $ decisao("saude_d7_carga_tabagica", False)
@@ -73,14 +73,14 @@ label scene_7_avaliacao_requisitos:
             developer_requirements "A [NOME_DOUTORA_1] pediu isso por um motivo concreto: hoje o cálculo é feito à mão. Quando há uma necessidade clara por trás, não é só desejo."
 
     if not aprendizagem.get("saude_d7_carga_tabagica"):
-        menu:
+        menu (tipo="trabalho"):
             "Reveja a classificação:"
             "É funcional: descreve uma ação do sistema, com entrada e resultado.":
                 developer_requirements "Exato. Vamos ao próximo."
 
     # ITEM 2: não funcional
     "Item 2: \"Abrir o prontuário em menos de 2 segundos, mesmo com 100 pessoas usando o sistema.\""
-    menu:
+    menu (tipo="trabalho"):
         "2 de 3 · Como você classifica esse item?"
         "Desejo da equipe clínica.":
             $ decisao("saude_d7_desempenho", False)
@@ -96,14 +96,14 @@ label scene_7_avaliacao_requisitos:
             developer_quality "Certo! Fala de desempenho e já vem com número e condição de carga. Dá para medir."
 
     if not aprendizagem.get("saude_d7_desempenho"):
-        menu:
+        menu (tipo="trabalho"):
             "Reveja a classificação:"
             "É não funcional: diz como o sistema precisa se comportar, com uma medida.":
                 developer_quality "Isso. E repare que ele já nasce testável."
 
     # ITEM 3: desejo
     "Item 3, o comentário da [NOME_DOUTORA_2] na saída: \"Deixar a tela inicial verdinha, porque combina com saúde.\""
-    menu:
+    menu (tipo="trabalho"):
         "3 de 3 · Como você classifica esse item?"
         "Requisito não funcional de aparência.":
             $ decisao("saude_d7_tela_verde", False)
@@ -119,7 +119,7 @@ label scene_7_avaliacao_requisitos:
             developer_requirements "Isso. Não há necessidade por trás, só preferência. A gente anota e confirma com as duas antes de decidir."
 
     if not aprendizagem.get("saude_d7_tela_verde"):
-        menu:
+        menu (tipo="trabalho"):
             "Reveja a classificação:"
             "É desejo: anoto e confirmo com as médicas antes de virar requisito.":
                 developer_requirements "Combinado. Desejo não se joga fora, só não entra na frente do que é necessário."

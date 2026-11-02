@@ -25,7 +25,7 @@ label st_14_comemoracao:
     st_mobile "Eu cuido do som. Alguém me salva dessa playlist de pitch do Vinícius?"
     st_mentora "E alguém precisa lembrar que copo não nasce sozinho na mesa."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você ajuda na festa?"
 
         "Monto a playlist com o Davi.":
@@ -75,7 +75,7 @@ label st_14_comemoracao:
     st_ceo "Atenção, time! Brinde! E quem faz o brinde é a pessoa mais nova da casa. [player_name], a palavra é sua!"
     "{i}Sete copos de guaraná se erguem na sua direção. Você respira fundo.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "O que você diz no brinde?"
 
         "“Aos mil, e aos que vão continuar usando.”":
@@ -115,6 +115,8 @@ label st_14_comemoracao:
     st_techlead "Startup cansa, viu. Dá vontade de provar alguma coisa virando a noite."
     st_techlead "Veja bem: ninguém aqui precisa disso. Código escrito às quatro da manhã eu revejo às dez, e sempre acho alguma coisa."
     st_techlead "Vai pra casa cedo hoje. Segunda a gente precisa da sua cabeça descansada, não de heroísmo."
+    if energia_cansaco():
+        st_techlead "E pelo seu jeito, você sabe do que eu tô falando. Pega um pedaço de pizza pra viagem e vai."
     "{i}Ele bate de leve no guarda-corpo, como quem encerra o assunto, e volta para a mesa da pizza.{/i}"
 
     hide st_techlead

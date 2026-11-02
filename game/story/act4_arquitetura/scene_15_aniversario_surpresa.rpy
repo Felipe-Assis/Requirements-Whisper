@@ -1,11 +1,13 @@
 label scene_15_aniversario_surpresa:
+    # Tempo livre da semana 4: almoço estendido de sexta (11h30-15h).
+    call im_intermissao(4) from _im_saude_s4
     $ set_available()
     play music music_office_relaxed fadein 1.0
     scene bg escritorio_interior_tarde
     with dissolve
 
     $ set_time(15, 0)
-    "{i}Já no dia seguinte...{/i}"
+    "{i}Depois do almoço...{/i}"
     "{i}O expediente da tarde segue animado, mas um grupo cochicha ao lado da impressora: hoje é aniversário de [NOME_DEVELOPER_SECURITY].{/i}"
     "{i}Você percebe que a equipe está querendo organizar algo especial, mas ninguém se prontificou ainda.{/i}"
 
@@ -15,7 +17,7 @@ label scene_15_aniversario_surpresa:
     developer_ai "Se cada um trouxer um docinho, já vira festa! Alguém consegue buscar refrigerante?"
 
     "{i}Você decide assumir a liderança da surpresa. Pode escolher o que organizar:{/i}"
-    menu:
+    menu (tipo="conversa"):
         "Como você contribui para o aniversário surpresa?"
         "Fico responsável por comprar o bolo na padaria.":
             $ add_friendship_point("developer_security", 2)
@@ -42,7 +44,7 @@ label scene_15_aniversario_surpresa:
             hide developer_project
 
     "{i}Com a comemoração se aproximando, você pode escolher mais uma ação para incrementar a surpresa:{/i}"
-    menu:
+    menu (tipo="conversa"):
         "Deseja cuidar de algum detalhe extra?"
         "Baixar uma playlist divertida para animar a sala.":
             play sound "audio/effects/ambiente_reuniao.ogg"
@@ -96,8 +98,11 @@ label scene_15_aniversario_surpresa:
     show developer_security thinking at center_zoom
     developer_security "Nossa, gente... Nem sei o que dizer. Vocês são demais!"
     play sound "audio/effects/feedback_positive.ogg"
+    # Retorno da conversa "Um dia comum" do tempo livre da semana 4.
+    if renpy.has_label("im_saude_s4_conversar_developer_security") and any(acao == "conversar" and alvo == "developer_security" for poi, acao, alvo in im_feitas.get("saude", {}).get(4, {}).get("acoes", [])):
+        "{i}Você lembra da mensagem que ele escondeu no almoço: \"Parabéns, filho. Vem jantar?\". Agora o \"dia comum\" faz sentido.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Como você deseja parabenizar [NOME_DEVELOPER_SECURITY]?"
         "Desejo sucesso e agradeço pela parceria no projeto.":
             $ add_friendship_point("developer_security", 1)

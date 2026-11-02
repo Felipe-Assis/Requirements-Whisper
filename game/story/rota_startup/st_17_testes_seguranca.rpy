@@ -19,15 +19,20 @@ label st_17_testes_seguranca:
     with dissolve
 
     st_qualidade "Bom dia, [player_name]! Senta aqui. Hoje é dia de plano de testes, e eu trouxe desenho."
+    if energia_cansaco():
+        st_qualidade "Oxe, cansaço dá pra ver de longe. Primeiro: água. Segundo: começamos pelo que é rápido. Terceiro: ninguém fica depois das seis."
     show st_qualidade thinking at left_zoom
     "{i}Ela vira o tablet. Na tela, um triângulo dividido em três faixas.{/i}"
     st_qualidade "Primeiro, a base: muitos testes de unidade. São rápidos e rodam a cada PR. É ali que mora o \"R$ 100 vira R$ 80\" que você escreveu."
     st_qualidade "Segundo, o meio: alguns testes de integração, com o app falando com a API de verdade. É onde aparece o id repetido chegando duas vezes."
     st_qualidade "Terceiro, o topo: poucos testes de ponta a ponta no celular. São lentos e quebram à toa, então ficam só os caminhos que não podem falhar."
     st_qualidade "Fora do triângulo, mas na lista: teste exploratório em modo avião, leitor de tela no botão Excluir e um teste de carga."
+    if rast_lacuna_achada("st_rast_exclusao"):
+        st_qualidade "E o teste do C4, o total depois da sincronização, que você achou sem teste no quadro. Escrevo à tarde, depois do exploratório."
     st_qualidade "Esse último é seu. Quarta que vem o semestre começa e os calouros chegam. Como a gente testa o pico?"
+    call pista_lembrar("st_p_conexoes") from _pl_st17_carga
 
-    menu:
+    menu (tipo="trabalho"):
         "Como testar o pico do início do semestre?"
 
         "Simular dez vezes os cadastros e lançamentos de um dia normal, concentrados no horário do almoço, medindo se a lista abre em até 2 segundos.":
@@ -53,7 +58,7 @@ label st_17_testes_seguranca:
         st_qualidade "Vamos montar juntos. Primeiro, quanto: um dia normal tem uns três mil lançamentos, então o pico é dez vezes isso."
         st_qualidade "Segundo, quando: na hora do almoço. Terceiro, contra o quê: os 2 segundos da lista que a gente escreveu lá na classificação."
 
-        menu:
+        menu (tipo="trabalho"):
             "O que você ajusta no teste de carga?"
 
             "Reproduzo o volume e o horário do pico e meço contra a meta de 2 segundos.":
@@ -81,7 +86,7 @@ label st_17_testes_seguranca:
     st_techlead "Isso é o consentimento do Open Finance. Tem finalidade, tem prazo e pode ser revogado quando ela quiser."
     st_techlead "Em troca, a gente recebe um token: uma chave temporária que só abre o extrato, e só pelo tempo combinado. A pergunta é onde guardar essa chave."
 
-    menu:
+    menu (tipo="trabalho"):
         "Onde guardar o token de acesso da importação bancária?"
 
         "No armazenamento seguro do sistema do celular (Keychain no iPhone, Keystore no Android), com validade curta; o app nunca pede senha do banco.":
@@ -104,7 +109,7 @@ label st_17_testes_seguranca:
         show st_techlead thinking at right_zoom
         st_techlead "Pensa em quem tem a chave. A senha fica com a Bia e com o banco. O token fica no lugar que o sistema do celular protege. E tudo tem validade."
 
-        menu:
+        menu (tipo="trabalho"):
             "O que você decide?"
 
             "Uso o cofre do sistema e o consentimento da instituição, sem senha.":
@@ -124,7 +129,7 @@ label st_17_testes_seguranca:
     show st_qualidade neutral at left_zoom
     st_qualidade "Pergunta ótima. E não é só resposta: é comportamento do app. O que acontece quando ela apaga a conta?"
 
-    menu:
+    menu (tipo="trabalho"):
         "O que acontece quando a Bia apaga a conta?"
 
         "Apagar conta e dados financeiros no prazo do RNF02, revogar consentimentos, manter só o que a lei obriga, e explicar isso a ela.":
@@ -148,7 +153,7 @@ label st_17_testes_seguranca:
         show st_techlead thinking at right_zoom
         st_techlead "Vamos por partes. Onde estão os gastos da Bia? No celular e no servidor. O que ela autorizou no banco? O consentimento. O que a lei obriga a guardar? Os registros de acesso que o Marco Civil pede por seis meses, e quase nada além disso."
 
-        menu:
+        menu (tipo="trabalho"):
             "Como fica a exclusão de conta?"
 
             "Apago nos dois lugares, revogo o consentimento e confirmo para a Bia.":
@@ -172,6 +177,9 @@ label st_17_testes_seguranca:
     hide st_techlead
     with dissolve
 
+    # Tempo livre da semana 7, no almoço (quarta, 11h30-14h30).
+    call im_intermissao(7) from _im_startup_s7
+
     scene bg startup_coworking_tarde
     with dissolve
     $ set_time(14, 30)
@@ -184,8 +192,10 @@ label st_17_testes_seguranca:
     with dissolve
     st_qualidade "Achei uma. Lancei o bandejão, R$ 4,50, em modo avião. Liguei a rede. O gasto aparece na lista, mas o total continua o de antes."
     st_qualidade "Só atualiza se eu fechar e abrir o app. Para a Bia, é o \"meu total está errado\" de novo."
+    if not rast_lacuna_achada("st_rast_exclusao"):
+        st_qualidade "Oxe, espera. Lembra do quadro da semana passada? O C4: total depois da sincronização offline. Nenhum teste cobria. O bug morava nesse elo."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você ataca o bug do modo avião?"
 
         "Peço à Lorena para reproduzirmos juntos.":
@@ -212,6 +222,8 @@ label st_17_testes_seguranca:
             scene bg startup_coworking_noite
             with dissolve
             $ set_time(20, 0)
+            $ energia_gastar(2, _("ficou até tarde sozinho"))
+            $ im_hora_extra_somar(60)
             "{i}Às 20h, o bug continua lá. O celular vibra.{/i}"
             show st_qualidade portrait at center_zoom
             with dissolve
@@ -219,6 +231,25 @@ label st_17_testes_seguranca:
             hide st_qualidade
             with dissolve
             "{i}Você fecha o notebook e vai para casa. O bug fica para amanhã, agora com companhia.{/i}"
+
+        "Rodar o teste que você pediu na semana passada" (tipo="pista") if rast_lacuna_achada("st_rast_exclusao"):
+            $ add_friendship_point("st_qualidade", 0.5)
+            "{i}A Lorena tinha acabado de escrever o teste do C4. Ele falha em três segundos, sempre no mesmo passo: a sincronização termina e a tela do total não fica sabendo.{/i}"
+            "{i}Às 16h, o total sobe na hora e o teste fica verde. Ele fica no conjunto de testes de vez.{/i}"
+            st_qualidade "Critério com teste é bug com endereço. Sobrou a tarde pro leitor de tela."
+            $ set_time(18, 30)
+
+        "Peço os logs ao Otávio e conferimos também o relatório de falhas que mandava o e-mail" (tipo="pista") if pista_tem("st_p_logs"):
+            $ pista_usar("st_p_logs")
+            $ add_friendship_point("st_techlead", 1)
+            show st_techlead neutral at right_zoom
+            with dissolve
+            "{i}Os logs mostram que o gasto chega ao servidor e volta confirmado. O problema está no celular: a tela do total não escuta o fim da sincronização.{/i}"
+            "{i}Você faz o total recalcular nesse momento e escreve um teste para esse caminho. Enquanto isso, Otávio abre o relatório de falhas do app.{/i}"
+            st_techlead "E o relatório de falhas... olha aí: o e-mail em cada erro, indo para o monitoramento. O log o Davi limpou; esse aqui ficou."
+            st_techlead "Corrijo agora, antes da 1.0. Dado que você não manda não vaza."
+            "{i}Às 18h, o bug está corrigido e o relatório de falhas passa a mandar só o tipo do erro e a versão do app.{/i}"
+            $ set_time(18, 30)
 
     stop music fadeout 1.0
     play music music_home_reflecting fadein 1.5

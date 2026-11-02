@@ -28,7 +28,7 @@ label co_11_inspecao:
 
     "\"RF-05: O solicitante pode reabrir um chamado resolvido.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "O que você aponta no RF-05?"
         "Faltam as condições: quem pode reabrir, até quando, se o motivo é obrigatório e o que acontece com a solução anterior.":
             $ co_acerto("co_ok_insp_ausente")
@@ -43,7 +43,7 @@ label co_11_inspecao:
 
     if not co_ok_insp_ausente:
         co_mentora "Lê de novo como se você fosse testar amanhã. O que você precisaria perguntar antes?"
-        menu:
+        menu (tipo="trabalho"):
             "Que perguntas o requisito não responde?"
             "Quem, até quando, com qual motivo e o que acontece com a solução anterior.":
                 show co_qualidade neutral at right_zoom
@@ -53,7 +53,7 @@ label co_11_inspecao:
     co_qualidade "Próximo."
     "\"RNF-01: A consulta do chamado deve ser rápida mesmo nos horários de pico.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "O que fazer com o RNF-01?"
         "Trocar por 'deve ser muito rápida e eficiente'.":
             $ co_erro("co_ok_insp_ambiguo")
@@ -68,11 +68,15 @@ label co_11_inspecao:
 
     if not co_ok_insp_ambiguo:
         co_mentora "Procura as palavras que cada pessoa leria de um jeito."
-        menu:
+        menu (tipo="trabalho"):
             "Quais palavras têm mais de uma leitura?"
             "'Rápida' e 'pico': substituir por 3 s, 95\%, 1.500 usuários, 9h.":
                 show co_qualidade neutral at right_zoom
                 co_qualidade "Isso. Ambiguidade se resolve com número que a [NOME_CO_SUPERVISORA] e o [NOME_CO_DEV] leem igual."
+
+    # Eco da caça à ambiguidade da co_09, depois da decisão para não dar a resposta.
+    if amb_resultados.get("co_amb_termo", {}).get("concluido"):
+        co_qualidade "É o mesmo 'rápida' que vocês caçaram no termo de abertura. Palavra vaga volta quando alguém copia frase velha."
 
     $ advance_minutes(25)
     show co_qualidade serious at right_zoom
@@ -80,7 +84,7 @@ label co_11_inspecao:
     "\"RF-03: O sistema deve impedir que um chamado seja resolvido sem descrição.\""
     "\"RN-07 (herdada do SGC): chamados de Reset de senha são resolvidos automaticamente após 72 h sem retorno.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "O que fazer com RF-03 e RN-07?"
         "Apagar a RN-07; é regra velha do legado.":
             $ co_erro("co_ok_insp_inconsistente")
@@ -95,7 +99,7 @@ label co_11_inspecao:
 
     if not co_ok_insp_inconsistente:
         co_mentora "As duas regras têm motivo. A pergunta é quem tem autoridade para escolher."
-        menu:
+        menu (tipo="trabalho"):
             "Quem pode decidir qual regra vale?"
             "Quem é dona do processo: a [NOME_CO_SUPERVISORA].":
                 show co_qualidade neutral at right_zoom
@@ -159,7 +163,7 @@ label co_11_inspecao:
     "{i}Lá fora, a cidade já acendeu as luzes. O documento tem marcas em quase toda página.{/i}"
     co_qualidade "Quatro horas, três defeitos, uma regra resolvida com a dona e um avatar 3D a menos. Dia produtivo."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você reage à inspeção?"
         "Agradeço o olhar crítico. Achei coisa que eu não veria por conta própria.":
             $ add_friendship_point("co_qualidade", 1)
@@ -174,6 +178,7 @@ label co_11_inspecao:
     $ co_conceder("co_conq_inspetor")
 
     $ set_time(18, 30)
+    $ energia_gastar(1, _("inspeção até 18h30"))
     hide co_mentora
     hide co_qualidade
     with dissolve

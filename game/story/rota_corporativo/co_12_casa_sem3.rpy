@@ -41,7 +41,7 @@ label co_12_casa_sem3:
     co_legado "(mensagem no grupo da equipe) Achei no armário uma foto do lançamento do SGC, 2008. Repararam no cabelo? Eu também tinha."
     co_legado "(mensagem no grupo da equipe) A gente comemorou com pão de queijo e uma queda do servidor às onze da noite."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você responde ao [NOME_CO_LEGADO]?"
         "Quem são os outros da foto?":
             $ add_friendship_point("co_legado", 1)

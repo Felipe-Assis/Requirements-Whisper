@@ -17,6 +17,13 @@ label scene_10_criacao_casos_uso:
     developer_requirements "Bom dia, [player_name]! Que tal começarmos pelos fluxos mais comuns do usuário? Pense em como o profissional de saúde interage com o sistema logo ao chegar para o atendimento."
     $ advance_minutes(3)
 
+    # Caça à ambiguidade: o rascunho de requisito que saiu da entrevista.
+    developer_requirements "Antes, olha esse rascunho que saiu das anotações da entrevista. Se o caso de uso nascer de palavra vaga, ele herda o problema."
+    call amb_atividade("saude_amb_historico") from _amb_s10
+    show developer_requirements positive at left_zoom
+    developer_requirements "Agora dá para testar cada pedaço. E os 3 minutos são uma proposta nossa: a gente confirma com a [NOME_DOUTORA_2] antes de fechar."
+    $ advance_minutes(7)
+
     "{i}Você senta ao lado de [NOME_DEVELOPER_REQUIREMENTS] e abre o notebook. Juntos, começam a mapear os passos do cadastro de pacientes, histórico de saúde e registro de atendimentos.{/i}"
 
     show item notebook_fechado as notebook at center_zoom
@@ -66,7 +73,7 @@ label scene_10_criacao_casos_uso:
     $ advance_minutes(110)
     "{i}Após algumas horas intensas, vocês decidem fazer uma pausa para alongar e conversar.{/i}"
     show developer_requirements neutral at left_zoom
-    menu:
+    menu (tipo="conversa"):
         "Durante a pausa, sobre o que você quer conversar com [NOME_DEVELOPER_REQUIREMENTS]?"
         "Pergunto sobre desafios enfrentados em projetos antigos.":
             show developer_requirements serious at left_zoom
@@ -77,6 +84,13 @@ label scene_10_criacao_casos_uso:
         "Falo sobre como a universidade está ajudando no trabalho.":
             show developer_requirements positive at left_zoom
             developer_requirements "Legal ouvir isso! Saber teoria de Engenharia de Software e análise de requisitos faz diferença todo dia, ainda mais quando temos que justificar uma decisão para os stakeholders."
+        "Contar o que vi na recepção do ambulatório: um paciente sem CPF, anotado num papel" (tipo="pista") if pista_tem("saude_p_cpf"):
+            $ pista_usar("saude_p_cpf")
+            show developer_requirements serious at left_zoom
+            developer_requirements "Num papel? Então o paciente existe para a recepção e não existe para o sistema. Foi esse buraco que eu já vi travar um cadastro inteiro."
+            developer_requirements "Vamos escrever agora: fluxo alternativo do UC1, paciente sem documento. Cadastro provisório com nome, data de nascimento e nome da mãe; o CPF fica pendente e o sistema lembra na próxima visita."
+            "{i}O UC1 ganha o fluxo alternativo FA1, com o passo onde começa e como termina. Ao lado, você anota a origem: observação na recepção.{/i}"
+            $ add_friendship_point("developer_requirements", 0.5)
     $ advance_minutes(4)
 
     # Recebe uma mensagem de developer_quality sugerindo revisão futura

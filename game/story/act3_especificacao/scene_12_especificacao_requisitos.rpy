@@ -39,8 +39,9 @@ label scene_12_especificacao_requisitos:
     # EXEMPLO 1: informação ausente (resposta parcial)
     "\"RF05A: O sistema deve permitir o cálculo automático de escore da escala HAD, conforme a pontuação das respostas do paciente.\""
     developer_requirements "Está claro? O que pode faltar aqui?"
+    call pista_lembrar("saude_p_had") from _pl_s12_had
 
-    menu:
+    menu (tipo="trabalho"):
         "1 de 4 · Qual problema pesa mais neste requisito?"
         "Está bom assim: o cálculo da HAD é conhecido, cada dev sabe fazer.":
             $ decisao("saude_d12_had", False)
@@ -57,7 +58,7 @@ label scene_12_especificacao_requisitos:
             developer_requirements "Boa! Informação ausente."
 
     if not aprendizagem.get("saude_d12_had"):
-        menu:
+        menu (tipo="trabalho"):
             "Como você revisa a análise?"
             "Registro a dúvida: o que o sistema faz quando o paciente deixa perguntas sem resposta?":
                 pass
@@ -73,7 +74,7 @@ label scene_12_especificacao_requisitos:
     show developer_requirements neutral at left_zoom
     developer_requirements "Esse parece completo, mas... há algo estranho ou ausente?"
 
-    menu:
+    menu (tipo="trabalho"):
         "2 de 4 · Qual problema você identifica?"
         "Faltam a lista de substâncias e o que fazer com uma que não está na lista.":
             if decisao("saude_d12_substancias", True):
@@ -90,7 +91,7 @@ label scene_12_especificacao_requisitos:
             developer_requirements "\"Rápido\" é vago, e não é o ponto fraco deste requisito. O que falta é o conteúdo do cadastro."
 
     if not aprendizagem.get("saude_d12_substancias"):
-        menu:
+        menu (tipo="trabalho"):
             "Como você revisa a análise?"
             "Peço a lista de substâncias e um campo \"outra\" para os casos fora dela.":
                 pass
@@ -106,7 +107,7 @@ label scene_12_especificacao_requisitos:
     show developer_requirements neutral at left_zoom
     developer_requirements "Esse é mais detalhado, mas ainda pode ser melhor. Vê algum ponto a aprimorar?"
 
-    menu:
+    menu (tipo="trabalho"):
         "3 de 4 · Qual ponto você sugere?"
         "Trocaria os \"==\" por palavras, para o texto ficar mais elegante.":
             $ decisao("saude_d12_fagerstrom", False)
@@ -123,7 +124,7 @@ label scene_12_especificacao_requisitos:
             developer_requirements "Importantíssimo! É nas bordas que o cálculo costuma errar."
 
     if not aprendizagem.get("saude_d12_fagerstrom"):
-        menu:
+        menu (tipo="trabalho"):
             "Como você revisa a análise?"
             "Acrescento a regra para valores fora de 0 a 10 e casos de teste nas fronteiras.":
                 pass
@@ -139,7 +140,7 @@ label scene_12_especificacao_requisitos:
     show developer_requirements neutral at left_zoom
     developer_requirements "Agora um de desempenho. Vê alguma ambiguidade ou informação que precisa de reforço?"
 
-    menu:
+    menu (tipo="trabalho"):
         "4 de 4 · Qual análise você faz?"
         "Melhor trocar por \"o sistema deve ser rápido\", fica mais simples.":
             $ decisao("saude_d12_desempenho", False)
@@ -156,7 +157,7 @@ label scene_12_especificacao_requisitos:
             developer_requirements "Mudar o número sem falar com as doutoras é decidir por elas. E continuaria sem dizer como medir."
 
     if not aprendizagem.get("saude_d12_desempenho"):
-        menu:
+        menu (tipo="trabalho"):
             "Como você revisa a análise?"
             "Descrevo como medir: a ferramenta, o cenário de carga e as telas incluídas.":
                 pass
@@ -182,7 +183,7 @@ label scene_12_especificacao_requisitos:
 
     "\"Requisito estranho: 'O sistema deve exibir gráficos 3D animados.' — Será mesmo necessário? Está alinhado ao contexto da clínica?\""
 
-    menu:
+    menu (tipo="conversa"):
         "Como você reage ao processo de inspeção?"
         "Agradece e valoriza o olhar crítico do time.":
             $ add_friendship_point("developer_quality", 1)
@@ -214,6 +215,8 @@ label scene_12_especificacao_requisitos:
     hide doutora_2
     show developer_requirements thinking at left_zoom
     developer_requirements "Pedido novo, e chegou na hora certa. Que tal você escrever esse? Um requisito e um critério de aceitação, usando o checklist."
+    if amb_resultados.get("saude_amb_historico", {}).get("concluido"):
+        developer_requirements "É o alerta que a gente destrinchou na caça à ambiguidade. Agora ela contou o motivo. Escreve inteiro, com critério."
     developer_requirements "Não precisa ficar perfeito. Depois a gente revisa junto e confirma com ela."
     hide developer_requirements
 
@@ -230,6 +233,7 @@ label scene_12_especificacao_requisitos:
     scene bg escritorio_interior_noite
     with fade
     $ advance_minutes(18)
+    $ energia_gastar(1, _("especificação até a noite"))
     "{i}Fim de tarde, sensação de dever cumprido. Com o checklist completo e o documento revisado, você sente que o projeto está cada vez mais sólido.{/i}"
     "{i}Colaborar e inspecionar juntos mostrou como cada detalhe faz diferença na Engenharia de Software real.{/i}"
 

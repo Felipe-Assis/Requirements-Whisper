@@ -44,7 +44,7 @@ label co_06_avaliacao:
     co_qualidade "Agora você. Este aqui veio da [NOME_CO_SUPERVISORA]."
     "\"A consulta do chamado deve responder em até 3 s para 95\% dos acessos, com 1.500 usuários simultâneos no pico das 9h.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "Que tipo de requisito é esse?"
 
         "Funcional: fala da consulta do chamado.":
@@ -65,7 +65,7 @@ label co_06_avaliacao:
 
     if not co_ok_class_nf:
         co_qualidade "Pergunta que eu faço sempre: descreve uma ação ou um jeito de se comportar?"
-        menu:
+        menu (tipo="trabalho"):
             "Esse item descreve o que o sistema faz ou como ele deve se comportar?"
             "Como ele deve se comportar: é não funcional.":
                 show co_qualidade neutral at right_zoom
@@ -76,7 +76,7 @@ label co_06_avaliacao:
     co_qualidade "Próximo. Este é meu, confesso."
     "\"O Farol não pode alterar tabelas do SGC sem aprovação do CAB; os dados continuam no Oracle.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "Que tipo de requisito é esse?"
 
         "Restrição: limita a solução e vem do ambiente e da gestão de mudanças.":
@@ -96,7 +96,7 @@ label co_06_avaliacao:
 
     if not co_ok_class_restricao:
         co_qualidade "Pensa em quem mandou e no que isso impede."
-        menu:
+        menu (tipo="trabalho"):
             "Quem impôs essa regra e o que ela limita?"
             "O ambiente e o CAB; limita a solução, então é restrição.":
                 show co_qualidade neutral at right_zoom
@@ -114,7 +114,7 @@ label co_06_avaliacao:
     co_qualidade "Restrição, com revisão de arquitetura. Desejo, com conversa com quem pediu."
     co_qualidade "E olha, ninguém acerta tudo de primeira. Uma vez eu classifiquei \"relatório em PDF\" como restrição. Passei vergonha no CAB."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você responde?"
 
         "Quero entender onde acertei e onde errei.":

@@ -302,13 +302,27 @@ init python:
     def _im_par(tabela, a, b):
         return tabela.get((a, b)) or tabela.get((b, a))
 
+    def im_trajeto_lugares(lo, ld):
+        """
+        (minutos, meio) entre dois lugares diferentes da cidade: exceções de
+        MAPA_TRAJETOS_LUGAR; mesmo bairro, MAPA_MINUTOS_BAIRRO a pé; bairros
+        diferentes, MAPA_TRAJETOS. None se o par de bairros não tem tempo
+        (im_validar_mapa acusa).
+        """
+        par = _im_par(MAPA_TRAJETOS_LUGAR, lo, ld)
+        if par:
+            return par
+        bo, bd = MAPA_LUGARES[lo]["bairro"], MAPA_LUGARES[ld]["bairro"]
+        if bo == bd:
+            return (MAPA_MINUTOS_BAIRRO, MAPA_MEIO_BAIRRO.get(bo, "calcada"))
+        return _im_par(MAPA_TRAJETOS, bo, bd)
+
     def im_trajeto(origem, destino, rota=None):
         """
         Deslocamento entre dois POIs (mapa-cidade.md §4): {"minutos", "meio",
         "de", "para"} (de/para = lugares). Mesmo POI ou origem desconhecida:
         0 min e meio None. Mesmo lugar: 0 min e o meio interno do prédio (None
-        = só um dissolve). Exceções de MAPA_TRAJETOS_LUGAR; mesmo bairro:
-        MAPA_MINUTOS_BAIRRO a pé; bairros diferentes: MAPA_TRAJETOS.
+        = só um dissolve). Lugares diferentes: im_trajeto_lugares.
         """
         lo = im_lugar_do_poi(origem, rota)
         ld = im_lugar_do_poi(destino, rota)
@@ -318,16 +332,7 @@ init python:
         if lo == ld:
             r["meio"] = MAPA_LUGARES[ld].get("interno")
             return r
-        par = _im_par(MAPA_TRAJETOS_LUGAR, lo, ld)
-        if par:
-            r["minutos"], r["meio"] = par
-            return r
-        bo, bd = MAPA_LUGARES[lo]["bairro"], MAPA_LUGARES[ld]["bairro"]
-        if bo == bd:
-            r["minutos"] = MAPA_MINUTOS_BAIRRO
-            r["meio"] = MAPA_MEIO_BAIRRO.get(bo, "calcada")
-            return r
-        r["minutos"], r["meio"] = _im_par(MAPA_TRAJETOS, bo, bd) or (40, "onibus")
+        r["minutos"], r["meio"] = im_trajeto_lugares(lo, ld) or (40, "onibus")
         return r
 
     def im_transicoes_ligadas():
@@ -354,7 +359,6 @@ init python:
         if op["poi"] == store.im_local:
             return None
         t = im_trajeto(store.im_local, op["poi"], rota)
-        meio = MAPA_MEIOS.get(t["meio"], {}) if t["meio"] else {}
         destino_poi = im_poi(op["poi"], rota)
         origem_poi = im_poi(store.im_local, rota)
         if t["de"] and t["de"] != t["para"]:
@@ -362,27 +366,47 @@ init python:
         else:
             de = __(origem_poi["nome"]) if origem_poi else ""
             para = __(destino_poi["nome"])
-        partes = [p for p in (__(meio["nome"]) if meio else "", "%s → %s" % (de, para) if de else para) if p]
-        if t["minutos"]:
-            partes.append(__("{n} min").format(n=t["minutos"]))
-        texto = " · ".join(partes)
-        ini = _im_minutos_do_dia()
-        fim = ini + t["minutos"]
-        som = meio.get("som")
         if op["poi"] == "cafe":
             chegada = MAPA_SOM_CAFE
         elif t["de"] != t["para"] and MAPA_LUGARES.get(t["para"], {}).get("predio"):
             chegada = MAPA_SOM_PORTA
         else:
             chegada = None
+        return _im_desl_info(t, de, para, chegada, cobra=True)
+
+    def im_deslocamento_casa_info(rota=None):
+        """
+        Volta para casa ao encerrar o tempo livre (mapa-cidade.md §2.3 e
+        §4.3): mesma sequência, mas sem cobrar minutos (o relógio não anda).
+        None se o jogador não está num lugar ou já está em casa.
+        """
+        lo = im_lugar_do_poi(store.im_local, rota)
+        if not lo or lo == MAPA_CASA:
+            return None
+        minutos, meio = im_trajeto_lugares(lo, MAPA_CASA) or (40, "onibus")
+        t = {"minutos": minutos, "meio": meio, "de": lo, "para": MAPA_CASA}
+        return _im_desl_info(t, __(MAPA_LUGARES[lo]["nome"]), __(MAPA_LUGARES[MAPA_CASA]["nome"]),
+                             MAPA_SOM_PORTA, cobra=False)
+
+    def _im_desl_info(t, de, para, chegada, cobra):
+        meio = MAPA_MEIOS.get(t["meio"], {}) if t["meio"] else {}
+        partes = [p for p in (__(meio["nome"]) if meio else "", "%s → %s" % (de, para) if de else para) if p]
+        if t["minutos"]:
+            partes.append(__("{n} min").format(n=t["minutos"]))
+        texto = " · ".join(partes)
+        ini = _im_minutos_do_dia()
+        fim = ini + (t["minutos"] if cobra else 0)
+        texto_curto = texto
+        if cobra:
+            texto_curto += " · %s → %s" % (im_hora_texto(_im_hm(ini)), im_hora_texto(_im_hm(fim)))
+        som = meio.get("som")
         imagem = None
         if t["meio"]:
             imagem = MAPA_CIDADE.get("pasta_transicoes", "") + t["meio"] + ".png"
         return {
-            "minutos": t["minutos"], "meio": t["meio"],
+            "minutos": t["minutos"] if cobra else 0, "meio": t["meio"],
             "meio_nome": __(meio["nome"]) if meio else "",
-            "texto": texto,
-            "texto_curto": texto + " · %s → %s" % (im_hora_texto(_im_hm(ini)), im_hora_texto(_im_hm(fim))),
+            "texto": texto, "texto_curto": texto_curto,
             "de": t["de"], "para": t["para"],
             "marcador": bool(t["de"]) and t["de"] != t["para"],
             "tela": t["meio"] is not None,
@@ -390,13 +414,13 @@ init python:
             "som": som if som and renpy.loadable(som) else None,
             "volume": meio.get("volume", 1.0),
             "som_chegada": chegada if chegada and renpy.loadable(chegada) else None,
-            "hora_ini": ini, "hora_fim": fim,
+            "hora_ini": ini, "hora_fim": fim, "relogio": cobra,
             "duracao": _im_duracao_transicao(t["minutos"]),
         }
 
-    def im_tocar_som(arquivo, volume=1.0):
+    def im_tocar_som(arquivo, volume=1.0, fadein=0):
         if arquivo:
-            renpy.sound.play(arquivo, relative_volume=volume)
+            renpy.sound.play(arquivo, relative_volume=volume, fadein=fadein)
 
     def im_pagar_deslocamento(op, desl):
         """Desconta o trajeto, avança o relógio e põe o jogador no POI novo."""
@@ -897,6 +921,36 @@ init python:
 
     # ---------------- validação (testes) ----------------
 
+    def im_validar_mapa():
+        """Problemas nos dados da cidade (data/mapa_cidade.rpy); vazia = ok."""
+        erros = []
+        if MAPA_CASA not in MAPA_LUGARES:
+            erros.append("MAPA_CASA desconhecida %s" % MAPA_CASA)
+        for lid, L in MAPA_LUGARES.items():
+            if L.get("bairro") not in MAPA_BAIRROS:
+                erros.append("lugar %s em bairro desconhecido %r" % (lid, L.get("bairro")))
+            if L.get("interno") and L["interno"] not in MAPA_MEIOS:
+                erros.append("lugar %s com meio interno desconhecido %s" % (lid, L["interno"]))
+        bairros = sorted(MAPA_BAIRROS)
+        for i, a in enumerate(bairros):
+            for b in bairros[i + 1:]:
+                if not _im_par(MAPA_TRAJETOS, a, b):
+                    erros.append("sem tempo entre %s e %s" % (a, b))
+        meios = [v[1] for v in MAPA_TRAJETOS.values()] + [v[1] for v in MAPA_TRAJETOS_LUGAR.values()]
+        meios += list(MAPA_MEIO_BAIRRO.values()) + ["calcada"]
+        for meio in meios:
+            if meio not in MAPA_MEIOS:
+                erros.append("meio desconhecido %s" % meio)
+        for par in MAPA_TRAJETOS_LUGAR:
+            for lid in par:
+                if lid not in MAPA_LUGARES:
+                    erros.append("trajeto com lugar desconhecido %s" % lid)
+        icones = list(v[1] for v in MAPA_ATIVIDADES.values()) + list(MAPA_ICONE_ACAO.values())
+        for icone in icones:
+            if icone not in MAPA_ICONES:
+                erros.append("arquivo de ícone fora dos %d: %s" % (len(MAPA_ICONES), icone))
+        return erros
+
     def im_validar_dados(rota):
         """Lista de problemas nos dados de tempo livre da rota (vazia = ok)."""
         erros = []
@@ -917,6 +971,15 @@ init python:
                 erros.append("%s: lugar desconhecido %s" % (rota, lid))
         if dados["mapa"].get("inicio") not in pois:
             erros.append("%s: mapa['inicio'] não é um poi" % rota)
+        else:
+            # Do lugar-base a cada lugar da rota (e a casa) há tempo definido.
+            base = pois[dados["mapa"]["inicio"]].get("lugar")
+            for lid in set(p.get("lugar") for p in pois.values()) | set([MAPA_CASA]):
+                if base in MAPA_LUGARES and lid in MAPA_LUGARES and lid != base and not im_trajeto_lugares(base, lid):
+                    erros.append("%s: sem tempo de %s até %s" % (rota, base, lid))
+            for lid in dados["mapa"].get("lugares_fechados", {}):
+                if lid in set(p.get("lugar") for p in pois.values()):
+                    erros.append("%s: lugar %s fechado e com poi" % (rota, lid))
         pistas_d = dados.get("pistas", {})
         extras_ids = set(e["id"] for e in dados.get("extras", []))
         mentor = (dados.get("mentoria") or {}).get("mentor")

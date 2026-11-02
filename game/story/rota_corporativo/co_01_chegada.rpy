@@ -103,7 +103,7 @@ label co_01_chegada:
     "{i}O resto da manhã passa entre senhas de acesso, e-mails de boas-vindas e um manual de 2011 que ninguém parece abrir.{/i}"
     "{i}Perto das onze e meia, o andar começa a falar de almoço. Você ainda tem alguns minutos.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Antes do almoço, com quem você puxa conversa?"
 
         "\"[NOME_CO_LEGADO], como era o SGC quando nasceu?\"":

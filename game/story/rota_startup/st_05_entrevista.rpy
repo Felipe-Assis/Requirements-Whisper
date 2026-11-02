@@ -34,7 +34,7 @@ label st_05_entrevista:
     $ advance_minutes(5)
     "{i}[NOME_ST_MENTORA] olha para você e faz um sinal discreto com a cabeça. A primeira pergunta é sua.{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você começa?"
 
         "[NOME_ST_ESTUDANTE], você pode contar a última vez em que o app te atrapalhou?":
@@ -47,7 +47,7 @@ label st_05_entrevista:
             st_estudante "Hum... modo escuro, acho?"
             show st_mentora serious at left_zoom
             st_mentora "(baixinho) Essa pergunta oferece duas soluções prontas. A [NOME_ST_ESTUDANTE] escolhe uma e a gente não descobre o que dói."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você reformula?"
                 "[NOME_ST_ESTUDANTE], me conta a última vez em que isso aconteceu?":
                     st_estudante "Ah, isso eu conto. Foi semana passada."
@@ -57,7 +57,7 @@ label st_05_entrevista:
             st_estudante "Acho que sim, né?"
             show st_mentora serious at left_zoom
             st_mentora "(baixinho) Ela pode dizer sim por educação. Menos botões é uma hipótese nossa, não um relato dela."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você reformula?"
                 "[NOME_ST_ESTUDANTE], me conta a última vez em que isso aconteceu?":
                     st_estudante "Tá. Então deixa eu contar o que aconteceu semana passada."
@@ -76,7 +76,7 @@ label st_05_entrevista:
 
     st_estudante "Se fosse fácil, isso não acontecia."
 
-    menu:
+    menu (tipo="trabalho"):
         "O que fazer com \"fácil\"?"
 
         "Pergunto o que ela precisa conseguir fazer naquela situação.":
@@ -89,7 +89,7 @@ label st_05_entrevista:
             $ st_decidir("st_d05_ambiguidade", False)
             show st_mentora serious at left_zoom
             st_mentora "(baixinho) [NOME_ST_MOBILE] vai entender uma coisa, [NOME_ST_QUALIDADE] outra e a [NOME_ST_ESTUDANTE] uma terceira. Ninguém consegue testar \"fácil\"."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você pergunta de novo?"
                 "O que precisa acontecer para o problema que você contou não se repetir?":
                     st_estudante "Eu preciso conseguir apagar o gasto que lancei errado. Com uma pergunta antes, para não apagar o certo sem querer. E o total tem que mudar na hora."
@@ -100,7 +100,7 @@ label st_05_entrevista:
             $ st_decidir("st_d05_ambiguidade", False)
             show st_mentora serious at left_zoom
             st_mentora "(baixinho) Trocou um adjetivo por dois. O resultado esperado continua sem nome."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você pergunta de novo?"
                 "O que precisa acontecer para o problema que você contou não se repetir?":
                     st_estudante "Eu preciso conseguir apagar o gasto que lancei errado. Com uma pergunta antes, para não apagar o certo sem querer. E o total tem que mudar na hora."
@@ -123,7 +123,7 @@ label st_05_entrevista:
 
     "{i}Os dois olham para você. [NOME_ST_MENTORA] não diz nada, mas o caderno dela está aberto numa página com uma palavra circulada: \"objetivo\".{/i}"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você conduz a discordância?"
 
         "Pergunto a cada um que resultado espera e proponho decidir pelo objetivo comum: estudantes que confiam no total e voltam a usar.":
@@ -137,7 +137,7 @@ label st_05_entrevista:
             st_estudante "..."
             show st_mentora serious at left_zoom
             st_mentora "Espera. Se a [NOME_ST_ESTUDANTE] sai daqui sem ser ouvida, os 800 do beta continuam desinstalando. E a métrica do [NOME_ST_CEO] cai junto."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você recomeça?"
                 "Peço que cada um diga o que quer ver acontecer e procuro o que os dois têm em comum.":
                     $ add_friendship_point("st_estudante", 1)
@@ -148,7 +148,7 @@ label st_05_entrevista:
             st_ceo "Descartar? Assim, sem conversar?"
             show st_mentora serious at left_zoom
             st_mentora "A vontade de não lançar tudo à mão é real, e o [NOME_ST_CEO] vai trazer o pedido de volta mais forte. Descartar não resolve."
-            menu:
+            menu (tipo="trabalho"):
                 "Como você recomeça?"
                 "Peço que cada um diga o que quer ver acontecer e procuro o que os dois têm em comum.":
                     $ add_friendship_point("st_ceo", 1)

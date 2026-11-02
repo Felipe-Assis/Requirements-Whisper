@@ -40,7 +40,7 @@ label co_04_preparacao:
     show co_mentora neutral at left_zoom
     co_mentora "Chegou na hora, [NOME_CO_LEGADO]. [player_name], me diz você: onde a gente busca isso?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Onde buscar o comportamento real do SGC antes da entrevista?"
 
         "No manual de 2011; é a documentação oficial.":
@@ -65,7 +65,7 @@ label co_04_preparacao:
     if not co_ok_fontes:
         show co_mentora thinking at left_zoom
         co_mentora "Uma fonte sozinha engana. Como você reformula?"
-        menu:
+        menu (tipo="trabalho"):
             "Como confirmar o que o sistema faz hoje?"
             "Comparar o que os dados mostram com o código e com o relato de quem usa.":
                 show co_mentora neutral at left_zoom
@@ -120,7 +120,7 @@ label co_04_preparacao:
 
     "{i}[NOME_CO_LEGADO] segura a pasta empoeirada, meio sem jeito.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "O que você faz?"
 
         "Me conta como essa regra das 72 h nasceu.":

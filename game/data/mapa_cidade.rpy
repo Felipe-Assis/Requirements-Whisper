@@ -47,16 +47,16 @@ init python:
                       "ancora": (620, 800), "largura": 220, "balao": "acima", "voce": "esquerda",
                       "interno": None, "predio": True},
         "predio_projeto": {"nome": _("Prédio da equipe (Polo de Tecnologia)"), "bairro": "cidade_universitaria",
-                           "ancora": (1960, 600), "largura": 330, "balao": "acima", "voce": "esquerda",
+                           "ancora": (1960, 585), "largura": 300, "balao": "acima", "voce": "esquerda",
                            "interno": None, "predio": True},
         "praca_campus": {"nome": _("Praça das Palmeiras"), "bairro": "cidade_universitaria",
-                         "ancora": (2160, 700), "largura": 250, "balao": "abaixo", "voce": "esquerda",
+                         "ancora": (2130, 690), "largura": 220, "balao": "abaixo", "voce": "esquerda",
                          "interno": None, "predio": False},
         "instituto": {"nome": _("Instituto (ambulatório)"), "bairro": "cidade_universitaria",
-                      "ancora": (2360, 580), "largura": 310, "balao": "acima", "voce": "esquerda",
+                      "ancora": (2390, 520), "largura": 270, "balao": "acima", "voce": "esquerda",
                       "interno": None, "predio": True},
         "bandejao": {"nome": _("Bandejão da universidade"), "bairro": "cidade_universitaria",
-                     "ancora": (2140, 900), "largura": 290, "balao": "abaixo", "voce": "esquerda",
+                     "ancora": (2370, 700), "largura": 230, "balao": "abaixo", "voce": "esquerda",
                      "interno": None, "predio": True},
         "casarao": {"nome": _("Casarão amarelo (Trocado)"), "bairro": "botafogo",
                     "ancora": (1000, 1090), "largura": 330, "balao": "acima", "voce": "esquerda",
@@ -67,6 +67,7 @@ init python:
         "orla": {"nome": _("Orla de Botafogo"), "bairro": "botafogo",
                  "ancora": (1440, 1260), "largura": 280, "balao": "direita", "voce": "esquerda",
                  "interno": None, "predio": False},
+        # Aterro: POI só do Corporativo, a partir da semana 2 (§2.3, aceito).
         "aterro": {"nome": _("Parque do Aterro"), "bairro": "aterro",
                    "ancora": (1420, 860), "largura": 300, "balao": "direita", "voce": "esquerda",
                    "interno": None, "predio": False},
@@ -143,6 +144,11 @@ init python:
     MAPA_TEMPO_TRANSICAO = [(0, 1.0), (10, 1.5), (25, 1.8), (999, 2.0)]
     # Com "Transições: desligadas": cartão de texto curto.
     MAPA_TEMPO_CARTAO = 1.0
+
+    # Os 8 ícones do lote de arte (images/mapa/icones/<id>.png, §6.3). Não há
+    # um "atendendo" separado: é o ícone "observando" com outro rótulo.
+    MAPA_ICONES = ["conversando", "estudando", "reuniao", "celular",
+                   "descansando", "observando", "programando", "cafe"]
 
     # Atividades dos balões: id -> (rótulo, arquivo do ícone em
     # pasta_icones). "atendendo" e "computador" reaproveitam ícones.

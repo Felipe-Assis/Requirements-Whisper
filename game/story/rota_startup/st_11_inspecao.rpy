@@ -27,7 +27,7 @@ label st_11_inspecao:
 
     "\"RF03: O app deve alertar o estudante quando ele gastar muito.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual é o defeito do RF03?"
         "Ambíguo: \"muito\" precisa de referência, por exemplo, ao atingir 80%% do orçamento do mês.":
             $ st_decidir("st_d11_ambiguo", True)
@@ -37,7 +37,7 @@ label st_11_inspecao:
             $ st_decidir("st_d11_ambiguo", False)
             show st_qualidade serious at right_zoom
             st_qualidade "Não contradiz nada. O problema é que cada um entende \"muito\" de um jeito. A Bia ia receber alerta todo dia ou nunca."
-            menu:
+            menu (tipo="trabalho"):
                 "Releio com a pergunta do checklist que encaixa e corrijo a frase.":
                     pass
             show st_qualidade neutral at right_zoom
@@ -46,7 +46,7 @@ label st_11_inspecao:
             $ st_decidir("st_d11_ambiguo", False)
             show st_mentora serious at left_zoom
             st_mentora "Aí o limite muda a cada versão, e ninguém consegue testar se o alerta está certo. O Davi escolhe 50, o próximo dev escolhe 90."
-            menu:
+            menu (tipo="trabalho"):
                 "Releio com a pergunta do checklist que encaixa e corrijo a frase.":
                     pass
             show st_qualidade neutral at right_zoom
@@ -59,7 +59,7 @@ label st_11_inspecao:
     show st_mentora thinking at left_zoom
     st_mentora "Esse aqui é o nosso cartão de segunda. Olha com carinho."
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual é o defeito do RF05?"
         "Ausente: falta a confirmação, o cancelamento e o recálculo do total que combinamos com a Bia.":
             $ st_decidir("st_d11_ausente", True)
@@ -69,7 +69,7 @@ label st_11_inspecao:
             $ st_decidir("st_d11_ausente", False)
             show st_qualidade serious at right_zoom
             st_qualidade "Editar e excluir são ações diferentes, com riscos diferentes. Um errado muda o valor; o outro some com o gasto."
-            menu:
+            menu (tipo="trabalho"):
                 "Releio com a pergunta do checklist que encaixa e corrijo a frase.":
                     pass
             show st_qualidade neutral at right_zoom
@@ -78,7 +78,7 @@ label st_11_inspecao:
             $ st_decidir("st_d11_ausente", False)
             show st_qualidade serious at right_zoom
             st_qualidade "Dá para testar e passar com o total errado. É exatamente o problema que a Bia contou."
-            menu:
+            menu (tipo="trabalho"):
                 "Releio com a pergunta do checklist que encaixa e corrijo a frase.":
                     pass
             show st_qualidade neutral at right_zoom
@@ -90,7 +90,7 @@ label st_11_inspecao:
     "\"RF08: Gastos excluídos ficam guardados para sempre para métricas.\""
     "\"RNF02: Ao excluir a conta, os dados financeiros do estudante são apagados em até 15 dias.\""
 
-    menu:
+    menu (tipo="trabalho"):
         "O que há de errado com o RF08 e o RNF02?"
         "Inconsistentes: o RF08 contradiz o RNF02. Precisamos decidir finalidade e prazo com o Otávio.":
             $ st_decidir("st_d11_inconsistente", True)
@@ -100,7 +100,7 @@ label st_11_inspecao:
             $ st_decidir("st_d11_inconsistente", False)
             show st_qualidade serious at right_zoom
             st_qualidade "O lugar não resolve. Num banco ou noutro, um diz \"para sempre\" e o outro diz \"apaga em 15 dias\". Os dois não podem ser verdade ao mesmo tempo."
-            menu:
+            menu (tipo="trabalho"):
                 "Releio com a pergunta do checklist que encaixa e corrijo a frase.":
                     pass
             show st_qualidade neutral at right_zoom
@@ -109,7 +109,7 @@ label st_11_inspecao:
             $ st_decidir("st_d11_inconsistente", False)
             show st_mentora serious at left_zoom
             st_mentora "Guardar dado financeiro sem finalidade e sem prazo vai contra a LGPD. E quebra a promessa feita a quem apaga a conta."
-            menu:
+            menu (tipo="trabalho"):
                 "Releio com a pergunta do checklist que encaixa e corrijo a frase.":
                     pass
             show st_qualidade neutral at right_zoom
@@ -172,7 +172,7 @@ label st_11_inspecao:
     with dissolve
     st_qualidade "Por hoje é isso. Amanhã o Davi recebe uma especificação que dá para testar linha por linha."
 
-    menu:
+    menu (tipo="conversa"):
         "O que você diz à Lorena antes de ir?"
         "Agradeço à Lorena pelo checklist.":
             $ add_friendship_point("st_qualidade", 1)
@@ -183,6 +183,7 @@ label st_11_inspecao:
 
     $ st_checar_conquistas()
     $ set_time(19, 30)
+    $ energia_gastar(1, _("inspeção até 19h30"))
 
     hide st_qualidade
     with dissolve

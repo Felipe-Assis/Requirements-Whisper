@@ -28,7 +28,7 @@ label scene_17_tarde_estudos_tecnicos:
     $ acertos_quiz = 0
     $ acertos_extra = None
 
-    menu:
+    menu (tipo="trabalho"):
         "O que é um critério de aceitação eficaz para um requisito?"
         "Deve ser objetivo, mensurável e validável.":
             $ acertos_quiz += 1
@@ -38,7 +38,7 @@ label scene_17_tarde_estudos_tecnicos:
         "Serve só para a documentação ficar mais completa.":
             "Errado! O objetivo é garantir que o requisito seja atendido."
 
-    menu:
+    menu (tipo="trabalho"):
         "O que significa 'code review'?"
         "Revisão do código por um colega para identificar melhorias e evitar bugs.":
             $ acertos_quiz += 1
@@ -50,11 +50,11 @@ label scene_17_tarde_estudos_tecnicos:
 
     "Você acerta [acertos_quiz] de 2 perguntas no quiz."
 
-    menu:
+    menu (tipo="trabalho"):
         "Deseja estudar mais e fazer mais questões, ou avançar?"
         "Sim, quero responder mais perguntas!":
             $ acertos_extra = 0
-            menu:
+            menu (tipo="trabalho"):
                 "O que é TDD (Test Driven Development)?"
                 "Desenvolver testes antes do código de produção.":
                     $ acertos_extra += 1
@@ -64,7 +64,7 @@ label scene_17_tarde_estudos_tecnicos:
                 "É um relatório de bugs.":
                     "Não, TDD é uma prática de programação orientada a testes."
 
-            menu:
+            menu (tipo="trabalho"):
                 "Qual métrica mede a facilidade de manter o software ao longo do tempo?"
                 "Manutenibilidade.":
                     $ acertos_extra += 1
@@ -104,7 +104,7 @@ label scene_17_tarde_estudos_tecnicos:
     else:
         "Valeu o esforço! O importante é nunca parar de aprender."
 
-    menu:
+    menu (tipo="conversa"):
         "Gostaria de aprofundar algum tema?"
         "Sim, quero falar com [NOME_DEVELOPER_QUALITY] sobre qualidade de software.":
             show developer_quality positive at right_zoom
@@ -125,10 +125,17 @@ label scene_17_tarde_estudos_tecnicos:
 
     show developer_test enthusiastic at left_zoom
     developer_test "Se quiser revisar algum teste, me chama! Nada como aprender praticando."
+    developer_test "Aliás, já que você está aqui: monta comigo o quadro de rastreabilidade da primeira entrega? Cada critério ligado ao requisito de onde veio e ao teste que cobre."
+    call rast_atividade("saude_rast_acesso") from _rast_s17
+    if rast_lacuna_achada("saude_rast_acesso"):
+        developer_test "C3 sem teste... bem visto. Escrevo hoje: teste_recepcao_nao_abre_historico. Entra na pipeline amanhã."
+    else:
+        developer_test "Quadro conferido. Semana que vem essa bateria roda inteira na pipeline."
     hide developer_test
 
     $ inventario.append("anotacoes_tecnicas")
     "Você salva suas anotações, fecha o notebook e sente que tem base para os desafios dos próximos dias."
+    call im_intermissao(5) from _im_saude_s5
     $ set_available('all')
     play music music_home_reflecting fadein 1.3
     scene bg quarto_noite

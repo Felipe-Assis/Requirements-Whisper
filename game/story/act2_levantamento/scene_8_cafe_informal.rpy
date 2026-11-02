@@ -18,7 +18,7 @@ label scene_8_cafe_informal:
 
     "{i}Você se senta ao lado deles, pegando uma caneca de café. O papo começa leve e descontraído.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Sobre o que você quer conversar?"
         "Pergunto sobre experiências em projetos anteriores.":
             $ add_friendship_point("developer_coding", 1)
@@ -60,7 +60,7 @@ label scene_8_cafe_informal:
     show developer_test thinking at right_zoom
     developer_test "Aliás, [player_name], você prefere testar seu próprio código ou acha melhor outra pessoa revisar?"
 
-    menu:
+    menu (tipo="conversa"):
         "Como você responde?"
         "Gosto de revisar o código dos outros e receber revisão também.":
             $ add_friendship_point("developer_coding", 1)

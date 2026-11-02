@@ -13,7 +13,7 @@ label scene_11_almoco_equipe:
     "{i}Você percebe [NOME_DEVELOPER_TEST] e [NOME_DEVELOPER_AI] discutindo animados sobre scripts; [NOME_DEVELOPER_CODING] trocando ideias com [NOME_DEVELOPER_PROJECT]; [NOME_DEVELOPER_QUALITY] ouvindo uma história engraçada de [NOME_DEVELOPER_SECURITY]; enquanto [NOME_DEVELOPER_REQUIREMENTS] revisa algo no notebook, de olho nas conversas.{/i}"
     "{i}Você pega sua comida e pode escolher onde sentar.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Você pode escolher com quem iniciar a conversa:"
         "Sentar com [NOME_DEVELOPER_CODING] e [NOME_DEVELOPER_PROJECT].":
             hide developer_test
@@ -34,7 +34,7 @@ label scene_11_almoco_equipe:
             else:
                 developer_coding "E aí, [player_name]! Gostando do projeto até agora? Estávamos debatendo padrões de arquitetura. Tem algum que você prefira usar?"
 
-            menu:
+            menu (tipo="conversa"):
                 "Como você responde?"
                 "Gosto de padrões clássicos, como MVC.":
                     $ add_friendship_point("developer_coding", 1)
@@ -94,7 +94,7 @@ label scene_11_almoco_equipe:
                 developer_test "E aí, [player_name]! Sabia que eu já automatizei o teste de uma cafeteria inteira? Imagina isso aqui no sistema..."
 
             developer_ai "Eu estava explicando sobre como IA pode ajudar a prever demandas e otimizar os fluxos do hospital. Já pensou?"
-            menu:
+            menu (tipo="conversa"):
                 "Sobre o que quer conversar?"
                 "Quero aprender mais sobre testes automatizados.":
                     $ add_friendship_point("developer_test", 1)
@@ -147,7 +147,7 @@ label scene_11_almoco_equipe:
                 developer_quality "Estávamos falando sobre os maiores bugs que já pegamos em produção... e olha, foram uns casos cabeludos."
             show developer_security thinking at right_zoom
             developer_security "E a maioria deles era falha boba de permissão ou de senha fraca. Segurança nunca é demais."
-            menu:
+            menu (tipo="conversa"):
                 "O que você comenta?"
                 "Pergunto como evitar esses bugs no futuro.":
                     $ add_friendship_point("developer_quality", 1)

@@ -15,7 +15,7 @@ label co_10_almoco:
     "{i}Na saída do bufê, a equipe se divide sem combinar. [NOME_CO_LEGADO] e [NOME_CO_QUALIDADE] pegam uma mesa perto da janela. [NOME_CO_MENTORA] e [NOME_CO_DEV] ficam numa mesa do meio, olhando alguma coisa no celular dele.{/i}"
     "{i}Você para um segundo com a bandeja na mão.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "Onde você senta?"
         "Com [NOME_CO_LEGADO] e [NOME_CO_QUALIDADE], perto da janela.":
             $ add_friendship_point("co_legado", 1)
@@ -35,7 +35,7 @@ label co_10_almoco:
         co_legado "O estrogonofe de quarta nunca falhou desde 2008. Único sistema da empresa sem incidente registrado."
         co_qualidade "Porque ninguém abriu chamado. Não quer dizer que não houve incidente."
 
-        menu:
+        menu (tipo="conversa"):
             "Que assunto você puxa?"
             "[NOME_CO_QUALIDADE], qual foi o pior incidente que você já viu?":
                 $ add_friendship_point("co_qualidade", 1)
@@ -60,7 +60,7 @@ label co_10_almoco:
         co_mentora "Chega mais, [player_name]. O [NOME_CO_DEV] está me mostrando o pico das nove como se fosse novidade."
         co_dev "É novidade em gráfico! Olha a curva. Segunda depois de feriado parece uma montanha."
 
-        menu:
+        menu (tipo="conversa"):
             "Que assunto você puxa?"
             "[NOME_CO_MENTORA], como você saiu da central para a TI?":
                 $ add_friendship_point("co_mentora", 1)

@@ -35,7 +35,12 @@ label co_17_testes_seguranca:
     with dissolve
     co_qualidade "Quatro perfis. Como você prova que essa matriz vale de verdade?"
 
-    menu:
+    # Pista de ajudar a Ingrid (semanas 5 e 6) e lembrete do quadro da co_16.
+    # Os dois ficam fora da contagem e não mudam o menu.
+    call pista_lembrar("co_p_botao") from _pl_co17_rbac
+    call rast_lembrar("co_rast_farol") from _rl_co17_rbac
+
+    menu (tipo="trabalho"):
         "Como verificar os perfis?"
 
         "Testes negativos por perfil: o atendente tenta abrir a trilha, o solicitante tenta ver chamado de outra pessoa; os dois recebem acesso negado e a tentativa fica registrada.":
@@ -63,7 +68,7 @@ label co_17_testes_seguranca:
         show co_qualidade thinking at left_zoom
         with dissolve
         co_qualidade "Vamos pelo outro lado. Como provar que alguém não consegue fazer uma coisa?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
 
             "Entrar com cada perfil e tentar o que ele não pode. O esperado é acesso negado, registrado na trilha.":
@@ -76,9 +81,21 @@ label co_17_testes_seguranca:
     "{i}Um caso falha: o perfil supervisor consegue editar perfis, função que é só do admin. [NOME_CO_DEV] corrige antes do almoço, e o caso entra na suíte.{/i}"
     co_dev "Esse teria virado manchete na auditoria. Bem achado."
 
+    # Consequência do quadro de rastreabilidade da co_16. Só narrativa: os dois
+    # caminhos chegam ao mesmo ponto e nada muda em decisões ou conquistas.
+    if rast_lacuna_achada("co_rast_farol"):
+        "{i}O teste que nasceu do quadro já está na suíte. Na segunda rodada, com a correção no servidor, ele passa: pela URL, o atendente recebe acesso negado, e a tentativa aparece na trilha.{/i}"
+        co_qualidade "Elo fechado: requisito, critério e teste. É assim que eu gosto de achar bug: uma semana antes, no quadro."
+    else:
+        "{i}Antes do almoço, [NOME_CO_QUALIDADE] tenta por conta própria os endereços diretos das ações. Com o perfil atendente, ela cola a URL da reabertura de um chamado de outro setor. A reabertura acontece.{/i}"
+        co_qualidade "Abre o quadro de rastreabilidade da semana passada."
+        "{i}A linha está lá: o critério do atendente que abre a reabertura pela URL. Na coluna do teste, nada que prove o acesso negado por esse caminho.{/i}"
+        co_qualidade "O critério existia. O teste que provava o 'não' não existia. O elo que faltou virou bug."
+        co_dev "Corrijo no servidor e escrevo o teste que faltou. Ainda bem que foi aqui, e não depois da janela."
+
     co_qualidade "Agora a regressão. A RFC pede a lista do que roda antes da janela. O que entra?"
 
-    menu:
+    menu (tipo="trabalho"):
         "O que entra na suíte de regressão antes do CAB?"
 
         "Só os testes do Farol; o SGC não foi alterado.":
@@ -104,7 +121,7 @@ label co_17_testes_seguranca:
         show co_qualidade thinking at left_zoom
         with dissolve
         co_qualidade "Pensa no que já funcionava e pode ser afetado."
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
 
             "Tudo que usa as mesmas tabelas ou a rotina das 72 h: abrir, resolver, a rotina e o relatório mensal, mais os testes novos.":
@@ -118,12 +135,14 @@ label co_17_testes_seguranca:
     co_dev "Gente. Olha isso aqui."
     "{i}Procurando a configuração da integração, [NOME_CO_DEV] abre um arquivo antigo do repositório. Numa linha marcada como \"provisório\" está a senha do usuário de integração do SGC.{/i}"
     "{i}O histórico do arquivo mostra a data: 2012.{/i}"
+    if pista_tem("co_p_senha"):
+        "{i}É o arquivo do registro que você e o [NOME_CO_DEV] fizeram na sexta. Agora ele foi aberto com a [NOME_CO_QUALIDADE] do lado.{/i}"
     co_dev "Provisório desde 2012. É mais velho que meu primeiro celular."
     show co_qualidade serious at left_zoom
     with dissolve
     co_qualidade "Respira. Ninguém copia, ninguém posta print. A gente decide como relatar."
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você relata a senha no repositório?"
 
         "Registro como vulnerabilidade e levo para [NOME_CO_QUALIDADE] e [NOME_CO_LEGADO], sem procurar culpados.":
@@ -148,9 +167,22 @@ label co_17_testes_seguranca:
             $ co_senha_relato = "grupo"
             co_qualidade "Espera. Expor um segredo para 300 pessoas aumenta o problema. Vamos trocar a senha agora."
 
+        # Pista de ajudar o Kauã (semana 6), formato 2. "registro" é o mesmo
+        # valor da primeira opção; nenhuma conquista lê co_senha_relato.
+        "Mostrar o registro de sexta: o script de build também lê esse arquivo" (tipo="pista") if pista_tem("co_p_senha"):
+            $ pista_usar("co_p_senha")
+            $ co_senha_relato = "registro"
+            $ add_friendship_point("co_qualidade", 1)
+            show co_qualidade neutral at left_zoom
+            with dissolve
+            co_qualidade "Dois lugares, não um. Sem isso, a gente trocava a senha e o build da madrugada quebrava no sábado."
+            co_dev "E o registro já existia desde sexta. Só faltava abrir o arquivo com testemunha."
+
     co_qualidade "Passo a passo. Um: a senha vai para o cofre de segredos, e a integração passa a ler de lá."
     co_qualidade "Apagar a linha do arquivo não basta. A senha antiga continua no histórico do repositório, para quem quiser procurar."
     co_qualidade "Dois: por isso trocamos a senha do usuário de integração. É mudança padrão, pré-aprovada. Não espera o CAB."
+    if "co_p_senha" in pistas_usadas:
+        co_qualidade "E o script de build passa a ler do cofre também. Entra na mesma mudança padrão."
     co_qualidade "Três: registramos o caso. O que aconteceu, desde quando, o que fizemos. Sem nome de culpado."
     co_dev "Sem caça às bruxas. Gostei."
     co_qualidade "Caça às bruxas só ensina as pessoas a esconder. Eu quero que me contem."
@@ -221,6 +253,8 @@ label co_17_testes_seguranca:
 
     co_dev "Bora! Agora é a semana 8."
     co_qualidade "Agora é descansar antes de sexta à noite. Janela de madrugada com sono é incidente esperando acontecer."
+    if energia_cansaco():
+        co_qualidade "[player_name], isso vale em dobro para você. Hoje, nada de ficar até tarde."
 
     $ co_conceder("co_conq_rede")
     $ co_conceder("co_conq_trilha")
@@ -228,6 +262,9 @@ label co_17_testes_seguranca:
     hide co_qualidade
     hide co_dev
     with dissolve
+
+    # Tempo livre da semana 7 (gancho B): quinta à tarde, antes do cartão.
+    call im_intermissao(7) from _im_corporativo_s7
 
     scene black
     with fade

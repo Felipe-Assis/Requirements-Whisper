@@ -59,7 +59,7 @@ label co_02_ciclo_legado:
     co_mentora "[player_name], o Farol vai depender do fechamento de chamados do SGC. O que você faria primeiro?"
     $ advance_minutes(10)
 
-    menu:
+    menu (tipo="trabalho"):
         "Antes de mexer no SGC, qual é o primeiro passo?"
 
         "Reescrever o SGC do zero numa tecnologia nova, para não herdar problemas.":
@@ -79,7 +79,7 @@ label co_02_ciclo_legado:
 
     if not co_ok_manutencao:
         co_mentora "Tudo bem, é para isso que a gente conversa. O que precisamos saber antes de mudar qualquer coisa?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
 
             "Primeiro descobrir o que o sistema faz hoje e como vamos perceber se algo parar de funcionar.":
@@ -91,7 +91,7 @@ label co_02_ciclo_legado:
 
     "{i}A reunião chega ao fim. Enquanto a equipe recolhe as canecas, você aproveita para fazer uma última pergunta.{/i}"
 
-    menu:
+    menu (tipo="conversa"):
         "No fim da reunião, você pergunta..."
 
         "Ao [NOME_CO_LEGADO]: \"Como vocês descobrem o que o SGC faz sem documentação?\"":

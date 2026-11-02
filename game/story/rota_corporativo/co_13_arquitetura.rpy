@@ -32,7 +32,7 @@ label co_13_arquitetura:
     co_mentora "Vamos por partes. Ninguém aqui discorda de que o SGC precisa mudar. A pergunta é como mudar sem parar a central."
     co_mentora "[player_name], você ouviu os dois. Qual estratégia faz sentido para o Farol?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Qual estratégia para o Farol?"
         "Construir o Farol dentro do SGC, acrescentando telas no JSF antigo.":
             $ co_erro("co_ok_arquitetura")
@@ -57,7 +57,7 @@ label co_13_arquitetura:
 
     if not co_ok_arquitetura:
         co_mentora "Vamos olhar por outro lado. A central atende 1.300 chamados por dia e não pode parar nem um sábado inteiro. Como trocar uma parte sem parar o resto?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
             "Uma parte por vez, ao lado do sistema velho, com um tradutor no meio.":
                 show co_legado neutral at left_zoom
@@ -87,7 +87,7 @@ label co_13_arquitetura:
     co_qualidade "Depois vêm solicitante, atendente, perfil e usuario_perfil, que liga cada pessoa aos perfis dela. E a tabela nova de histórico."
     co_qualidade "A [NOME_CO_SUPERVISORA] quer saber quem mudou o quê em cada chamado. A auditoria interna também. Como a gente guarda isso?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como guardar quem mudou o quê no chamado?"
         "Gravar num arquivo de log no servidor.":
             $ co_erro("co_ok_auditoria")
@@ -106,7 +106,7 @@ label co_13_arquitetura:
 
     if not co_ok_auditoria:
         co_qualidade "Pensa na [NOME_CO_SUPERVISORA] sentada com a auditoria interna, como em 2021. O que ela precisaria mostrar?"
-        menu:
+        menu (tipo="trabalho"):
             "Como você reformula?"
             "Cada mudança, com autor e horário, sem possibilidade de edição.":
                 co_qualidade "Então é uma tabela de histórico só de inclusão: quem, perfil, quando, ação, valor anterior e novo."
@@ -124,7 +124,7 @@ label co_13_arquitetura:
     with dissolve
     co_dev "Passei o domingo desenhando aquilo. Eu entendi o motivo, de verdade. Mas dá uma pena."
 
-    menu:
+    menu (tipo="conversa"):
         "O que você diz?"
         "\"Sua ideia de serviços pode ser o destino. O estrangulamento é o caminho até lá.\"":
             $ add_friendship_point("co_dev", 1)
@@ -165,7 +165,7 @@ label co_13_arquitetura:
     $ co_negociacao_sem_atalho = True
 
 label .negociar:
-    menu:
+    menu (tipo="negociacao"):
         "Como você conduz o pedido do WhatsApp?"
         "Incluir o WhatsApp e manter o prazo sem falar de capacidade.":
             $ co_negociacao_sem_atalho = False
@@ -193,7 +193,7 @@ label .negociar:
     "{i}Você escreve o acordo no quadro e lê em voz alta:{/i}"
     "\"[co_negociacao_acordo]\""
 
-    menu:
+    menu (tipo="negociacao"):
         "O texto diz o que os dois combinaram?"
         "Rever o acordo":
             jump .negociar

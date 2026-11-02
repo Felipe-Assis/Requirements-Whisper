@@ -7,7 +7,7 @@
 init -1:
     default game_hour = 7      # Horas (inteiro, 0-23)
     default game_minute = 0    # Minutos (inteiro, 0-59)
-    default show_clock = False  # Se quiser poder ocultar facilmente
+    default show_clock = True  # A cena 1 também liga; False esconde o relógio do canto
 
 # Função para atualizar o horário, se preferir
 init python:

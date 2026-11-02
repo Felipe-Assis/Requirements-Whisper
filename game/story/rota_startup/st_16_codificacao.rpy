@@ -19,6 +19,8 @@ label st_16_codificacao:
     with dissolve
 
     st_mobile "Bom dia! Pô, chegou o dia. Primeiro cartão seu indo para o código."
+    if energia_cansaco():
+        st_mobile "Pera. Tá com olheira de sprint, hein? Toma, café forte da copa. Hoje é PR pequeno, não maratona."
     st_techlead "Tem mais empolgação no Davi do que em você, [player_name]. Pode ser bom sinal. Ainda não sei."
     st_mobile "Olha o protótipo de novo, pra gente lembrar do que combinou com a Bia."
 
@@ -37,7 +39,7 @@ label st_16_codificacao:
 
     st_techlead "Veja bem. Obra começa pela fundação, não pela pintura. Por onde você começa esse cartão?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como você implementa o cartão?"
 
         "Escrevo primeiro os testes do critério e do caso limite (R$ 100 vira R$ 80; cancelar mantém R$ 100) e abro um PR pequeno.":
@@ -63,7 +65,7 @@ label st_16_codificacao:
         st_techlead "Calma. Ninguém escreveu código ainda, então trocar de caminho agora sai barato."
         st_techlead "Começa pelo que a Bia combinou com a gente. Um teste para confirmar, outro para cancelar. Depois, só o código que faz os dois passarem."
 
-        menu:
+        menu (tipo="trabalho"):
             "O que você ajusta no plano?"
 
             "Começo pelos dois testes da Bia e deixo o PR do tamanho do cartão.":
@@ -112,7 +114,7 @@ label st_16_codificacao:
     show st_techlead thinking at right_zoom
     st_techlead "Não olha pra mim. Hoje quem revisa é você."
 
-    menu:
+    menu (tipo="trabalho"):
         "Que comentário você deixa no PR do Davi?"
 
         "O log grava e-mail, descrição e valor do gasto, que são dados pessoais. Sugiro registrar só o id e o status, e incluir um teste enviando o mesmo id duas vezes.":
@@ -140,7 +142,7 @@ label st_16_codificacao:
         st_techlead "Vamos ler juntos. Primeiro, a linha do log: o que ela grava sobre a Bia?"
         st_techlead "Depois, o túnel: qual teste mostraria que o mesmo lançamento chegando duas vezes vira um gasto só?"
 
-        menu:
+        menu (tipo="trabalho"):
             "Como você reescreve o comentário?"
 
             "Aponto a linha, explico o risco e sugiro a correção.":
@@ -158,7 +160,7 @@ label st_16_codificacao:
     st_mobile "Teu PR tá ótimo, li em dez minutos. Só um comentário: a função se chama tratarExclusao(). Tratar como? Sugiro excluirGasto()."
     st_mobile "Trocadilho do dia: nome bom poupa comentário. Nome ruim custa reunião."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você responde ao review do Davi?"
 
         "\"Valeu, ajustei o nome.\"":
@@ -176,7 +178,31 @@ label st_16_codificacao:
             show st_mobile neutral at left_zoom
             st_mobile "Tudo certo, mas um \"ok\" ajuda a fechar a conversa."
 
+        "\"Ajustei. E lembrei do clube: no leitor de tela, a lixeira dizia só 'botão'.\"" (tipo="pista") if pista_tem("st_p_leitor"):
+            $ pista_usar("st_p_leitor")
+            $ add_friendship_point("st_mobile", 1)
+            show st_mobile thinking at left_zoom
+            st_mobile "Pô, sério? Liguei o leitor de tela aqui... \"botão\". Só isso."
+            st_mobile "Põe o nome e o valor no rótulo: \"Excluir Almoço, R$ 20\". Aprovado com louvor."
+
     hide st_mobile
+    hide st_techlead
+    with dissolve
+
+    # Quadro de rastreabilidade (docs/design/intermissoes-startup.md, seção 8):
+    # depois do review, quando o teste do id repetido (T3) já existe.
+    $ advance_minutes(20)
+    show st_techlead thinking at center_zoom
+    with dissolve
+    st_techlead "Antes de os dois PRs irem para a Lorena, um hábito da casa: o quadro."
+    st_techlead "Cada critério, de qual requisito veio e qual teste cobre. Se um elo falta, é por ali que o bug entra."
+    hide st_techlead
+    call rast_atividade("st_rast_exclusao") from _rast_st16
+    show st_techlead neutral at center_zoom
+    if rast_lacuna_achada("st_rast_exclusao"):
+        st_techlead "Bem visto. Critério sem teste é porta destrancada. Vira cartão: a Lorena escreve esse teste semana que vem, com o plano."
+    else:
+        st_techlead "Quadro conferido. Agora os PRs vão para a Lorena."
     hide st_techlead
     with dissolve
 
@@ -206,7 +232,11 @@ label st_16_codificacao:
 
     st_qualidade "Excluí o almoço de R$ 20 com a rede lenta: o total foi para R$ 80. Toquei em Excluir e cancelei: o almoço ficou e o total ficou em R$ 100."
     st_qualidade "Lancei um café de R$ 5 e cortei a rede no meio do envio, igual no túnel. Quando a rede voltou, o app reenviou sozinho. Apareceu um café só."
-    st_qualidade "Oxe, passou tudo. E o leitor de tela já fala \"Excluir Almoço, R$ 20\", não só \"botão\"."
+    if "st_p_leitor" in pistas_usadas:
+        st_qualidade "Oxe, passou tudo. E o leitor de tela fala \"Excluir Almoço, R$ 20\". O Davi disse que a ideia veio do clube. A Joana vai gostar de saber."
+        $ add_friendship_point("st_qualidade", 0.5)
+    else:
+        st_qualidade "Oxe, passou tudo. E o leitor de tela já fala \"Excluir Almoço, R$ 20\", não só \"botão\"."
 
     if st_abordagem_primeira == "teste_pr":
         st_mobile "Os testes da manhã já tinham pegado o cancelamento antes de chegar na Lorena. Sobrou tempo até pra eu errar o meu log."
@@ -222,11 +252,14 @@ label st_16_codificacao:
     hide st_techlead
     with dissolve
 
+    # Tempo livre da semana 6, no mesmo dia (terça, 18h-21h).
+    call im_intermissao(6) from _im_startup_s6
+
     stop music fadeout 1.0
     play music music_home_reflecting fadein 1.5
     scene bg quarto_noite
     with fade
-    $ set_time(19, 0)
+    $ set_time(21, 30)
     $ set_available("all")
 
     "{i}Em casa, você deixa a mochila na cadeira e abre o beta no celular.{/i}"

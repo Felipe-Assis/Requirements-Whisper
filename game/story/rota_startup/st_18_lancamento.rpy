@@ -20,11 +20,14 @@ label st_18_lancamento:
     with dissolve
 
     st_mentora "Bom dia, gente! Bora, que hoje a 1.0 sai de casa."
+    if energia_cansaco():
+        st_mentora "E você, [player_name], dormiu? Semana de lançamento não é semana de heroísmo. Hoje ninguém fica depois das sete."
     st_mentora "A versão foi para a revisão das lojas na quarta passada, como a gente combinou nos riscos. Falta decidir como liberar."
     st_mobile "Quarta o semestre começa. Os calouros chegam, baixam três apps de finanças e ficam com um. Tem que ser o nosso."
     st_techlead "E na quinta tem demo day. Muita coisa numa semana só. Veja bem, [player_name]: como você soltaria essa versão?"
+    call pista_lembrar("st_p_loja") from _pl_st18_rollout
 
-    menu:
+    menu (tipo="trabalho"):
         "Como liberar a 1.0?"
 
         "Enviar às lojas com antecedência, liberar aos poucos (10%%, depois 50%%, depois 100%%), deixar o que é novo atrás de feature flag e acompanhar falhas e o tempo de abertura da lista.":
@@ -50,7 +53,7 @@ label st_18_lancamento:
         st_mobile "Pensa no celular de mil pessoas. Não dá pra dar F5. O que você quer é poder ver o problema cedo e desligar rápido."
         st_mentora "E sem perder a quarta-feira."
 
-        menu:
+        menu (tipo="trabalho"):
             "O que você ajusta no lançamento?"
 
             "Libero em etapas, com a novidade desligável e o painel aberto.":
@@ -120,11 +123,15 @@ label st_18_lancamento:
         $ advance_minutes(20)
         st_qualidade "Ninguém perdeu dado. Mas foram vinte minutos de gente esperando no bandejão."
         st_techlead "Anota para a retrospectiva: teste que acha problema só ajuda se a correção entrar antes do pico."
+        $ energia_gastar(1, _("pico do semestre sem o ajuste"))
         hide st_mobile
 
     hide st_qualidade
     hide st_techlead
     with dissolve
+
+    # Tempo livre da semana 8, depois do pico (quarta, 13h30-17h).
+    call im_intermissao(8) from _im_startup_s8
 
     # Quinta: todos estão juntos no demo day.
     $ set_available()
@@ -152,7 +159,7 @@ label st_18_lancamento:
     hide st_estudante
     with dissolve
 
-    menu:
+    menu (tipo="conversa"):
         "Antes do pitch, quem você ajuda?"
 
         "Ensaio a fala da Bia com a Tainá.":
@@ -184,6 +191,17 @@ label st_18_lancamento:
             st_qualidade "Primeiro, o gráfico verde em fundo verde: troca. Segundo, o vídeo da demo: legenda. Terceiro, tem gente no fundo da sala: fonte maior."
             st_qualidade "Pronto. Agora todo mundo consegue ler, não só quem sentou na frente."
 
+        "Ensaio com o Vinícius e a Tainá a resposta sobre retenção, a única pergunta do ensaio na Maré" (tipo="pista") if pista_tem("st_p_retencao"):
+            $ pista_usar("st_p_retencao")
+            $ add_friendship_point("st_mentora", 1)
+            $ add_friendship_point("st_ceo", 0.5)
+            show st_mentora neutral at left_zoom
+            show st_ceo thinking at right_zoom
+            with dissolve
+            st_mentora "Se a pergunta é sempre essa, a resposta tem que caber numa frase."
+            st_ceo "Quantos voltam: 57%% na semana. E os calouros de ontem a gente mostra em trinta dias, por coorte. Uma frase. Consigo!"
+
+    hide st_ceo
     hide st_mentora
     hide st_techlead
     hide st_mobile
@@ -203,6 +221,11 @@ label st_18_lancamento:
 
     "{i}É a métrica que vocês combinaram na semana 5, no aquário. Na plateia, alguém anota.{/i}"
 
+    if "st_p_retencao" in pistas_usadas:
+        "{i}Na primeira fila, uma investidora levanta a mão: \"E os calouros que entraram ontem?\"{/i}"
+        st_ceo "A coorte do semestre a gente mostra em trinta dias. Hoje, a do beta: 57%% voltam toda semana."
+        "{i}A investidora fecha o caderno e sorri. Vinícius nem olha para o slide.{/i}"
+
     if st_acordo_opcao == "investigar_agora":
         st_ceo "Próximo passo: importação bancária via Open Finance. Passamos uma semana investigando a parceria. O parceiro autorizado existe. Ela entra depois do semestre, começando pelo consentimento."
     else:
@@ -218,6 +241,8 @@ label st_18_lancamento:
     st_estudante "Uns dois meses atrás, lancei o almoço de R$ 20 no ônibus. A internet caiu, toquei de novo, e o almoço apareceu duas vezes. Achei que tinha perdido dinheiro. Desinstalei por três dias."
     st_estudante "Semana passada lancei o bandejão, R$ 4,50, dentro do túnel. Apareceu uma vez só. E quando lancei errado, consegui apagar."
     st_estudante "Tipo assim: eu só quero saber quanto sobra até a bolsa cair. Agora eu sei."
+    if mentoria_conq_startup:
+        st_estudante "E agora eu, a Joana e a Rayane testamos cada versão antes de chegar em vocês. A gente até tem nome: Clube das Testers."
 
     "{i}O auditório aplaude. Davi bate palma mais alto que todo mundo.{/i}"
 

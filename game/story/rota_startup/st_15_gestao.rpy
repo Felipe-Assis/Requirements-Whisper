@@ -81,7 +81,7 @@ label .feedback_plano:
         hide st_estudante
         show st_mentora serious at left_zoom
         st_mentora "Viu? Cada vaga que foi para um extra tirou uma parte do que a Bia confirmou como necessidade. O extra não é ruim; só não é para agora."
-        menu:
+        menu (tipo="trabalho"):
             "Refaço o plano com os dois itens que a Bia confirmou como necessidade.":
                 pass
         call atividade_planejamento("st_plano", ST_PLANO_ITENS, ST_PLANO_NECESSARIOS, 2) from _st_15_plano_revisao
@@ -98,7 +98,7 @@ label .feedback_plano:
     st_mobile "Pô, dá pra fazer uma lista de cem coisas."
     st_mentora "Por isso mesmo. [player_name], como a gente trata os riscos?"
 
-    menu:
+    menu (tipo="trabalho"):
         "Como tratar os riscos destas três semanas?"
 
         "Registrar cada risco com dono, gatilho e plano: pico de cadastros no semestre, revisão das lojas e textos de privacidade.":
@@ -110,7 +110,7 @@ label .feedback_plano:
             show st_mobile serious at right_zoom
             st_mobile "A revisão da loja pode levar dias. Se rejeitarem na véspera, a gente lança depois que os calouros já escolheram outro app."
             st_mobile "Rapidez não resolve o que depende dos outros."
-            menu:
+            menu (tipo="trabalho"):
                 "Escolho os riscos que podem atrasar o lançamento e dou um dono e um gatilho para cada um.":
                     st_mentora "Isso. Poucos riscos, cada um com alguém cuidando."
 
@@ -121,7 +121,7 @@ label .feedback_plano:
             st_qualidade "Sessenta linhas que ninguém abre. Risco sem dono é decoração."
             hide st_qualidade
             with dissolve
-            menu:
+            menu (tipo="trabalho"):
                 "Escolho os riscos que podem atrasar o lançamento e dou um dono e um gatilho para cada um.":
                     st_mentora "Isso. Poucos riscos, cada um com alguém cuidando."
 
@@ -155,8 +155,9 @@ label .feedback_plano:
     show st_qualidade thinking at left_zoom
     with dissolve
     st_ceo "O gráfico de cadastros é lindo, né? Mas a Lorena me lembrou da retenção na sexta. [player_name], qual número a gente leva?"
+    call pista_lembrar("st_p_bolsa") from _pl_st15_metrica
 
-    menu:
+    menu (tipo="trabalho"):
         "Que métrica Vinícius deve mostrar no demo day?"
 
         "Total de downloads.":
@@ -164,7 +165,7 @@ label .feedback_plano:
             show st_qualidade serious at left_zoom
             st_qualidade "Download sobe com anúncio e com festa de mil cadastros. Não mostra se o app ajudou alguém."
             st_qualidade "Cadê a evidência de que a pessoa voltou?"
-            menu:
+            menu (tipo="trabalho"):
                 "Escolho um número que mostre se o estudante voltou e confiou no total.":
                     show st_ceo neutral at right_zoom
                     st_ceo "Gente voltando e confiando. Isso responde a pergunta que todo fundo faz."
@@ -181,7 +182,7 @@ label .feedback_plano:
             st_techlead "Mede nosso esforço, não o resultado de quem usa. Podemos entregar vinte coisas e a Bia continuar no caderno."
             hide st_techlead
             with dissolve
-            menu:
+            menu (tipo="trabalho"):
                 "Escolho um número que mostre se o estudante voltou e confiou no total.":
                     show st_ceo neutral at right_zoom
                     st_ceo "Gente voltando e confiando. Isso responde a pergunta que todo fundo faz."
@@ -198,6 +199,8 @@ label .feedback_plano:
     st_qualidade "Mais uma coisa, antes de todo mundo levantar. Quero mudar a nossa definição de pronto."
     st_qualidade "Primeiro: um cartão só está pronto se o teste do caso limite passou. Cancelar a exclusão e o total continuar em R$ 100."
     st_qualidade "Segundo: o botão Excluir precisa ter um nome que o leitor de tela fale. Hoje ele é só um ícone de lixeira."
+    if mentoria_passos.get("startup", 0) >= 3:
+        st_qualidade "Quem me mostrou isso foi a Joana, no clube."
     st_mentora "Aprovado. Escreve no quadro, Lorena."
 
     $ registrar("st_reg_metricas")
@@ -218,7 +221,7 @@ label .feedback_plano:
     with dissolve
     st_mentora "Ei, [player_name]. Antes de você ir: como você tá com essa pressão toda? Três semanas, lojas, demo day..."
 
-    menu:
+    menu (tipo="conversa"):
         "Como você responde à Tainá?"
 
         "“Com honestidade: a ansiedade aparece, mas o plano ajudou.”":
@@ -236,6 +239,9 @@ label .feedback_plano:
 
     hide st_mentora
     with dissolve
+
+    # Tempo livre da semana 5, no mesmo dia (segunda, 16h-19h30).
+    call im_intermissao(5) from _im_startup_s5
 
     # Volta para casa.
     $ set_available("all")

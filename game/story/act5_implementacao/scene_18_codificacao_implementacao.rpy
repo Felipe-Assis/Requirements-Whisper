@@ -32,7 +32,7 @@ label scene_18_codificacao_implementacao:
     $ feedback_coding = ""
     $ finalizou_no_escritorio = False
 
-    menu:
+    menu (tipo="trabalho"):
         "Escolha sua abordagem:"
         "Implementar rápido, mas sem muitos comentários e testes.":
             $ tempo_gasto += 2
@@ -112,6 +112,13 @@ label scene_18_codificacao_implementacao:
     hide tela_ui_final
     pause 0.7
 
+    # Tempo livre da semana 6, para todos os caminhos. Depois dele, a cena
+    # volta ao escritório à noite (o caminho "terminou" não tem scene própria).
+    call im_intermissao(6) from _im_saude_s6
+    scene bg escritorio_interior_noite
+    with dissolve
+    play music music_office_relaxed fadein 1.0
+
     # Decisão: se não finalizou no escritório, ramifica para trabalhar em casa ou terminar no próximo dia
     if not finalizou_no_escritorio:
         play sound "audio/effects/abrindo_porta.ogg"
@@ -119,7 +126,7 @@ label scene_18_codificacao_implementacao:
         with fade
         $ set_time(19, 40)
         "{i}Já é noite quando você deixa o escritório, com o corpo cansado e o notebook na mochila. Ainda falta terminar parte do módulo...{/i}"
-        menu:
+        menu (tipo="trabalho"):
             "Como prefere lidar com o trabalho restante?"
             "Virar a noite e entregar tudo ainda hoje.":
                 play music music_home_reflecting fadein 1.3
@@ -129,6 +136,8 @@ label scene_18_codificacao_implementacao:
                 $ set_time(3, 10)
                 "{i}Passa das três da manhã quando o último teste fica verde. Você fecha o notebook, mas a cabeça não desliga.{/i}"
                 $ energia_diaria = 1
+                $ energia_gastar(3, _("virou a noite"))
+                $ im_hora_extra_somar(60)
             "Deixar para finalizar pela manhã, descansando e evitando erros por cansaço.":
                 "{i}Você prioriza o descanso e decide acordar cedo para revisar com calma no escritório.{/i}"
                 call scene_18_2_codificacao_final from _scene_18_2_codificacao_final

@@ -25,6 +25,8 @@ init python:
     IM_BALAO_MAX = 6
     IM_TOPO = 80        # altura da barra superior
     IM_RODAPE = 930     # topo do rodapé (acima do menu rápido)
+    # Tamanho (px) de cada sprite de lugar, lido uma vez fora da predição.
+    _im_tamanhos = {}
 
     def _im_escala():
         return float(config.screen_width) / MAPA_CIDADE["tamanho"][0]
@@ -80,7 +82,13 @@ init python:
         w = int(L["largura"] * s)
         img = _im_img(MAPA_CIDADE.get("pasta_lugares", "") + "%s.png" % lid)
         if img:
-            iw, ih = renpy.image_size(img)
+            # image_size abre o arquivo, e o Ren'Py recusa abrir arquivos na
+            # predição da tela. Guarda o tamanho; na predição ainda sem ele,
+            # usa a altura estimada (a tela real recalcula).
+            tam = _im_tamanhos.get(img)
+            if tam is None and not renpy.display.predict.predicting:
+                tam = _im_tamanhos[img] = renpy.image_size(img)
+            iw, ih = tam or (w, int(w * 0.45))
             z = float(w) / iw
             return {"x": x, "y": y, "w": w, "h": int(ih * z), "img": img, "zoom": z}
         return {"x": x, "y": y, "w": w, "h": int(w * 0.45), "img": None, "zoom": 1.0}
@@ -226,6 +234,11 @@ init python:
                 trajeto = __("Você está aqui")
             elif salas:
                 trajeto = _im_trajeto_texto(im_trajeto(store.im_local, salas[0]["id"], rota))
+            elif casa and lugar_voce:
+                # A volta não sai do tempo livre (mapa-cidade.md §4.1).
+                m, meio = im_trajeto_lugares(lugar_voce, lid) or (40, "onibus")
+                trajeto = __("Daqui: {n} min ({meio}), sem gastar tempo livre").format(
+                    n=m, meio=__(MAPA_MEIOS[meio]["nome"]).lower())
             alt = __(L["nome"]) + ", " + __(MAPA_BAIRROS[L["bairro"]]["nome"]) + ". "
             if trajeto:
                 alt += trajeto + ". "
@@ -305,6 +318,12 @@ init python:
         if img:
             return Transform(img, xysize=(config.screen_width, config.screen_height), fit="cover")
         return im_bg_disp(desl.get("fundo"))
+
+    def im_resumo_caminho(r):
+        """Linha do fechamento: "No caminho: 40 min (2 trajetos)" (§5)."""
+        if r["trajetos"] == 1:
+            return __("No caminho: {m} min (1 trajeto)").format(m=r["trajeto_min"])
+        return __("No caminho: {m} min ({n} trajetos)").format(m=r["trajeto_min"], n=r["trajetos"])
 
     def im_abertura_info(semana, rota=None):
         rota = im_rota(rota)
@@ -451,6 +470,11 @@ screen im_mapa(semana):
         xfill True
         ypos 0
         text est["barra"] style "im_barra_text" id "im_mapa_barra"
+
+    # Relógio e energia sempre à vista no mapa, como no resto do jogo.
+    if show_clock:
+        use relogio_caixa
+    use energia_caixa
 
     hbox:
         xpos 24 ypos IM_RODAPE + 10
@@ -754,7 +778,8 @@ screen im_deslocamento(semana, desl):
 screen im_transicao(desl, cartao=False):
     # Tela do trajeto (ônibus, metrô, calçada, elevador...) com o relógio
     # correndo; cartao=True (transições desligadas): só o texto. Clique,
-    # Enter ou Espaço pulam.
+    # Enter ou Espaço pulam. Fundo: images/bg/transicao_<meio>.png ou, até a
+    # arte chegar, o bg "fundo" de MAPA_MEIOS.
     modal True
     zorder 60
     if cartao:
@@ -777,7 +802,9 @@ screen im_transicao(desl, cartao=False):
                 vbox:
                     text desl["meio_nome"] style "nb_titulo" size 36
                     text desl["texto"] style "nb_texto"
-                add DynamicDisplayable(im_relogio_anim, desl["hora_ini"], desl["hora_fim"], desl["duracao"]) yalign 0.5
+                # Na volta para casa o tempo livre já acabou: o relógio não anda.
+                if desl.get("relogio", True):
+                    add DynamicDisplayable(im_relogio_anim, desl["hora_ini"], desl["hora_fim"], desl["duracao"]) yalign 0.5
                 text _("Clique para pular.") style "nb_dica" yalign 0.5
         timer desl["duracao"] action Return(True)
     button:
@@ -859,7 +886,7 @@ screen im_resumo(semana):
                         text "· " + r["extra"] style "nb_texto" size 24
                     text _("Energia: {a} → {b} ({estado})").format(a=r["energia_inicio"], b=r["energia"], estado=energia_estado()) style "nb_texto" size 24
                     if r["trajetos"]:
-                        text _("No caminho: {m} min ({n} trajetos)").format(m=r["trajeto_min"], n=r["trajetos"]) style "nb_texto" size 24
+                        text im_resumo_caminho(r) style "nb_texto" size 24
                     if r["encerrou_cedo"]:
                         text _("Você foi para casa mais cedo.") style "nb_texto" size 24
                     if r["fora"]:
@@ -915,30 +942,35 @@ screen im_parada(semana, novos):
 
 # ---------------- HUD e epílogo ----------------
 
+screen energia_caixa():
+    # Abaixo do relógio do canto. Número e texto, e dez quadradinhos cheios ou vazados
+    # (a diferença não depende de cor).
+    frame:
+        background Solid("#00000080")
+        xalign 1.0 ypos 116
+        xoffset -16
+        padding (12, 8)
+        vbox:
+            spacing 6
+            text energia_hud_texto() size 20 color "#ffffff" xalign 1.0
+            hbox:
+                spacing 4
+                xalign 1.0
+                for i in range(ENERGIA_MAX):
+                    if i < energia_semana:
+                        add Solid("#ffffff", xysize=(14, 14))
+                    else:
+                        fixed:
+                            xysize (14, 14)
+                            add Solid("#ffffff")
+                            add Solid("#333b44", xysize=(10, 10)) pos (2, 2)
+
+
 screen energia_hud():
-    # Abaixo do relógio do canto (top_right_clock). Número e texto, e dez
-    # quadradinhos cheios ou vazados (a diferença não depende de cor).
-    zorder 5
-    if energia_mostrar and not main_menu and not _menu and not renpy.get_screen("im_mapa") and not renpy.get_screen("im_deslocamento") and not renpy.get_screen("im_transicao"):
-        frame:
-            background Solid("#00000080")
-            xalign 1.0 ypos 116
-            xoffset -16
-            padding (12, 8)
-            vbox:
-                spacing 6
-                text energia_hud_texto() size 20 color "#ffffff" xalign 1.0
-                hbox:
-                    spacing 4
-                    xalign 1.0
-                    for i in range(ENERGIA_MAX):
-                        if i < energia_semana:
-                            add Solid("#ffffff", xysize=(14, 14))
-                        else:
-                            fixed:
-                                xysize (14, 14)
-                                add Solid("#ffffff")
-                                add Solid("#333b44", xysize=(10, 10)) pos (2, 2)
+    # Overlay para diálogos e atividades; o mapa desenha a própria caixa (ver clock_screen.rpy).
+    zorder 70
+    if energia_mostrar and not main_menu and not _menu and not renpy.get_screen("im_transicao") and not renpy.get_screen("im_mapa"):
+        use energia_caixa
 
 
 screen im_resumo_tempo_livre():

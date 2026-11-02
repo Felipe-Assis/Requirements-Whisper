@@ -35,7 +35,7 @@ label st_12_casa_sem3:
         "{i}Você anota a pergunta para levar à Bia na segunda. Melhor perguntar do que adivinhar.{/i}"
     else:
         "{i}No fim do documento, o pedido da Bia continua esperando: corrigir o valor de um gasto. O exercício ficou pendente.{/i}"
-        menu:
+        menu (tipo="trabalho"):
             "Retomar o rascunho agora?"
             "Retomar o rascunho agora":
                 call exercicio_escrita(ST_ESCRITA_ID, ST_ESCRITA_PEDIDO) from _st_12_exercicio_escrita
