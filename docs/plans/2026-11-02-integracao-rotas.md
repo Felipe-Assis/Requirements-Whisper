@@ -54,3 +54,24 @@ F3 e F4 rodam em paralelo: as cenas usam nomes de imagem definidos na F2; até a
 - Agentes escrevem só arquivos novos ou os arquivos atribuídos a eles; arquivos compartilhados (`script.rpy`, `data/*`, `logic/*`) só na F2 ou pelo orquestrador.
 - Texto em português, tom igual ao da versão longa, flexão de gênero do jogador via `player_gender` quando houver.
 - Commits por fase na branch `integracao-rotas`. Nada é enviado ao GitHub sem confirmação.
+
+## Resultado (2026-11-02)
+
+| Fase | Commit | Resultado |
+|---|---|---|
+| F1 Bíblias | `144e1b6` | Startup (Trocado) e Corporativo (Grupo Vértice, SGC/Farol), 18 cenas cada, 6 personagens novos por rota |
+| F2a Infraestrutura | `c2028d3` | despacho por rota, `ROUTES`, 12 personagens, contatos por rota, chat offline, limite de amizade pelo chat |
+| F2b Mecânicas da demo | `f7e6a35` | notebook de registros, `decisao`, escrita livre, planejamento, perfil sem idade, acessibilidade, resumo no epílogo, testes no motor, script de build |
+| F3 Arte | `e9bbf72` | 49 imagens geradas com o Codex (`imagegen`) com referências de estilo; 3 regeradas por inconsistência; revisão visual antes de entrar no jogo |
+| F4 Conteúdo | `14cf489` | 36 cenas novas (~12,8 mil e ~11 mil palavras por partida) revisadas por rota; saúde com distratores, classificação, negociação, planejamento, escrita e conquistas antes inalcançáveis |
+| F5 Execução real | `e86d11b` | piloto automático: 3 rotas × 5 modos chegam ao epílogo sem erro; bug do chat que encerrava a cena corrigido |
+| F6 UI/UX e entrega | `113f45f` e seguinte | escolhas centralizadas e legíveis, artefatos acima da caixa de diálogo, painéis opacos, estados escritos, foco por teclado, navegação em português; documentação; pacote Windows |
+
+Números finais: 2.540 blocos de diálogo, 43.399 palavras (antes 728 e 11.796), 223 menus (antes 49); lint 100% limpo; 28 testes no motor passando (mais 27 capturas de inspeção desligadas por padrão).
+
+Revisões independentes com o Codex (somente leitura) na infraestrutura e na interface: um achado corrigido (marcas da autoavaliação perdidas ao retomar a escrita); os demais avaliados e mantidos (Esc fecha o chat de propósito; cada `set_available` reabre o ponto de amizade do chat, efeito pequeno).
+
+Pendências conhecidas:
+- Na rota Saúde, o final "bom" exige amizade 30 e os menus dão cerca de 18 a 23; o resto vem do chat (+1 por contato por cena), como no desenho original.
+- `docs/restricoes-e-decisoes.md` §2.4 (fora deste branch, na cópia de trabalho principal) ainda descreve a volta para a escolha de vaga; a decisão 1 deste plano a substitui.
+- As telas de ajuda padrão do Ren'Py seguem em inglês.

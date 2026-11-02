@@ -31,11 +31,11 @@ New-Item -ItemType Directory -Path $packageDirectory -Force | Out-Null
 try {
     $env:RENPY_PATH_TO_SAVES = Join-Path $stage 'isolated-saves'
 
-    # 1. Lint. O relatorio vai para errors.txt; tudo antes de "Statistics:"
-    #    alem do cabecalho e um problema.
-    & $python $renpy $projectRoot lint
+    # 1. Lint. O relatorio sai no console (o errors.txt so aparece quando ha
+    #    erros); tudo antes de "Statistics:" alem do cabecalho e um problema.
+    $report = (& $python $renpy $projectRoot lint 2>&1 | Out-String)
     if ($LASTEXITCODE -ne 0) { throw 'O lint falhou.' }
-    $report = Get-Content -LiteralPath (Join-Path $projectRoot 'errors.txt') -Raw -Encoding UTF8
+    Write-Host $report
     $beforeStats = ($report -split 'Statistics:')[0]
     $problems = @($beforeStats -split "`r?`n" | Where-Object { $_.Trim() -and ($_ -notmatch 'lint report, generated at') })
     if ($problems.Count -gt 0) {
