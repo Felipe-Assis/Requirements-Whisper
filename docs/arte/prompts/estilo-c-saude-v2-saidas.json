@@ -1,0 +1,129 @@
+{
+ "saidas": [
+  {
+   "id": "developer_test__enthusiastic",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/enthusiastic.png"
+  },
+  {
+   "id": "developer_test__confident",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/confident.png"
+  },
+  {
+   "id": "developer_test__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/serious.png",
+   "portrait": "images/characters/developer_test/portrait.png"
+  },
+  {
+   "id": "developer_test__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/thinking.png"
+  },
+  {
+   "id": "developer_coding__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/developer_coding/neutral.png",
+   "portrait": "images/characters/developer_coding/portrait.png"
+  },
+  {
+   "id": "developer_coding__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_coding/serious.png"
+  },
+  {
+   "id": "developer_coding__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_coding/thinking.png"
+  },
+  {
+   "id": "developer_management__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_management/thinking.png",
+   "portrait": "images/characters/developer_management/portrait.png"
+  },
+  {
+   "id": "developer_management__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_management/serious.png"
+  },
+  {
+   "id": "developer_ai__positive",
+   "kind": "sprite",
+   "dest": "images/characters/developer_ai/positive.png",
+   "portrait": "images/characters/developer_ai/portrait.png"
+  },
+  {
+   "id": "developer_ai__concentrated",
+   "kind": "sprite",
+   "dest": "images/characters/developer_ai/concentrated.png"
+  },
+  {
+   "id": "developer_ai__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_ai/thinking.png"
+  },
+  {
+   "id": "developer_quality__positive",
+   "kind": "sprite",
+   "dest": "images/characters/developer_quality/positive.png",
+   "portrait": "images/characters/developer_quality/portrait.png"
+  },
+  {
+   "id": "developer_quality__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_quality/serious.png"
+  },
+  {
+   "id": "developer_quality__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_quality/thinking.png"
+  },
+  {
+   "id": "developer_project__confident",
+   "kind": "sprite",
+   "dest": "images/characters/developer_project/confident.png",
+   "portrait": "images/characters/developer_project/portrait.png"
+  },
+  {
+   "id": "developer_project__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_project/serious.png"
+  },
+  {
+   "id": "developer_project__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_project/thinking.png"
+  },
+  {
+   "id": "developer_security__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_security/serious.png",
+   "portrait": "images/characters/developer_security/portrait.png"
+  },
+  {
+   "id": "developer_security__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/developer_security/thinking.png"
+  },
+  {
+   "id": "doutora_1__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_1/neutral.png",
+   "portrait": "images/characters/doutora_1/portrait.png"
+  },
+  {
+   "id": "doutora_2__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_2/neutral.png",
+   "portrait": "images/characters/doutora_2/portrait.png"
+  },
+  {
+   "id": "amigo__base",
+   "kind": "sprite",
+   "dest": "images/characters/amigo/base.png",
+   "portrait": "images/characters/amigo/portrait.png"
+  }
+ ]
+}

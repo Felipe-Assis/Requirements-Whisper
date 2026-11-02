@@ -1,0 +1,9 @@
+[
+ {
+  "id": "icone__cafe",
+  "prompt": "ATENÇÃO: o fundo precisa ser TOTALMENTE TRANSPARENTE (PNG com canal alfa), só o ícone, sem quadrado, sem cor de fundo. Ícone de atividade para os balões do mapa de um jogo: uma xícara branca com pires e três fios curvos de vapor, um pão de queijo ao lado.\n\nÍcone de interface no estilo C (o mesmo traço da imagem anexada, que é só referência de estilo): contorno escuro e grosso de 3 a 4 px com leve textura de lápis, preenchimento chapado em 2 tons suaves e levemente dessaturados, forma simples com silhueta única, legível em 48 px. Um único objeto centralizado, vista frontal ou três quartos, fundo totalmente transparente (PNG com alfa), sem moldura, sem círculo de fundo, sem sombra, sem texto, sem letras, sem números. Formato quadrado.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ]
+ }
+]

@@ -1,0 +1,36 @@
+[
+ {
+  "id": "developer_coding__neutral",
+  "prompt": "ROSTO NO TRAÇO DA EMILY (segunda imagem de referência): linhas simples e limpas, SEM rugas, sem marcas de expressão desenhadas, sem textura de pele, sombreamento de 1 tom; olhos com íris escura bem marcada e brilho discreto, sobrancelhas grossas e expressivas; barba grisalha curta desenhada como uma mancha simples. A PRIMEIRA imagem é Joseph (desenvolvedor sênior de backend, sério e crítico). Redesenhe essa pessoa mantendo o rosto, o cabelo, o tom de pele, a roupa base, as cores e a pose. As imagens seguintes são só referência de ESTILO e PROPORÇÃO (não copie as pessoas delas). Acréscimo de personalidade: menos realista que hoje, no mesmo traço das referências; relógio analógico de pulseira de couro e uma caneca de café escura.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: mesmas proporções de corpo (adulto com ~7,5 cabeças, cabeça proporcional, ombros e mãos naturais), o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas, rosto simples com olhos discretos. Nem realista demais (sem pele com textura de foto, sem rugas detalhadas) nem cartunesco demais (sem cabeça grande, sem olhos enormes). Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_coding/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_dev/neutral.png"
+  ]
+ },
+ {
+  "id": "developer_coding__serious",
+  "prompt": "ROSTO NO TRAÇO DA EMILY (segunda imagem de referência): linhas simples e limpas, SEM rugas, sem marcas de expressão desenhadas, sem textura de pele, sombreamento de 1 tom; olhos com íris escura bem marcada e brilho discreto, sobrancelhas grossas e expressivas; barba grisalha curta desenhada como uma mancha simples. A PRIMEIRA imagem é Joseph na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (careca, barba grisalha curta, blazer marrom, relógio analógico, caneca de café). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: braços cruzados sobre o peito, peso numa perna, postura firme.\nROSTO (obrigatório, bem diferente da primeira imagem): sobrancelhas BAIXAS, retas e aproximadas; pálpebras de cima um pouco caídas; olhar firme direto para a frente; boca fechada em linha reta, sem sorriso.\n\nEstilo C, igual ao das referências: proporção adulta de ~7,5 cabeças, mesmo nível de detalhe nas roupas, contorno escuro com leve textura de lápis, cores suaves. O ROSTO deve ser tão expressivo quanto o da imagem de referência de expressão: sobrancelhas e olhos mudam bastante de uma emoção para outra. Sprite de visual novel, corpo inteiro, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_qualidade/serious.png"
+  ],
+  "depends": "developer_coding__neutral"
+ },
+ {
+  "id": "developer_coding__thinking",
+  "prompt": "ROSTO NO TRAÇO DA EMILY (segunda imagem de referência): linhas simples e limpas, SEM rugas, sem marcas de expressão desenhadas, sem textura de pele, sombreamento de 1 tom; olhos com íris escura bem marcada e brilho discreto, sobrancelhas grossas e expressivas; barba grisalha curta desenhada como uma mancha simples. A PRIMEIRA imagem é Joseph na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (careca, barba grisalha curta, blazer marrom, relógio analógico, caneca de café). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: uma mão no queixo, a outra no bolso ou segurando o objeto do personagem, cabeça levemente inclinada.\nROSTO (obrigatório, bem diferente da primeira imagem): uma sobrancelha erguida e a outra franzida (assimétricas); olhos semicerrados olhando para CIMA e para o LADO, não para a frente; lábios comprimidos e puxados para um canto.\n\nEstilo C, igual ao das referências: proporção adulta de ~7,5 cabeças, mesmo nível de detalhe nas roupas, contorno escuro com leve textura de lápis, cores suaves. O ROSTO deve ser tão expressivo quanto o da imagem de referência de expressão: sobrancelhas e olhos mudam bastante de uma emoção para outra. Sprite de visual novel, corpo inteiro, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/thinking.png"
+  ],
+  "depends": "developer_coding__neutral"
+ },
+ {
+  "id": "developer_security__thinking",
+  "prompt": "EXPRESSÃO BEM DIFERENTE DA POSE SÉRIA: olhos virados para CIMA e para a DIREITA, uma sobrancelha bem erguida e a outra baixa, boca torta para um lado, cabeça inclinada. A PRIMEIRA imagem é Mateus na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (camiseta preta, sobrecamisa cinza-escura aberta, crachá de acesso no cinto). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: uma mão no queixo, a outra no bolso ou segurando o objeto do personagem, cabeça levemente inclinada.\nROSTO (obrigatório, bem diferente da primeira imagem): uma sobrancelha erguida e a outra franzida (assimétricas); olhos semicerrados olhando para CIMA e para o LADO, não para a frente; lábios comprimidos e puxados para um canto.\n\nEstilo C, igual ao das referências: proporção adulta de ~7,5 cabeças, mesmo nível de detalhe nas roupas, contorno escuro com leve textura de lápis, cores suaves. O ROSTO deve ser tão expressivo quanto o da imagem de referência de expressão: sobrancelhas e olhos mudam bastante de uma emoção para outra. Sprite de visual novel, corpo inteiro, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/thinking.png"
+  ],
+  "depends": "developer_security__serious"
+ }
+]

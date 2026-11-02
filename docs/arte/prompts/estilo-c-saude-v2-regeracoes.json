@@ -1,0 +1,38 @@
+[
+ {
+  "id": "developer_test__serious",
+  "prompt": "POSE OBRIGATÓRIA: braços CRUZADOS sobre o peito, boca fechada, expressão séria e concentrada, sem acenar, sem sorrir. Mantenha os ÓCULOS redondos, o boné azul-marinho, a barba, o crachá azul e o smartwatch.\n\nA PRIMEIRA imagem é César já no estilo e na roupa finais (inclusive: crachá azul num cordão no pescoço, smartwatch no pulso e um celular de testes com capinha colorida na mão ou no bolso da camisa): mantenha a identidade, o rosto, o cabelo, a roupa, os acessórios e as cores. A SEGUNDA imagem mostra a POSE e a expressão desejadas. Desenhe a pessoa da primeira imagem na pose da segunda. A TERCEIRA é referência de estilo e proporção.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: mesmas proporções de corpo (adulto com ~7,5 cabeças, cabeça proporcional, ombros e mãos naturais), o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas, rosto simples com olhos discretos. Nem realista demais (sem pele com textura de foto, sem rugas detalhadas) nem cartunesco demais (sem cabeça grande, sem olhos enormes). Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_test__enthusiastic"
+ },
+ {
+  "id": "developer_test__confident",
+  "prompt": "POSE OBRIGATÓRIA: uma mão no bolso da calça e a outra segurando o celular de testes à altura do peito, olhando confiante para a frente com meio sorriso; NÃO está acenando. Mantenha os óculos, o boné azul-marinho, a barba, o crachá azul e o smartwatch.\n\nA PRIMEIRA imagem é César já no estilo e na roupa finais (inclusive: crachá azul num cordão no pescoço, smartwatch no pulso e um celular de testes com capinha colorida na mão ou no bolso da camisa): mantenha a identidade, o rosto, o cabelo, a roupa, os acessórios e as cores. A SEGUNDA imagem mostra a POSE e a expressão desejadas. Desenhe a pessoa da primeira imagem na pose da segunda. A TERCEIRA é referência de estilo e proporção.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: mesmas proporções de corpo (adulto com ~7,5 cabeças, cabeça proporcional, ombros e mãos naturais), o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas, rosto simples com olhos discretos. Nem realista demais (sem pele com textura de foto, sem rugas detalhadas) nem cartunesco demais (sem cabeça grande, sem olhos enormes). Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/confident.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_test__enthusiastic"
+ },
+ {
+  "id": "developer_management__serious",
+  "prompt": "IDENTIDADE OBRIGATÓRIA: é o Robert da PRIMEIRA imagem: camiseta de LISTRAS HORIZONTAIS azul-marinho e branco, BIGODE (sem barba cheia), cabelo preto curto, calça cáqui, crachá no bolso e prancheta. POSE: braços cruzados segurando a prancheta junto ao corpo, expressão séria.\n\nA PRIMEIRA imagem é Robert já no estilo e na roupa finais (inclusive: crachá preso no bolso e uma prancheta com o cronograma impresso (sem texto legível)): mantenha a identidade, o rosto, o cabelo, a roupa, os acessórios e as cores. A SEGUNDA imagem mostra a POSE e a expressão desejadas. Desenhe a pessoa da primeira imagem na pose da segunda. A TERCEIRA é referência de estilo e proporção.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: mesmas proporções de corpo (adulto com ~7,5 cabeças, cabeça proporcional, ombros e mãos naturais), o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas, rosto simples com olhos discretos. Nem realista demais (sem pele com textura de foto, sem rugas detalhadas) nem cartunesco demais (sem cabeça grande, sem olhos enormes). Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_management/serious.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_management__thinking"
+ },
+ {
+  "id": "developer_ai__thinking",
+  "prompt": "POSE OBRIGATÓRIA: mão no QUEIXO, olhar para cima e para o lado, pensativo; a outra mão segura a alça da mochila; NÃO está apontando. Mantenha os óculos pretos, o cabelo loiro, a camisa de flores, a mochila com adesivos e a pulseira.\n\nA PRIMEIRA imagem é Lucas já no estilo e na roupa finais (inclusive: mochila de uma alça com adesivos de tecnologia e uma pulseira de tecido): mantenha a identidade, o rosto, o cabelo, a roupa, os acessórios e as cores. A SEGUNDA imagem mostra a POSE e a expressão desejadas. Desenhe a pessoa da primeira imagem na pose da segunda. A TERCEIRA é referência de estilo e proporção.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: mesmas proporções de corpo (adulto com ~7,5 cabeças, cabeça proporcional, ombros e mãos naturais), o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas, rosto simples com olhos discretos. Nem realista demais (sem pele com textura de foto, sem rugas detalhadas) nem cartunesco demais (sem cabeça grande, sem olhos enormes). Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_ai/thinking.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png"
+  ],
+  "depends": "developer_ai__positive"
+ }
+]
