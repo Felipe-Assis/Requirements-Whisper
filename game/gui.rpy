@@ -106,7 +106,9 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 360
+## 397 = dialogue_xpos (402) menos a borda de 5 px da namebox: o nome começa na
+## mesma coluna do texto da fala.
+define gui.name_xpos = 397
 define gui.name_ypos = 0
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
@@ -443,7 +445,7 @@ init python:
 
         ## Adjust the location of the textbox.
         gui.textbox_height = 360
-        gui.name_xpos = 120
+        gui.name_xpos = 130
         gui.dialogue_xpos = 135
         gui.dialogue_width = 1650
 

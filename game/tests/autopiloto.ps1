@@ -3,12 +3,16 @@
 # Exemplo, da raiz do projeto:
 #   powershell -File game/tests/autopiloto.ps1
 #   powershell -File game/tests/autopiloto.ps1 -Rotas startup -Modos primeira,aleatorio:3
+#   powershell -File game/tests/autopiloto.ps1 -Mapa pular     (pula todo tempo livre)
 param(
     [string[]]$Rotas = @("saude", "startup", "corporativo"),
     [string[]]$Modos = @("primeira", "ultima", "aleatorio:1", "aleatorio:2", "aleatorio:3"),
     [string]$Sdk = "C:\Program Files (x86)\renpy-8.5.3-sdk",
     [string]$Saida = "",
-    [int]$TimeoutSeg = 900
+    [int]$TimeoutSeg = 900,
+    # Estratégia do tempo livre: prioridade, ultima, aleatorio ou pular.
+    # Vazio = padrão de cada modo (ver autopiloto.rpy).
+    [string]$Mapa = ""
 )
 
 # "powershell -File" entrega "a,b" como um texto só.
@@ -25,12 +29,14 @@ $linhas = @()
 foreach ($rota in $Rotas) {
     foreach ($modo in $Modos) {
         $nome = "$rota-$($modo -replace ':', '')"
+        if ($Mapa) { $nome = "$nome-$Mapa" }
         $json = Join-Path $Saida "$nome.json"
         $saves = Join-Path $Saida "saves-$nome"
         Remove-Item $json -ErrorAction SilentlyContinue
         $env:RW_AUTOPILOTO = "${rota}:$modo"
         $env:RW_AUTOPILOTO_RELATORIO = $json
         $env:SDL_AUDIODRIVER = "dummy"
+        if ($Mapa) { $env:RW_AUTOPILOTO_MAPA = $Mapa } else { Remove-Item Env:RW_AUTOPILOTO_MAPA -ErrorAction SilentlyContinue }
         $p = Start-Process -FilePath $python -ArgumentList "`"$renpy`"", "`"$projeto`"", "--savedir", "`"$saves`"" -PassThru
         if (-not $p.WaitForExit($TimeoutSeg * 1000)) {
             Stop-Process -Id $p.Id -Force
@@ -43,11 +49,12 @@ foreach ($rota in $Rotas) {
             continue
         }
         $r = Get-Content $json -Raw -Encoding UTF8 | ConvertFrom-Json
-        $linhas += "{0,-26} epilogo={1} final={2}/{3} registros={4} erros={5} img={6} audio={7} {8}s" -f `
+        $linhas += "{0,-26} epilogo={1} final={2}/{3} registros={4} erros={5} img={6} audio={7} tempo_livre={8} mentoria={9} pistas={10} genericos={11} {12}s" -f `
             $nome, $r.chegou_epilogo, $r.final_cena, $r.final_rota, $r.resumo_registros, `
             @($r.erros).Count, (@($r.imagens_ausentes).Count + @($r.imagens_nao_encontradas).Count), `
-            @($r.audios_ausentes).Count, $r.segundos
+            @($r.audios_ausentes).Count, $r.intermissoes, $r.mentoria, @($r.pistas).Count, `
+            @($r.conteudo_generico).Count, $r.segundos
     }
 }
-Remove-Item Env:RW_AUTOPILOTO, Env:RW_AUTOPILOTO_RELATORIO -ErrorAction SilentlyContinue
+Remove-Item Env:RW_AUTOPILOTO, Env:RW_AUTOPILOTO_RELATORIO, Env:RW_AUTOPILOTO_MAPA -ErrorAction SilentlyContinue
 $linhas

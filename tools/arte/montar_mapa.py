@@ -1,0 +1,244 @@
+"""Monta o lote do mapa da cidade (E3b): base, lugares, ícones de atividade, marcador "Você" e telas de transição.
+
+Gera docs/arte/prompts/mapa.json (tarefas para gerar_codex.py) e docs/arte/prompts/mapa-saidas.json (destinos para
+posproc.py). Rode a partir da raiz do repositório:
+    python tools/arte/montar_mapa.py
+
+O design (lugares, bairros, posições, trajetos) está em docs/design/mapa-cidade.md. As descrições visuais abaixo são
+as mesmas do documento; se mudar uma, mude a outra.
+"""
+import json, os
+
+RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+IMG = os.path.join(RAIZ, "game", "images").replace("\\", "/")
+REF = os.path.join(RAIZ, "docs", "arte", "referencias").replace("\\", "/")
+REF_FUNDO = f"{REF}/estilo-c-escritorio.png"
+REF_TRACO = f"{REF}/estilo-c-emily.png"
+
+ESTILO_MAPA = (
+    "Estilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de "
+    "ilustração feita à mão, traço limpo e escuro, objetos bem definidos, luz de fim de tarde vinda da esquerda, "
+    "sombras curtas e contidas projetadas para a direita. Sem texto legível, sem letreiros, sem números, sem "
+    "logotipos."
+)
+PERSPECTIVA = (
+    "Vista de cima em perspectiva leve, como uma maquete ilustrada vista a cerca de 30 graus (isométrica suave): "
+    "telhados e a fachada voltada para baixo à esquerda visíveis, sem distorção de olho de peixe, sem ponto de fuga "
+    "dramático."
+)
+ESTILO_ICONE = (
+    "Ícone de interface no estilo C (o mesmo traço da imagem anexada, que é só referência de estilo): contorno "
+    "escuro e grosso de 3 a 4 px com leve textura de lápis, preenchimento chapado em 2 tons suaves e levemente "
+    "dessaturados, forma simples com silhueta única, legível em 48 px. Um único objeto centralizado, vista frontal ou "
+    "três quartos, fundo totalmente transparente (PNG com alfa), sem moldura, sem círculo de fundo, sem sombra, sem "
+    "texto, sem letras, sem números. Formato quadrado."
+)
+ESTILO_TRANSICAO = (
+    "Estilo C dos fundos (aprovado): paleta suave e levemente dessaturada, leve textura de papel, clima de "
+    "ilustração feita à mão, perspectiva precisa, linhas limpas, objetos bem definidos, luz clara porém contida. "
+    "Figurantes só ao longe ou de costas, sem rosto. Sem texto legível (nada de letreiros, nomes de linha, números de "
+    "andar ou placas com letras). Fundo de visual novel em paisagem 3:2, ponto de vista de quem está a caminho, com "
+    "uma faixa calma na parte de baixo (onde a tela escreve o trajeto)."
+)
+
+# Base do mapa: 2560x1440. As posições citadas no prompt são aproximadas; a E2 ajusta as coordenadas dos lugares
+# (docs/design/mapa-cidade.md, seção 3) sobre a base gerada.
+PROMPT_BASE = (
+    "Mapa ilustrado de uma cidade fictícia inspirada no Rio de Janeiro, em paisagem 16:9 e alta resolução. "
+    f"{PERSPECTIVA}\n\n"
+    "Composição (esquerda para a direita, de cima para baixo):\n"
+    "- No alto, uma faixa de horizonte com morros verdes de mata densa; no pico mais alto, à esquerda do centro, uma "
+    "pequena estátua de braços abertos, enevoada e distante.\n"
+    "- À esquerda, morros verdes descem até um vale residencial (casas baixas, sobrados coloridos, ruas curvas com "
+    "amendoeiras).\n"
+    "- No centro, um bairro de avenidas retas e quadras de prédios baixos e médios em tons frios, com uma praça arborizada.\n"
+    "- À direita, uma baía larga de água azul-esverdeada calma ocupa quase metade do mapa, com veleiros pequenos e "
+    "uma barca. Dentro da baía, à direita e no alto, uma ilha baixa e plana com gramados, alamedas de "
+    "palmeiras-imperiais e prédios modernistas de concreto de um campus universitário, ligada ao continente por uma "
+    "ponte comprida de vãos de concreto.\n"
+    "- No alto, junto à margem da baía, uma faixa portuária com armazéns de tijolo e um guindaste antigo, e mais acima "
+    "uma área industrial com galpões e torres de transmissão.\n"
+    "- A margem da baía desce do porto até um parque comprido à beira da água (gramados, árvores de copa larga, "
+    "ciclovia vermelha, caminho sinuoso) e termina embaixo numa enseada curva com praia de areia clara e um calçadão "
+    "de pedras portuguesas com ondas pretas e brancas, palmeiras ao longo da orla.\n"
+    "- No canto inferior direito, dois morros de pedra arredondados na entrada da baía, com um bondinho pendurado num "
+    "cabo entre eles.\n"
+    "- Uma linha de metrô desenhada como faixa colorida (coral) com estações pequenas em círculo atravessa o mapa do "
+    "vale residencial à enseada e ao centro; linhas de ônibus como faixas tracejadas finas (azul-petróleo) seguem as "
+    "avenidas e cruzam a ponte até a ilha.\n\n"
+    "IMPORTANTE: deixe 12 lotes vazios, de chão claro (grama aparada ou calçada lisa, com contorno suave e sem nada "
+    "construído), onde depois serão encaixados os prédios principais, cada um recortado à parte. Posições "
+    "aproximadas em fração da largura e da altura (0,0 no canto superior esquerdo): vale residencial (0,24; 0,53); "
+    "bairro central (0,46; 0,39); porto (0,62; 0,30); área industrial (0,54; 0,16); parque à beira da baía "
+    "(0,55; 0,57); três lotes juntos perto da enseada (0,39; 0,74), (0,48; 0,76) e, na orla, (0,56; 0,85); quatro "
+    "lotes no campus da ilha (0,77; 0,40), (0,84; 0,46), (0,92; 0,38) e (0,84; 0,60). Os lotes do campus ficam "
+    "ligados por alamedas.\n\n"
+    "Sem pessoas em primeiro plano; figurantes minúsculos só ao longe. Carros e ônibus pequenos e simplificados. Nenhum "
+    "nome de bairro, rua ou estação escrito.\n\n"
+    f"{ESTILO_MAPA}\n\nA imagem anexada é só referência de estilo (traço, paleta, textura), não de conteúdo."
+)
+
+# id, nome, bairro, largura do sprite na base 2560x1440, descrição visual, referências extras (além da base e do
+# estilo) com o papel de cada uma.
+LUGARES = [
+    ("republica", "República das Amendoeiras", "Laranjeiras", 220,
+     "a casa do jogador: sobrado estreito de três andares do início do século XX, fachada verde-água desbotada com "
+     "frisos brancos, varanda de ferro no segundo andar com varal de roupas coloridas e um vaso de samambaia, janela "
+     "do sótão com luz acesa, porta de madeira com dois degraus, uma amendoeira na calçada de pedras portuguesas, uma "
+     "bicicleta encostada e um gato no muro", []),
+    ("predio_projeto", "Prédio da equipe (Polo de Tecnologia)", "Cidade Universitária", 330,
+     "prédio baixo de três andares e subsolo, concreto claro e vidro azul-esverdeado com brises horizontais de "
+     "madeira; no terceiro andar, janelas grandes com luz quente de fim de tarde mostram mesas de trabalho e uma sala "
+     "com quadro branco; no segundo, uma copa com um vaso na janela; no térreo, um refeitório com mesas visíveis pela "
+     "vidraça; na lateral, uma porta metálica discreta com grade de ventilação e uma rampa que desce ao subsolo; pátio "
+     "de entrada com bicicletário e duas palmeiras-imperiais jovens",
+     [(f"{IMG}/bg/empresa_exterior_manha.png", "o prédio de vidro e concreto desta imagem é a mesma construção; "
+       "mantenha materiais e cores, mas na perspectiva do mapa e no estilo da base")]),
+    ("praca_campus", "Praça das Palmeiras", "Cidade Universitária", 250,
+     "praça pequena e quadrada com calçada de pedras portuguesas em ondas pretas e brancas, três palmeiras-imperiais, "
+     "dois bancos de madeira, um bebedouro, canteiro de flores baixas, um ipê-roxo florido num canto e um bem-te-vi "
+     "num galho", []),
+    ("instituto", "Instituto (ambulatório)", "Cidade Universitária", 310,
+     "ala de dois andares de um instituto de saúde: fachada creme com janelas azul-esverdeadas, entrada lateral com "
+     "toldo verde-água e rampa com corrimão, uma placa com o desenho de uma folha e um pulmão (sem letras), sala de "
+     "espera com cadeiras azuis visível pela vidraça, jardim de entrada com bancos e palmeiras. Sem cruz vermelha, sem "
+     "a palavra HOSPITAL e sem ambulância",
+     [(f"{IMG}/bg/fachada_instituto_tarde.png", "referência do prédio do Instituto; NÃO copie os letreiros nem a "
+       "ambulância")]),
+    ("bandejao", "Bandejão da universidade", "Cidade Universitária", 290,
+     "prédio baixo de concreto aparente sobre pilotis, com um painel de azulejos azuis geométricos na fachada, fila de "
+     "estudantes de mochila até a porta (minúsculos, de costas), bicicletário, um ipê-amarelo no gramado e uma escada "
+     "lateral que desce para o subsolo", []),
+    ("casarao", "Casarão amarelo (Trocado)", "Botafogo", 330,
+     "casarão de dois andares do início do século XX, fachada amarelo-ocre desbotada com frisos brancos, janelas altas "
+     "em arco com venezianas verde-garrafa abertas; pelas janelas do segundo andar aparecem uma mesa comprida de "
+     "madeira clara com notebooks e uma parede de vidro com post-its coral, menta e amarelo; portão de ferro com uma "
+     "plaquinha sem texto, bicicleta encostada no muro, uma amendoeira na calçada; no telhado, um terraço de deck de "
+     "madeira com guarda-corpo de ferro, varal de lâmpadas amarelas e vasos de manjericão. A quina direita do térreo "
+     "fica sem loja (o café é outra peça encaixada ali)", []),
+    ("cafe_esquina", "Café da esquina", "Botafogo", 170,
+     "a quina térrea do mesmo casarão amarelo-ocre (só o térreo e um pedaço da parede, cortado em cima): café de "
+     "esquina com toldo listrado verde e creme, duas mesinhas redondas na calçada com cadeiras de ferro, vitrine com "
+     "uma cesta de pão de queijo, uma lousa de cardápio com rabiscos sem letras e xícaras nas mesas", []),
+    ("orla", "Orla de Botafogo", "Botafogo", 280,
+     "trecho da orla: abrigo de ônibus com cobertura curva e banco, sobre o calçadão de pedras portuguesas em ondas "
+     "pretas e brancas, duas palmeiras, a mureta da praia com um pedaço de areia clara e água, um carrinho de mate com "
+     "guarda-sol listrado", []),
+    ("aterro", "Parque do Aterro", "Aterro", 300,
+     "faixa de parque à beira da baía: gramado com árvores de copa larga e palmeiras, caminho sinuoso de pedras "
+     "portuguesas, ciclovia vermelha, um quiosque de mate com guarda-sol listrado, bancos voltados para a água e um "
+     "pequeno píer de madeira com dois barquinhos", []),
+    ("torre_vertice", "Torre do Grupo Vértice", "Centro", 270,
+     "torre de escritórios de dezesseis andares, alta e esguia, vidro azul-acinzentado com faixas de concreto claro "
+     "em cada andar, antenas e heliponto no alto; térreo com porta giratória e uma marquise com um café de mesinhas "
+     "embaixo; as janelas de um andar alto com luz quente acesa e as do penúltimo andar com persianas a meia altura; "
+     "uma janela basculante no nível da calçada (o subsolo); canteiro com plantas e um banco. Bem mais alta e mais "
+     "escura que o prédio do campus. Sem letreiro e sem logotipo", []),
+    ("aceleradora", "Aceleradora Maré", "Cais da Maré", 320,
+     "galpão portuário reformado: tijolo aparente, telhado em arco, portões de metal azul-petróleo, uma faixa lateral "
+     "com padrão geométrico azul e laranja sem palavras, um guindaste antigo pintado ao lado e um pedaço do cais com "
+     "água", []),
+    ("subestacao", "Subestação Caju", "Caju", 260,
+     "subestação de energia: pátio cercado por alambrado com portão de grade, transformadores cinza com isoladores de "
+     "porcelana marrom, pórticos metálicos treliçados com cabos, uma casinha de comando de tijolo com porta azul, uma "
+     "caminhonete branca de serviço com faixa laranja (sem texto), chão de brita e um poste com refletor", []),
+]
+
+# 8 ícones de atividade (balões e botões de ação) e o marcador "Você".
+ICONES = [
+    ("conversando", "dois balões de fala sobrepostos, um coral e um menta, vazios (sem letras nem pontos)"),
+    ("estudando", "um livro aberto com uma fita marcadora e um lápis atravessado por cima"),
+    ("reuniao", "três bustos simples lado a lado atrás da borda de uma mesa, o do meio um pouco à frente, sem rostos "
+     "detalhados"),
+    ("celular", "um notebook aberto visto de três quartos com um celular em pé ao lado, telas em azul claro sem "
+     "conteúdo"),
+    ("descansando", "uma rede de dormir listrada amarrada entre dois coqueiros pequenos"),
+    ("observando", "uma lupa grande sobre a tela de um celular, com a ponta de um dedo tocando um botão na tela"),
+    ("programando", "uma janela de editor de código com os símbolos < / > grandes e bem desenhados no centro e "
+     "três linhas curtas coloridas abaixo"),
+    ("cafe", "uma xícara branca com pires e três fios curvos de vapor, um pão de queijo ao lado"),
+]
+PROMPT_MARCADOR = (
+    "Marcador de mapa \"Você\" para a interface de um jogo: um pino em forma de gota invertida, cor coral quente com "
+    "contorno escuro e grosso, com um círculo creme no centro contendo a silhueta simples (cabeça e ombros) de uma "
+    "pessoa de mochila. A ponta da gota embaixo é bem fina e centralizada, porque marca o ponto exato no mapa. "
+    "Precisa ser legível de 64 a 96 px sobre um mapa colorido.\n\n" + ESTILO_ICONE
+)
+
+# Telas de transição: id, descrição, referências extras.
+TRANSICOES = [
+    ("onibus", "o interior de um ônibus urbano no fim da tarde, visto do banco de quem está sentado no meio do "
+     "corredor: bancos azuis, barras amarelas, alguns passageiros de costas, janelas largas mostrando, borradas pelo "
+     "movimento, palmeiras, a orla e um morro verde; luz laranja entrando de lado", []),
+    ("metro", "o interior de um vagão de metrô: bancos laterais, barras de inox, um mapa de linhas simplificado no "
+     "alto (só faixas coloridas e pontos, sem letras), janelas escuras com riscos de luz do túnel, poucos passageiros "
+     "lendo ou de fone, de perfil ou de costas; luz fria e limpa", []),
+    ("calcada", "a calçada de um bairro residencial carioca vista por quem caminha: pedras portuguesas em ondas pretas "
+     "e brancas, amendoeiras fazendo sombra, sobrados coloridos e prédios baixos, uma banca de jornal sem letreiro, um "
+     "morro verde ao fundo e luz de fim de tarde", []),
+    ("elevador", "o saguão de uma torre de escritórios: piso de granito claro, catracas de inox, a porta de um "
+     "elevador aberta com luz interna quente, painel de andares só com luzes (sem números), um vaso de planta alto, "
+     "um segurança de costas ao fundo e o reflexo da rua na vidraça", []),
+    ("campus", "o portão de um campus universitário numa ilha: portão largo de grade aberto, uma guarita, uma alameda "
+     "de palmeiras-imperiais, prédios modernistas de concreto sobre pilotis, bicicletas, estudantes de mochila de "
+     "costas e, ao fundo, a ponte e a baía", []),
+    ("escada", "a escada de madeira de um casarão antigo transformado em coworking, vista de baixo: degraus de "
+     "madeira escura gastos, corrimão torneado, azulejos antigos até meia parede, uma janela alta em arco com luz de "
+     "tarde e um vaso de costela-de-adão no patamar",
+     [(f"{IMG}/bg/startup_coworking_tarde.png", "o andar de cima deste casarão; use os mesmos materiais e cores")]),
+]
+
+
+def refs_e_texto(extras):
+    """Referências extras dos lugares e a frase com o papel de cada uma (1ª = base, 2ª = estilo, extras da 3ª)."""
+    refs, textos = [], []
+    for i, (caminho, papel) in enumerate(extras):
+        refs.append(caminho)
+        textos.append(f"A imagem {i + 3} é {papel}.")
+    return refs, (" " + " ".join(textos)) if textos else ""
+
+
+tarefas, saidas = [], []
+
+tarefas.append({"id": "mapa__base", "prompt": PROMPT_BASE, "refs": [REF_FUNDO]})
+saidas.append({"id": "mapa__base", "kind": "mapa", "dest": "images/mapa/cidade_base.png"})
+
+for lid, nome, bairro, largura, desc, extras in LUGARES:
+    refs, papeis = refs_e_texto(extras)
+    prompt = (
+        f"A PRIMEIRA imagem é a base do mapa da cidade, já pronta. Desenhe SÓ um lugar para ser encaixado nela, "
+        f"com a mesma perspectiva, o mesmo ângulo de câmera, a mesma escala de prédios, a mesma luz (sol da esquerda) "
+        f"e o mesmo traço e paleta. A SEGUNDA imagem é só referência de estilo.{papeis}\n\n"
+        f"Lugar: {nome} ({bairro}). {desc[0].upper()}{desc[1:]}.\n\n"
+        "Desenhe como uma peça de maquete recortada: o lugar sobre um pequeno lote de chão próprio (calçada ou "
+        "gramado) de contorno arredondado e irregular, que se apoia num lote vazio da base. Fundo totalmente "
+        "transparente (PNG com alfa) fora da peça: sem céu, sem ruas em volta, sem outros prédios. Sem pessoas em "
+        f"primeiro plano (no máximo figurantes minúsculos de costas).\n\n{PERSPECTIVA}\n\n{ESTILO_MAPA}"
+    )
+    tarefas.append({"id": f"lugar__{lid}", "prompt": prompt, "refs": [REF_FUNDO] + refs, "depends": "mapa__base"})
+    saidas.append({"id": f"lugar__{lid}", "kind": "lugar", "largura": largura,
+                   "dest": f"images/mapa/lugares/{lid}.png"})
+
+for iid, desc in ICONES:
+    prompt = f"Ícone de atividade para os balões do mapa de um jogo: {desc}.\n\n{ESTILO_ICONE}"
+    tarefas.append({"id": f"icone__{iid}", "prompt": prompt, "refs": [REF_TRACO]})
+    saidas.append({"id": f"icone__{iid}", "kind": "icone", "tamanho": 192,
+                   "dest": f"images/mapa/icones/{iid}.png"})
+
+tarefas.append({"id": "marcador__voce", "prompt": PROMPT_MARCADOR, "refs": [REF_TRACO]})
+saidas.append({"id": "marcador__voce", "kind": "icone", "tamanho": 192, "dest": "images/mapa/voce.png"})
+
+for tid, desc, extras in TRANSICOES:
+    refs = [REF_FUNDO] + [c for c, _ in extras]
+    papeis = "".join(f" A imagem {i + 2} é {papel}." for i, (_, papel) in enumerate(extras))
+    prompt = (f"Tela de transição de um jogo (o personagem está a caminho de outro lugar da cidade): {desc}.\n\n"
+              f"A PRIMEIRA imagem é só referência de estilo.{papeis}\n\n{ESTILO_TRANSICAO}")
+    tarefas.append({"id": f"transicao__{tid}", "prompt": prompt, "refs": refs})
+    saidas.append({"id": f"transicao__{tid}", "kind": "bg", "dest": f"images/bg/transicao_{tid}.png"})
+
+os.makedirs(os.path.join(RAIZ, "docs", "arte", "prompts"), exist_ok=True)
+with open(os.path.join(RAIZ, "docs", "arte", "prompts", "mapa.json"), "w", encoding="utf-8") as f:
+    json.dump(tarefas, f, ensure_ascii=False, indent=1)
+with open(os.path.join(RAIZ, "docs", "arte", "prompts", "mapa-saidas.json"), "w", encoding="utf-8") as f:
+    json.dump({"saidas": saidas}, f, ensure_ascii=False, indent=1)
+print(len(tarefas), "tarefas de geração;", len(saidas), "saídas")

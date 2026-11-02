@@ -1,0 +1,210 @@
+<title>Assets do Whisperer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: mesa de revisão por rota — abas no topo, personagens em fileiras (retrato + poses no palco cinza), depois cenários e telas em grade; painel de revisão no fim. */
+:root {
+  --bg: #f3f4f2; --surface: #ffffff; --fg: #1d2321; --muted: #5d6763; --line: #d9dedb;
+  --accent: #0f6e6a; --accent-soft: #dcefed; --stage: #8a8f8d; --stage-edge: #7b807e;
+  --warn: #9a4b00; --warn-soft: #fbe9d7; --badge-fg: #0b4f4c;
+  --display: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141917; --surface: #1c2220; --fg: #e8ecea; --muted: #a3ada9; --line: #2e3633;
+    --accent: #5cc4bd; --accent-soft: #173734; --stage: #6e7371; --stage-edge: #626765;
+    --warn: #f0a868; --warn-soft: #3a2a1a; --badge-fg: #bfeee9; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141917; --surface: #1c2220; --fg: #e8ecea; --muted: #a3ada9; --line: #2e3633;
+  --accent: #5cc4bd; --accent-soft: #173734; --stage: #6e7371; --stage-edge: #626765;
+  --warn: #f0a868; --warn-soft: #3a2a1a; --badge-fg: #bfeee9; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+.wrap { max-width: 1280px; margin: 0 auto; display: grid; gap: 28px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 800 clamp(28px, 4.5vw, 42px)/1.05 var(--display); font-stretch: 80%; margin: 6px 0 0; text-wrap: balance; }
+h2 { font: 700 24px/1.15 var(--display); font-stretch: 85%; margin: 0; }
+h3 { font: 600 17px/1.3 var(--body); margin: 0; }
+p { margin: 0; }
+.lede { color: var(--muted); max-width: 75ch; margin-top: 8px; }
+.checks { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; gap: 8px; }
+.checks ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 8px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav a { font: 600 14px var(--body); color: var(--fg); text-decoration: none; padding: 8px 14px; border-radius: 4px; border: 1px solid var(--line); background: var(--surface); }
+nav a[aria-current="page"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+nav a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+nav .count { font: 500 12px var(--mono); margin-left: 6px; color: inherit; opacity: .75; }
+section { display: grid; gap: 14px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.sec-head p { color: var(--muted); font-size: 14px; }
+.person { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; display: grid; grid-template-columns: 200px minmax(0, 1fr); overflow: hidden; }
+@media (max-width: 760px) { .person { grid-template-columns: 1fr; } }
+.who { padding: 14px; display: grid; gap: 8px; align-content: start; border-right: 1px solid var(--line); }
+@media (max-width: 760px) { .who { border-right: 0; border-bottom: 1px solid var(--line); grid-template-columns: 96px 1fr; align-items: center; } }
+.who .face { background: var(--stage); border-radius: 4px; overflow: hidden; }
+.who .face img { display: block; width: 100%; height: auto; }
+.role { color: var(--muted); font-size: 14px; }
+.note { font-size: 13px; color: var(--warn); background: var(--warn-soft); border-radius: 4px; padding: 6px 8px; }
+.poses { display: flex; gap: 12px; padding: 14px; overflow-x: auto; }
+.tile { flex: 0 0 auto; display: grid; gap: 6px; }
+.stage { background: var(--stage); border: 1px solid var(--stage-edge); border-radius: 4px; height: 360px; display: grid; place-items: end center; padding: 10px 8px 0; }
+.stage img { height: 100%; width: auto; display: block; }
+@media (max-width: 760px) { .stage { height: 260px; } }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 14px; }
+.bgcard { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: grid; gap: 0; }
+.bgcard img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: var(--stage); }
+.bgcard.art img { object-fit: contain; }
+.cap { padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.cap code, .tile code { font: 500 12px var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+.redo { font: 600 12px var(--body); border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 4px; padding: 5px 9px; cursor: pointer; white-space: nowrap; }
+.redo[aria-pressed="true"] { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.tile .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.marked .stage, .bgcard.marked { outline: 3px solid var(--warn); outline-offset: -3px; }
+.review { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; display: grid; gap: 10px; }
+textarea { width: 100%; min-height: 140px; font: 14px/1.5 var(--mono); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 10px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.primary { font: 600 14px var(--body); color: var(--bg); background: var(--fg); border: 0; border-radius: 4px; padding: 9px 14px; cursor: pointer; }
+.small { font-size: 13px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">The Requirements Whisperer · validação de assets · estilo C</span>
+    <h1>Personagens e cenários de cada rota</h1>
+    <p class="lede">Tudo o que está no jogo hoje, na branch <code>evolucao</code>. Os personagens aparecem com todas as poses na mesma escala em que entram em cena, sobre cinza neutro. Marque <strong>Refazer</strong> no que destoa e escreva o motivo no fim da página.</p>
+  </header>
+
+  <div class="checks">
+    <h3>O que eu já conferi</h3>
+    <ul>
+      <li>Cobertura: os 82 arquivos de personagem (59 poses e 23 retratos) foram regerados no estilo C; nenhum sobrou do estilo antigo.</li>
+      <li>Identidade: cada personagem foi comparado pose a pose; 5 imagens foram refeitas por troca de identidade, fundo não transparente ou âncora errada.</li>
+      <li>Métricas de saturação, brilho e contorno por sprite: os casos fora da média são roupa (colete laranja, blazer marrom) e o traço mais fino da Rosângela, sinalizados nos cartões.</li>
+      <li>As telas de produto e o cartão de conquistas não foram regerados: são interface, não ilustração.</li>
+    </ul>
+  </div>
+
+  <nav id="abas" aria-label="Rotas"></nav>
+  <main id="conteudo"></main>
+
+  <section class="review" aria-labelledby="t-rev">
+    <h2 id="t-rev">Sua revisão</h2>
+    <p class="small">Os itens marcados entram aqui automaticamente. Acrescente o motivo ao lado de cada um, copie e cole no chat do Claude Code.</p>
+    <textarea id="resumo" aria-label="Resumo da revisão"></textarea>
+    <div class="actions">
+      <button type="button" class="primary" id="copiar">Copiar revisão</button>
+      <button type="button" class="redo" id="limpar">Desmarcar tudo</button>
+      <span class="small" id="status" aria-live="polite"></span>
+    </div>
+  </section>
+</div>
+
+<script>
+const DADOS = /*DADOS*/null;
+const CHAVE = "assets-revisao-v1";
+let marcados = new Set(), notas = "";
+try { const s = JSON.parse(localStorage.getItem(CHAVE) || "{}"); marcados = new Set(s.m || []); notas = s.n || ""; } catch (e) {}
+function guardar() { try { localStorage.setItem(CHAVE, JSON.stringify({ m: [...marcados], n: notas })); } catch (e) {} }
+const abas = [...DADOS.rotas.map(r => ({ id: r.id, nome: r.nome })), { id: "sem-uso", nome: "Sem uso" }];
+
+function el(tag, attrs, ...filhos) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) { if (k === "class") n.className = v; else n.setAttribute(k, v); }
+  for (const f of filhos) if (f != null) n.append(f);
+  return n;
+}
+function botao(chave) {
+  const b = el("button", { type: "button", class: "redo", "aria-pressed": marcados.has(chave) ? "true" : "false" }, marcados.has(chave) ? "Refazer ✓" : "Refazer");
+  b.addEventListener("click", () => {
+    if (marcados.has(chave)) marcados.delete(chave); else marcados.add(chave);
+    const on = marcados.has(chave);
+    b.setAttribute("aria-pressed", on ? "true" : "false"); b.textContent = on ? "Refazer ✓" : "Refazer";
+    b.closest(".tile, .bgcard").classList.toggle("marked", on);
+    atualizarResumo(); guardar();
+  });
+  return b;
+}
+function img(o, alt) { return el("img", { src: o.src, width: o.w, height: o.h, alt, loading: "lazy", decoding: "async" }); }
+function fundoCard(f, tipo) {
+  const chave = `${tipo}:${f.id}`;
+  const c = el("figure", { class: "bgcard" + (tipo === "tela" ? " art" : "") + (marcados.has(chave) ? " marked" : "") },
+    img(f, f.id.replace(/_/g, " ")), el("figcaption", { class: "cap" }, el("code", {}, f.id), botao(chave)));
+  c.style.margin = "0"; return c;
+}
+function rota(r) {
+  const frag = document.createDocumentFragment();
+  const pess = el("section", { "aria-labelledby": `p-${r.id}` },
+    el("div", { class: "sec-head" }, el("h2", { id: `p-${r.id}` }, `Personagens · ${r.nome}`), el("p", {}, `${r.empresa} · ${r.pessoas.length} pessoas`)));
+  for (const p of r.pessoas) {
+    const who = el("div", { class: "who" }, el("div", { class: "face" }, img(p.retrato, `Retrato de ${p.nome}`)),
+      el("div", {}, el("h3", {}, p.nome), el("p", { class: "role" }, p.papel), p.nota ? el("p", { class: "note" }, p.nota) : null));
+    const poses = el("div", { class: "poses" });
+    for (const po of p.poses) {
+      const chave = `personagem:${p.id}/${po.pose}`;
+      poses.append(el("div", { class: "tile" + (marcados.has(chave) ? " marked" : "") },
+        el("div", { class: "stage" }, img(po, `${p.nome}, pose ${po.pose}`)),
+        el("div", { class: "row" }, el("code", {}, po.pose), botao(chave))));
+    }
+    const chaveR = `retrato:${p.id}`;
+    const tr = el("div", { class: "tile" + (marcados.has(chaveR) ? " marked" : "") },
+      el("div", { class: "stage" }, img(p.retrato, `Retrato de ${p.nome}`)), el("div", { class: "row" }, el("code", {}, "retrato"), botao(chaveR)));
+    tr.querySelector(".stage").style.placeItems = "center"; tr.querySelector(".stage img").style.height = "auto"; tr.querySelector(".stage img").style.width = "220px";
+    poses.append(tr);
+    pess.append(el("article", { class: "person" }, who, poses));
+  }
+  frag.append(pess);
+  const fs = el("section", { "aria-labelledby": `f-${r.id}` },
+    el("div", { class: "sec-head" }, el("h2", { id: `f-${r.id}` }, `Cenários · ${r.nome}`), el("p", {}, `${r.fundos.length} fundos usados pelas cenas desta rota`)),
+    el("div", { class: "grid" }, ...r.fundos.map(f => fundoCard(f, "fundo"))));
+  const ts = el("section", { "aria-labelledby": `t-${r.id}` },
+    el("div", { class: "sec-head" }, el("h2", { id: `t-${r.id}` }, `Telas de produto · ${r.nome}`), el("p", {}, "interface mostrada nas cenas; não regerada no estilo C")),
+    el("div", { class: "grid" }, ...r.telas.map(t => fundoCard(t, "tela"))));
+  frag.append(fs, ts);
+  return frag;
+}
+function semUso() {
+  return el("section", { "aria-labelledby": "s-sem" },
+    el("div", { class: "sec-head" }, el("h2", { id: "s-sem" }, "Fundos sem uso"), el("p", {}, "regerados no estilo C, mas nenhuma cena usa hoje; podem entrar nas intermissões")),
+    el("div", { class: "grid" }, ...DADOS.semUso.map(f => fundoCard(f, "fundo"))));
+}
+function mostrar() {
+  const id = (location.hash || "").slice(1);
+  const atual = abas.find(a => a.id === id) ? id : abas[0].id;
+  const nav = document.getElementById("abas"); nav.innerHTML = "";
+  for (const a of abas) {
+    const r = DADOS.rotas.find(x => x.id === a.id);
+    const n = r ? r.pessoas.reduce((s, p) => s + p.poses.length + 1, 0) + r.fundos.length + r.telas.length : DADOS.semUso.length;
+    const link = el("a", { href: `#${a.id}` }, a.nome, el("span", { class: "count" }, String(n)));
+    if (a.id === atual) link.setAttribute("aria-current", "page");
+    nav.append(link);
+  }
+  const main = document.getElementById("conteudo"); main.innerHTML = "";
+  main.style.display = "grid"; main.style.gap = "28px";
+  main.append(atual === "sem-uso" ? semUso() : rota(DADOS.rotas.find(r => r.id === atual)));
+}
+function atualizarResumo() {
+  const ta = document.getElementById("resumo");
+  const linhasNotas = (notas || "").split("\n").filter(l => l.trim() && !l.startsWith("- "));
+  const antigas = Object.fromEntries((notas || "").split("\n").filter(l => l.startsWith("- ")).map(l => { const m = l.match(/^- (\S+)(.*)$/); return m ? [m[1], m[2]] : [l, ""]; }));
+  const itens = [...marcados].sort().map(k => `- ${k}${antigas[k] || ": "}`);
+  ta.value = ["Revisão de assets (estilo C):", ...itens, ...linhasNotas.filter(l => l !== "Revisão de assets (estilo C):")].join("\n");
+  notas = ta.value;
+}
+document.getElementById("resumo").addEventListener("input", e => { notas = e.target.value; guardar(); });
+document.getElementById("copiar").addEventListener("click", async () => {
+  const ta = document.getElementById("resumo"), st = document.getElementById("status");
+  try { await navigator.clipboard.writeText(ta.value); st.textContent = "Revisão copiada."; } catch (e) { ta.select(); st.textContent = "Selecionei o texto: copie com Ctrl+C."; }
+});
+document.getElementById("limpar").addEventListener("click", () => { marcados.clear(); notas = ""; guardar(); mostrar(); atualizarResumo(); });
+window.addEventListener("hashchange", mostrar);
+mostrar(); atualizarResumo();
+</script>

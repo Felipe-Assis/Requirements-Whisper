@@ -9,6 +9,11 @@ init offset = -1
 ## de texto do celular, então o ajuste só vale fora dela.
 default persistent.texto_maior = False
 
+## Destacar quem fala (escurece os outros sprites; ui/styles/fala_destaque.rpy)
+## e respiração dos personagens + câmera (ui/styles/vida_transforms.rpy).
+default persistent.fala_destaque = True
+default persistent.vida_movimento = True
+
 init python:
     def texto_maior_ativo():
         return bool(persistent.texto_maior) and not renpy.variant("small")
@@ -219,7 +224,43 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
-screen choice(items):
+## Tipo de menu: menu (tipo="trabalho"): ... vale para todos os itens; um item
+## pode trocar com "Opção" (tipo="pista"). Com tipo, o botão ganha à esquerda
+## um selo com ícone + texto (o texto distingue os tipos mesmo sem cor) e o alt
+## vira "Trabalho: <opção>". i.caption e i.action não mudam (autopiloto e
+## testes clicam pelo texto). Ícones são glifos da DejaVuSans; a E3 pode
+## trocar por imagens mudando "icone" para um displayable.
+init python:
+    MENU_TIPOS = {
+        "trabalho": {"rotulo": _("TRABALHO"), "nome": _("Trabalho"), "icone": "▤", "cor": "#f2c14e"},
+        "conversa": {"rotulo": _("CONVERSA"), "nome": _("Conversa"), "icone": "❝", "cor": "#8fd694"},
+        "negociacao": {"rotulo": _("NEGOCIAÇÃO"), "nome": _("Negociação"), "icone": "⇄", "cor": "#ffa877"},
+        "pista": {"rotulo": _("PISTA"), "nome": _("Pista"), "icone": "⚲", "cor": "#c4b5ff"},
+    }
+
+    # Largura do selo (cabe "NEGOCIAÇÃO") e da coluna do texto da opção, que
+    # fica centralizado nela: botão de 1185 - margens 24 e 110 - espaço 12.
+    CHOICE_SELO_LARGURA = {False: 206, True: 254}
+    CHOICE_TEXTO_LARGURA = {False: 1185 - 24 - 206 - 12 - 110, True: 1185 - 24 - 254 - 12 - 110}
+
+    def menu_tipo(item, tipo=None):
+        # Tipo do item (argumento do item ou, sem ele, o do menu); None se não houver.
+        t = item.kwargs.get("tipo", tipo) if getattr(item, "kwargs", None) else tipo
+        return t if t in MENU_TIPOS else None
+
+screen choice_selo(t, maior=False):
+    $ selo = MENU_TIPOS[t]
+    frame:
+        style "choice_selo"
+        xsize CHOICE_SELO_LARGURA[maior]
+        yalign 0.5
+        hbox:
+            spacing 8
+            add Solid(selo["cor"]) xsize 5 ysize (34 if maior else 28) yalign 0.5
+            text selo["icone"] style "choice_selo_text" color selo["cor"] size (30 if maior else 24) yalign 0.5
+            text selo["rotulo"] style "choice_selo_text" color selo["cor"] size (24 if maior else 20) yalign 0.5
+
+screen choice(items, tipo=None):
     style_prefix "choice"
 
     $ maior = texto_maior_ativo()
@@ -249,7 +290,28 @@ screen choice(items):
             ypos 0
             yanchor 0.0
             for i in items:
-                textbutton i.caption action i.action text_size (42 if maior else gui.choice_button_text_size)
+                $ t = menu_tipo(i, tipo)
+                if t:
+                    button:
+                        style "choice_button"
+                        left_padding 24
+                        right_padding 110
+                        action i.action
+                        alt (__(MENU_TIPOS[t]["nome"]) + ": " + renpy.filter_text_tags(__(i.caption), allow=[]))
+                        hbox:
+                            spacing 12
+                            use choice_selo(t, maior)
+                            fixed:
+                                xsize CHOICE_TEXTO_LARGURA[maior]
+                                fit_first "height"
+                                yalign 0.5
+                                text i.caption:
+                                    style "choice_button_text"
+                                    size (42 if maior else gui.choice_button_text_size)
+                                    xalign 0.5
+                                    text_align 0.5
+                else:
+                    textbutton i.caption action i.action text_size (42 if maior else gui.choice_button_text_size)
 
 
 style choice_vbox is vbox
@@ -268,6 +330,16 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
+
+## Selo do tipo de menu: fundo escuro próprio, para continuar legível sobre a
+## faixa azul clara da opção em foco.
+style choice_selo is frame:
+    background Solid("#0b1117f0")
+    padding (10, 5, 10, 5)
+
+style choice_selo_text is text:
+    font gui.text_font
+    bold True
 
 ## Barra da lista de escolhas com cores sólidas (gui/scrollbar não tem as
 ## imagens dos estados selected/insensitive).
@@ -828,7 +900,13 @@ screen preferences():
                             textbutton (_("Transições: desligadas") if _preferences.transitions == 0 else _("Transições: ligadas")):
                                 id "pref_sem_transicoes"
                                 action InvertSelected(Preference("transitions", "toggle"))
-                        text _("Texto maior aumenta falas, nomes, escolhas, histórico e as telas de atividades. Sem transições desliga as transições do Ren'Py; algumas animações das cenas podem continuar. Teclado: setas movem o foco, Enter confirma, Esc abre e fecha menus."):
+                            textbutton (_("Destacar quem fala: sim") if persistent.fala_destaque else _("Destacar quem fala: não")):
+                                id "pref_fala_destaque"
+                                action ToggleField(persistent, "fala_destaque")
+                            textbutton (_("Movimento dos personagens: sim") if persistent.vida_movimento else _("Movimento dos personagens: não")):
+                                id "pref_vida_movimento"
+                                action ToggleField(persistent, "vida_movimento")
+                        text _("Texto maior aumenta falas, nomes, escolhas, histórico e as telas de atividades. Sem transições desliga as transições do Ren'Py; algumas animações das cenas podem continuar. Destacar quem fala escurece um pouco quem está em silêncio. Movimento dos personagens liga a respiração e a câmera; vale a partir do próximo personagem que entrar em cena. Teclado: setas movem o foco, Enter confirma, Esc abre e fecha menus."):
                             size 24
                             color "#cccccc"
                             xsize 700

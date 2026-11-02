@@ -23,6 +23,7 @@ https://claude.ai/artifact/4wNJSGy4HhqwEEcpALx8X1
 | `comparacao-estilos-2026-11-02.json` | as 6 variações da página de comparação | registro da escolha do estilo |
 | `estilo-c.json` | regeração de todos os personagens (23) e fundos (27) no estilo C | lote atual; montado por `tools/arte/montar_estilo_c.py` |
 | `estilo-c-regeracoes.json` | 5 imagens refeitas do lote acima (2 com reforço de identidade/transparência, 3 que tinham nascido de uma âncora trocada) | aplicado junto com o lote |
+| `mapa.json` | mapa da cidade (E3b): base 16:9 sem os prédios, 12 lugares recortados (dependem da base), 8 ícones de atividade, o marcador "Você" e 6 telas de transição (28 tarefas) | a gerar; montado por `tools/arte/montar_mapa.py`; design em `docs/design/mapa-cidade.md`; saídas com os kinds novos `mapa`, `lugar` e `icone` de `posproc.py` |
 
 ## Cuidado com execuções em paralelo
 
@@ -59,4 +60,6 @@ Ferramentas em `tools/arte/` (Python 3 com Pillow; Codex CLI autenticado):
    Os nomes de arquivo não mudam, então nenhum script precisa ser alterado.
 
 Padrões de saída: sprite RGBA 1024x1536 com a figura de ~1490 px de altura e os pés a 22 px da base; retrato
-520x430 recortado da pose âncora; fundo RGB 1536x1024; tela de produto RGBA com até 1600 px de largura.
+520x430 recortado da pose âncora; fundo RGB 1536x1024; tela de produto RGBA com até 1600 px de largura. Mapa:
+base RGB 2560x1440; lugar RGBA recortado justo, na largura definida em `mapa-saidas.json` (sem normalizar a altura);
+ícone e marcador RGBA 192x192 com margem.

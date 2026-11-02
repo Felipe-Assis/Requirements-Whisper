@@ -1,0 +1,165 @@
+{
+ "saidas": [
+  {
+   "id": "mapa__base",
+   "kind": "mapa",
+   "dest": "images/mapa/cidade_base.png"
+  },
+  {
+   "id": "lugar__republica",
+   "kind": "lugar",
+   "largura": 220,
+   "dest": "images/mapa/lugares/republica.png"
+  },
+  {
+   "id": "lugar__predio_projeto",
+   "kind": "lugar",
+   "largura": 330,
+   "dest": "images/mapa/lugares/predio_projeto.png"
+  },
+  {
+   "id": "lugar__praca_campus",
+   "kind": "lugar",
+   "largura": 250,
+   "dest": "images/mapa/lugares/praca_campus.png"
+  },
+  {
+   "id": "lugar__instituto",
+   "kind": "lugar",
+   "largura": 310,
+   "dest": "images/mapa/lugares/instituto.png"
+  },
+  {
+   "id": "lugar__bandejao",
+   "kind": "lugar",
+   "largura": 290,
+   "dest": "images/mapa/lugares/bandejao.png"
+  },
+  {
+   "id": "lugar__casarao",
+   "kind": "lugar",
+   "largura": 330,
+   "dest": "images/mapa/lugares/casarao.png"
+  },
+  {
+   "id": "lugar__cafe_esquina",
+   "kind": "lugar",
+   "largura": 170,
+   "dest": "images/mapa/lugares/cafe_esquina.png"
+  },
+  {
+   "id": "lugar__orla",
+   "kind": "lugar",
+   "largura": 280,
+   "dest": "images/mapa/lugares/orla.png"
+  },
+  {
+   "id": "lugar__aterro",
+   "kind": "lugar",
+   "largura": 300,
+   "dest": "images/mapa/lugares/aterro.png"
+  },
+  {
+   "id": "lugar__torre_vertice",
+   "kind": "lugar",
+   "largura": 270,
+   "dest": "images/mapa/lugares/torre_vertice.png"
+  },
+  {
+   "id": "lugar__aceleradora",
+   "kind": "lugar",
+   "largura": 320,
+   "dest": "images/mapa/lugares/aceleradora.png"
+  },
+  {
+   "id": "lugar__subestacao",
+   "kind": "lugar",
+   "largura": 260,
+   "dest": "images/mapa/lugares/subestacao.png"
+  },
+  {
+   "id": "icone__conversando",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/conversando.png"
+  },
+  {
+   "id": "icone__estudando",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/estudando.png"
+  },
+  {
+   "id": "icone__reuniao",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/reuniao.png"
+  },
+  {
+   "id": "icone__celular",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/celular.png"
+  },
+  {
+   "id": "icone__descansando",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/descansando.png"
+  },
+  {
+   "id": "icone__observando",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/observando.png"
+  },
+  {
+   "id": "icone__programando",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/programando.png"
+  },
+  {
+   "id": "icone__cafe",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/icones/cafe.png"
+  },
+  {
+   "id": "marcador__voce",
+   "kind": "icone",
+   "tamanho": 192,
+   "dest": "images/mapa/voce.png"
+  },
+  {
+   "id": "transicao__onibus",
+   "kind": "bg",
+   "dest": "images/bg/transicao_onibus.png"
+  },
+  {
+   "id": "transicao__metro",
+   "kind": "bg",
+   "dest": "images/bg/transicao_metro.png"
+  },
+  {
+   "id": "transicao__calcada",
+   "kind": "bg",
+   "dest": "images/bg/transicao_calcada.png"
+  },
+  {
+   "id": "transicao__elevador",
+   "kind": "bg",
+   "dest": "images/bg/transicao_elevador.png"
+  },
+  {
+   "id": "transicao__campus",
+   "kind": "bg",
+   "dest": "images/bg/transicao_campus.png"
+  },
+  {
+   "id": "transicao__escada",
+   "kind": "bg",
+   "dest": "images/bg/transicao_escada.png"
+  }
+ ]
+}

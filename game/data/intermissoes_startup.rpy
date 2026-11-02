@@ -1,0 +1,200 @@
+# intermissoes_startup.rpy
+# -------------------------------
+# TEMPO LIVRE DA ROTA STARTUP: locais, agenda, pistas, extras e mentoria
+# -------------------------------
+# Só dados (docs/design/intermissoes-startup.md, seções 1, 3.9, 4, 5 e 6). O
+# motor está em logic/intermissao.rpy; o formato de cada chave está descrito
+# no topo daquele arquivo. Falas ficam nos labels de conteúdo
+# (im_startup_s<N>_<acao>_<alvo>, im_startup_<acao>_<alvo>,
+# im_startup_mentoria_<k>, im_startup_abertura_<N>); sem eles, o motor usa
+# uma fala genérica.
+# Blocos das semanas 2 a 8 com a folga de trajeto de 30 min (mapa-cidade.md §5).
+
+init 3 python:
+    ROUTES["startup"]["mapa"] = {
+        "musica": "music_office_relaxed",
+        "inicio": "mesa",
+        "pois": [
+            {"id": "mesa", "nome": _("Mesa da equipe"), "lugar": "casarao", "sub": _("2º andar · mesa da equipe"), "bg": "startup_coworking_tarde",
+             "bg_semana": {6: "startup_coworking_noite"}, "abre": 1, "acoes": [], "icone": "programando"},
+            {"id": "sala_vidro", "nome": _("Sala de vidro"), "lugar": "casarao", "sub": _("2º andar · sala de vidro"), "bg": "sala_reunioes_tarde",
+             "abre": 1, "acoes": ["estudar"], "icone": "reuniao"},
+            {"id": "cafe", "nome": _("Café da esquina"), "lugar": "cafe_esquina", "sub": _("térreo, na esquina"), "bg": "empresa_cafe_tarde",
+             "abre": 1, "acoes": ["descansar"], "icone": "cafe"},
+            {"id": "terraco", "nome": _("Terraço"), "lugar": "casarao", "sub": _("terraço"), "bg": "startup_terraco_noite",
+             "abre": 1, "acoes": ["descansar"], "icone": "descansando"},
+            {"id": "ponto", "nome": _("Ponto de ônibus"), "lugar": "orla", "sub": _("ponto do calçadão"), "bg": "transito_tarde",
+             "abre": 1, "acoes": ["descansar"], "icone": "descansando"},
+            {"id": "bandejao", "nome": _("Bandejão da universidade"), "lugar": "bandejao", "sub": _("salão do bandejão"), "bg": "refeitorio_tarde",
+             "abre": 2, "acoes": ["observar"], "icone": "conversando"},
+            {"id": "aceleradora", "nome": _("Aceleradora Maré"), "lugar": "aceleradora", "sub": _("auditório do galpão"), "bg": "demo_day_auditorio",
+             "abre": 6, "acoes": [], "icone": "reuniao"},
+        ],
+    }
+
+    ROUTES["startup"]["intermissoes"] = {
+        1: {"dia": _("Sexta"), "inicio": (15, 0), "bloco": 120, "mesmo_dia": False,
+            "agenda": {"mesa": ["st_mobile", "st_techlead"], "sala_vidro": ["st_mentora"],
+                       "cafe": ["st_qualidade"], "terraco": ["st_ceo"]},
+            "fechados": {}, "ajudar": {"st_mobile": None}, "observar": {},
+            "estudar": "st_extra_kanban",
+            "atividade": {
+                "st_mobile": ("programando", _("Davi esperando o build no celular que trava")),
+                "st_techlead": ("programando", _("Otávio revisando um PR, caneca na mão")),
+                "st_mentora": ("estudando", _("Tainá reorganizando a coluna de descoberta")),
+                "st_qualidade": ("cafe", _("Lorena lendo avaliações com um café")),
+                "st_ceo": ("celular", _("Vinícius ensaiando o pitch para os vasos de planta")),
+            }},
+        2: {"dia": _("Sexta"), "inicio": (15, 0), "bloco": 210, "mesmo_dia": False,
+            "agenda": {"mesa": ["st_techlead", "st_mobile"], "sala_vidro": ["st_ceo"],
+                       "cafe": ["st_mentora"], "bandejao": ["st_estudante", "st_qualidade"]},
+            "fechados": {}, "ajudar": {"st_techlead": None},
+            "observar": {"bandejao": "st_p_cancelar"}, "estudar": "st_extra_episodio",
+            "atividade": {
+                "st_techlead": ("programando", _("Otávio passando decisões antigas a limpo")),
+                "st_mobile": ("celular", _("Davi testando o app no Tijolo")),
+                "st_ceo": ("reuniao", _("Vinícius saindo de uma call com o fundo")),
+                "st_mentora": ("cafe", _("Tainá relendo as anotações da entrevista")),
+                "st_estudante": ("estudando", _("Bia estudando Cálculo com um suco")),
+                "st_qualidade": ("observando", _("Lorena com a Bia e duas amigas dela")),
+            }},
+        3: {"dia": _("Sexta"), "inicio": (15, 0), "bloco": 210, "mesmo_dia": False,
+            "agenda": {"mesa": ["st_mobile", "st_mentora"], "sala_vidro": ["st_techlead"],
+                       "cafe": ["st_ceo"], "bandejao": ["st_estudante", "st_qualidade"]},
+            "fechados": {}, "ajudar": {}, "observar": {"bandejao": "st_p_tunel"},
+            "estudar": "st_extra_invest",
+            "atividade": {
+                "st_mobile": ("programando", _("Davi ligando o protótipo da confirmação")),
+                "st_mentora": ("estudando", _("Tainá escrevendo critérios")),
+                "st_techlead": ("programando", _("Otávio cruzando registros do servidor")),
+                "st_ceo": ("estudando", _("Vinícius lendo um livro de métricas")),
+                "st_estudante": ("estudando", _("Bia no subsolo, estudando para a prova")),
+            }},
+        4: {"dia": _("Sexta"), "inicio": (14, 30), "bloco": 210, "mesmo_dia": False,
+            "agenda": {"mesa": ["st_mobile"], "sala_vidro": ["st_ceo", "st_mentora"],
+                       "cafe": ["st_techlead"], "bandejao": ["st_estudante", "st_qualidade"]},
+            "fechados": {"terraco": _("Fechado: arrumando a festa")}, "ajudar": {},
+            "observar": {"bandejao": "st_p_bolsa"}, "estudar": "st_extra_idempotencia",
+            "atividade": {
+                "st_mobile": ("programando", _("Davi montando a fila com id único")),
+                "st_ceo": ("reuniao", _("Vinícius e Tainá escrevendo o post dos mil")),
+                "st_techlead": ("cafe", _("Otávio fugindo do barulho com um café")),
+                "st_estudante": ("celular", _("Bia mostrando o app para a república")),
+            }},
+        5: {"dia": _("Segunda"), "inicio": (16, 0), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["st_techlead", "st_mobile"], "sala_vidro": ["st_mentora"],
+                       "cafe": ["st_ceo"], "bandejao": ["st_estudante", "st_qualidade"]},
+            "fechados": {}, "ajudar": {"st_techlead": "st_p_conexoes", "st_mobile": "st_p_logs"},
+            "observar": {"bandejao": None}, "estudar": "st_extra_coorte",
+            "atividade": {
+                "st_techlead": ("programando", _("Otávio olhando o painel do banco da noite da festa")),
+                "st_mobile": ("programando", _("Davi caçando um erro na fila de sincronização")),
+                "st_mentora": ("estudando", _("Tainá atualizando a lista de riscos")),
+                "st_ceo": ("celular", _("Vinícius refazendo o slide principal")),
+                "st_estudante": ("atendendo", _("Bia ajudando a Rayane com o app")),
+            }},
+        6: {"dia": _("Terça"), "inicio": (18, 0), "bloco": 180, "mesmo_dia": True,
+            "agenda": {"mesa": ["st_mobile", "st_techlead"], "cafe": ["st_estudante"],
+                       "terraco": ["st_mentora", "st_qualidade"], "aceleradora": ["st_ceo"]},
+            "fechados": {"bandejao": _("Fechado à noite")},
+            "ajudar": {"st_mobile": "st_p_loja", "st_techlead": "st_p_conexoes",
+                       "st_ceo": "st_p_retencao"},
+            "observar": {"cafe": None}, "estudar": "st_extra_carga",
+            "atividade": {
+                "st_mobile": ("programando", _("Davi tirando prints para as lojas")),
+                "st_techlead": ("programando", _("Otávio preparando o teste de carga")),
+                "st_estudante": ("observando", _("Bia, Joana e Rayane testando a versão nova")),
+                "st_mentora": ("descansando", _("Tainá respirando depois de uma reunião")),
+                "st_qualidade": ("estudando", _("Lorena anotando o teste com calouros")),
+                "st_ceo": ("reuniao", _("Vinícius ensaiando o pitch no palco")),
+            }},
+        7: {"dia": _("Quarta"), "inicio": (11, 30), "bloco": 180, "mesmo_dia": True,
+            "agenda": {"mesa": ["st_techlead"], "sala_vidro": ["st_mobile"], "cafe": ["st_mentora"],
+                       "bandejao": ["st_estudante", "st_qualidade"], "aceleradora": ["st_ceo"]},
+            "fechados": {}, "ajudar": {"st_mobile": "st_p_loja", "st_ceo": "st_p_retencao"},
+            "observar": {"bandejao": None}, "estudar": "st_extra_rollout",
+            "atividade": {
+                "st_techlead": ("programando", _("Otávio comendo marmita de olho no teste de carga")),
+                "st_mobile": ("programando", _("Davi preenchendo os formulários das lojas")),
+                "st_mentora": ("estudando", _("Tainá reescrevendo o texto de exclusão de conta")),
+                "st_estudante": ("celular", _("Bia na fila do bandejão")),
+                "st_ceo": ("reuniao", _("Vinícius no segundo ensaio")),
+            }},
+        8: {"dia": _("Quarta"), "inicio": (13, 30), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["st_mobile", "st_techlead"], "sala_vidro": ["st_mentora"],
+                       "bandejao": ["st_estudante", "st_qualidade"], "aceleradora": ["st_ceo"]},
+            "fechados": {}, "ajudar": {"st_ceo": "st_p_retencao"},
+            "observar": {"bandejao": None}, "estudar": None,
+            "atividade": {
+                "st_mobile": ("celular", _("Davi de olho no painel")),
+                "st_techlead": ("programando", _("Otávio com o painel e a caneca")),
+                "st_mentora": ("estudando", _("Tainá rascunhando a retrospectiva")),
+                "st_estudante": ("atendendo", _("Bia com os calouros da monitoria")),
+                "st_qualidade": ("observando", _("Lorena observando calouros")),
+                "st_ceo": ("reuniao", _("Vinícius no ensaio geral")),
+            }},
+    }
+
+    ROUTES["startup"]["pistas"] = {
+        "st_p_cancelar": {"titulo": _("Desistir no meio"), "ate_semana": 2,
+            "texto": _("No bandejão, a Bia começou a lançar um suco de R$ 6, desistiu porque a amiga pagou e tocou em Cancelar. Na mesma hora conferiu a lista e o caderno: \"Depois do almoço duplicado, toda vez que eu desisto eu confiro se nada mudou.\""),
+            "uso": _("Semana 3: o caso do cancelamento.")},
+        "st_p_tunel": {"titulo": _("Salvar duas vezes no subsolo"), "ate_semana": 3,
+            "texto": _("No subsolo do bandejão o 4G cai. A Bia lançou o bandejão de R$ 4,50, a tela travou e ela tocou em Salvar de novo: apareceram dois. Antes, ela tinha lançado de propósito dois sucos de R$ 6, um dela e um da colega. Na lista, as duas duplas pareciam iguais."),
+            "uso": _("Semana 4: a causa do gasto duplicado.")},
+        "st_p_bolsa": {"titulo": _("Só no dia da bolsa"), "ate_semana": 4,
+            "texto": _("Na mesa da Bia, de cinco estudantes, três só abrem o app no dia em que a bolsa cai. Duas instalaram nesta semana e nunca lançaram um gasto. Só a Bia lança todo dia."),
+            "uso": _("Semana 5: a métrica do demo day.")},
+        "st_p_leitor": {"titulo": _("A lixeira sem nome"), "ate_semana": 5,
+            "texto": _("No clube das testers, o leitor de tela da Joana leu a lixeira do protótipo só como \"botão\". Ela não sabia qual gasto ia apagar."),
+            "uso": _("Semana 6: a revisão do seu PR.")},
+        "st_p_conexoes": {"titulo": _("Conexões no limite"), "ate_semana": 6,
+            "texto": _("No painel do banco, com umas duzentas pessoas usando ao mesmo tempo, as conexões abertas chegaram a 80% do limite. Cada função que acorda abre a própria conexão."),
+            "uso": _("Semana 7: o teste do pico.")},
+        "st_p_logs": {"titulo": _("O e-mail no relatório de falhas"), "ate_semana": 6,
+            "texto": _("O relatório de falhas do app manda o e-mail da pessoa junto com cada erro para o serviço de monitoramento. O Davi disse: \"depois eu tiro isso\"."),
+            "uso": _("Semana 7: os logs da sincronização.")},
+        "st_p_loja": {"titulo": _("Dois dias na fila da loja"), "ate_semana": 7,
+            "texto": _("No histórico de envios, a última versão do beta ficou dois dias em revisão no Google. Uma anterior voltou rejeitada por falta do link da política de privacidade."),
+            "uso": _("Semana 8: como liberar a 1.0.")},
+        "st_p_retencao": {"titulo": _("A única pergunta do ensaio"), "ate_semana": 8,
+            "texto": _("No ensaio na Aceleradora Maré, a mentora ouviu o pitch inteiro e fez uma pergunta só: quantos dos que entraram há um mês ainda usam."),
+            "uso": _("Semana 8: o demo day.")},
+    }
+
+    ROUTES["startup"]["extras"] = [
+        {"id": "st_extra_kanban", "title": _("Kanban e limite de trabalho em andamento"),
+         "text": _("O quadro mostra o fluxo do trabalho: descoberta, pronto para desenvolver, fazendo, revisão, pronto. O limite de trabalho em andamento diz quantos cartões cabem em \"Fazendo\" ao mesmo tempo. Bateu o limite? Ninguém puxa cartão novo: termina um ou ajuda a destravar outro. Menos coisa aberta quer dizer menos espera e problemas aparecendo cedo.")},
+        {"id": "st_extra_episodio", "title": _("Perguntas abertas e episódio"),
+         "text": _("Pergunta aberta começa com \"como\", \"o que\" ou \"me conta\". Pergunta de sim ou não serve para confirmar, não para descobrir. Peça o episódio mais recente: quando foi, onde a pessoa estava, o que tentou fazer, o que aconteceu e o que fez depois. Anote as palavras dela, sem traduzir.")},
+        {"id": "st_extra_invest", "title": _("INVEST para histórias"),
+         "text": _("Uma boa história é Independente (dá para entregar sozinha), Negociável (é conversa, não contrato), Valiosa (alguém ganha com ela), Estimável (a equipe sabe o tamanho), Pequena (cabe num ciclo) e Testável (tem critério). \"Quero um app fácil\" falha em quase todas. \"Excluir um gasto com confirmação para o total voltar a ser confiável\" passa.")},
+        {"id": "st_extra_idempotencia", "title": _("Idempotência numa página"),
+         "text": _("Uma operação é idempotente quando repetir dá o mesmo resultado de fazer uma vez. Em rede instável, o app reenvia quando não sabe se deu certo. Receita: o app gera uma chave única por operação (o id do gasto); o servidor guarda as chaves que já recebeu e, se a mesma chegar de novo, devolve a resposta anterior sem gravar outra vez. \"Excluir o gasto X\" é idempotente; \"somar R$ 20 ao total\" não é.")},
+        {"id": "st_extra_coorte", "title": _("Retenção por coorte"),
+         "text": _("Coorte é o grupo que começou no mesmo período, como quem se cadastrou na semana da festa dos mil. Retenção da coorte é quantas dessas pessoas ainda fazem a ação que importa (lançar um gasto) depois de 1, 4 e 8 semanas. Olhar por coorte impede que um pico de cadastros esconda quem foi embora. Defina a ação e a janela antes de medir.")},
+        {"id": "st_extra_carga", "title": _("O que medir num teste de carga"),
+         "text": _("Defina o cenário (quantas pessoas, fazendo o quê, em que horário) e a meta (por exemplo, lista em até 2 s em 95% das vezes). Além do tempo, observe erros, conexões abertas no banco, filas e custo. Suba a carga aos poucos até ver onde quebra. Use dados fictícios, nunca dados reais de pessoas. Teste sem meta vira opinião.")},
+        {"id": "st_extra_rollout", "title": _("Lançamento gradual nas lojas"),
+         "text": _("Nas lojas, cada versão passa por revisão (horas ou dias) e uma instalação não se desfaz. Por isso: envie com folga, libere em etapas (no Google você escolhe a porcentagem; na Apple a liberação em fases leva sete dias), deixe o que é novo atrás de uma feature flag que desliga sem versão nova e acompanhe falhas e tempos no painel.")},
+    ]
+
+    ROUTES["startup"]["mentoria"] = {
+        "id": "st_mentoria_testers",
+        "titulo": _("Clube das Testers"),
+        "mentor": "st_qualidade",
+        "conquista": "mentoria_conq_startup",
+        "passos": [
+            {"n": 1, "semana_min": 2, "pista": None, "resumo": _("Apresentar o beta ao clube")},
+            {"n": 2, "semana_min": 3, "pista": None, "resumo": _("Cinco tarefas cronometradas")},
+            {"n": 3, "semana_min": 4, "pista": "st_p_leitor", "resumo": _("O leitor de tela da Joana")},
+            {"n": 4, "semana_min": 5, "pista": None, "resumo": _("Calouros e o pico")},
+            {"n": 5, "semana_min": 6, "pista": None, "resumo": _("O primeiro relato de bug do clube")},
+        ],
+    }
+
+    ROUTES["startup"]["conquistas_extra"] = [
+        {"id": "mentoria_conq_startup", "var": "mentoria_conq_startup",
+         "title": _("Clube das Testers"),
+         "desc": _("Concluiu os cinco encontros do clube de testers com a Lorena e a Bia.")},
+    ]

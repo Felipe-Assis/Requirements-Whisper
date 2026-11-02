@@ -29,6 +29,19 @@ testsuite ponta_a_ponta:
         assert eval autopiloto.relatorio()["audios_ausentes"] == []
         assert eval [i["arquivo"] for i in autopiloto.relatorio()["imagens_ausentes"]] == []
 
+    # Pulando todo tempo livre, o caminho principal ainda dá os 8 registros:
+    # nada obrigatório para aprender depende das intermissões.
+    testcase rota_pulando_tempo_livre:
+        parameter rota = ["saude", "startup", "corporativo"]
+        $ autopiloto.ligar(rota, "primeira", mapa="pular")
+        run Start()
+        pause until eval autopiloto.terminou() timeout 600
+        assert eval autopiloto.relatorio()["motivo"] == "ok"
+        assert eval autopiloto.relatorio()["cenas_faltando"] == []
+        assert eval autopiloto.relatorio()["erros"] == []
+        assert eval registros_contagem() == (8, 8)
+        assert eval autopiloto.relatorio()["intermissoes"] == autopiloto.relatorio()["intermissoes_puladas"]
+
     # Saúde pelas últimas opções, com o ramo raro da scene_18: abordagem
     # inovadora (fica tarde) e virar a noite, em vez de descansar.
     testcase saude_virar_a_noite:

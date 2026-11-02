@@ -21,3 +21,6 @@ traceback.txt
 # Saves dos testes no motor e pacotes gerados por tools/build-windows.ps1
 .test-saves/
 /dist/
+
+# Python
+__pycache__/

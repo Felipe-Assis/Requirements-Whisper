@@ -1,0 +1,177 @@
+# intermissoes_saude.rpy
+# -------------------------------
+# TEMPO LIVRE DA ROTA SAÚDE: locais, agenda, pistas, extras e mentoria
+# -------------------------------
+# Só dados (docs/design/intermissoes-saude.md, seções 1, 4, 5, 9 e 11). O
+# motor está em logic/intermissao.rpy; o formato de cada chave está descrito
+# no topo daquele arquivo. Falas ficam nos labels de conteúdo
+# (im_saude_s<N>_<acao>_<alvo>, im_saude_<acao>_<alvo>, im_saude_mentoria_<k>,
+# im_saude_abertura_<N>); sem eles, o motor usa uma fala genérica.
+#
+# init 3: ROUTES nasce em init 1 e as outras rotas registram dados em init 2.
+# Blocos das semanas 2 a 8 com a folga de trajeto de 30 min (mapa-cidade.md §5).
+
+init 3 python:
+    ROUTES["saude"]["mapa"] = {
+        "musica": "music_office_relaxed",
+        "inicio": "mesa",
+        "pois": [
+            {"id": "mesa", "nome": _("Mesa da equipe"), "lugar": "predio_projeto", "sub": _("3º andar · mesa da equipe"),
+             "bg": "escritorio_interior_tarde", "abre": 1, "acoes": [], "icone": "programando"},
+            {"id": "sala_reunioes", "nome": _("Sala de reuniões"), "lugar": "predio_projeto", "sub": _("3º andar · sala de reuniões"),
+             "bg": "sala_reunioes_tarde", "abre": 1, "acoes": ["estudar"], "icone": "reuniao"},
+            {"id": "cafe", "nome": _("Café"), "lugar": "predio_projeto", "sub": _("2º andar · copa"),
+             "bg": "empresa_cafe_tarde", "abre": 1, "acoes": ["descansar"], "icone": "cafe"},
+            {"id": "refeitorio", "nome": _("Refeitório"), "lugar": "predio_projeto", "sub": _("térreo · refeitório"),
+             "bg": "refeitorio_tarde", "abre": 1, "acoes": [], "icone": "conversando"},
+            {"id": "praca", "nome": _("Praça em frente"), "lugar": "praca_campus", "sub": _("praça em frente ao prédio"),
+             "bg": "empresa_exterior_manha", "abre": 1, "acoes": ["descansar"], "icone": "descansando"},
+            {"id": "ambulatorio", "nome": _("Ambulatório do Instituto"), "lugar": "instituto", "sub": _("ambulatório"),
+             "bg": "escritorio_medica", "abre": 2, "acoes": ["observar"], "icone": "atendendo"},
+            {"id": "servidores", "nome": _("Sala de servidores"), "lugar": "predio_projeto", "sub": _("subsolo · sala de servidores"),
+             "bg": "sala_servidores", "abre": 6, "acoes": [], "icone": "computador"},
+        ],
+    }
+
+    # "atividade" (opcional, por semana): {cid: (icone, frase curta)} para os
+    # balões do mapa. Sem ela, o balão usa o ícone do local. Frases: E5.
+    ROUTES["saude"]["intermissoes"] = {
+        1: {"dia": _("Primeiro dia"), "inicio": (16, 0), "bloco": 120, "mesmo_dia": False,
+            "agenda": {"mesa": ["developer_requirements", "developer_coding"],
+                       "sala_reunioes": ["developer_management"],
+                       "cafe": ["developer_ai", "developer_test"],
+                       "refeitorio": ["developer_quality", "developer_project"],
+                       "praca": ["developer_security"]},
+            "fechados": {}, "ajudar": {}, "observar": {}, "estudar": "saude_extra_glossario",
+            "atividade": {}},
+        2: {"dia": _("Sexta"), "inicio": (16, 0), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["developer_coding", "developer_security"],
+                       "sala_reunioes": ["developer_management", "developer_project"],
+                       "cafe": ["developer_requirements"],
+                       "refeitorio": ["developer_quality", "developer_test"],
+                       "praca": ["developer_ai"],
+                       "ambulatorio": ["doutora_2", "doutora_1"]},
+            "fechados": {}, "ajudar": {"developer_coding": None},
+            "observar": {"ambulatorio": "saude_p_cpf"}, "estudar": "saude_extra_fluxos",
+            "atividade": {}},
+        3: {"dia": _("Sexta"), "inicio": (15, 0), "bloco": 210, "mesmo_dia": False,
+            "agenda": {"mesa": ["developer_quality", "developer_ai"],
+                       "sala_reunioes": ["developer_requirements", "developer_management"],
+                       "cafe": ["developer_coding", "developer_test"],
+                       "refeitorio": ["developer_project", "developer_security"],
+                       "ambulatorio": ["doutora_2"]},
+            "fechados": {}, "ajudar": {"developer_management": None},
+            "observar": {"ambulatorio": "saude_p_autosave"}, "estudar": "saude_extra_acoplamento",
+            "atividade": {}},
+        4: {"dia": _("Sexta"), "inicio": (11, 30), "bloco": 210, "mesmo_dia": False,
+            "agenda": {"mesa": ["developer_security"],
+                       "sala_reunioes": ["developer_management", "developer_project"],
+                       "cafe": ["developer_requirements", "developer_quality"],
+                       "refeitorio": ["developer_coding", "developer_test", "developer_ai"],
+                       "ambulatorio": ["doutora_2", "doutora_1"]},
+            "fechados": {}, "ajudar": {"developer_test": None},
+            "observar": {"ambulatorio": "saude_p_autosave"}, "estudar": "saude_extra_estimativa",
+            "atividade": {}},
+        5: {"dia": _("Sexta"), "inicio": (16, 0), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["developer_coding", "developer_test"],
+                       "sala_reunioes": ["developer_management", "developer_requirements"],
+                       "cafe": ["developer_ai"],
+                       "refeitorio": ["developer_quality", "developer_project"],
+                       "praca": ["developer_security"],
+                       "ambulatorio": ["doutora_2"]},
+            "fechados": {},
+            "ajudar": {"developer_coding": "saude_p_memoria", "developer_security": "saude_p_papeis"},
+            "observar": {"ambulatorio": None}, "estudar": "saude_extra_revisao",
+            "atividade": {}},
+        6: {"dia": _("Dia da codificação"), "inicio": (16, 0), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["developer_coding", "developer_ai"],
+                       "sala_reunioes": ["developer_project"],
+                       "cafe": ["developer_requirements", "developer_quality"],
+                       "refeitorio": ["developer_management"],
+                       "praca": ["developer_test"],
+                       "ambulatorio": ["doutora_2"],
+                       "servidores": ["developer_security"]},
+            "fechados": {},
+            "ajudar": {"developer_coding": "saude_p_memoria", "developer_security": "saude_p_backup"},
+            "observar": {"ambulatorio": None}, "estudar": "saude_extra_piramide",
+            "atividade": {}},
+        7: {"dia": _("Dia dos testes"), "inicio": (15, 30), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["developer_test", "developer_quality"],
+                       "sala_reunioes": ["developer_management", "developer_project"],
+                       "cafe": ["developer_coding"],
+                       "refeitorio": ["developer_ai", "developer_requirements"],
+                       "ambulatorio": ["doutora_2", "doutora_1"],
+                       "servidores": ["developer_security"]},
+            "fechados": {},
+            "ajudar": {"developer_test": "saude_p_memoria", "developer_security": "saude_p_backup"},
+            "observar": {"ambulatorio": None}, "estudar": "saude_extra_rollback",
+            "atividade": {}},
+        8: {"dia": _("Último dia"), "inicio": (9, 30), "bloco": 210, "mesmo_dia": True,
+            "agenda": {"mesa": ["developer_requirements", "developer_management"],
+                       "sala_reunioes": ["developer_project", "developer_quality"],
+                       "cafe": ["developer_ai", "developer_coding"],
+                       "praca": ["developer_test"],
+                       "ambulatorio": ["doutora_2"],
+                       "servidores": ["developer_security"]},
+            "fechados": {}, "ajudar": {},
+            "observar": {"ambulatorio": None}, "estudar": None,
+            "atividade": {}},
+    }
+
+    ROUTES["saude"]["pistas"] = {
+        "saude_p_cpf": {"titulo": _("O paciente sem CPF"),
+            "texto": _("Na recepção do ambulatório, um paciente chegou sem documento. A recepcionista anotou o nome num papel para cadastrar depois, e a ficha ficou sem CPF."),
+            "ate_semana": 2, "uso": _("Semana 3: um fluxo alternativo do cadastro.")},
+        "saude_p_had": {"titulo": _("A escala pela metade"),
+            "texto": _("Na triagem, um paciente pulou duas perguntas da escala HAD no papel. A Dra. Nathalia não conseguiu fechar o escore e escreveu 'incompleta' na margem."),
+            "ate_semana": 2, "uso": _("Semana 3: a inspeção do requisito da HAD.")},
+        "saude_p_autosave": {"titulo": _("O formulário que sumiu"),
+            "texto": _("No ambulatório, a internet caiu no meio de uma consulta e o formulário quase pronto se perdeu. A médica refez as perguntas com o paciente esperando."),
+            "ate_semana": 4, "uso": _("Semana 5: o plano da primeira entrega.")},
+        "saude_p_papeis": {"titulo": _("A senha emprestada"),
+            "texto": _("A recepção entra no sistema com a senha da Dra. Nathalia, porque o perfil da recepção não abre a agenda. Tudo o que a recepção faz fica registrado como se fosse a médica."),
+            "ate_semana": 6, "uso": _("Semana 7: a revisão de papéis de acesso.")},
+        "saude_p_memoria": {"titulo": _("O servidor que reinicia"),
+            "texto": _("O servidor de testes é reiniciado toda madrugada por uma rotina automática. Nenhum teste roda mais de um dia seguido."),
+            "ate_semana": 7, "uso": _("Semana 8: o bug crítico antes do deploy.")},
+        "saude_p_backup": {"titulo": _("O backup nunca restaurado"),
+            "texto": _("A rotina de backup aparece verde todo dia há dois anos, mas ninguém nunca tentou restaurar uma cópia."),
+            "ate_semana": 7, "uso": _("Semana 8: o checklist de deploy.")},
+    }
+
+    ROUTES["saude"]["extras"] = [
+        {"id": "saude_extra_glossario", "title": _("Glossário do projeto"),
+         "text": _("Um glossário dá um sentido só a cada termo do domínio: histórico de saúde, carga tabágica (maços por dia vezes anos de fumo), retorno, escala HAD. Quando equipe e médicas usam a mesma palavra para a mesma coisa, o requisito não muda de sentido no caminho.")},
+        {"id": "saude_extra_fluxos", "title": _("Fluxo alternativo e exceção"),
+         "text": _("Fluxo alternativo é outro caminho que ainda chega ao objetivo, como o cadastro provisório do paciente sem CPF. Exceção é quando o objetivo não é alcançado e o sistema precisa reagir, como guardar o rascunho quando a conexão cai. Os dois entram no caso de uso, com o passo onde começam.")},
+        {"id": "saude_extra_acoplamento", "title": _("Coesão e acoplamento"),
+         "text": _("Um módulo coeso faz uma coisa só, como calcular as escalas. Acoplamento baixo quer dizer que mudar um módulo não obriga a mexer nos outros. Separar a gravação dos dados da regra de negócio reduz o acoplamento e facilita os testes.")},
+        {"id": "saude_extra_estimativa", "title": _("Estimativa em equipe"),
+         "text": _("No planning poker, todos mostram a estimativa ao mesmo tempo, e as diferenças grandes viram conversa: quem estimou alto costuma ver um risco que os outros não viram. Estime em tamanho relativo e compare com a capacidade real da equipe.")},
+        {"id": "saude_extra_revisao", "title": _("O que olhar numa revisão de código"),
+         "text": _("Comece pelo comportamento: o código faz o que o requisito pede, inclusive nas exceções? Depois, nomes claros, entradas validadas, dado sensível fora do log e testes junto da mudança. Comente o código, não a pessoa, e prefira revisões pequenas.")},
+        {"id": "saude_extra_piramide", "title": _("Pirâmide de testes"),
+         "text": _("Muitos testes de unidade (rápidos e baratos), menos testes de integração e poucos testes de ponta a ponta (lentos e frágeis). Com a pirâmide invertida, a pipeline demora e as falhas aparecem tarde.")},
+        {"id": "saude_extra_rollback", "title": _("Plano de rollback"),
+         "text": _("Antes do deploy, escreva como voltar: para qual versão, quem decide, em quanto tempo e o que acontece com os dados gravados na versão nova. Ensaie a volta em homologação. Rollback nunca testado é só uma esperança.")},
+    ]
+
+    ROUTES["saude"]["mentoria"] = {
+        "id": "saude_mentoria_ambulatorio",
+        "titulo": _("Um dia de ambulatório"),
+        "mentor": "doutora_2",
+        "conquista": "mentoria_conq_saude",
+        "passos": [
+            {"n": 1, "semana_min": 2, "pista": "saude_p_had", "resumo": _("Triagem e escala no papel")},
+            {"n": 2, "semana_min": 3, "pista": None, "resumo": _("O retorno de um paciente")},
+            {"n": 3, "semana_min": 4, "pista": "saude_p_papeis", "resumo": _("Quem vê o quê")},
+            {"n": 4, "semana_min": 5, "pista": None, "resumo": _("A consulta de 15 minutos")},
+            {"n": 5, "semana_min": 6, "pista": None, "resumo": _("A paciente testa o protótipo")},
+        ],
+    }
+
+    ROUTES["saude"]["conquistas_extra"] = [
+        {"id": "mentoria_conq_saude", "var": "mentoria_conq_saude",
+         "title": _("Olhar de Ambulatório"),
+         "desc": _("Concluiu os cinco encontros com a Dra. Nathalia.")},
+    ]

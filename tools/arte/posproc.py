@@ -1,7 +1,8 @@
 """Ajusta as imagens geradas ao padrão do jogo e grava em game/ (ou numa pasta de revisão).
 
 Uso: python posproc.py saidas.json pasta_staging raiz_destino [--substituir]
-saidas.json: lista [{"id", "kind": "sprite|bg|artifact", "dest": "images/...png", "portrait": opcional}]
+saidas.json: lista [{"id", "kind": "sprite|bg|artifact|mapa|lugar|icone", "dest": "images/...png",
+             "portrait": opcional, "largura" (lugar), "tamanho" (icone)}]
              ou {"saidas": [...]} (formato de estilo-c-saidas.json).
 Sem --substituir, nunca sobrescreve um arquivo existente. Use --substituir só depois da aprovação visual.
 
@@ -10,6 +11,11 @@ Padrões (iguais aos da arte existente):
 - retrato: recorte de cabeça e ombros da pose âncora, 520x430;
 - fundo: RGB 1536x1024, cobrindo (corte central);
 - artefato: RGBA, no máximo 1600 px de largura.
+Mapa da cidade (docs/design/mapa-cidade.md):
+- mapa: base RGB 2560x1440, cobrindo (corte central);
+- lugar: recorte RGBA justo no conteúdo, com a largura pedida em "largura" (px da base 2560x1440), sem normalizar
+  a altura (uma torre fica mais alta que uma praça);
+- icone: RGBA quadrado de "tamanho" px (padrão 192), conteúdo centralizado com margem de 8%.
 """
 import json, os, sys
 from PIL import Image
@@ -19,19 +25,24 @@ SUBSTITUIR = "--substituir" in sys.argv
 dados = json.load(open(args[0], encoding="utf-8"))
 mapa = dados["saidas"] if isinstance(dados, dict) else dados
 staging, raiz = args[1], args[2]
-SPRITE, FIG_ALTURA, MARGEM_BASE, BG = (1024, 1536), 1490, 22, (1536, 1024)
+SPRITE, FIG_ALTURA, MARGEM_BASE, BG, MAPA = (1024, 1536), 1490, 22, (1536, 1024), (2560, 1440)
 
 
 def bbox_alpha(im, limiar=24):
     return im.getchannel("A").point(lambda a: 255 if a > limiar else 0).getbbox()
 
 
-def sprite(src):
+def recorte(src):
+    """Abre a imagem, confere o fundo transparente e corta justo no conteúdo."""
     im = Image.open(src).convert("RGBA")
     transparentes = sum(im.getchannel("A").histogram()[:10]) / (im.width * im.height)
     if transparentes < 0.2:
         raise ValueError(f"sem fundo transparente ({transparentes:.0%} transparente)")
-    fig = im.crop(bbox_alpha(im))
+    return im.crop(bbox_alpha(im))
+
+
+def sprite(src):
+    fig = recorte(src)
     escala = min(FIG_ALTURA / fig.height, 1000 / fig.width)
     fig = fig.resize((round(fig.width * escala), round(fig.height * escala)), Image.LANCZOS)
     tela = Image.new("RGBA", SPRITE, (0, 0, 0, 0))
@@ -50,12 +61,27 @@ def retrato(img):
     return img.crop((int(cx - larg / 2), max(0, y0 - 12), int(cx + larg / 2), int(y0 + alt))).resize((520, 430), Image.LANCZOS)
 
 
-def fundo(src):
+def fundo(src, tam=BG):
     im = Image.open(src).convert("RGB")
-    escala = max(BG[0] / im.width, BG[1] / im.height)
+    escala = max(tam[0] / im.width, tam[1] / im.height)
     im = im.resize((round(im.width * escala), round(im.height * escala)), Image.LANCZOS)
-    x, y = (im.width - BG[0]) // 2, (im.height - BG[1]) // 2
-    return im.crop((x, y, x + BG[0], y + BG[1]))
+    x, y = (im.width - tam[0]) // 2, (im.height - tam[1]) // 2
+    return im.crop((x, y, x + tam[0], y + tam[1]))
+
+
+def lugar(src, largura):
+    fig = recorte(src)
+    return fig.resize((largura, round(fig.height * largura / fig.width)), Image.LANCZOS)
+
+
+def icone(src, tamanho):
+    fig = recorte(src)
+    util = round(tamanho * 0.84)
+    escala = util / max(fig.width, fig.height)
+    fig = fig.resize((max(1, round(fig.width * escala)), max(1, round(fig.height * escala))), Image.LANCZOS)
+    tela = Image.new("RGBA", (tamanho, tamanho), (0, 0, 0, 0))
+    tela.alpha_composite(fig, ((tamanho - fig.width) // 2, (tamanho - fig.height) // 2))
+    return tela
 
 
 def artefato(src):
@@ -86,6 +112,12 @@ for item in mapa:
                 salvar(retrato(s), item["portrait"])
         elif item["kind"] == "bg":
             salvar(fundo(src), item["dest"])
+        elif item["kind"] == "mapa":
+            salvar(fundo(src, MAPA), item["dest"])
+        elif item["kind"] == "lugar":
+            salvar(lugar(src, item["largura"]), item["dest"])
+        elif item["kind"] == "icone":
+            salvar(icone(src, item.get("tamanho", 192)), item["dest"])
         else:
             salvar(artefato(src), item["dest"])
     except Exception as e:

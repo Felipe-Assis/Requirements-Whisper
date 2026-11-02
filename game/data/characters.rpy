@@ -4,22 +4,25 @@
 # -------------------------------
 # NOME_*/COR_* defines live in data/character_names.rpy.
 # Sprite-position transforms live in ui/styles/sprite_transforms.rpy.
+# image="<id>" liga o personagem à tag do sprite: o destaque de quem fala
+# (ui/styles/fala_destaque.rpy) usa renpy.get_say_image_tag(). Não existe
+# imagem "side <id>", então a tela say continua sem side image.
 
-define developer_test = Character(NOME_DEVELOPER_TEST, color=COR_DEVELOPER_TEST)
-define developer_coding = Character(NOME_DEVELOPER_CODING, color=COR_DEVELOPER_CODING)
-define developer_management = Character(NOME_DEVELOPER_MANAGEMENT, color=COR_DEVELOPER_MANAGEMENT)
-define developer_requirements = Character(NOME_DEVELOPER_REQUIREMENTS, color=COR_DEVELOPER_REQUIREMENTS)
+define developer_test = Character(NOME_DEVELOPER_TEST, color=COR_DEVELOPER_TEST, image="developer_test")
+define developer_coding = Character(NOME_DEVELOPER_CODING, color=COR_DEVELOPER_CODING, image="developer_coding")
+define developer_management = Character(NOME_DEVELOPER_MANAGEMENT, color=COR_DEVELOPER_MANAGEMENT, image="developer_management")
+define developer_requirements = Character(NOME_DEVELOPER_REQUIREMENTS, color=COR_DEVELOPER_REQUIREMENTS, image="developer_requirements")
 
-define developer_ai = Character(NOME_DEVELOPER_AI, color=COR_DEVELOPER_AI)
-define developer_quality = Character(NOME_DEVELOPER_QUALITY, color=COR_DEVELOPER_QUALITY)
-define developer_project = Character(NOME_DEVELOPER_PROJECT, color=COR_DEVELOPER_PROJECT)
-define developer_security = Character(NOME_DEVELOPER_SECURITY, color=COR_DEVELOPER_SECURITY)
+define developer_ai = Character(NOME_DEVELOPER_AI, color=COR_DEVELOPER_AI, image="developer_ai")
+define developer_quality = Character(NOME_DEVELOPER_QUALITY, color=COR_DEVELOPER_QUALITY, image="developer_quality")
+define developer_project = Character(NOME_DEVELOPER_PROJECT, color=COR_DEVELOPER_PROJECT, image="developer_project")
+define developer_security = Character(NOME_DEVELOPER_SECURITY, color=COR_DEVELOPER_SECURITY, image="developer_security")
 
 
-define npc_roommate = Character(_("Colega de República"), color="#8EC07C")
+define npc_roommate = Character(_("Colega de República"), color="#8EC07C", image="npc_roommate")
 
-define doutora_1 = Character(NOME_DOUTORA_1, color="#B45F06")
-define doutora_2 = Character(NOME_DOUTORA_2, color="#4CAF50")
+define doutora_1 = Character(NOME_DOUTORA_1, color="#B45F06", image="doutora_1")
+define doutora_2 = Character(NOME_DOUTORA_2, color="#4CAF50", image="doutora_2")
 
 # -------------------------------
 # MAPEAMENTO DAS IMAGENS
@@ -108,18 +111,18 @@ image developer_test thinking = "images/characters/developer_test/thinking.png"
 # têm neutral/thinking. Os atributos extras são aliases para as cenas poderem
 # usar o mesmo vocabulário da rota saúde.
 
-define st_mentora = Character(NOME_ST_MENTORA, color=COR_ST_MENTORA)
-define st_techlead = Character(NOME_ST_TECHLEAD, color=COR_ST_TECHLEAD)
-define st_mobile = Character(NOME_ST_MOBILE, color=COR_ST_MOBILE)
-define st_qualidade = Character(NOME_ST_QUALIDADE, color=COR_ST_QUALIDADE)
-define st_ceo = Character(NOME_ST_CEO, color=COR_ST_CEO)
-define st_estudante = Character(NOME_ST_ESTUDANTE, color=COR_ST_ESTUDANTE)
-define co_mentora = Character(NOME_CO_MENTORA, color=COR_CO_MENTORA)
-define co_legado = Character(NOME_CO_LEGADO, color=COR_CO_LEGADO)
-define co_dev = Character(NOME_CO_DEV, color=COR_CO_DEV)
-define co_qualidade = Character(NOME_CO_QUALIDADE, color=COR_CO_QUALIDADE)
-define co_supervisora = Character(NOME_CO_SUPERVISORA, color=COR_CO_SUPERVISORA)
-define co_solicitante = Character(NOME_CO_SOLICITANTE, color=COR_CO_SOLICITANTE)
+define st_mentora = Character(NOME_ST_MENTORA, color=COR_ST_MENTORA, image="st_mentora")
+define st_techlead = Character(NOME_ST_TECHLEAD, color=COR_ST_TECHLEAD, image="st_techlead")
+define st_mobile = Character(NOME_ST_MOBILE, color=COR_ST_MOBILE, image="st_mobile")
+define st_qualidade = Character(NOME_ST_QUALIDADE, color=COR_ST_QUALIDADE, image="st_qualidade")
+define st_ceo = Character(NOME_ST_CEO, color=COR_ST_CEO, image="st_ceo")
+define st_estudante = Character(NOME_ST_ESTUDANTE, color=COR_ST_ESTUDANTE, image="st_estudante")
+define co_mentora = Character(NOME_CO_MENTORA, color=COR_CO_MENTORA, image="co_mentora")
+define co_legado = Character(NOME_CO_LEGADO, color=COR_CO_LEGADO, image="co_legado")
+define co_dev = Character(NOME_CO_DEV, color=COR_CO_DEV, image="co_dev")
+define co_qualidade = Character(NOME_CO_QUALIDADE, color=COR_CO_QUALIDADE, image="co_qualidade")
+define co_supervisora = Character(NOME_CO_SUPERVISORA, color=COR_CO_SUPERVISORA, image="co_supervisora")
+define co_solicitante = Character(NOME_CO_SOLICITANTE, color=COR_CO_SOLICITANTE, image="co_solicitante")
 
 # --- st_mentora ---
 image st_mentora portrait = "images/characters/st_mentora/portrait.png"

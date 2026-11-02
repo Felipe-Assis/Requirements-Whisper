@@ -22,6 +22,18 @@
 # Planejamento e escrita têm roteiro próprio por modo (coberturas 0/1/2,
 # revisão interna, confirmado/pendente/reescrever).
 #
+# Tempo livre (intermissões): no cartão de abertura escolhe "Abrir o mapa"
+# ou, na estratégia "pular", "Pular o tempo livre"; no mapa devolve uma opção
+# de im_opcoes() ou "encerrar"; pula as telas de deslocamento e transição e
+# fecha o resumo e o ponto de parada. Estratégias do mapa:
+#   prioridade   (padrão de "primeira") mentoria > observar > ajudar >
+#                estudar > conversar > descansar, para cobrir pistas e mentoria
+#   ultima       (padrão de "ultima") semanas pares encerram logo; ímpares
+#                usam a prioridade invertida
+#   aleatorio    (padrão de "aleatorio:n") sorteio, 15% de chance de encerrar
+#   pular        pula todo tempo livre (prova de que nada obrigatório depende dele)
+# RW_AUTOPILOTO_MAPA=prioridade|ultima|aleatorio|pular sobrepõe o padrão.
+#
 # Uso em testcase (ponta_a_ponta.rpy):
 #     $ autopiloto.ligar("startup", "primeira")
 #     run Start()
@@ -52,6 +64,8 @@ init 999 python in autopiloto:
     LIMITE_VISITAS = 25
     LIMITE_INTERACOES = 40000
     LIMITE_ERROS = 40
+    LIMITE_VOLTAS_MAPA = 20
+    PRIORIDADE_MAPA = ["mentoria", "observar", "ajudar", "estudar", "conversar", "descansar"]
 
     # Índice da vaga no menu de scene_1 ("1. ...", "2. ...", "3. ...").
     VAGA = {"saude": "1. ", "startup": "2. ", "corporativo": "3. "}
@@ -98,7 +112,14 @@ init 999 python in autopiloto:
     # Estado do piloto: objeto comum (fora de save e rollback).
     ap = types.SimpleNamespace(ativo=False, avulso=False, fim=False)
 
-    def _novo_estado(rota, modo, forcar=()):
+    def _mapa_padrao(modo):
+        if modo == "ultima":
+            return "ultima"
+        if modo.startswith("aleatorio"):
+            return "aleatorio"
+        return "prioridade"
+
+    def _novo_estado(rota, modo, forcar=(), mapa=None):
         if rota not in CENAS:
             raise Exception("autopiloto: rota desconhecida %r" % (rota,))
         ap.rota = rota
@@ -132,15 +153,25 @@ init 999 python in autopiloto:
         ap.resumo_registros = None
         ap.relatorio = None
         ap.iniciou = False
+        ap.mapa = mapa or os.environ.get("RW_AUTOPILOTO_MAPA") or _mapa_padrao(modo)
+        ap.voltas_mapa = {}
+        ap.mapa_escolhas = []
+        diag = store.IM_DIAG
+        ap.diag_ini = (len(diag.genericos), len(diag.relogio_volta), len(diag.telas))
 
-    def ligar(rota, modo="primeira", forcar=()):
+    def ligar(rota, modo="primeira", forcar=(), mapa=None):
         """
         Liga o piloto para `rota` e `modo` (ver o topo do arquivo). `forcar`:
         trechos de texto de opções que, quando aparecem num menu, são
-        escolhidas antes de qualquer outra (para ramos raros).
+        escolhidas antes de qualquer outra (para ramos raros). `mapa`:
+        estratégia do tempo livre (padrão conforme o modo).
         """
-        _novo_estado(rota, modo, forcar)
+        _novo_estado(rota, modo, forcar, mapa)
         _aplicar_prefs()
+
+    def concluir(motivo="ok"):
+        """Fecha o percurso e monta o relatório (testes que não vão ao epílogo)."""
+        _finalizar(motivo)
 
     def _aplicar_prefs():
         # Texto instantâneo e sem transições: o percurso fica rápido e as
@@ -435,6 +466,52 @@ init 999 python in autopiloto:
             _erro("chat", "chat offline sem resposta de %s" % store.amigo_selecionado)
         return True
 
+    # ---------------- tempo livre ----------------
+
+    def _escolher_mapa():
+        sem = store.im_semana_atual
+        ap.voltas_mapa[sem] = ap.voltas_mapa.get(sem, 0) + 1
+        if ap.voltas_mapa[sem] > LIMITE_VOLTAS_MAPA:
+            _erro("laco", "mapa da semana %s aberto %d vezes" % (sem, ap.voltas_mapa[sem]))
+            return "encerrar"
+        ops = store.im_opcoes(sem)
+        if not ops:
+            return "encerrar"
+        if ap.mapa == "ultima":
+            if sem % 2 == 0:
+                return "encerrar"
+            ordem = PRIORIDADE_MAPA[::-1]
+            escolha = min(ops, key=lambda o: ordem.index(o["acao"]))
+        elif ap.mapa == "aleatorio":
+            if ap.rng.random() < 0.15:
+                return "encerrar"
+            escolha = ap.rng.choice(ops)
+        else:
+            escolha = min(ops, key=lambda o: PRIORIDADE_MAPA.index(o["acao"]))
+        ap.mapa_escolhas.append([sem, escolha["poi"], escolha["acao"], escolha["alvo"]])
+        return escolha["valor"]
+
+    def _dados_tempo_livre():
+        regs = store.im_feitas.get(ap.rota, {})
+        diag = store.IM_DIAG
+        g, r, t = ap.diag_ini
+        return {
+            "intermissoes": ap.labels.count("im_intermissao"),
+            "intermissoes_puladas": sum(1 for x in regs.values() if x.get("pulada")),
+            "acoes_intermissao": {k: [list(a) for a in v["acoes"]] for k, v in regs.items()},
+            "energia": {k: v.get("energia_fim") for k, v in regs.items()},
+            "pistas": sorted(store.pistas),
+            "pistas_usadas": sorted(store.pistas_usadas),
+            "mentoria": store.mentoria_passos.get(ap.rota, 0),
+            "conquistas_extra": [a["id"] for a in store.conquistas_extra_obtidas()],
+            "extras": list(store.extras_contagem()),
+            "conteudo_generico": sorted(set(diag.genericos[g:])),
+            "relogio_volta": list(diag.relogio_volta[r:]),
+            "telas_deslocamento": list(diag.telas[t:]),
+            "mapa_estrategia": ap.mapa,
+            "mapa_escolhas": ap.mapa_escolhas,
+        }
+
     # ---------------- fim ----------------
 
     def _final_da_rota():
@@ -487,6 +564,10 @@ init 999 python in autopiloto:
             "contatos_vistos": ap.contatos_vistos,
             "telas": ap.telas,
         }
+        try:
+            rel.update(_dados_tempo_livre())
+        except Exception as e:
+            rel["tempo_livre_erro"] = repr(e)
         ap.relatorio = rel
         destino = os.environ.get("RW_AUTOPILOTO_RELATORIO")
         if destino:
@@ -532,6 +613,20 @@ init 999 python in autopiloto:
             item = itens[n]
             ap.escolhas.append((_label_atual(), str(item.caption)))
             valor = item.action()
+        elif renpy.get_screen("im_abertura_cartao"):
+            _tela("im_abertura_cartao")
+            valor = "pular" if ap.mapa == "pular" else "mapa"
+        elif renpy.get_screen("im_transicao"):
+            _tela("im_transicao")
+        elif renpy.get_screen("im_deslocamento"):
+            _tela("im_deslocamento")
+        elif renpy.get_screen("im_mapa"):
+            _tela("im_mapa")
+            valor = _escolher_mapa()
+        elif renpy.get_screen("im_resumo"):
+            _tela("im_resumo")
+        elif renpy.get_screen("im_parada"):
+            _tela("im_parada")
         elif renpy.get_screen("escrita_revisao"):
             _tela("escrita_revisao")
             valor = _revisao_escrita()
