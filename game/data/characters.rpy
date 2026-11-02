@@ -33,10 +33,16 @@ image npc_roommate neutral = "images/characters/amigo/base.png"
 # --- doutora ---
 image doutora_1 portrait = "images/characters/doutora_1/portrait.png"
 image doutora_1 neutral = "images/characters/doutora_1/neutral.png"
+image doutora_1 serious = "images/characters/doutora_1/serious.png"
+image doutora_1 thinking = "images/characters/doutora_1/thinking.png"
+image doutora_1 positive = "images/characters/doutora_1/positive.png"
 
-# --- enfermeira ---
+# --- doutora_2 ---
 image doutora_2 portrait = "images/characters/doutora_2/portrait.png"
 image doutora_2 neutral = "images/characters/doutora_2/neutral.png"
+image doutora_2 serious = "images/characters/doutora_2/serious.png"
+image doutora_2 thinking = "images/characters/doutora_2/thinking.png"
+image doutora_2 positive = "images/characters/doutora_2/positive.png"
 
 
 

@@ -1,0 +1,78 @@
+[
+ {
+  "id": "amigo__base",
+  "prompt": "A PRIMEIRA imagem é o colega de república do protagonista, mas ele está com cara de criança. Redesenhe-o como um ADULTO de uns 26 anos, que faz mestrado e divide o apartamento: altura e ombros de adulto, rosto mais longo, barba por fazer, cabelo castanho bagunçado de quem acabou de acordar, olheiras leves. Mantenha a cena: ele boceja cobrindo a boca com uma mão e segura uma caneca de café na outra. Roupa com personalidade: calça de pijama listrada azul (a base de hoje), camiseta larga e desbotada de um time de futebol de bairro (estampa sem texto legível), chinelo de dedo, fone de ouvido grande pendurado no pescoço. As imagens seguintes são só referência de ESTILO e PROPORÇÃO (não copie as pessoas delas).\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/amigo/base.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_dev/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_techlead/neutral.png"
+  ]
+ },
+ {
+  "id": "doutora_2__neutral",
+  "prompt": "A PRIMEIRA imagem é a Dra. Nathalia, mas ela está jovem demais e genérica. Redesenhe-a como uma médica pneumologista de uns 32 anos, prática e direta, que atende muitos pacientes por dia: rosto adulto com maçãs do rosto definidas, olhos de tamanho natural, sardas leves, cabelo loiro-escuro preso num coque baixo com mechas soltas e uma caneta enfiada no coque, brincos pequenos de pérola. Roupa: pijama cirúrgico verde-água por baixo do jaleco branco aberto, estetoscópio no pescoço, máscara cirúrgica ABAIXADA no pescoço (rosto inteiro à mostra), crachá do Instituto no jaleco, tênis brancos confortáveis e um tablet na mão. Pose: em pé, relaxada, olhar direto, leve sorriso de canto. As imagens seguintes são só referência de ESTILO e PROPORÇÃO (não copie as pessoas delas).\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_2/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/docs/arte/referencias/estilo-c-emily.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_1/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/co_mentora/neutral.png"
+  ]
+ },
+ {
+  "id": "doutora_1__serious",
+  "prompt": "A PRIMEIRA imagem é Dra. Michelle na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (cabelo cacheado grisalho, jaleco branco, camisa lilás, calça bege, crachá do Instituto e prancheta). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: braços cruzados ou segurando o objeto dela junto ao peito, peso numa perna, postura firme.\nROSTO (obrigatório, bem diferente da primeira imagem): sobrancelhas BAIXAS e franzidas, inclinadas para o centro (preocupação); olhar firme direto para a frente; boca fechada em linha reta, cantos levemente para baixo.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_1/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_qualidade/serious.png"
+  ]
+ },
+ {
+  "id": "doutora_1__thinking",
+  "prompt": "A PRIMEIRA imagem é Dra. Michelle na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (cabelo cacheado grisalho, jaleco branco, camisa lilás, calça bege, crachá do Instituto e prancheta). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: uma mão no queixo, a outra segurando o objeto dela, cabeça levemente inclinada.\nROSTO (obrigatório, bem diferente da primeira imagem): uma sobrancelha erguida e a outra franzida (assimétricas); olhos semicerrados olhando para CIMA e para o LADO, não para a frente; lábios comprimidos e puxados para um canto.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_1/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/thinking.png"
+  ]
+ },
+ {
+  "id": "doutora_1__positive",
+  "prompt": "A PRIMEIRA imagem é Dra. Michelle na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (cabelo cacheado grisalho, jaleco branco, camisa lilás, calça bege, crachá do Instituto e prancheta). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: explicando algo com uma mão aberta estendida à frente, a outra segurando o objeto dela.\nROSTO (obrigatório, bem diferente da primeira imagem): sobrancelhas erguidas; olhos apertados de sorriso; sorriso aberto e caloroso mostrando os dentes.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/doutora_1/neutral.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png"
+  ]
+ },
+ {
+  "id": "doutora_2__serious",
+  "prompt": "A PRIMEIRA imagem é Dra. Nathalia na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (coque baixo loiro-escuro com caneta, sardas, pijama cirúrgico verde-água, jaleco, estetoscópio, máscara abaixada no pescoço e tablet). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: braços cruzados ou segurando o objeto dela junto ao peito, peso numa perna, postura firme.\nROSTO (obrigatório, bem diferente da primeira imagem): sobrancelhas BAIXAS e franzidas, inclinadas para o centro (preocupação); olhar firme direto para a frente; boca fechada em linha reta, cantos levemente para baixo.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_qualidade/serious.png"
+  ],
+  "depends": "doutora_2__neutral"
+ },
+ {
+  "id": "doutora_2__thinking",
+  "prompt": "A PRIMEIRA imagem é Dra. Nathalia na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (coque baixo loiro-escuro com caneta, sardas, pijama cirúrgico verde-água, jaleco, estetoscópio, máscara abaixada no pescoço e tablet). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: uma mão no queixo, a outra segurando o objeto dela, cabeça levemente inclinada.\nROSTO (obrigatório, bem diferente da primeira imagem): uma sobrancelha erguida e a outra franzida (assimétricas); olhos semicerrados olhando para CIMA e para o LADO, não para a frente; lábios comprimidos e puxados para um canto.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/thinking.png"
+  ],
+  "depends": "doutora_2__neutral"
+ },
+ {
+  "id": "doutora_2__positive",
+  "prompt": "A PRIMEIRA imagem é Dra. Nathalia na versão final: mantenha exatamente a identidade, o rosto, o cabelo, a roupa, as cores e os acessórios (coque baixo loiro-escuro com caneta, sardas, pijama cirúrgico verde-água, jaleco, estetoscópio, máscara abaixada no pescoço e tablet). A SEGUNDA imagem é referência de EXPRESSÃO e atitude (outra pessoa: não copie rosto nem roupa dela).\n\nPOSE: explicando algo com uma mão aberta estendida à frente, a outra segurando o objeto dela.\nROSTO (obrigatório, bem diferente da primeira imagem): sobrancelhas erguidas; olhos apertados de sorriso; sorriso aberto e caloroso mostrando os dentes.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/st_mentora/neutral.png"
+  ],
+  "depends": "doutora_2__neutral"
+ },
+ {
+  "id": "developer_test__serious",
+  "prompt": "A PRIMEIRA imagem é César na versão final: mantenha exatamente a identidade, o rosto, o boné, os óculos, a barba, a roupa, o crachá e o smartwatch. A SEGUNDA imagem é a pose séria atual, que tem um erro: ele segura o celular de um jeito estranho com os braços cruzados. Corrija: braços cruzados sobre o peito com as DUAS mãos vazias e o celular de capinha colorida guardado no bolso da calça, só a pontinha aparecendo. ROSTO: sobrancelhas BAIXAS, retas e aproximadas; olhar firme direto para a frente; boca fechada em linha reta, sem sorriso.\n\nEstilo C, IGUAL ao das imagens de referência de estilo: proporção de ADULTO com ~7,5 cabeças, ombros e mãos naturais, o mesmo nível de detalhe nas roupas (costuras, dobras, sombras suaves de 1 tom), contorno escuro com leve textura de lápis, cores suaves e levemente dessaturadas. Rosto de adulto: olhos de tamanho natural (não olhos grandes de anime), maçãs do rosto e mandíbula definidas, sobrancelhas marcadas e expressivas. Nem realista demais nem cartunesco. Sprite de visual novel: corpo inteiro em pé, do topo da cabeça aos pés, centralizado, fundo totalmente transparente (PNG com alfa), sem sombra no chão, sem texto, retrato 2:3.",
+  "refs": [
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/enthusiastic.png",
+   "C:/Users/Felipe/Documents/GitHub/Renpy Projects/Requirements-Whisper-evolucao/game/images/characters/developer_test/serious.png"
+  ]
+ }
+]

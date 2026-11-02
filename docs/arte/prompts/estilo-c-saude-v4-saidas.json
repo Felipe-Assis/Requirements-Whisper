@@ -1,0 +1,52 @@
+{
+ "saidas": [
+  {
+   "id": "amigo__base",
+   "kind": "sprite",
+   "dest": "images/characters/amigo/base.png",
+   "portrait": "images/characters/amigo/portrait.png"
+  },
+  {
+   "id": "doutora_2__neutral",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_2/neutral.png",
+   "portrait": "images/characters/doutora_2/portrait.png"
+  },
+  {
+   "id": "doutora_1__serious",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_1/serious.png"
+  },
+  {
+   "id": "doutora_1__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_1/thinking.png"
+  },
+  {
+   "id": "doutora_1__positive",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_1/positive.png"
+  },
+  {
+   "id": "doutora_2__serious",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_2/serious.png"
+  },
+  {
+   "id": "doutora_2__thinking",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_2/thinking.png"
+  },
+  {
+   "id": "doutora_2__positive",
+   "kind": "sprite",
+   "dest": "images/characters/doutora_2/positive.png"
+  },
+  {
+   "id": "developer_test__serious",
+   "kind": "sprite",
+   "dest": "images/characters/developer_test/serious.png",
+   "portrait": "images/characters/developer_test/portrait.png"
+  }
+ ]
+}

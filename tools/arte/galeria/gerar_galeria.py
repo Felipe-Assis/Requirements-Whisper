@@ -34,16 +34,16 @@ SEM_USO = ["escritorio_interior_vazio", "empresa_cafe_manha"]
 NOTAS = {
     "co_supervisora": "Traço um pouco mais fino que o resto do elenco (a métrica de contorno ficou abaixo da média).",
     "co_solicitante": "Saturação alta por causa do colete laranja, não do estilo.",
-    "developer_test": "Revisado: crachá, smartwatch e celular de testes; expressões por pose.",
+    "developer_test": "Revisado: crachá, smartwatch e celular de testes; expressões por pose. Pose séria refeita: braços cruzados, celular no bolso.",
     "developer_coding": "Revisado: rosto no traço da Emily (menos realista); caneca e relógio; expressões por pose.",
     "developer_management": "Revisado: prancheta e crachá; expressões por pose.",
     "developer_ai": "Revisado: mochila com adesivos e pulseira; expressões por pose.",
     "developer_quality": "Revisado: brincos e pasta com post-its; expressões por pose.",
     "developer_project": "Revisado: relógio e notebook; expressões por pose.",
     "developer_security": "Revisado: sobrecamisa e crachá de acesso; expressões por pose.",
-    "doutora_1": "Revisado: crachá do Instituto e prancheta.",
-    "doutora_2": "Revisado: máscara abaixada no pescoço (rosto à mostra) e tablet.",
-    "amigo": "Revisado: proporção e caneca de café.",
+    "doutora_1": "Revisado: crachá do Instituto e prancheta. Novas expressões: séria (preocupada), pensativa e positiva.",
+    "doutora_2": "Refeita como médica de ~32 anos: coque com caneta, sardas, pijama cirúrgico verde-água, máscara abaixada e tablet. Novas expressões: séria, pensativa e positiva.",
+    "amigo": "Refeito como adulto de ~26 anos (mestrando): barba por fazer, camiseta de time de bairro, fone no pescoço, chinelo e caneca.",
 }
 CONTA = {}
 usados = {}
