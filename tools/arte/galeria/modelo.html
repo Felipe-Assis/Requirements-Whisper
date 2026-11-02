@@ -90,6 +90,7 @@ textarea { width: 100%; min-height: 140px; font: 14px/1.5 var(--mono); color: va
       <li>Identidade: cada personagem foi comparado pose a pose; 5 imagens foram refeitas por troca de identidade, fundo não transparente ou âncora errada.</li>
       <li>Métricas de saturação, brilho e contorno por sprite: os casos fora da média são roupa (colete laranja, blazer marrom) e o traço mais fino da Rosângela, sinalizados nos cartões.</li>
       <li>As telas de produto e o cartão de conquistas não foram regerados: são interface, não ilustração.</li>
+      <li><strong>Revisão 2 da Saúde (seu feedback):</strong> os 10 personagens marcados foram refeitos usando a Emily, a Tainá e o Kauã como referência de proporção e detalhe; cada um ganhou um acessório de personalidade; todas as poses que não são âncora foram refeitas com sobrancelhas, olhos, olhar e boca descritos por pose. O Joseph teve o rosto simplificado no traço da Emily.</li>
     </ul>
   </div>
 
@@ -110,11 +111,11 @@ textarea { width: 100%; min-height: 140px; font: 14px/1.5 var(--mono); color: va
 
 <script>
 const DADOS = /*DADOS*/null;
-const CHAVE = "assets-revisao-v1";
+const CHAVE = "assets-revisao-v2";
 let marcados = new Set(), notas = "";
 try { const s = JSON.parse(localStorage.getItem(CHAVE) || "{}"); marcados = new Set(s.m || []); notas = s.n || ""; } catch (e) {}
 function guardar() { try { localStorage.setItem(CHAVE, JSON.stringify({ m: [...marcados], n: notas })); } catch (e) {} }
-const abas = [...DADOS.rotas.map(r => ({ id: r.id, nome: r.nome })), { id: "sem-uso", nome: "Sem uso" }];
+const abas = [...DADOS.rotas.map(r => ({ id: r.id, nome: r.nome })), { id: "mapa", nome: "Mapa" }, { id: "sem-uso", nome: "Sem uso" }];
 
 function el(tag, attrs, ...filhos) {
   const n = document.createElement(tag);
@@ -171,6 +172,24 @@ function rota(r) {
   frag.append(fs, ts);
   return frag;
 }
+function mapaAba() {
+  const M = DADOS.mapa, frag = document.createDocumentFragment();
+  const prev = el("section", { "aria-labelledby": "m-prev" },
+    el("div", { class: "sec-head" }, el("h2", { id: "m-prev" }, "Mapa da cidade montado"), el("p", {}, "base + 12 lugares nas posições ajustadas; balões, ícones e marcador entram por cima no jogo")),
+    fundoCard({ id: "mapa_montado", ...M.previa }, "mapa"));
+  prev.querySelector(".bgcard img").style.aspectRatio = "16 / 9";
+  const lug = el("section", { "aria-labelledby": "m-lug" },
+    el("div", { class: "sec-head" }, el("h2", { id: "m-lug" }, "Lugares"), el("p", {}, "sprites recortados que sobem ao receber foco")),
+    el("div", { class: "grid" }, ...M.lugares.map(l => { const c = fundoCard(l, "lugar"); c.querySelector("img").style.objectFit = "contain"; return c; })));
+  const ico = el("section", { "aria-labelledby": "m-ico" },
+    el("div", { class: "sec-head" }, el("h2", { id: "m-ico" }, "Ícones de atividade e marcador"), el("p", {}, "aparecem nos balões sobre cada lugar")),
+    el("div", { class: "grid", style: "grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))" }, ...M.icones.map(i => { const c = fundoCard(i, "icone"); const im = c.querySelector("img"); im.style.objectFit = "contain"; im.style.aspectRatio = "1"; return c; })));
+  const tr = el("section", { "aria-labelledby": "m-tr" },
+    el("div", { class: "sec-head" }, el("h2", { id: "m-tr" }, "Telas de transição"), el("p", {}, "1,5 a 2 s no deslocamento entre lugares, com som")),
+    el("div", { class: "grid" }, ...M.transicoes.map(t => fundoCard(t, "transicao"))));
+  frag.append(prev, lug, ico, tr);
+  return frag;
+}
 function semUso() {
   return el("section", { "aria-labelledby": "s-sem" },
     el("div", { class: "sec-head" }, el("h2", { id: "s-sem" }, "Fundos sem uso"), el("p", {}, "regerados no estilo C, mas nenhuma cena usa hoje; podem entrar nas intermissões")),
@@ -182,14 +201,16 @@ function mostrar() {
   const nav = document.getElementById("abas"); nav.innerHTML = "";
   for (const a of abas) {
     const r = DADOS.rotas.find(x => x.id === a.id);
-    const n = r ? r.pessoas.reduce((s, p) => s + p.poses.length + 1, 0) + r.fundos.length + r.telas.length : DADOS.semUso.length;
+    const M = DADOS.mapa;
+    const n = r ? r.pessoas.reduce((s, p) => s + p.poses.length + 1, 0) + r.fundos.length + r.telas.length
+      : a.id === "mapa" ? 1 + M.lugares.length + M.icones.length + M.transicoes.length : DADOS.semUso.length;
     const link = el("a", { href: `#${a.id}` }, a.nome, el("span", { class: "count" }, String(n)));
     if (a.id === atual) link.setAttribute("aria-current", "page");
     nav.append(link);
   }
   const main = document.getElementById("conteudo"); main.innerHTML = "";
   main.style.display = "grid"; main.style.gap = "28px";
-  main.append(atual === "sem-uso" ? semUso() : rota(DADOS.rotas.find(r => r.id === atual)));
+  main.append(atual === "sem-uso" ? semUso() : atual === "mapa" ? mapaAba() : rota(DADOS.rotas.find(r => r.id === atual)));
 }
 function atualizarResumo() {
   const ta = document.getElementById("resumo");

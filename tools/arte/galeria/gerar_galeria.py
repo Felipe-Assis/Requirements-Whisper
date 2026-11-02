@@ -33,9 +33,17 @@ ROTAS = [
 SEM_USO = ["escritorio_interior_vazio", "empresa_cafe_manha"]
 NOTAS = {
     "co_supervisora": "Traço um pouco mais fino que o resto do elenco (a métrica de contorno ficou abaixo da média).",
-    "doutora_2": "Máscara cobre parte do rosto, como no desenho original.",
     "co_solicitante": "Saturação alta por causa do colete laranja, não do estilo.",
-    "developer_management": "Saturação alta por causa do blazer marrom, não do estilo.",
+    "developer_test": "Revisado: crachá, smartwatch e celular de testes; expressões por pose.",
+    "developer_coding": "Revisado: rosto no traço da Emily (menos realista); caneca e relógio; expressões por pose.",
+    "developer_management": "Revisado: prancheta e crachá; expressões por pose.",
+    "developer_ai": "Revisado: mochila com adesivos e pulseira; expressões por pose.",
+    "developer_quality": "Revisado: brincos e pasta com post-its; expressões por pose.",
+    "developer_project": "Revisado: relógio e notebook; expressões por pose.",
+    "developer_security": "Revisado: sobrecamisa e crachá de acesso; expressões por pose.",
+    "doutora_1": "Revisado: crachá do Instituto e prancheta.",
+    "doutora_2": "Revisado: máscara abaixada no pescoço (rosto à mostra) e tablet.",
+    "amigo": "Revisado: proporção e caneca de café.",
 }
 CONTA = {}
 usados = {}
@@ -71,8 +79,26 @@ for r in ROTAS:
     dados.append({"id": r["id"], "nome": r["nome"], "empresa": r["empresa"], "pessoas": pessoas, "fundos": fundos, "telas": telas})
 extras = [{"id": b, **salvar(f"{E}/bg/{b}.png", f"bg__{b}", (960, 640), alfa=False)} for b in SEM_USO]
 
+# Mapa: prévia montada (base + lugares nas coordenadas ajustadas), lugares, ícones e transições.
+COORD = json.load(open(os.path.join(os.path.dirname(E), "..", "docs", "arte", "prompts", "mapa-coordenadas-ajustadas.json"), encoding="utf-8"))
+base = Image.open(f"{E}/mapa/cidade_base.png").convert("RGBA")
+for lid, (x, y, larg) in sorted(COORD.items(), key=lambda kv: kv[1][1]):
+    lug = Image.open(f"{E}/mapa/lugares/{lid}.png").convert("RGBA")
+    lug = lug.resize((larg, round(lug.height * larg / lug.width)), Image.LANCZOS)
+    base.alpha_composite(lug, (x - larg // 2, y - lug.height))
+base.convert("RGB").save(os.path.join(AQUI, "_previa_mapa.png"))
+mapa = {
+    "previa": salvar(os.path.join(AQUI, "_previa_mapa.png"), "mapa__previa", (1600, 900), alfa=False),
+    "base": salvar(f"{E}/mapa/cidade_base.png", "mapa__base", (1200, 675), alfa=False),
+    "lugares": [{"id": l, **salvar(f"{E}/mapa/lugares/{l}.png", f"lugar__{l}", (520, 420))} for l in sorted(COORD)],
+    "icones": [{"id": i[:-4], **salvar(f"{E}/mapa/icones/{i}", f"icone__{i[:-4]}", (160, 160))} for i in sorted(os.listdir(f"{E}/mapa/icones"))]
+              + [{"id": "voce", **salvar(f"{E}/mapa/voce.png", "icone__voce", (160, 160))}],
+    "transicoes": [{"id": t[:-4], **salvar(f"{E}/bg/{t}", f"bg__{t[:-4]}", (960, 640), alfa=False)}
+                   for t in sorted(os.listdir(f"{E}/bg")) if t.startswith("transicao_")],
+}
+
 modelo = open(os.path.join(AQUI, "modelo.html"), encoding="utf-8").read()
-html = modelo.replace("/*DADOS*/null", json.dumps({"rotas": dados, "semUso": extras}, ensure_ascii=False))
+html = modelo.replace("/*DADOS*/null", json.dumps({"rotas": dados, "semUso": extras, "mapa": mapa}, ensure_ascii=False))
 open(os.path.join(AQUI, "galeria-assets.html"), "w", encoding="utf-8").write(html)
 total = sum(os.path.getsize(os.path.join(IMG, f)) for f in os.listdir(IMG))
 print(len(usados), "imagens,", round(total / 1e6, 1), "MB")
