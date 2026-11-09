@@ -9,7 +9,8 @@ TodoWrite indisponível; este registro mantém a retomada.
 - [completed] Gerar e integrar artes, feedback visual e HUD.
 - [completed] Criar portfólio HTML interativo.
 - [completed] Executar testes, inspeção visual, revisão independente e corrigir achados.
-- [in_progress] Gerar pacote, integrar main e limpar worktree/temporários.
+- [completed] Gerar pacote, integrar main e remover worktree/branch de trabalho.
+- [in_progress] Limpar temporários restantes — bloqueado pela política automática de execução.
 
 Decisões: campanha nova acessível pelo menu principal, preservando a demo guiada e seus saves. A campanha é o fluxo recomendado; não duplicar seu estado nos campos da demo. Ren'Py 8.5.3 reutilizado de C:/Users/Felipe/.cache/requirements-whisper-tools. Trabalho e testes no X:. Baseline lint: 145 blocos, 21 menus, 39 telas, sem erros.
 
@@ -67,3 +68,11 @@ Arte final do objeto: `images/items/notebook_evidencias.png`, usada no inventár
 
 - Verificação final: 53 casos e 388 asserções no motor, 15 testes de estado em Python e 15 casos/77 asserções na variante compacta passaram. Lint sem erros.
 - Pacote Windows gerado e verificado com seu próprio runtime: 50 casos e 387 asserções passaram, com três capturas opcionais desativadas. Hash e limites em `VALIDACAO-CAMPANHA.md`.
+
+## Integração e limpeza
+
+Implementação integrada na `main` local pelo commit `4a9981f`. Worktree `X:/dev-tmp/Requirements-Whisper/evolucao/worktree` removido pelo Git após conferir estado limpo e ancestralidade; branch `evolucao-jogavel` removida. Servidor de prévia encerrado e navegador de verificação fechado. SDK preexistente e pacote final em `dist/` preservados. Nenhum recurso Docker criado.
+
+A revisão automática rejeitou a exclusão dos temporários com a mensagem `blocked by policy`, mesmo com conferência dos caminhos. A limpeza não foi executada. Restam, sob `X:/dev-tmp/Requirements-Whisper/evolucao/`, as pastas desta execução: `npm-cache`, `saves`, `state-saves`, `ui-saves`, `compact-saves`, `package-check`, `package-saves`; e os arquivos `build.log`, `lab-ui.log`, `lint-final.log`, `package-test.log`, `portfolio-desktop.png`, `portfolio-mobile.png`, `superdesign-portfolio.html`, `test-compact.log`, `test-final.log`, `test-round2.log`, `test-round3.log`. Também resta `C:/Users/Felipe/Documents/GitHub/Requirements-Whisper/.playwright-mcp/`.
+
+As pastas `backup-migracao`, `capturas-final` e `dist` nesse diretório temporário são anteriores à execução e devem ser preservadas. O arquivo não rastreado `II'` da raiz do repositório também é preexistente e não foi alterado. Não apagar o diretório temporário inteiro para concluir esta limpeza.
