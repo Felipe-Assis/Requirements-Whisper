@@ -1,12 +1,16 @@
 # The Requirements Whisperer
 
-A [revisão criativa de novembro de 2026](docs/revisao-2026-11/LEIA-ME.md) reúne avaliação crítica, proposta visual e plano de evolução. As funcionalidades propostas ainda não fazem parte da demo descrita abaixo.
+A [revisão criativa](docs/revisao-2026-11/LEIA-ME.md) originou a campanha **O horário de todo mundo**. Veja o [portfólio interativo](docs/portfolio/index.html), com artes, mecânicas e um simulador das consequências. Abra o HTML em um navegador; não exige servidor nem conexão.
 
-Versão **1.1-demo**. Jogo educacional em Ren'Py, em português, sobre engenharia de requisitos. Você procura um estágio, investiga um pedido com Sabrina e Carlos, negocia uma mudança com Júlio e produz um rascunho de requisito e critério de aceitação.
+Versão **1.2-campanha**. A nova campanha começa com duas reservas para o mesmo microscópio. Você investiga três lugares, relaciona fontes e requisitos, escolhe um pacote de trabalho e experimenta o calendário. Uma semana depois, Carlos e Júlio retomam o compromisso; uma omissão pode virar uma reparação e uma nova verificação. Quatro famílias de finais refletem entrega, investigação e pendências.
+
+No menu, **Jogar a campanha** abre essa história. **Iniciar história** preserva a demo guiada anterior, com três contextos e escrita livre. As duas jornadas têm estado separado; preferências de leitura continuam compartilhadas.
+
+Novidades: exploração por cenário ou lista, missão opcional da planilha local, pasta de evidências/projeto/compromissos, HUD de objetivo, planejamento com dependências, consulta do calendário diferente conforme o pacote, retorno dos NPCs, versão reparada e roupa de Sabrina na semana seguinte. O quadro usa seleção por clique ou teclado; arrastar não está implementado. A duração e a diversão ainda precisam de medição com jogadores.
 
 ## Jogar
 
-Para jogar o pacote Windows local, extraia `dist/TheRequirementsWhisperer-1.1-demo-win.zip` e abra `TheRequirementsWhisperer.exe` na pasta extraída. O pacote inclui o motor; não exige instalar o SDK.
+Para jogar o pacote Windows local, extraia `dist/TheRequirementsWhisperer-1.2-campanha-win.zip` e abra `TheRequirementsWhisperer.exe` na pasta extraída. O pacote inclui o motor; não exige instalar o SDK.
 
 Para executar ou editar o código-fonte:
 
@@ -22,7 +26,7 @@ $jogo = 'C:/caminho/Requirements-Whisper'
 
 Para usar um projeto criado pelo launcher, coloque o conteúdo deste repositório na pasta `game/` desse projeto, substituindo os scripts de exemplo.
 
-## O que há nesta versão
+## Demo guiada preservada
 
 - Preparação interativa com inventário, nome opcional e prévia visual do emblema do perfil. Não é preciso informar idade ou nome real.
 - Três contextos: reservas de laboratório, controle de gastos e atendimento de chamados.

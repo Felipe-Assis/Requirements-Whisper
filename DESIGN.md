@@ -1,5 +1,11 @@
 # Direção visual
 
+## Campanha 1.2 — pasta de trabalho
+
+A campanha mantém azul-petróleo e teal, com âmbar `#e1b66b` nas ações de avanço e nos marcos. Cenário e personagens ocupam as conversas; atividades têm uma bancada própria, sem sobreposição da HUD. A pasta reúne fontes, projeto e compromissos. Hotspots sempre têm ação equivalente numa lista, e estado é escrito além da cor. Uma hipótese pode ser revista; uma entrega pendente nunca recebe rótulo de concluída.
+
+O quarto e laboratório usam artes próprias. Sabrina muda de roupa no retorno explicitamente situado uma semana depois. Transições seguem a preferência do motor. Não há cronômetro de leitura. O portfólio em `docs/portfolio/index.html` usa abas de caderno, paleta do jogo e imagens locais; mantém foco visível, diálogo acessível e respeita movimento reduzido.
+
 Uma visual novel educacional em português para estudantes iniciando a prática de engenharia de software. O jogador precisa ler, comparar decisões e consultar o que descobriu sem pressa.
 
 ## Padrões preservados

@@ -325,6 +325,7 @@ screen navigation():
 
         if main_menu:
 
+            textbutton _("Jogar a campanha") action Start("lab_campaign")
             textbutton _("Iniciar história") action Start()
 
         else:
@@ -412,10 +413,10 @@ screen main_menu():
                 spacing 12
                 text "[config.name!t]":
                     style "main_menu_title"
-                text _("Ouça as pessoas. Investigue necessidades. Negocie requisitos."):
+                text _("Investigue o problema. Transforme o projeto. Veja o que mudou."):
                     size 27
                     color gui.text_color
-                text _("Uma história interativa sobre engenharia de requisitos"):
+                text _("Campanha: O horário de todo mundo · Demo guiada: Iniciar história"):
                     size 24
                     color gui.accent_color
 
