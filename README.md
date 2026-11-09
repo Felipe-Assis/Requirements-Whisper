@@ -1,5 +1,7 @@
 # The Requirements Whisperer
 
+A [revisão criativa de novembro de 2026](docs/revisao-2026-11/LEIA-ME.md) reúne avaliação crítica, proposta visual e plano de evolução. As funcionalidades propostas ainda não fazem parte da demo descrita abaixo.
+
 Versão **1.1-demo**. Jogo educacional em Ren'Py, em português, sobre engenharia de requisitos. Você procura um estágio, investiga um pedido com Sabrina e Carlos, negocia uma mudança com Júlio e produz um rascunho de requisito e critério de aceitação.
 
 ## Jogar
