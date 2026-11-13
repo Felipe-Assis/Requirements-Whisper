@@ -18,7 +18,9 @@ testsuite lab_visual:
     testcase menu_map_and_sources:
         pause 0.2
         screenshot "review/campaign_menu.png"
-        click "Jogar a campanha"
+        click id "main_new_game"
+        advance until screen "campaign_hub_screen"
+        click id "campaign_project_lab"
         advance until screen "lab_map"
         pause 0.2
         screenshot "review/campaign_map.png"

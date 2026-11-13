@@ -120,7 +120,10 @@ testsuite journey:
         keysym "K_n"
         assert not screen "learning_notebook"
         keysym "K_BACKSPACE"
-        screenshot "review/journey_input_large.png"
+        if eval renpy.variant("small"):
+            screenshot "review-small/journey_input_large.png"
+        else:
+            screenshot "review/journey_input_large.png"
         keysym "K_RETURN"
         pause until eval transfer_requirement == journey_expected_requirement
         pause 0.1
@@ -129,11 +132,17 @@ testsuite journey:
         assert eval transfer_requirement == journey_expected_requirement
         assert eval transfer_criterion == journey_expected_criterion
         assert eval renpy.get_widget("transfer_review", "transfer_review_scroll").yadjustment.range > 0
-        screenshot "review/journey_review_large.png"
+        if eval renpy.variant("small"):
+            screenshot "review-small/journey_review_large.png"
+        else:
+            screenshot "review/journey_review_large.png"
         keysym "K_PAGEDOWN"
         pause 0.2
         assert eval renpy.get_widget("transfer_review", "transfer_review_scroll").yadjustment.value > 0
-        screenshot "review/journey_review_scrolled.png"
+        if eval renpy.variant("small"):
+            screenshot "review-small/journey_review_scrolled.png"
+        else:
+            screenshot "review/journey_review_scrolled.png"
         click "Continuar a autoavalia"
         advance until screen "choice"
         $ persistent.rw_large_text = journey_previous_large

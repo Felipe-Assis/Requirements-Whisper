@@ -32,6 +32,10 @@ image carlos serious = "images/characters/carlos/serious.png"
 image carlos enthusiastic = "images/characters/carlos/enthusiastic.png"
 image julio neutral = "images/characters/julio/neutral.png"
 image julio thinking = "images/characters/julio/thinking.png"
+image julio retorno = "images/characters/julio/return.png"
+image carlos retorno = "images/characters/carlos/return.png"
+image lia retorno = "images/characters/lia/return.png"
+image rodrigo chuva = "images/characters/rodrigo/rain.png"
 
 transform colleague_left:
     xalign 0.12

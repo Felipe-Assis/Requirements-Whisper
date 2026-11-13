@@ -31,15 +31,21 @@ testsuite lab_ui:
         click id "lab_rule_conflict"
         assert eval lab_links["conflict"] == "sheets"
         click id "lab_evidence_preparation"
-        move id "lab_rules_scroll"
+        assert eval renpy.get_screen("lab_board").scope["selected_evidence"] == "preparation"
+        move id "lab_board_scroll"
         keysym "K_PAGEDOWN"
         click id "lab_rule_preparation"
         assert eval lab_links["preparation"] == "preparation"
         if eval __import__("os").environ.get("RW_LAB_CAPTURE") == "1":
+            move id "lab_board_scroll"
+            keysym "K_PAGEUP"
+            pause 0.2
             screenshot "review/lab_board.png"
         run Hide("lab_board")
 
     testcase map_has_equivalent_locations:
+        # O recorte alpha do objeto precisa estar renderizado antes do clique.
+        pause 0.2
         if eval __import__("os").environ.get("RW_LAB_CAPTURE") == "1":
             pause 0.2
             screenshot "review/lab_map.png"
@@ -53,10 +59,24 @@ testsuite lab_ui:
         $ lab_phase = "planning"
         run Show("lab_planning")
         pause until screen "lab_planning"
+        # A dependência fica abaixo do cabeçalho e da descrição do cartão.
+        move id "lab_plan_scroll"
+        keysym "K_PAGEDOWN"
         click id "lab_plan_preparation"
         assert eval lab_plan == []
         assert eval "depende" in lab_feedback
         click id "lab_plan_conflict"
+        move id "lab_plan_scroll"
+        # No compacto, alcance o primeiro cartão com meia página de setas.
+        if eval renpy.variant("small"):
+            keysym "K_PAGEUP"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+        else:
+            keysym "K_PAGEDOWN"
         click id "lab_plan_preparation"
         assert eval lab_plan_cost() == 3
         assert screen "lab_map"
@@ -64,10 +84,25 @@ testsuite lab_ui:
         click id "lab_plan_conflict"
         assert eval "conflict" in lab_plan
         assert eval "Retire a preparação primeiro" in lab_feedback
+        # Preparação agora é o segundo cartão da coluna Nesta rodada.
+        move id "lab_plan_scroll"
+        keysym "K_PAGEDOWN"
         click id "lab_plan_preparation"
+        assert eval lab_plan == ["conflict"]
+        if eval renpy.variant("small"):
+            move id "lab_plan_scroll"
+            keysym "K_PAGEUP"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
+            keysym "K_DOWN"
         click id "lab_plan_conflict"
         assert eval lab_plan == []
         if eval __import__("os").environ.get("RW_LAB_CAPTURE") == "1":
+            move id "lab_plan_scroll"
+            keysym "K_PAGEUP"
+            pause 0.2
             screenshot "review/lab_planning.png"
         run Hide("lab_planning")
 
@@ -85,9 +120,12 @@ testsuite lab_ui:
         assert eval lab_test_results["adjacent"] == "preparation_required"
         click id "lab_test_preparation"
         assert eval lab_test_results["preparation"] == "preparation_required"
+        move id "lab_calendar_scroll"
         keysym "K_PAGEDOWN"
         click id "lab_test_other"
         assert eval lab_test_results["other"] == "allowed"
+        move id "lab_calendar_scroll"
+        keysym "K_PAGEUP"
         click id "lab_existing_open"
         pause until screen "lab_reservation_reference"
         assert eval renpy.get_widget("lab_reservation_reference", "lab_existing_owner").get_all_text() == "Ana · reserva mantida"
@@ -135,11 +173,18 @@ testsuite lab_ui:
         assert eval lab_delivery == "revision_pending"
         run Show("lab_journal")
         pause until screen "lab_journal"
+        click id "lab_journal_tab_project"
+        assert eval renpy.get_screen("lab_journal").scope["journal_section"] == "project"
         move id "lab_journal_scroll"
-        keysym "K_PAGEDOWN"
+        keysym "K_PAGEUP"
         assert "Plano inicial: Calendário legível"
         assert "revisão 2 em verificação; versão anterior em uso"
+        click id "lab_journal_tab_commitments"
+        assert eval renpy.get_screen("lab_journal").scope["journal_section"] == "commitments"
+        assert "Acordo: Entregar a base antes da integração"
+        assert "Reparação registrada. Evidências e acordo anteriores foram preservados."
         keysym "K_ESCAPE"
+        assert screen "lab_demo"
         $ lab_mark_delivery()
         assert eval lab_delivery == "repaired"
         run Hide("lab_demo")

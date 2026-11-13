@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.2-campanha"
+define config.version = "1.3-cidade"
 
 
 ## Text that is placed on the game's about screen. Place the text between the

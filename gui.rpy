@@ -29,6 +29,7 @@ define gui.accent_color = '#99ccff'
 
 # Painéis opacos mantêm a leitura sobre cenários claros e escuros.
 define gui.panel_color = '#142b38'
+define gui.dialogue_panel_color = '#192c32'
 define gui.focus_color = '#30556b'
 
 ## The color used for a text button when it is neither selected nor hovered.
@@ -54,7 +55,7 @@ define gui.muted_color = '#3d5166'
 define gui.hover_muted_color = '#5b7a99'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
+define gui.text_color = '#f5f0e7'
 define gui.interface_text_color = '#ffffff'
 
 
@@ -70,10 +71,10 @@ define gui.name_text_font = "DejaVuSans.ttf"
 define gui.interface_text_font = "DejaVuSans.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 34
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 32
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 33
@@ -91,7 +92,7 @@ define gui.title_text_size = 56
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = Transform("images/bg/escritorio_interior_manha.png", xysize=(1920, 1080), fit="cover")
+define gui.main_menu_background = Transform("images/bg/startup_manha.png", xysize=(1920, 1080), fit="cover")
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -101,7 +102,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 330
+define gui.textbox_height = 300
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -110,8 +111,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 270
-define gui.name_ypos = 12
+define gui.name_xpos = 135
+define gui.name_ypos = 16
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -134,11 +135,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 280
-define gui.dialogue_ypos = 75
+define gui.dialogue_xpos = 140
+define gui.dialogue_ypos = 82
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1360
+define gui.dialogue_width = 1500
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.

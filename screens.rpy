@@ -101,6 +101,10 @@ screen say(who, what):
 
     window:
         id "window"
+        xfill False
+        xsize (1920 if renpy.variant("small") else 1780)
+        background gui.dialogue_panel_color
+        foreground Frame(Crop((18, 77, 2138, 571), "images/ui/dialogue_frame.png"), 38, 38)
         ysize (390 if persistent.rw_large_text and not renpy.variant("small") else gui.textbox_height)
 
         if who is not None:
@@ -110,7 +114,7 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
 
-        text what id "what" size (42 if persistent.rw_large_text and not renpy.variant("small") else gui.text_size)
+        text what id "what" size (42 if persistent.rw_large_text and not renpy.variant("small") else gui.text_size) ypos (gui.dialogue_ypos if who is not None else 36)
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -147,7 +151,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background gui.panel_color
+    background None
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -325,8 +329,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Jogar a campanha") action Start("lab_campaign")
-            textbutton _("Iniciar história") action Start()
+            textbutton _("Novo jogo") action Start("campaign_start") id "main_new_game"
 
         else:
 
@@ -339,6 +342,9 @@ screen navigation():
         textbutton _("Preferências") action ShowMenu("preferences")
 
         textbutton _("Acessibilidade") action ShowMenu("rw_accessibility")
+
+        if main_menu:
+            textbutton _("Extras") action ShowMenu("rw_extras") id "main_extras"
 
         if _in_replay:
 
@@ -416,7 +422,7 @@ screen main_menu():
                 text _("Investigue o problema. Transforme o projeto. Veja o que mudou."):
                     size 27
                     color gui.text_color
-                text _("Campanha: O horário de todo mundo · Demo guiada: Iniciar história"):
+                text _("Três projetos · uma cidade · suas decisões"):
                     size 24
                     color gui.accent_color
 
@@ -449,6 +455,17 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
+
+
+screen rw_extras():
+    tag menu
+    use game_menu(_("Extras"), scroll="viewport"):
+        vbox:
+            spacing 26
+            text _("Demo guiada anterior") size 38 color gui.text_color
+            text _("Uma experiência separada, com três contextos e respostas escritas por você. Foi criada antes da campanha atual.") size 28 color gui.text_color xmaximum 1100
+            text _("Para jogar os projetos com exploração, documentos e consequências, volte ao menu e escolha Novo jogo. O progresso da demo não é transferido para a campanha.") size 28 color gui.text_color xmaximum 1100
+            textbutton _("Abrir demo guiada") action Start() id "extras_legacy_demo"
 
 
 ## Game Menu screen ############################################################

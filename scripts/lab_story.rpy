@@ -1,10 +1,12 @@
 # A campanha tem seu próprio estado; as três atividades guiadas continuam em start.
 label lab_campaign:
+    $ campaign_mark_started("lab")
     hide screen learning_hud
     hide screen learning_notebook
     hide screen inv_quick
     hide screen inventory_screen
     $ lab_reset()
+    $ campaign_set_clock("lab", "Segunda · início do caso", "14h", "afternoon")
     $ lab_return_milestone = "reunião de sexta-feira da semana seguinte"
     show screen lab_hud
     scene bg laboratorio
@@ -27,6 +29,10 @@ label lab_investigation:
     $ lab_location = _return
 
 label lab_visit_location:
+    if lab_location == "laboratorio":
+        $ campaign_set_clock("lab", "Segunda · investigação", "14h", "afternoon")
+    else:
+        $ campaign_set_clock("startup", "Segunda · investigação", "15h", "afternoon")
     call screen lab_location_screen(lab_location)
     if _return == "back":
         jump lab_investigation
@@ -52,7 +58,7 @@ label lab_inspect_source:
         player "Vou registrar o equipamento e o intervalo juntos."
     elif _return == "interview":
         $ lab_collect("interview")
-        scene bg escritorio
+        scene expression Transform(campaign_clock["image"], xysize=(1920, 1080), fit="cover")
         show carlos thinking at colleague_right
         carlos "Eu olho a agenda antes de chamar o pessoal. Preciso saber se posso confiar naquele horário."
         player "O que você confere primeiro?"
@@ -61,7 +67,7 @@ label lab_inspect_source:
         carlos "Isso. Um aviso bonito depois que eu trouxe a amostra chega tarde."
     elif _return == "offline":
         $ lab_collect("offline")
-        scene bg escritorio
+        scene expression Transform(campaign_clock["image"], xysize=(1920, 1080), fit="cover")
         show julio neutral at colleague_right
         "Na mesa da equipe há uma cópia local da agenda. A coluna de alterações está cheia."
         julio "Eu ia pedir para apagarem isso. A técnica disse que a conexão cai perto da bancada."
@@ -75,7 +81,8 @@ label lab_inspect_source:
 
 label lab_definition:
     $ lab_phase = "definition"
-    scene bg escritorio
+    $ campaign_set_clock("startup", "Segunda · planejamento", "16h", "afternoon")
+    scene expression Transform(campaign_clock["image"], xysize=(1920, 1080), fit="cover")
     show julio thinking at colleague_right
     julio "Trouxe as fontes? Vamos deixar claro qual delas sustenta cada regra."
     player "Uma fala ajuda a entender a necessidade. A ficha do equipamento limita onde a regra vale."
@@ -92,7 +99,7 @@ label lab_definition:
 
 label lab_negotiation:
     $ lab_phase = "negotiation"
-    scene bg escritorio
+    scene expression Transform(campaign_clock["image"], xysize=(1920, 1080), fit="cover")
     show carlos thinking at colleague_left
     show julio thinking at colleague_right
     carlos "Se as planilhas conversassem entre si, eu não precisaria comparar cópias. Dá para fazer agora?"
@@ -132,6 +139,11 @@ label lab_negotiate_choice:
 
 label lab_delivery:
     $ lab_phase = "delivery"
+    $ campaign_set_clock("startup", "Quarta · revisão", "09h", "morning")
+    scene expression Transform(campaign_clock["image"], xysize=(1920, 1080), fit="cover")
+    with dissolve
+    if campaign_active:
+        call lab_development(True)
     "Quarta-feira. Mesa da equipe."
     if lab_commitment == "investigar_agora":
         julio "A rodada ficou com a pesquisa. Este protótipo simula o plano futuro; a execução do pacote está adiada."
@@ -168,6 +180,9 @@ label lab_delivery:
         julio "Os testes vão usar exatamente as regras do pacote confirmado. Uma regra ausente continua ausente."
         hide julio
     call screen lab_demo
+    $ campaign_set_clock("lab", "Sexta · primeira semana", "09h", "morning")
+    scene expression Transform(campaign_clock["image"], xysize=(1920, 1080), fit="cover")
+    with dissolve
     if lab_commitment == "base_primeiro":
         $ lab_mark_delivery()
         "Sexta-feira. O pacote escolhido chega à bancada com suas limitações registradas."
@@ -176,8 +191,9 @@ label lab_delivery:
 
 label lab_followup:
     $ lab_phase = "followup"
+    $ campaign_set_clock("lab", "Sexta · semana seguinte", "15h", "afternoon")
     scene bg laboratorio
-    show carlos thinking at colleague_left
+    show carlos retorno at colleague_left
     show sabrina retorno at colleague_right
     "Sexta-feira da semana seguinte. Uma semana depois da entrega prevista, chega a reunião combinada."
     if lab_commitment == "base_primeiro":
@@ -191,6 +207,7 @@ label lab_followup:
             player "Nós dois vamos levar o pedido à coordenação na próxima reunião. Ainda não temos uma data de integração."
             carlos "Essa resposta eu consigo levar para a bancada. Vou participar do pedido."
             $ lab_commitment_status = "fulfilled"
+            $ lab_return_milestone = "próxima reunião com a coordenação"
             $ lab_record_event("dependency_found")
             $ lab_record_event("investigation_returned")
         "Renegociar o retorno e registrar a investigação pendente":
@@ -200,7 +217,7 @@ label lab_followup:
             $ lab_commitment_status = "renegotiated"
             $ lab_record_event("return_renegotiated")
     hide sabrina
-    show julio thinking at colleague_right
+    show julio retorno at colleague_right
     if lab_delivery == "not_delivered":
         carlos "O procedimento evitou confirmar o segundo pedido no nosso ensaio. No dia a dia, continuo fazendo essa conferência à mão."
         julio "A dependência de autorização continua. O calendário que você testou ainda não foi entregue."
@@ -237,15 +254,17 @@ label lab_followup:
     jump lab_adoption
 
 label lab_regression:
+    if campaign_active:
+        call lab_development
     call screen lab_demo
     if lab_test_results.get("overlap") != "conflict" or lab_test_results.get("preparation") != "preparation_required":
         julio "Precisamos repetir a sobreposição e os cinco minutos de preparação na revisão. Um caso não cobre o outro."
         jump lab_regression
-    show julio neutral at colleague_right
+    show julio retorno at colleague_right
     julio "A sobreposição foi recusada. Cinco minutos também; a reserva anterior ficou intacta."
     $ lab_mark_delivery()
     "A revisão 2 chega à bancada. Carlos repete os horários com a técnica antes de usá-la."
-    show carlos thinking at colleague_left
+    show carlos retorno at colleague_left
     carlos "Eu esperei pela correção, mas agora consigo mostrar exatamente o que mudou."
 
 label lab_adoption:
@@ -287,11 +306,17 @@ label lab_adoption:
     else:
         "Carlos deixa o incidente aberto no quadro. A agenda mudou, mas parte do trabalho de conciliar horários continua com as pessoas."
         "A equipe ainda pode assumir a revisão. Hoje, essa responsabilidade permanece pendente."
+    if campaign_active:
+        $ campaign_archive_lab()
     call screen lab_final(lab_ending())
     if _return == "replay":
         jump lab_campaign
+    elif _return == "hub":
+        jump campaign_hub
     elif _return == "legacy":
         $ lab_active = False
+        $ campaign_active = False
+        hide screen campaign_time_hud
         hide screen lab_hud
         hide screen lab_journal
         jump start
