@@ -53,7 +53,7 @@ jobs:
             git archive HEAD game project.json | tar -x -C "$project" --exclude=game/tests
           fi
           export RENPY_PATH_TO_SAVES="$RUNNER_TEMP/renpy-saves"
-          "$sdk/renpy.sh" launcher ios_create "$project" "$xcode"
+          "$sdk/renpy.sh" "$sdk/launcher" ios_create "$project" "$xcode"
           version=$(tr -d '\r' < "$project/game/options.rpy" | sed -nE 's/^define config\.version = "([^":/]+)"$/\1/p')
           [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-z0-9-]+)?$ ]]
           /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${version%%-*}" "$xcode/Info.plist"
