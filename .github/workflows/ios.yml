@@ -1,0 +1,136 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [build/ios]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 35
+    env:
+      RENPY_VERSION: 8.5.3
+      BUNDLE_ID: io.github.felipe-assis.requirementswhisperer
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Ren’Py and Renios
+        working-directory: ${{ runner.temp }}
+        run: |
+          repo="https://www.renpy.org/dl/$RENPY_VERSION"
+          sdk="renpy-$RENPY_VERSION-sdk.tar.bz2"
+          ios="renpy-$RENPY_VERSION-renios.zip"
+          curl --fail --silent --show-error --location --retry 3 --remote-name "$repo/$sdk"
+          curl --fail --silent --show-error --location --retry 3 --remote-name "$repo/$ios"
+          printf '%s  %s\n' \
+            'eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45' "$sdk" \
+            'c4fae153e8276ed0faed5e84ea3e0b7c4bf337f0e3208e9130c6a41748a83b2b' "$ios" | shasum -a 256 -c
+          tar -xjf "$sdk"
+          unzip -q "$ios" -d "renpy-$RENPY_VERSION-sdk"
+          xcodebuild -version
+
+      - name: Prepare the Xcode project
+        id: project
+        run: |
+          sdk="$RUNNER_TEMP/renpy-$RENPY_VERSION-sdk"
+          project="$RUNNER_TEMP/requirements-whisper"
+          xcode="$RUNNER_TEMP/xcode"
+          mkdir "$project"
+          if [[ "$GITHUB_REF_NAME" == build/ios ]]; then
+            python3 tools/ios-itch-source.py "$project"
+            cp project.json "$project/"
+          else
+            git archive HEAD game project.json | tar -x -C "$project" --exclude=game/tests
+          fi
+          export RENPY_PATH_TO_SAVES="$RUNNER_TEMP/renpy-saves"
+          "$sdk/renpy.sh" launcher ios_create "$project" "$xcode"
+          version=$(tr -d '\r' < "$project/game/options.rpy" | sed -nE 's/^define config\.version = "([^":/]+)"$/\1/p')
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-z0-9-]+)?$ ]]
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${version%%-*}" "$xcode/Info.plist"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $GITHUB_RUN_NUMBER" "$xcode/Info.plist"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "GAME_VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Build the unsigned iPhone IPA
+        run: |
+          output="$RUNNER_TEMP/ios-device-artifacts"
+          payload="$RUNNER_TEMP/ios-ipa/Payload"
+          mkdir -p "$output" "$payload"
+          xcodebuild -project "$RUNNER_TEMP/xcode/TheRequirementsWhisperer.xcodeproj" \
+            -target 'The Requirements Whisperer' -configuration Release -sdk iphoneos \
+            ARCHS=arm64 ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO \
+            PRODUCT_BUNDLE_IDENTIFIER="$BUNDLE_ID" CONFIGURATION_BUILD_DIR="$RUNNER_TEMP/ios-device-products" build
+          app="$RUNNER_TEMP/ios-device-products/The Requirements Whisperer.app"
+          executable=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$app/Info.plist")
+          test -x "$app/$executable"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app/Info.plist")" = "$BUNDLE_ID"
+          xcrun vtool -show-build "$app/$executable" | grep -E 'platform[[:space:]]+IOS$'
+          ditto "$app" "$payload/${app##*/}"
+          archive="$output/TheRequirementsWhisperer-$GAME_VERSION-ios-unsigned.ipa"
+          ditto -c -k --keepParent "$payload" "$archive"
+          (cd "$output" && shasum -a 256 "${archive##*/}" > "${archive##*/}.sha256")
+
+      - name: Upload the unsigned IPA
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: TheRequirementsWhisperer-${{ steps.project.outputs.version }}-ios-unsigned
+          path: ${{ runner.temp }}/ios-device-artifacts/
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Build the simulator app
+        id: build
+        if: ${{ !cancelled() && steps.project.outcome == 'success' }}
+        run: |
+          xcode="$RUNNER_TEMP/xcode"
+          output="$RUNNER_TEMP/ios-artifacts"
+          mkdir "$output"
+          xcodebuild -project "$xcode/TheRequirementsWhisperer.xcodeproj" \
+            -target 'The Requirements Whisperer' -configuration Debug -sdk iphonesimulator \
+            ARCHS=arm64 ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO \
+            PRODUCT_BUNDLE_IDENTIFIER="$BUNDLE_ID" CONFIGURATION_BUILD_DIR="$RUNNER_TEMP/ios-products" build
+          app="$RUNNER_TEMP/ios-products/The Requirements Whisperer.app"
+          executable=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$app/Info.plist")
+          test -x "$app/$executable"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app/Info.plist")" = "$BUNDLE_ID"
+          archive="$output/TheRequirementsWhisperer-$GAME_VERSION-ios-simulator-arm64.zip"
+          ditto -c -k --keepParent "$app" "$archive"
+          (cd "$output" && shasum -a 256 "${archive##*/}" > "${archive##*/}.sha256")
+          echo "IOS_SIM_APP=$app" >> "$GITHUB_ENV"
+
+      - name: Launch on a simulated iPhone
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: |
+          device=$(xcrun simctl list devices booted -j | python3 -c 'import json, sys; print(next((d["udid"] for devices in json.load(sys.stdin)["devices"].values() for d in devices if d["name"].startswith("iPhone")), ""))')
+          if [[ -z "$device" ]]; then
+            device=$(xcrun simctl list devices available -j | python3 -c 'import json, sys; print(next(d["udid"] for _, devices in reversed(list(json.load(sys.stdin)["devices"].items())) for d in devices if d["name"].startswith("iPhone")))')
+            xcrun simctl boot "$device"
+          fi
+          xcrun simctl bootstatus "$device" -b
+          xcrun simctl install "$device" "$IOS_SIM_APP"
+          xcrun simctl launch "$device" "$BUNDLE_ID"
+          sleep 12
+          xcrun simctl io "$device" screenshot "$RUNNER_TEMP/ios-artifacts/iphone.png"
+          xcrun simctl spawn "$device" launchctl list > "$RUNNER_TEMP/sim-processes.txt"
+          grep -F "$BUNDLE_ID" "$RUNNER_TEMP/sim-processes.txt" | grep -E '^[0-9]+'
+
+      - name: Upload simulator package
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: TheRequirementsWhisperer-${{ steps.project.outputs.version }}-ios-simulator-arm64
+          path: ${{ runner.temp }}/ios-artifacts/
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
